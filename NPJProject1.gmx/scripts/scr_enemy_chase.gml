@@ -1,13 +1,4 @@
 ///Enemy Chase
-if (obj_player.sliding = false)
-   { 
-    dir = sign(obj_player.x - x);
-   } 
-if (firing = false)
-   {
-    hspd = dir * chsSpeed;
-   } 
-
 if (obj_player.state = states.knockback)
    {
     dir = 0; 
@@ -38,17 +29,43 @@ if (distance_to_object(obj_player) < 105)
     alarm[0] = -1;
     //hspd = dir * (chsSpeed + 1);
    }
-if (distance_to_object(obj_player) < 64 && alarm[7] = -1)
+if (distance_to_object(obj_player) < 64)
    {
-    hspd = 0;
-    
-    /*if (alarm[7] = -1)
+    if (alarm[7] = -1 && alarm[8] = -1)
        {
-        instance_create(x, y, obj_enemy_melee);
+        hspd = 0;
+        dir = sign(obj_player.x - x);
+        if (dir < 0)
+           {
+            melee_hitbox = instance_create(x-24, y, obj_enemy_melee);
+           }
+        else
+           {
+            melee_hitbox = instance_create(x+24, y, obj_enemy_melee);
+           }     
         alarm[7] = 10;
-       }*/
+       }
+    if (instance_exists(melee_hitbox))
+       {   
+        melee_hitbox.x += hspd;   
+       }
    }
-
+else 
+   {
+    if (instance_exists(melee_hitbox))
+       {   
+        melee_hitbox.alarm[0] = 1;
+       }
+    if (obj_player.sliding = false)
+       { 
+        dir = sign(obj_player.x - x);
+       }
+    if (firing = false)
+       {
+        hspd = dir * chsSpeed;
+       }  
+   }
+   
 //Valid Target
 scr_enemy_targeted();
    

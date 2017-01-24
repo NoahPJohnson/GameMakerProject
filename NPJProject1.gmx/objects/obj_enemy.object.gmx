@@ -47,6 +47,7 @@ hp = 2;
 hp_max = 2;
 cp = 2;
 cp_max = 2;
+melee_hitbox = noone;
 state = e_state.idle
 </string>
           </argument>
@@ -71,7 +72,7 @@ state = e_state.idle
           <argument>
             <kind>1</kind>
             <string>///Melee Lunge Ends
-chsSpeed = 2;
+hspd = dir * chsSpeed;
 </string>
           </argument>
         </arguments>
@@ -95,10 +96,11 @@ chsSpeed = 2;
           <argument>
             <kind>1</kind>
             <string>///Melee Lunge Begins
-chsSpeed = 4;
+hspd = dir * chsSpeed * 3;
+
 if (alarm[8] = -1)
    { 
-    alarm[8] = 30;
+    alarm[8] = 40;
    }
 </string>
           </argument>
