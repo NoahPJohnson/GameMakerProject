@@ -46,6 +46,7 @@ hp_max = 1;
 cp = 2;
 cp_max = 2;
 fir_speed = 42;
+melee_hitbox = noone;
 state = e_state.idle
 </string>
           </argument>

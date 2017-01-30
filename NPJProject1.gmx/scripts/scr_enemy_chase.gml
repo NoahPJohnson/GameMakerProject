@@ -29,6 +29,7 @@ if (distance_to_object(obj_player) < 105)
     alarm[0] = -1;
     //hspd = dir * (chsSpeed + 1);
    }
+//Melee Attack
 if (distance_to_object(obj_player) < 64)
    {
     if (alarm[7] = -1 && alarm[8] = -1)
@@ -47,7 +48,8 @@ if (distance_to_object(obj_player) < 64)
        }
     if (instance_exists(melee_hitbox))
        {   
-        melee_hitbox.x += hspd;   
+        melee_hitbox.x += hspd; 
+        melee_hitbox.y = y;  
        }
    }
 else 

@@ -2,7 +2,10 @@
 hitstun = true;
 stopped = false;
 alarm[0] = -1;
-
+if (instance_exists(melee_hitbox))
+   {   
+    melee_hitbox.alarm[0] = 1;
+   }
 if (!place_meeting(x,y+vspeed, obj_boundary))   
    {
     vspeed += 0.8;
