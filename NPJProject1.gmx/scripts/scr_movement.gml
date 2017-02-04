@@ -43,11 +43,12 @@ if (crouching = true)
     if (key_J && right = true && sliding = false)
        { 
         sliding = true;
-        hspd = (jspd * 2);
+        sp -= 45;
+        hspd = (jspd * 2.2);
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 4;
+            alarm[9] = 6;
             frc = 1;
            }
         state = states.sliding
@@ -56,11 +57,12 @@ if (crouching = true)
     if (key_J && right = false && sliding = false)
        { 
         sliding = true;
-        hspd = (-jspd * 2);
+        sp -= 45;
+        hspd = (-jspd * 2.2);
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 4;
+            alarm[9] = 6;
             frc = 1;
            }
         state = states.sliding

@@ -39,7 +39,7 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
            {
             if (alarm[7] = -1)
                {
-                alarm[7] = 7;   
+                alarm[7] = 12;   
                }
             knock_force = 4;
             state = states.knockback;
@@ -63,7 +63,7 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
     hp -= 12;
     if (alarm[7] = -1)
        {
-        alarm[7] = 7;                  
+        alarm[7] = 12;                  
        }
     knock_force = 6;
     state = states.knockback;

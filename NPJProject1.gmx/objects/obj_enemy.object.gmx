@@ -73,6 +73,10 @@ state = e_state.idle
             <kind>1</kind>
             <string>///Melee Lunge Ends
 hspd = dir * chsSpeed;
+if (instance_exists(melee_hitbox))
+   {   
+    melee_hitbox.alarm[0] = 1;
+   }
 </string>
           </argument>
         </arguments>
@@ -100,7 +104,7 @@ hspd = dir * chsSpeed * 3;
 
 if (alarm[8] = -1)
    { 
-    alarm[8] = 40;
+    alarm[8] = 25;
    }
 </string>
           </argument>

@@ -71,6 +71,7 @@ directionMemory = false;
 dash = 1;
 dashing = false;
 drive = false;
+dashJump = false;
 
 //State
 state = states.normal

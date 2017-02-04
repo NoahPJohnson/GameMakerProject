@@ -30,7 +30,12 @@ if (distance_to_object(obj_player) < 105)
     //hspd = dir * (chsSpeed + 1);
    }
 //Melee Attack
-if (distance_to_object(obj_player) < 64)
+if (instance_exists(melee_hitbox))
+   {   
+    melee_hitbox.x += hspd; 
+    melee_hitbox.y = y;  
+   }
+if (distance_to_object(obj_player) < 64 && obj_player.state != states.sliding && obj_player.state != states.knockback)
    {
     if (alarm[7] = -1 && alarm[8] = -1)
        {
@@ -39,20 +44,22 @@ if (distance_to_object(obj_player) < 64)
         if (dir < 0)
            {
             melee_hitbox = instance_create(x-24, y, obj_enemy_melee);
+            xoffset = -24;
            }
         else
            {
             melee_hitbox = instance_create(x+24, y, obj_enemy_melee);
+            xoffset = 24;
            }     
-        alarm[7] = 10;
+        alarm[7] = 15;
        }
     if (instance_exists(melee_hitbox))
        {   
-        melee_hitbox.x += hspd; 
+        melee_hitbox.x = x + xoffset; 
         melee_hitbox.y = y;  
        }
    }
-else 
+else if (alarm[7] = -1 && alarm[8] = -1)
    {
     if (instance_exists(melee_hitbox))
        {   
