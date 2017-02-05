@@ -15,6 +15,7 @@
     <sprite>sprites\spr_boundary_slope_UL</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_enemy_jump</sprite>
     <sprite>sprites\spr_enemy_stationary</sprite>
     <sprite>sprites\spr_projectile</sprite>
     <sprites name="player">
@@ -54,6 +55,7 @@
       <sprite>sprites\spr_test</sprite>
     </sprites>
     <sprite>sprites\spr_enemy_melee</sprite>
+    <sprite>sprites\spr_enemy_divekick_hitbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -97,6 +99,7 @@
       <script>scripts\scr_enemy_collision.gml</script>
       <script>scripts\scr_enemy_collision_hitstun.gml</script>
       <script>scripts\scr_enemy_targeted.gml</script>
+      <script>scripts\scr_enemy_melee.gml</script>
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
@@ -132,6 +135,7 @@
       <object>objects\obj_enemy_target</object>
       <object>objects\obj_projectile</object>
       <object>objects\obj_enemy_melee</object>
+      <object>objects\obj_enemy_divekick_hitbox</object>
     </objects>
     <object>objects\obj_boundary</object>
     <object>objects\obj_boundary_long</object>

@@ -37,6 +37,11 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
         hp -= 7;
         if (drive = false)
            {
+            charging = false;
+            chargeOne = false;
+            chargeTwo = false;
+            alarm[3] = -1;
+            alarm[4] = -1; 
             if (alarm[7] = -1)
                {
                 alarm[7] = 12;   
@@ -51,7 +56,7 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
 //Hit by melee attack   
 if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
    {   
-    melee_meeting = instance_place(x,y, obj_enemy_melee)
+    melee_meeting = instance_place(x,y, obj_enemy_melee);
     if (melee_meeting.x > x)
        {
         hitdir = -1;
@@ -61,6 +66,11 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
         hitdir = 1;
        }
     hp -= 12;
+    charging = false;
+    chargeOne = false;
+    chargeTwo = false;
+    alarm[3] = -1;
+    alarm[4] = -1; 
     if (alarm[7] = -1)
        {
         alarm[7] = 12;                  

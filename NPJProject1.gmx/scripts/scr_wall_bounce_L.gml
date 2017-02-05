@@ -1,4 +1,4 @@
-if (place_meeting(x,y,obj_boundary) || place_meeting(x, y, obj_enemy))
+if (place_meeting(x,y-32,obj_boundary) || place_meeting(x, y, obj_enemy))
    {
     if (obj_player.alarm[8] == -1)
        {

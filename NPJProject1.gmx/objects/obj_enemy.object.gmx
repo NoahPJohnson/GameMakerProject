@@ -73,6 +73,8 @@ state = e_state.idle
             <kind>1</kind>
             <string>///Melee Lunge Ends
 hspd = dir * chsSpeed;
+vspd = (min(7, vspd + grv));
+grv = 0.8;
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = 1;
@@ -100,12 +102,29 @@ if (instance_exists(melee_hitbox))
           <argument>
             <kind>1</kind>
             <string>///Melee Lunge Begins
-hspd = dir * chsSpeed * 3;
+if (jumping = false)
+   {
+    hspd = dir * chsSpeed * 3;
 
-if (alarm[8] = -1)
-   { 
-    alarm[8] = 25;
+    if (alarm[8] = -1)
+       { 
+        alarm[8] = 25;
+       }
    }
+else
+   {
+    if (!place_meeting(x, y+1, obj_boundary))
+       {
+        hspd = dir * chsSpeed * 3;
+        vspd = 13;
+        //grv = 0.8;
+        
+        if (alarm[8] = -1)
+           { 
+            alarm[8] = 20;
+           }
+       }    
+   }    
 </string>
           </argument>
         </arguments>
