@@ -28,8 +28,9 @@
             <string>hspd = 0;
 vspd = 0;
 jspeed = 15;
-chsSpeed = 2;
+chsSpeed = 1.8;
 jumping = true;
+jumped = true;
 dir = 0;
 firing = false;
 firSpeed = -1;
@@ -71,15 +72,11 @@ state = e_state.idle
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Jump End
-if (vspd &lt; 0)
-   {
-    vspd = (-jspeed/4);
-   }
-if (alarm[5] = -1)
-   {
-    alarm[5] = 98;
-   }    
+            <string>///Stuck after dive end
+chsSpeed = 1.8;
+jumped = false;
+//sprite_index = spr_enemy_jump;
+
 </string>
           </argument>
         </arguments>
@@ -105,12 +102,9 @@ if (alarm[5] = -1)
             <string>///Jump
 if (place_meeting(x, y+1, obj_boundary))
    {
-    hspd = (hspd/2);
+    //hspd = (hspd/2);
+    chsSpeed = 3.5;
     vspd = -jspeed;
-    if (alarm[6] = -1)
-       {
-        alarm[6] = 20;
-       }
    }
 else
    {

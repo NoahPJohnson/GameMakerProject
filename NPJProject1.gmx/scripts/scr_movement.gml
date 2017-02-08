@@ -48,7 +48,7 @@ if (crouching = true)
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 6;
+            alarm[9] = 5;
             frc = 1;
            }
         state = states.sliding
@@ -62,7 +62,7 @@ if (crouching = true)
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 6;
+            alarm[9] = 5;
             frc = 1;
            }
         state = states.sliding

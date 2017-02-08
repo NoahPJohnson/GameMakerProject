@@ -5,13 +5,23 @@ if (obj_player.state = states.knockback)
    }
    
 vspd = (min(7, vspd + grv));
-if (alarm[0] = -1)
+if (alarm[0] = -1 && firing = false)
    {
     alarm[0] = firSpeed; 
    }
 
 if (jumping = true)
    {
+    if (place_meeting(x,y+1, obj_boundary) && jumped = true)
+       {
+        hspd = 0;
+        chsSpeed = 0;
+        //sprite_index = spr_player_charging;
+        if (alarm[6] = -1)
+           {
+            alarm[6] = 60;
+           }
+       }   
     if (alarm[5] = -1)
        {
         alarm[5] = 94;
@@ -21,75 +31,27 @@ if (jumping = true)
 if (distance_to_object(obj_player) > 444)
    {
     alarm[0] = -1;
+    alarm[2] = -1;
     state = e_state.idle;
    }
    
-if (distance_to_object(obj_player) < 105)
+if (distance_to_object(obj_player) < 128)
    {
     alarm[0] = -1;
+    alarm[2] = -1;
     if (jumping = true)
        {
-        if (place_meeting(x, y+1, obj_boundary))
+        if (place_meeting(x, y+1, obj_boundary) && jumped = false)
            {
             alarm[5] = 1;
            }
        }
     //hspd = dir * (chsSpeed + 1);
    }
+   
 //Melee Attack
 scr_enemy_melee();
-/*if (instance_exists(melee_hitbox))
-   {   
-    melee_hitbox.x += hspd; 
-    melee_hitbox.y = y;  
-   }*/
-/*if (jumping = false)
-   {
-    //Lunge Melee
-    if (distance_to_object(obj_player) < 64 && obj_player.state != states.sliding && obj_player.state != states.knockback)
-       {
-        if (alarm[7] = -1 && alarm[8] = -1)
-           {
-            hspd = 0;
-            dir = sign(obj_player.x - x);
-            if (dir < 0)
-               {
-                melee_hitbox = instance_create(x-24, y, obj_enemy_melee);
-                xoffset = -24;
-               }
-            else
-               {
-                melee_hitbox = instance_create(x+24, y, obj_enemy_melee);
-                xoffset = 24;
-               }     
-            alarm[7] = 15;
-           }
-        if (instance_exists(melee_hitbox))
-           {   
-            melee_hitbox.x = x + xoffset; 
-            melee_hitbox.y = y;  
-           }
-       }
-    else if (alarm[7] = -1 && alarm[8] = -1)
-       {
-        if (instance_exists(melee_hitbox))
-           {   
-            melee_hitbox.alarm[0] = 1;
-           }
-        if (obj_player.sliding = false)
-           { 
-            dir = sign(obj_player.x - x);
-           }
-        if (firing = false)
-           {
-            hspd = dir * chsSpeed;
-           }  
-       }
-   }
-else
-   {
-   
-   }*/   
+  
 //Valid Target
 scr_enemy_targeted();
    

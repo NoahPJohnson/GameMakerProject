@@ -28,7 +28,7 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
        {
         hitdir = -1;
        }
-    impetus = 9 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+    impetus = 9 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
     speed = (abs(speed) * hitdir) + (impetus * hitdir);
     direction = 55 * hitdir;
     hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);    

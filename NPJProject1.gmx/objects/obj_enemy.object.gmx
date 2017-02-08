@@ -32,7 +32,7 @@ chsSpeed = 2;
 jumping = false;
 dir = 0;
 firing = false;
-firSpeed = 25;
+firSpeed = 40;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
@@ -104,7 +104,7 @@ if (instance_exists(melee_hitbox))
             <string>///Melee Lunge Begins
 if (jumping = false)
    {
-    hspd = dir * chsSpeed * 3;
+    hspd = dir * chsSpeed * 4;
 
     if (alarm[8] = -1)
        { 
@@ -195,7 +195,8 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop firing
+            <string>///Fire Projectile
+projectile = instance_create(x,y, obj_projectile);
 firing = false;
 </string>
           </argument>
@@ -248,12 +249,12 @@ state = e_state.idle
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fire Projectile
+            <string>///Stop and Prepare to Fire
 firing = true;
 hspd = 0;
-projectile = instance_create(x,y, obj_projectile);
-alarm[0] = 53;
-alarm[2] = 7;
+
+//alarm[0] = 53;
+alarm[2] = 15;
 </string>
           </argument>
         </arguments>

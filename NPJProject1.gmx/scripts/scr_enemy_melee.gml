@@ -7,7 +7,7 @@ if (instance_exists(melee_hitbox))
 if (jumping = false)
    {
     //Lunge Melee
-    if (distance_to_object(obj_player) < 64 && obj_player.state != states.sliding && obj_player.state != states.knockback)
+    if (distance_to_object(obj_player) < 80 && obj_player.state != states.sliding && obj_player.state != states.knockback)
        {
         if (alarm[7] = -1 && alarm[8] = -1)
            {
@@ -44,10 +44,12 @@ if (jumping = false)
    }
 else
    {
+    //Divekick Melee
     if (distance_to_object(obj_player) < 80 && !place_meeting(x, y+64, obj_boundary) && obj_player.state != states.sliding && obj_player.state != states.knockback)
        {
         if (alarm[7] = -1 && alarm[8] = -1)
            {
+            jumped = true;
             hspd = 0;
             vspd = 0;
             grv = 0;
@@ -62,7 +64,7 @@ else
                 melee_hitbox = instance_create(x+24, y+32, obj_enemy_divekick_hitbox);
                 xoffset = 24;
                }
-            alarm[7] = 15;
+            alarm[7] = 10;
            }    
        }
     else if (alarm[7] = -1 && alarm[8] = -1)
