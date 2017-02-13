@@ -7,7 +7,7 @@ if (hp < 1)
        }
     if (alarm[3] = -1)
        {
-        alarm[3] = 197;
+        alarm[3] = 200;
        }   
     state = e_state.crash
    }

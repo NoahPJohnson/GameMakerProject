@@ -105,7 +105,17 @@ if (place_meeting(x, y, obj_bat_spike))
         
 
 //Collsion with Wall
-if (place_meeting(x, y, obj_boundary))
+if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
    {
     instance_destroy();
-   }             
+   }
+
+//Collision with Crashed Enemy   
+if (place_meeting(x, y, obj_enemy))     
+   {
+    crashed_enemy_meeting = instance_place(x, y, obj_enemy);
+    if (crashed_enemy_meeting.state = e_state.crash)
+       {
+        instance_destroy();
+       }
+   }            

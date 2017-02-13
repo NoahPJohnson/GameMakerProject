@@ -80,6 +80,7 @@
         <script>scripts\scr_power_slide.gml</script>
       </scripts>
     </scripts>
+    <script>scripts\scr_homing_projectile.gml</script>
     <script>scripts\scr_projectile.gml</script>
     <script>scripts\scr_projectile_destroyed.gml</script>
     <script>scripts\scr_projectile_struck.gml</script>
@@ -134,8 +135,10 @@
       <object>objects\obj_enemy_stationary</object>
       <object>objects\obj_enemy_target</object>
       <object>objects\obj_projectile</object>
+      <object>objects\obj_projectile_homing</object>
       <object>objects\obj_enemy_melee</object>
       <object>objects\obj_enemy_divekick_hitbox</object>
+      <object>objects\obj_prop</object>
     </objects>
     <object>objects\obj_boundary</object>
     <object>objects\obj_boundary_long</object>

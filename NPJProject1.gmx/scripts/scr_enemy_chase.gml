@@ -32,6 +32,7 @@ if (distance_to_object(obj_player) > 444)
    {
     alarm[0] = -1;
     alarm[2] = -1;
+    firing = false;
     state = e_state.idle;
    }
    
@@ -39,6 +40,7 @@ if (distance_to_object(obj_player) < 128)
    {
     alarm[0] = -1;
     alarm[2] = -1;
+    firing = false;
     if (jumping = true)
        {
         if (place_meeting(x, y+1, obj_boundary) && jumped = false)
@@ -46,7 +48,13 @@ if (distance_to_object(obj_player) < 128)
             alarm[5] = 1;
            }
        }
-    //hspd = dir * (chsSpeed + 1);
+    else
+       {
+        if (meleeAttack = false)
+           {
+            hspd = dir * chsSpeed;
+           } 
+       } 
    }
    
 //Melee Attack

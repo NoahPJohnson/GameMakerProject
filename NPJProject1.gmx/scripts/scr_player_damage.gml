@@ -37,14 +37,23 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
         hp -= 7;
         if (drive = false)
            {
+            crouching = false;
             charging = false;
             chargeOne = false;
             chargeTwo = false;
             alarm[3] = -1;
             alarm[4] = -1; 
-            if (alarm[7] = -1)
+            if (iframes = false)
                {
-                alarm[7] = 12;   
+                //Invincibility
+                iframes = true;
+                jumping = false;
+                sprite_index = spr_player_iframes;
+                if (alarm[8] = -1)
+                   {
+                    alarm[8] = 15;
+                   }
+                //scr_movement();  
                }
             knock_force = 4;
             state = states.knockback;
@@ -66,14 +75,23 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
         hitdir = 1;
        }
     hp -= 12;
+    crouching = false;
     charging = false;
     chargeOne = false;
     chargeTwo = false;
     alarm[3] = -1;
     alarm[4] = -1; 
-    if (alarm[7] = -1)
+    if (iframes = false)
        {
-        alarm[7] = 12;                  
+        //Invincibility
+        iframes = true;
+        jumping = false;
+        sprite_index = spr_player_iframes;
+        if (alarm[8] = -1)
+           {
+            alarm[8] = 35;
+           }
+        //scr_movement();                  
        }
     knock_force = 6;
     state = states.knockback;

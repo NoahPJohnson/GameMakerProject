@@ -2,10 +2,10 @@
 dashing = false;
 jumping = true;
 
-if (iframes = false && wallBounce = false)
+if (wallBounce = false)
    {
-    hspd = knock_force * hitdir;
-    vspd = -knock_force + 1;
+    hspd = (knock_force+1) * hitdir;
+    vspd = -(knock_force);
     wallBounce = true;
    }
 else

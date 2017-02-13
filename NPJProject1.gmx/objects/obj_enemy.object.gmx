@@ -33,6 +33,7 @@ jumping = false;
 dir = 0;
 firing = false;
 firSpeed = 40;
+meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
@@ -198,6 +199,8 @@ instance_destroy();
             <string>///Fire Projectile
 projectile = instance_create(x,y, obj_projectile);
 firing = false;
+//sprite_index = spr_enemy;
+//hspd = dir * chsSpeed;
 </string>
           </argument>
         </arguments>
@@ -252,7 +255,7 @@ state = e_state.idle
             <string>///Stop and Prepare to Fire
 firing = true;
 hspd = 0;
-
+//sprite_index = spr_player;
 //alarm[0] = 53;
 alarm[2] = 15;
 </string>

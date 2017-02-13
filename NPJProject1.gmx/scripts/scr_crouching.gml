@@ -10,7 +10,7 @@ if (place_meeting(x, y+1, obj_boundary) && recovery = false && drive = false)
         crouching = true;
         mspd = 0;
         hspd = 0;
-        jspd = 12;
+        jspd = 14;
         alarm[0] = -1;
         alarm[1] = -1;
         alarm[2] = -1;

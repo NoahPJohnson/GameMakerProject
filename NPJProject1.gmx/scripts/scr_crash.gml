@@ -23,6 +23,12 @@ if (place_meeting(x,y+1,obj_boundary))
         hspeed += frc;
        }          
    }    
+   
+//Hit by Projectile
+/*if (place_meeting(x, y, obj_projectile))
+   {
+    
+   }*/      
 
 if (abs(speed) < 1.6 && place_meeting(x,y+1,obj_boundary))
    {

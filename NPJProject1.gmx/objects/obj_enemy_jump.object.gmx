@@ -34,6 +34,7 @@ jumped = true;
 dir = 0;
 firing = false;
 firSpeed = -1;
+meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
