@@ -10,19 +10,24 @@ key_L_released = keyboard_check_released(ord("A"));
 //Initiate with Double Tap
 if (place_meeting(x, y+1, obj_boundary))
    {
+    //Key pressed while double tap window is open and it is in the same direction
     if ((key_R_pressed || key_L_pressed) && alarm[10] > 0 && directionMemory = right)
        {
+        //initiate dash
         doubleTapWindow = false;
         alarm[10] = -1;
         hspd = mve * 2;
         dashing = true;
        }
+    //Key pressed while double tap window is not open
     if ((key_R_pressed || key_L_pressed) && doubleTapWindow = false)
        {
+        //initiate double tap window
         //directionMemory = right;
         doubleTapWindow = true;
         alarm[10] = 10;
        }
+    //If key is released after window is opened, remember the direction that was released
     if ((key_R_released || key_L_released) && doubleTapWindow = true && alarm[10] > 0)
        {
         directionMemory = right;

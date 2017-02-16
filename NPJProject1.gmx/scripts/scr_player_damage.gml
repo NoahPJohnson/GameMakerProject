@@ -45,18 +45,18 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
             alarm[4] = -1; 
             if (iframes = false)
                {
-                //Invincibility
-                iframes = true;
-                jumping = false;
-                sprite_index = spr_player_iframes;
                 if (alarm[8] = -1)
                    {
+                    //Invincibility
+                    iframes = true;
+                    jumping = false;
+                    sprite_index = spr_player_iframes;
                     alarm[8] = 15;
+                    knock_force = 4;
+                    state = states.knockback;
                    }
                 //scr_movement();  
                }
-            knock_force = 4;
-            state = states.knockback;
            }
         projectile_meeting.state = proj_state.destroyed;
        }    

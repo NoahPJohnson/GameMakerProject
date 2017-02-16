@@ -5,6 +5,17 @@ if (obj_player.state = states.knockback)
    }
    
 vspd = (min(7, vspd + grv));
+if (alarm[7] = -1 && alarm[8] = -1)
+   {
+    if (obj_player.sliding = false)
+       { 
+        dir = sign(obj_player.x - x);
+       }
+    if (firing = false)
+       {
+        hspd = dir * chsSpeed;
+       }
+   } 
 if (alarm[0] = -1 && firing = false)
    {
     alarm[0] = firSpeed; 

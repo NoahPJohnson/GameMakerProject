@@ -2,6 +2,8 @@
 hitstun = true;
 stopped = false;
 alarm[0] = -1;
+alarm[7] = -1;
+alarm[8] = -1;
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = 1;
