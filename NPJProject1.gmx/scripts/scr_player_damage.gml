@@ -51,7 +51,7 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
                     iframes = true;
                     jumping = false;
                     sprite_index = spr_player_iframes;
-                    alarm[8] = 15;
+                    alarm[8] = room_speed * (15/60);
                     knock_force = 4;
                     state = states.knockback;
                    }
@@ -89,7 +89,7 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
         sprite_index = spr_player_iframes;
         if (alarm[8] = -1)
            {
-            alarm[8] = 35;
+            alarm[8] = room_speed * (35/60);
            }
         //scr_movement();                  
        }

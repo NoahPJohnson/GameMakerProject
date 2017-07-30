@@ -89,7 +89,7 @@ vspd = (min(7, vspd + grv));
 grv = 0.8;
 if (instance_exists(melee_hitbox))
    {   
-    melee_hitbox.alarm[0] = 1;
+    melee_hitbox.alarm[0] = room_speed * (1/60);
    }
 </string>
           </argument>
@@ -120,7 +120,10 @@ if (longRange = false)
        {
         if (!instance_exists(melee_hitbox))
            {
-            dir = sign(obj_player.x - x);
+            if (obj_player.state != states.sliding)
+               {
+                dir = sign(obj_player.x - x);
+               }
             if (antiAir = false)
                {
                 if (dir &lt; 0)
@@ -153,13 +156,13 @@ if (longRange = false)
        {
         if (place_meeting(x, y+1, obj_boundary))
            {
-            vspd = -jspeed;
+            vspd = -(jspeed+3);
             hspd = dir * chsSpeed * .8;
            }
        }
     if (alarm[8] = -1)
        { 
-        alarm[8] = 15;
+        alarm[8] = room_speed * (15/60);
        }
    }
 /*else
@@ -207,7 +210,7 @@ if (place_meeting(x, y+1, obj_boundary))
    }
 else
    {
-    alarm[5] = 94; 
+    alarm[5] = room_speed * (94/60); 
    }           
        
 </string>
@@ -341,7 +344,7 @@ firing = true;
 hspd = 0;
 //sprite_index = spr_player;
 //alarm[0] = 53;
-alarm[2] = 15;
+alarm[2] = room_speed * (15/60);
 </string>
           </argument>
         </arguments>

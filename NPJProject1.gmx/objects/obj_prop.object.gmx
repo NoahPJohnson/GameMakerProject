@@ -101,7 +101,7 @@ firing = true;
 hspd = 0;
 //sprite_index = spr_player;
 //alarm[0] = 53;
-alarm[2] = 15;
+alarm[2] = room_speed * (15/60);
 </string>
           </argument>
         </arguments>

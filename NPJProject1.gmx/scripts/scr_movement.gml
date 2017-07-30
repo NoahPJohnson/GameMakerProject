@@ -11,7 +11,7 @@ mve = key_L + key_R;
 
 if (crouching = false && dashing = false)
    {
-    hspd = mve * mspd;
+    hspd = mve * mspd * ((60/1000000) * delta_time);
    }
 
 //Dashing 
@@ -40,7 +40,7 @@ if (mve = -1)
 //Sliding
 if (crouching = true)
    {
-    if (key_J && right = true && sliding = false)
+    if (key_J && right = true && sliding = false && sp > 45)
        { 
         sliding = true;
         sp -= 45;
@@ -48,13 +48,13 @@ if (crouching = true)
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 5;
+            alarm[9] = room_speed * (5/60);
             frc = 1;
            }
         state = states.sliding
        }
     
-    if (key_J && right = false && sliding = false)
+    if (key_J && right = false && sliding = false && sp > 45)
        { 
         sliding = true;
         sp -= 45;
@@ -62,7 +62,7 @@ if (crouching = true)
         siframes = true;  
         if (alarm[9] = -1)
            { 
-            alarm[9] = 5;
+            alarm[9] = room_speed * (5/60);
             frc = 1;
            }
         state = states.sliding
@@ -118,7 +118,7 @@ if (swinging = false && recovery = false && place_meeting(x, y+1, obj_boundary))
            }
         if (alarm[2] = -1)
            {
-            alarm[2] = 3;
+            alarm[2] = room_speed * (3/60);
            }
         dashing = false;
         state = states.swinging

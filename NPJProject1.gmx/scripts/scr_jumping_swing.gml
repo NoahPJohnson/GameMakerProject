@@ -6,7 +6,7 @@ if (swinging = false && recovery = false && !place_meeting(x, y+1, obj_boundary)
         swinging = true;
         if (alarm[5] = -1)
            {
-            alarm[5] = 4;
+            alarm[5] = room_speed * (4/60);
            }
        }
    }

@@ -17,12 +17,12 @@ if (longRange = false)
             if (obj_player.jumping = true)
                {
                 antiAir = true;
-                alarm[7] = 5;
+                alarm[7] = room_speed * (5/60);
                }
             else
                {
                 antiAir = false;
-                alarm[7] = 20;
+                alarm[7] = room_speed * (20/60);
                }
            }
        }

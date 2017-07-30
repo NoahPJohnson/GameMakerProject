@@ -14,10 +14,10 @@ if (obj_player.state = states.knockback)
        } 
    }
 //Don't walk off tall ledges   
-if (!place_meeting((x+dir), (y+2), obj_boundary))
+/*if (!place_meeting((x-dir), (y+1), obj_boundary))
    {
-    //dir *= -1;
-   }   
+    dir *= -1;
+   }  */ 
    
 vspd = (min(7, vspd + grv));
 if (alarm[7] = -1 && alarm[8] = -1)
@@ -37,6 +37,9 @@ if (longRange = true)
        {
         //Begin approach
         longRange = false;
+        alarm[0] = -1;
+        alarm[2] = -1;
+        firing = false;
         //dir = sign(obj_player.x - x);
        }
     //Otherwise, when in long range maintain a distance from the player
@@ -51,11 +54,14 @@ if (longRange = true)
     else if (distance_to_object(obj_player) < 112 && longRange = true)
        {
         longRange = false;
+        alarm[0] = -1;
+        alarm[2] = -1;
+        firing = false;
        }
     
-    if (alarm[0] = -1 && firing = false)
+    if (alarm[0] = -1 && firing = false && longRange = true)
        {
-        alarm[0] = firSpeed; 
+        alarm[0] = room_speed * (firSpeed/60); 
        }
    }    
 else if (longRange = false)
@@ -69,13 +75,13 @@ else if (longRange = false)
    }
 
 //Can jump up large obsticals
-if (place_meeting(x,y+1, obj_boundary) && place_meeting(x+(dir * 64),y, obj_boundary) && !place_meeting(x+(dir), (y-100), obj_boundary))
+/*if (place_meeting(x,y+1, obj_boundary) && place_meeting(x+(dir * 64),y+32, obj_boundary) && !place_meeting(x+(dir), (y-100), obj_boundary))
    {
     if (alarm[5] = -1)
        {
         alarm[5] = 30;
        }
-   }        
+   }*/        
 
 if (distance_to_object(obj_player) > 444)
    {

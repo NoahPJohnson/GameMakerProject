@@ -46,7 +46,7 @@ if (charging = true)
                 //mspd = 0;
                 //hspd = 0;
                 //jspd = 0;
-                alarm[0] = 6;
+                alarm[0] = room_speed * (6/60);
                }                     
            }
        }

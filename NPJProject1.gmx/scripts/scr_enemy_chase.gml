@@ -18,7 +18,7 @@ if (alarm[7] = -1 && alarm[8] = -1)
    } 
 if (alarm[0] = -1 && firing = false)
    {
-    alarm[0] = firSpeed; 
+    alarm[0] = room_speed * (firSpeed/60); 
    }
 
 if (jumping = true)
@@ -30,12 +30,12 @@ if (jumping = true)
         //sprite_index = spr_player_charging;
         if (alarm[6] = -1)
            {
-            alarm[6] = 60;
+            alarm[6] = room_speed * (60/60);
            }
        }   
     if (alarm[5] = -1)
        {
-        alarm[5] = 94;
+        alarm[5] = room_speed * (94/60);
        }
    }     
 

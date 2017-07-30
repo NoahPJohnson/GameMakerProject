@@ -160,6 +160,7 @@ wallBounce = false;
 dashing = false;
 crouching = false;
 mspd = 8;
+doubleTapWindow = false;
 sprite_index = spr_player;
 alarm[0] = -1;
 alarm[1] = -1;
@@ -200,7 +201,7 @@ jumping = false;
 sprite_index = spr_player_iframes;
 if (alarm[8] = -1)
    {
-    alarm[8] = 20;
+    alarm[8] = room_speed * (20/60);
    }
 
 scr_movement();
@@ -268,7 +269,7 @@ if (right = true)
     recovery = true;
     if (alarm[6] = -1)
        {
-        alarm[6] = 11;
+        alarm[6] = room_speed * (11/60);
         sprite_index = spr_player_recovery;
        }
    }
@@ -281,7 +282,7 @@ else
     recovery = true;
     if (alarm[6] = -1)
        {
-        alarm[6] = 11;
+        alarm[6] = room_speed * (11/60);
         sprite_index = spr_player_recovery;
        }
    }
@@ -357,7 +358,7 @@ if (charging = true)
         sprite_index = spr_player_charged1;
        }
     chargeOne = true;
-    alarm[4] = 20;
+    alarm[4] = room_speed * (20/60);
    }
    
 </string>
@@ -397,7 +398,7 @@ if (keyboard_check(vk_numpad2))
     mspd = 0;
     hspd = 0;
     jspd = 0;
-    alarm[3] = 16;
+    alarm[3] = room_speed * (16/60);
    }
 else
    {
@@ -410,7 +411,7 @@ else
             mspd = 0;
             hspd = 0;
             jspd = 0;
-            alarm[0] = 7;
+            alarm[0] = room_speed * (7/60);
            }     
                 
        }
@@ -502,7 +503,7 @@ if (right = true)
     recovery = true;
     if (alarm[1] = -1)
        {
-        alarm[1] = 5;
+        alarm[1] = room_speed * (5/60);
         sprite_index = spr_player_recovery;
        }
    }

@@ -1,4 +1,5 @@
-///Hitstun  
+///Hitstun
+grv = 0.8;  
 hitstun = true;
 stopped = false;
 alarm[0] = -1;
@@ -51,7 +52,7 @@ scr_collision_bounce();
 
 if (alarm[1] = -1)
    {
-    alarm[1] = 13;   
+    alarm[1] = room_speed * (13/60);   
    }
    
    

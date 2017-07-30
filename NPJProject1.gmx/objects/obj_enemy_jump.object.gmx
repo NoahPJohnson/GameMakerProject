@@ -109,7 +109,7 @@ if (place_meeting(x, y+1, obj_boundary))
    }
 else
    {
-    alarm[5] = 94; 
+    alarm[5] = room_speed * (94/60); 
    }           
        
 </string>
@@ -239,8 +239,8 @@ state = e_state.idle
 firing = true;
 hspd = 0;
 projectile = instance_create(x,y, obj_projectile);
-alarm[0] = 53;
-alarm[2] = 7;
+alarm[0] = room_speed * (53/60);
+alarm[2] = room_speed * (7/60);
 </string>
           </argument>
         </arguments>

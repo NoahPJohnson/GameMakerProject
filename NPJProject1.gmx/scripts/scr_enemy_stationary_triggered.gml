@@ -11,7 +11,7 @@ if (obj_player.state = states.knockback)
    
 if (alarm[0] = -1)
    {
-    alarm[0] = 15; 
+    alarm[0] = room_speed * (15/60); 
    }
      
 if (distance_to_object(obj_player) > 444)

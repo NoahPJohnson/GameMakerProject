@@ -7,7 +7,7 @@ if (hp < 1)
        }
     if (alarm[3] = -1)
        {
-        alarm[3] = 200;
+        alarm[3] = room_speed * (20/60);
        }   
     state = e_state.crash
    }

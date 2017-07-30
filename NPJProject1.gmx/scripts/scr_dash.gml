@@ -25,14 +25,14 @@ if (place_meeting(x, y+1, obj_boundary))
         //initiate double tap window
         //directionMemory = right;
         doubleTapWindow = true;
-        alarm[10] = 10;
+        alarm[10] = room_speed * (10/60);
        }
     //If key is released after window is opened, remember the direction that was released
     if ((key_R_released || key_L_released) && doubleTapWindow = true && alarm[10] > 0)
        {
         directionMemory = right;
         doubleTapWindow = false;
-        alarm[10] = 15;
+        alarm[10] = room_speed * (15/60);
        }   
     
     /*if (key_D_pressed)
@@ -125,7 +125,7 @@ if (dashing = true)
         if (alarm[3] = -1 && charging = false)
            {
             charging = true;
-            alarm[3] = 16;
+            alarm[3] = room_speed * (16/60);
            }
        }      
     else

@@ -175,8 +175,8 @@ state = e_state.idle
 firing = true;
 hspd = 0;
 projectile = instance_create(x,y, obj_projectile);
-alarm[0] = fir_speed;
-alarm[2] = 7;
+alarm[0] = room_speed * (fir_speed/60);
+alarm[2] = room_speed * (7/60);
 </string>
           </argument>
         </arguments>

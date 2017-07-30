@@ -350,7 +350,7 @@
     <instance objName="obj_boundary" x="5248" y="1408" name="inst_DB705208" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_stationary" x="5216" y="832" name="inst_08D09126" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="5120" y="640" name="inst_8D67F4B4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_smart" x="480" y="1056" name="inst_241C4B79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_smart" x="608" y="928" name="inst_241C4B79" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
