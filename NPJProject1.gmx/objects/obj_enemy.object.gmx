@@ -258,12 +258,8 @@ firing = false;
           <argument>
             <kind>1</kind>
             <string>///Hitstun End
-hit = false;
 hitstun = false;
-stopped = true;
-speed = 0;
-direction = 0;
-state = e_state.idle
+
 </string>
           </argument>
         </arguments>
@@ -287,11 +283,14 @@ state = e_state.idle
           <argument>
             <kind>1</kind>
             <string>///Stop and Prepare to Fire
-firing = true;
-hspd = 0;
-//sprite_index = spr_player;
-//alarm[0] = 53;
-alarm[2] = room_speed * (15/60);
+if (!collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true))
+   {
+    firing = true;
+    hspd = 0;
+    //sprite_index = spr_player;
+    //alarm[0] = 53;
+    alarm[2] = room_speed * (15/60);
+   }
 </string>
           </argument>
         </arguments>

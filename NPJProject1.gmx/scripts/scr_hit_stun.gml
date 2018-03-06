@@ -28,7 +28,17 @@ if (place_meeting(x,y+1,obj_boundary))
     if (hspeed < 0) 
        {
         hspeed += frc;
-       }          
+       }
+    if (alarm[1] < 0)
+       {
+        sprite_index = spr_player_charging;
+        hit = false;
+        hitstun = false;
+        stopped = true;
+        speed = 0;
+        direction = 0;
+        state = e_state.idle;
+       }             
    }    
 if (abs(speed) < 1)
    {
@@ -50,9 +60,6 @@ scr_hit_by_bat();
 //Bounce
 scr_collision_bounce();
 
-if (alarm[1] = -1)
-   {
-    alarm[1] = room_speed * (13/60);   
-   }
+
    
    

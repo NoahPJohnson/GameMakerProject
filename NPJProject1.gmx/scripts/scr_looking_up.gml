@@ -3,7 +3,7 @@ key_U = keyboard_check_pressed(ord("W"))
 key_U_held = keyboard_check(ord("W"))
 key_U_released = keyboard_check_released(ord("W"))
 
-if (place_meeting(x, y+1, obj_boundary))
+if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
    {
     if (swinging = false && recovery = false)
        { 

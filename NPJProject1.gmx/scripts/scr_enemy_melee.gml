@@ -8,7 +8,7 @@ if (jumping = false)
    {
     //Lunge Melee
     //meleeAttack = true;
-    if (distance_to_object(obj_player) < 80 && place_meeting(x,y+1,obj_boundary) /*&& obj_player.state != states.sliding*/ && obj_player.state != states.knockback && meleeAttack = false)
+    if (distance_to_object(obj_player) < 80 && place_meeting(x,y+1,obj_boundary) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && obj_player.state != states.knockback && meleeAttack = false)
        {
         meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)
@@ -27,6 +27,10 @@ if (jumping = false)
                }*/     
             alarm[7] = room_speed * (20/60);
            }
+       }
+    else if (alarm[7] = -1 && alarm[8] > 0 && !instance_exists(melee_hitbox) && meleeAttack = true)
+       {
+        hspd = 0;
        }
     else if (alarm[7] = -1 && alarm[8] = -1 && meleeAttack = true)
        {

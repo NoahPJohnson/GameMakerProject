@@ -72,7 +72,7 @@ if (crouching = true)
 //Jumping
 if (crouching = false)
    {
-    if (place_meeting(x, y+1, obj_boundary))
+    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && !place_meeting(x, y, obj_enemy))
        {
         vspd = key_J * -jspd;
         jumping = true;
@@ -83,7 +83,7 @@ if (crouching = false)
         vspd = max(vspd,-jspd/4);
        }   
    }
-if (place_meeting(x, y+1, obj_boundary) && key_J = false)
+if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && key_J = false)
    {
     jumping = false;
    }
@@ -108,7 +108,7 @@ scr_collision();
 
 //Swinging
 ///Input Swing
-if (swinging = false && recovery = false && place_meeting(x, y+1, obj_boundary))
+if (swinging = false && recovery = false && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
    { 
     if (keyboard_check_pressed(vk_numpad2))
        { 
@@ -132,10 +132,10 @@ scr_looking_up();
 scr_jumping_swing(); 
 
 #define scr_player_bounce
-if (place_meeting(x, y+1, obj_enemy))
+if (place_meeting(x, y+1, obj_enemy) && !place_meeting(x,y,obj_enemy))
    {
     enemy_bouncing_on = instance_place(x,y+1, obj_enemy)
-    if (enemy_bouncing_on.state != e_state.crash && vspd > 2)
+    if (enemy_bouncing_on.state != e_state.crash)
        {
         vspd = -jspd;
         jumping = true;

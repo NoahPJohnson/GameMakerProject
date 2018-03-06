@@ -1,4 +1,5 @@
 ///Collision
+
 //Going Down Slope
 if (!place_meeting(x+sign(hspd),y+1,obj_boundary && jumping = false)) // && place_meeting(x+sign(hspd),y+2,obj_boundary))
    {
@@ -14,7 +15,7 @@ if (!place_meeting(x+sign(hspd),y+1,obj_boundary && jumping = false)) // && plac
    }
    
 //Horizontal Collision
-if (place_meeting(x+hspd,y,obj_boundary))
+if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) || place_meeting(x+hspd,y,obj_player))
    {
     y_adj = 0;
     while (place_meeting(x+hspd,y-y_adj, obj_boundary) && y_adj <= abs(slope_mod*hspd))
@@ -29,6 +30,26 @@ if (place_meeting(x+hspd,y,obj_boundary))
               } 
         hspd = 0;
        }
+    else if (place_meeting(x+hspd,y-y_adj,obj_enemy) /*&& state != states.sliding*/ && !place_meeting(x,y,obj_enemy))
+       {
+        enemy_collision = instance_place(x+hspd,y-y_adj, obj_enemy)
+        if (enemy_collision.state == e_state.crash || state != states.sliding)
+           {
+            while (!place_meeting(x+sign(hspd),y,obj_enemy))
+                  {
+                   x += sign(hspd);
+                  } 
+            hspd = 0;
+           }
+       }    
+    else if (place_meeting(x+hspd,y-y_adj,obj_player) && !place_meeting(x,y,obj_player))
+       {
+        while (!place_meeting(x+sign(hspd),y,obj_player))
+              {
+               x += sign(hspd);
+              } 
+        hspd = 0;   
+       }    
     //Going Up Slope
     else
        {
@@ -62,5 +83,21 @@ if (place_meeting(x,y+vspd,obj_boundary))
           }  
     vspd = 0;
    }   
+else if (place_meeting(x,y+vspd,obj_enemy) && !place_meeting(x,y,obj_enemy))
+   {
+    while (!place_meeting(x,y+sign(vspd),obj_enemy))
+          {
+           y += sign(vspd);
+          }  
+    vspd = 0;
+   }    
+else if (place_meeting(x+hspd,y-y_adj,obj_player) && !place_meeting(x,y,obj_player))
+       {
+        while (!place_meeting(x+sign(hspd),y,obj_player))
+              {
+               x += sign(hspd);
+              } 
+        hspd = 0;   
+       }    
 y += vspd; 
 

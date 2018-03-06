@@ -8,7 +8,7 @@ key_R_released = keyboard_check_released(ord("D"));
 key_L_released = keyboard_check_released(ord("A"));
 
 //Initiate with Double Tap
-if (place_meeting(x, y+1, obj_boundary))
+if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
    {
     //Key pressed while double tap window is open and it is in the same direction
     if ((key_R_pressed || key_L_pressed) && alarm[10] > 0 && directionMemory = right)

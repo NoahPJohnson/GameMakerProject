@@ -3,7 +3,7 @@ key_C = keyboard_check_pressed(ord("S"))
 key_C_held = keyboard_check(ord("S"))
 key_C_released = keyboard_check_released(ord("S"))
 
-if (place_meeting(x, y+1, obj_boundary) && recovery = false && drive = false)
+if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && recovery = false && drive = false)
    {
     if (key_C_held && sliding = false)
        {

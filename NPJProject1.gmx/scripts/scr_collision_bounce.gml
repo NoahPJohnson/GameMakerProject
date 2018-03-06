@@ -1,6 +1,6 @@
 ///Collision
 //Horizontal Collision
-if (place_meeting(x+hspeed,y,obj_boundary))
+if (place_meeting(x+hspeed,y,obj_boundary) || place_meeting(x+hspeed,y,obj_player))
    {
     y_adj = 0;
     while (place_meeting(x+hspeed,y-y_adj, obj_boundary) && y_adj <= abs(slope_mod*hspeed))
@@ -15,6 +15,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
               } 
         hspeed = -hspeed * .7;
        }
+    else if (place_meeting(x+hspeed,y-y_adj,obj_player))
+       {
+        while (!place_meeting(x+sign(hspeed),y,obj_player))
+              {
+               x += sign(hspeed);
+              } 
+        hspeed = -hspeed * .7;
+       }   
     //Slope Encountered
     else
        {
@@ -30,7 +38,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
    }
 
 //Vertical Collision
-if (place_meeting(x,y+vspeed,obj_boundary))
+if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_player))
    {
     y_adj = 0;
     while (place_meeting(x-y_adj,y+vspeed, obj_boundary) && y_adj <= abs(slope_mod*vspeed))
@@ -41,6 +49,27 @@ if (place_meeting(x,y+vspeed,obj_boundary))
     if (place_meeting(x-y_adj,y+vspeed,obj_boundary))
        {
         while (!place_meeting(x,y+sign(vspeed),obj_boundary))
+              {
+               y += sign(vspeed);
+              }  
+        /*if (place_meeting(x,y,obj_boundary))
+           {
+            sprite_index = spr_player_charging;
+            x = xprevious;
+            y = y-3;
+           }*/
+        if (abs(vspeed > 2))
+           {
+            vspeed = -vspeed * .7;
+           }
+        else
+           {
+            vspeed = 0;
+           }
+       }
+    else if (place_meeting(x-y_adj,y+vspeed,obj_player))
+       {
+        while (!place_meeting(x,y+sign(vspeed),obj_player))
               {
                y += sign(vspeed);
               }  
