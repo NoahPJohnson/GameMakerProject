@@ -100,9 +100,6 @@ scr_player_damage();
 //HP = 0
 scr_zero_health();
 
-//Collide with Enemy
-scr_playerCollisionWithEnemy();
-
 //Collision            
 scr_collision();  
 

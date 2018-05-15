@@ -9,9 +9,12 @@ if (obj_player.state = states.knockback)
     dir = 0; 
    }
    
-if (alarm[0] = -1)
+if (alarm[0] == -1)
    {
-    alarm[0] = room_speed * (15/60); 
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
+       {
+        alarm[0] = room_speed * (fir_speed/60);
+       } 
    }
      
 if (distance_to_object(obj_player) > 444)
@@ -20,7 +23,7 @@ if (distance_to_object(obj_player) > 444)
     state = e_state.idle;
    }
    
-if (distance_to_object(obj_player) < 95)
+if (distance_to_object(obj_player) < 95 && alarm[0] > -1)
    {
     alarm[0] = -1;
    }

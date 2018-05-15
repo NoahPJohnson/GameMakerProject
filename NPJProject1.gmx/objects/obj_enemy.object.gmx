@@ -32,7 +32,7 @@ chsSpeed = 2;
 jumping = false;
 dir = 0;
 firing = false;
-firSpeed = 40;
+firSpeed = 45;
 meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
@@ -107,10 +107,10 @@ if (jumping = false)
    {
     if (!instance_exists(melee_hitbox))
        {
-        if (obj_player.state != states.sliding)
+        /*if (obj_player.state != states.sliding)
            {
             dir = sign(obj_player.x - x);
-           }
+           }*/
         if (dir &lt; 0)
            {
             melee_hitbox = instance_create(x-32, y, obj_enemy_melee);
@@ -259,7 +259,14 @@ firing = false;
             <kind>1</kind>
             <string>///Hitstun End
 hitstun = false;
-
+hit = false;
+//sprite_index = spr_player_charging;
+/*
+stopped = true;
+speed = 0;
+direction = 0;
+state = e_state.idle;
+*/
 </string>
           </argument>
         </arguments>

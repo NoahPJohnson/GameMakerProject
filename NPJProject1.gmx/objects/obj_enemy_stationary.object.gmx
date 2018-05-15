@@ -45,7 +45,7 @@ hp = 1;
 hp_max = 1;
 cp = 2;
 cp_max = 2;
-fir_speed = 42;
+fir_speed = 40;
 melee_hitbox = noone;
 state = e_state.idle
 </string>
@@ -175,7 +175,7 @@ state = e_state.idle
 firing = true;
 hspd = 0;
 projectile = instance_create(x,y, obj_projectile);
-alarm[0] = room_speed * (fir_speed/60);
+//alarm[0] = room_speed * (fir_speed/60);
 alarm[2] = room_speed * (7/60);
 </string>
           </argument>

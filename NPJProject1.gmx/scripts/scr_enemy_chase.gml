@@ -16,14 +16,17 @@ if (alarm[7] = -1 && alarm[8] = -1)
         hspd = dir * chsSpeed;
        }
    } 
-if (alarm[0] = -1 && firing = false)
+if (alarm[0] = -1 && firing = false && alarm[7] == -1 && alarm[8] == -1)
    {
-    alarm[0] = room_speed * (firSpeed/60); 
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
+       {
+        alarm[0] = room_speed * (firSpeed/60); 
+       }
    }
 
 if (jumping = true)
    {
-    if (place_meeting(x,y+1, obj_boundary) && jumped = true)
+    if ((place_meeting(x,y+1, obj_boundary) || place_meeting(x,y+1,obj_player)) && jumped = true)
        {
         hspd = 0;
         chsSpeed = 0;

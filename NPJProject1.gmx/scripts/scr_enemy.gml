@@ -3,7 +3,10 @@ hspd = 0;
 vspd = (min(7, vspd + grv))
 if (distance_to_object(obj_player) < 380) 
    {
-    state = e_state.chase;
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
+       {
+        state = e_state.chase;
+       }
    }
 
 //Valid Target

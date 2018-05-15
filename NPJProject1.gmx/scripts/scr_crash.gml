@@ -1,6 +1,6 @@
 //Crash
 alarm[0] = -1;
-
+alarm[7] = -1;
 sprite_index = spr_player_charging;
 if (!place_meeting(x,y+vspeed, obj_boundary))   
    {

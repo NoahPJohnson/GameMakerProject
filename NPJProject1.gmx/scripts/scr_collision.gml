@@ -30,31 +30,32 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
               } 
         hspd = 0;
        }
-    else if (place_meeting(x+hspd,y-y_adj,obj_enemy) /*&& state != states.sliding*/ && !place_meeting(x,y,obj_enemy))
+    //Going Up Slope
+    else 
        {
-        enemy_collision = instance_place(x+hspd,y-y_adj, obj_enemy)
+        y -= y_adj;
+       }
+    if (place_meeting(x+hspd,y,obj_enemy))
+       {
+        enemy_collision = instance_place(x+hspd,y-y_adj, obj_enemy);
         if (enemy_collision.state == e_state.crash || state != states.sliding)
            {
             while (!place_meeting(x+sign(hspd),y,obj_enemy))
                   {
                    x += sign(hspd);
-                  } 
+                  }
             hspd = 0;
            }
        }    
-    else if (place_meeting(x+hspd,y-y_adj,obj_player) && !place_meeting(x,y,obj_player))
+    if (place_meeting(x+hspd,y,obj_player) && object_index == obj_enemy)
        {
         while (!place_meeting(x+sign(hspd),y,obj_player))
               {
                x += sign(hspd);
-              } 
+              }
         hspd = 0;   
        }    
-    //Going Up Slope
-    else
-       {
-        y -= y_adj;
-       }
+    
    }
 x += hspd;
 
@@ -83,21 +84,26 @@ if (place_meeting(x,y+vspd,obj_boundary))
           }  
     vspd = 0;
    }   
-else if (place_meeting(x,y+vspd,obj_enemy) && !place_meeting(x,y,obj_enemy))
+if (place_meeting(x,y+vspd,obj_enemy))
    {
-    while (!place_meeting(x,y+sign(vspd),obj_enemy))
-          {
-           y += sign(vspd);
-          }  
+    enemy_collision = instance_place(x,y+vspd, obj_enemy);
+    if (enemy_collision.state == e_state.crash || state != states.sliding)
+       {
+        while (!place_meeting(x,y+sign(vspd),obj_enemy))
+              {
+               y += sign(vspd);
+               //sprite_index = spr_enemy_jump;
+              }
+       }       
     vspd = 0;
    }    
-else if (place_meeting(x+hspd,y-y_adj,obj_player) && !place_meeting(x,y,obj_player))
-       {
-        while (!place_meeting(x+sign(hspd),y,obj_player))
-              {
-               x += sign(hspd);
-              } 
-        hspd = 0;   
-       }    
+if (place_meeting(x,y+vspd,obj_player))
+   {
+    while (!place_meeting(x,y+sign(vspd),obj_player))
+          {
+           y += sign(vspd);
+          }
+    vspd = 0;   
+   }    
 y += vspd; 
 

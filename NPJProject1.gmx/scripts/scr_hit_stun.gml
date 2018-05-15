@@ -1,17 +1,28 @@
 ///Hitstun
 grv = 0.8;  
-hitstun = true;
 stopped = false;
 alarm[0] = -1;
 alarm[7] = -1;
 alarm[8] = -1;
+
+if (hitstun == false)
+   {
+    if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player) || place_meeting(x,y+1,obj_enemy))
+       {
+        //sprite_index = spr_player_charging;
+        stopped = true;
+        speed = 0;
+        direction = 0;
+        state = e_state.idle;
+       }
+   }
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = 1;
    }
-if (!place_meeting(x,y+vspeed, obj_boundary))   
+if (!place_meeting(x,y+vspeed, obj_boundary) && !place_meeting(x,y+vspeed, obj_player) && !place_meeting(x,y+1,obj_enemy))   
    {
-    vspeed += 0.8;
+    vspeed += grv;
    }
 else
    {
@@ -28,21 +39,11 @@ if (place_meeting(x,y+1,obj_boundary))
     if (hspeed < 0) 
        {
         hspeed += frc;
-       }
-    if (alarm[1] < 0)
-       {
-        sprite_index = spr_player_charging;
-        hit = false;
-        hitstun = false;
-        stopped = true;
-        speed = 0;
-        direction = 0;
-        state = e_state.idle;
-       }             
+       }            
    }    
-if (abs(speed) < 1)
+if (abs(hspeed) < 1)
    {
-    speed = 0;
+    hspeed = 0;
    }
 
 //Max Speed

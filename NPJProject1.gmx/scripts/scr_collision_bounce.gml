@@ -2,12 +2,7 @@
 //Horizontal Collision
 if (place_meeting(x+hspeed,y,obj_boundary) || place_meeting(x+hspeed,y,obj_player))
    {
-    y_adj = 0;
-    while (place_meeting(x+hspeed,y-y_adj, obj_boundary) && y_adj <= abs(slope_mod*hspeed))
-          {
-           y_adj += 1;
-          }
-    if (place_meeting(x+hspeed,y-y_adj,obj_boundary))
+    if (place_meeting(x+hspeed,y,obj_boundary))
        {
         while (!place_meeting(x+sign(hspeed),y,obj_boundary))
               {
@@ -15,7 +10,7 @@ if (place_meeting(x+hspeed,y,obj_boundary) || place_meeting(x+hspeed,y,obj_playe
               } 
         hspeed = -hspeed * .7;
        }
-    else if (place_meeting(x+hspeed,y-y_adj,obj_player))
+    else if (place_meeting(x+hspeed,y,obj_player))
        {
         while (!place_meeting(x+sign(hspeed),y,obj_player))
               {
@@ -40,13 +35,8 @@ if (place_meeting(x+hspeed,y,obj_boundary) || place_meeting(x+hspeed,y,obj_playe
 //Vertical Collision
 if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_player))
    {
-    y_adj = 0;
-    while (place_meeting(x-y_adj,y+vspeed, obj_boundary) && y_adj <= abs(slope_mod*vspeed))
-          {
-           y_adj += 1;
-          }
     //instance_create(x-y_adj,y+vspeed,obj_test);
-    if (place_meeting(x-y_adj,y+vspeed,obj_boundary))
+    if (place_meeting(x,y+vspeed,obj_boundary))
        {
         while (!place_meeting(x,y+sign(vspeed),obj_boundary))
               {
@@ -58,7 +48,7 @@ if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_playe
             x = xprevious;
             y = y-3;
            }*/
-        if (abs(vspeed > 2))
+        if (abs(vspeed) > 2)
            {
             vspeed = -vspeed * .7;
            }
@@ -67,7 +57,7 @@ if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_playe
             vspeed = 0;
            }
        }
-    else if (place_meeting(x-y_adj,y+vspeed,obj_player))
+    else if (place_meeting(x,y+vspeed,obj_player))
        {
         while (!place_meeting(x,y+sign(vspeed),obj_player))
               {
@@ -79,7 +69,7 @@ if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_playe
             x = xprevious;
             y = y-3;
            }*/
-        if (abs(vspeed > 2))
+        if (abs(vspeed) > 2)
            {
             vspeed = -vspeed * .7;
            }

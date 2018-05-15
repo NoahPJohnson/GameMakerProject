@@ -8,12 +8,17 @@ if (jumping = false)
    {
     //Lunge Melee
     //meleeAttack = true;
-    if (distance_to_object(obj_player) < 80 && place_meeting(x,y+1,obj_boundary) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && obj_player.state != states.knockback && meleeAttack = false)
+    if (distance_to_object(obj_player) < 80 && (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && obj_player.state != states.knockback && meleeAttack = false)
        {
+        //sprite_index = spr_player_charging;
         meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)
            {
             hspd = 0;
+            if (obj_player.state != states.sliding)
+               {
+                dir = sign(obj_player.x - x);
+               }
             /*dir = sign(obj_player.x - x);
             if (dir < 0)
                {
@@ -25,7 +30,7 @@ if (jumping = false)
                 melee_hitbox = instance_create(x+32, y, obj_enemy_melee);
                 xoffset = 24;
                }*/     
-            alarm[7] = room_speed * (20/60);
+            alarm[7] = room_speed * (50/60);
            }
        }
     else if (alarm[7] = -1 && alarm[8] > 0 && !instance_exists(melee_hitbox) && meleeAttack = true)
@@ -48,6 +53,11 @@ if (jumping = false)
            {
             hspd = dir * chsSpeed;
            }*/  
+       }
+    else if ((!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_player)) || obj_player.state = states.knockback)
+       {
+           alarm[7] = -1;
+           alarm[8] = -1;
        }
    }
 else

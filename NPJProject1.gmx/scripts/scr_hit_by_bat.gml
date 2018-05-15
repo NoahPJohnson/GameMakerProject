@@ -15,6 +15,7 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
     if (state != e_state.crash)
        {
         alarm[1] = room_speed * (13/60);
+        hitstun = true;
         state = e_state.hitstun;
        }   
    }          
@@ -31,11 +32,12 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
        }
     impetus = 13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
     speed = (abs(speed) * hitdir) + (impetus * hitdir);
-    direction = 80 * hitdir;
+    direction = (90-(obj_player.chargeOne*10)-(obj_player.chargeTwo*20)) * hitdir;
     hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);    
     if (state != e_state.crash)
        {
         alarm[1] = room_speed * (13/60);
+        hitstun = true;
         state = e_state.hitstun;
        }
    }          
@@ -66,6 +68,7 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit = false)
     if (state != e_state.crash)
        {
         alarm[1] = room_speed * (13/60);
+        hitstun = true;
         state = e_state.hitstun;
        }
    }   
