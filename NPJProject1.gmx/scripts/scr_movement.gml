@@ -8,6 +8,14 @@ key_J_held = keyboard_check(vk_space);
 
 
 mve = key_L + key_R;
+if (mve == -1)
+   {
+    image_xscale = -1;
+   }
+else if (mve == 1)
+   {
+    image_xscale = 1; 
+   }
 
 if (crouching = false && dashing = false)
    {

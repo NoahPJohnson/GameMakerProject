@@ -37,6 +37,6 @@ else
     sliding = false;
     sprite_index = spr_player;       
     state = states.normal
-    mspd = 8;
+    mspd = mspd_normal;
    }
    

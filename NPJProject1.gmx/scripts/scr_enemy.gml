@@ -1,10 +1,11 @@
 ///scr_enemy
 hspd = 0;
 vspd = (min(7, vspd + grv))
-if (distance_to_object(obj_player) < 380) 
+if (distance_to_object(obj_player) < 500) 
    {
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
        {
+        first_shot = true;
         state = e_state.chase;
        }
    }

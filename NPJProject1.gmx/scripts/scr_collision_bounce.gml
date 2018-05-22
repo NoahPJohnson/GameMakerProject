@@ -1,95 +1,357 @@
-///Collision
-//Horizontal Collision
-if (place_meeting(x+hspeed,y,obj_boundary) || place_meeting(x+hspeed,y,obj_player))
+///Collision Bounce
+if (place_meeting(x,y,obj_player))
    {
-    if (place_meeting(x+hspeed,y,obj_boundary))
+    show_debug_message("Clipping before ANY collision");
+   }
+//Horizontal Collision
+if (place_meeting(x+hspeed,y,obj_boundary))
+   {
+    colliding_object = instance_place(x+hspeed,y,obj_boundary);
+    if (colliding_object.object_index == obj_boundary_slope)
        {
-        while (!place_meeting(x+sign(hspeed),y,obj_boundary))
-              {
-               x += sign(hspeed);
-              } 
-        hspeed = -hspeed * .7;
+        incidence = direction;
+        //heading toward the non-sloped part of the slope
+        if (incidence > 45 && incidence < 225)
+           {
+            
+            new_dir = 180 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+            //show_debug_message("Hit slope on wrong side. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
+           }
+        //heading toward sloped part of the slope
+        else
+           {
+            
+            new_dir = 90 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+            //show_debug_message("Hit slope. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));   
+           }
        }
-    else if (place_meeting(x+hspeed,y,obj_player))
+    else if (colliding_object.object_index == obj_boundary_slope_L)
        {
-        while (!place_meeting(x+sign(hspeed),y,obj_player))
-              {
-               x += sign(hspeed);
-              } 
-        hspeed = -hspeed * .7;
-       }   
-    //Slope Encountered
+        incidence = direction; 
+        //Heading toward the non-sloped part of Slope L
+        if ((incidence > 315 && incidence < 360) || (incidence >= 0 && incidence < 135))
+           {
+            new_dir = 180 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+        //Heading toward the sloped part of Slope L
+        else
+           {  
+            new_dir = 270 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+       }
+    else if (colliding_object.object_index == obj_boundary_slope_U)
+       {
+        incidence = direction;
+        //NON Slope of Slope U 
+        if (incidence > 135 && incidence < 315)
+           {
+            new_dir = 180 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+        //Slope
+        else
+           {  
+            new_dir = 270 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+       }
+    else if (colliding_object.object_index == obj_boundary_slope_UL)
+       {
+        incidence = direction;
+        //NON Slope of Slope UL
+        if ((incidence >= 0 && incidence < 45) && (incidence > 225 && incidence < 360))
+           {
+            new_dir = 180 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+        //Slope
+        else
+           {   
+            new_dir = 90 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            speed *= .7;
+           }
+       }
+    //Regular Boundary
     else
        {
-        if (direction < 40 && direction > -40)
+        incidence = direction;
+        new_dir = 180 - incidence;
+        if (new_dir < 0)
            {
-            direction += choose(65,70,75,80,90,95);
-           }  
-        if (direction > 140 && direction < 220)
-           {
-            direction -= choose(65,70,75,80,90,95);
+            new_dir += 360;
            }
+        direction = new_dir;
+        speed *= .7;
+        //show_debug_message("Hit regular boundary. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
        }
    }
-
-//Vertical Collision
-if (place_meeting(x,y+vspeed,obj_boundary) || place_meeting(x,y+vspeed,obj_player))
+if (place_meeting(x+hspeed,y,obj_player))
    {
-    //instance_create(x-y_adj,y+vspeed,obj_test);
-    if (place_meeting(x,y+vspeed,obj_boundary))
+    incidence = direction;
+     
+    new_dir = 180 - incidence;
+    if (new_dir < 0)
        {
-        while (!place_meeting(x,y+sign(vspeed),obj_boundary))
-              {
-               y += sign(vspeed);
-              }  
-        /*if (place_meeting(x,y,obj_boundary))
+        new_dir += 360;
+       }
+    direction = new_dir;
+    speed *= .7;
+    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
+   }   
+   
+if (place_meeting(x,y,obj_player))
+   {
+    show_debug_message("Clipping before vertical collision");
+   }
+   
+//Vertical Collision
+if (place_meeting(x,y+vspeed,obj_boundary))
+   {
+    colliding_object = instance_place(x,y+vspeed,obj_boundary);
+    if (colliding_object.object_index == obj_boundary_slope)
+       {
+        incidence = direction;
+        if ((incidence < 45 && incidence >= 0) || (incidence > 225 && incidence < 360))
            {
-            sprite_index = spr_player_charging;
-            x = xprevious;
-            y = y-3;
-           }*/
-        if (abs(vspeed) > 2)
-           {
-            vspeed = -vspeed * .7;
+            
+            new_dir = 90 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+            //show_debug_message("Hit slope. Vertical  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));  
            }
         else
            {
-            vspeed = 0;
+            
+            new_dir = 360 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+            //show_debug_message("Hit slope on wrong side. Vertical.  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
        }
-    else if (place_meeting(x,y+vspeed,obj_player))
+    else if (colliding_object.object_index == obj_boundary_slope_L)
        {
-        while (!place_meeting(x,y+sign(vspeed),obj_player))
-              {
-               y += sign(vspeed);
-              }  
-        /*if (place_meeting(x,y,obj_boundary))
-           {
-            sprite_index = spr_player_charging;
-            x = xprevious;
-            y = y-3;
-           }*/
-        if (abs(vspeed) > 2)
-           {
-            vspeed = -vspeed * .7;
+        incidence = direction;
+        if (incidence > 135 && incidence < 315)
+           {  
+            new_dir = 270 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
            }
         else
            {
-            vspeed = 0;
+            new_dir = 360 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
            }
        }
-    //Slope Encountered
+    else if (colliding_object.object_index == obj_boundary_slope_U)
+       {
+        incidence = direction;
+        if ((incidence < 135 && incidence >= 0) || (incidence < 360 && incidence > 315))
+           {  
+            new_dir = 270 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+           }
+        else
+           {
+            new_dir = 360 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+           }
+       }
+    else if (colliding_object.object_index == obj_boundary_slope_UL)
+       {
+        incidence = direction;
+        if (incidence > 45 && incidence < 225)
+           {  
+            new_dir = 90 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+           }
+        else
+           {
+            new_dir = 360 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+           }
+       }
     else
        {
-        if (direction < 130 && direction > 50)
+        
+        incidence = direction;
+        new_dir = 360 - incidence;
+        if (new_dir < 0)
            {
-            direction += choose(65,70,75,80,90,95);
+            new_dir += 360;
            }
-        if (direction < 310 && direction > 230)
+        direction = new_dir;
+        if (speed > 2)
            {
-            direction -= choose(65,70,75,80,90,95);
+            speed *= .7; 
            }
+        else
+           {
+            speed = 0;
+           }
+        //show_debug_message("Hit Boundary. V  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+       }    
+   }
+if (place_meeting(x,y+vspeed,obj_player))
+   {
+    incidence = direction;
+    new_dir = 360 - incidence;
+    if (new_dir < 0)
+       {
+        new_dir += 360;
        }
+    direction = new_dir;
+    if (speed > 2)
+       {
+        speed *= .7; 
+       }
+    else
+       {
+        speed = 0;
+       }
+    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+   }
+   
+if (place_meeting(x,y,obj_player))
+   {
+    show_debug_message("Clipping!!");
    }
 
 /*   

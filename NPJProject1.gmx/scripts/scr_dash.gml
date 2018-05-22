@@ -64,7 +64,7 @@ if (dashing = true)
         chargeTwo = false;
         alarm[3] = -1;
         alarm[4] = -1; 
-        mspd = 8;
+        mspd = mspd_normal;
         dash = 1;
         sprite_index = spr_player;
        }
@@ -74,7 +74,7 @@ if (crouching = false && sliding = false && dashing = true)
    {
     if (key_R && !(-key_L) && sp > 3)
        {
-        if (hspd < 16)
+        if (hspd < dash_speed)
            {
             hspd += dash;
             sp -= 2;
@@ -82,7 +82,7 @@ if (crouching = false && sliding = false && dashing = true)
        }
     else if (-key_L && !key_R && sp > 3)
        {
-        if (hspd > -16)
+        if (hspd > -dash_speed)
            {
             hspd -= dash;
             sp -= 2;
@@ -114,7 +114,7 @@ if (crouching = false && sliding = false && dashing = true)
 //Drive (Charge while dashing)
 if (dashing = true)   
    {
-    if (abs(hspd) > 15 && iframes = false && sp > 3 && place_meeting(x, y+1, obj_boundary))
+    if (abs(hspd) > (dash_speed - 1 )&& iframes = false && sp > 3 && place_meeting(x, y+1, obj_boundary))
        {
         if (charging = false)
            {
@@ -146,9 +146,9 @@ if (dashing = true)
 //Dash Slide
 if (drive = true && place_meeting(x, y+1, obj_boundary))
    {
-    if (key_C && sp > 33)
+    if (key_C && sp > 20)
        {
-        sp -= 33;
+        sp -= 20;
         state = states.powerslide
        }
    }
@@ -184,7 +184,7 @@ if (dashing = true && !place_meeting(x, y+1, obj_boundary) && dashJump = false)
 if (dashJump = true)
    {
     //sprite_index = spr_enemy;
-    if (mspd > 8)
+    if (mspd > mspd_normal)
        {
         mspd -= .1;
         sp -= 1;
@@ -203,6 +203,6 @@ if (dashJump = true)
         alarm[4] = -1;
         dash = 1;
         sprite_index = spr_player;
-        mspd = 8;
+        mspd = mspd_normal;
        }
    }                 

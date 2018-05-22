@@ -11,7 +11,7 @@ if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
            {
             up = true;
             crouching = false;
-            mspd = 8;
+            mspd = mspd_normal;
             if (charging = true)
                {
                 sprite_index = spr_player_up_charging;

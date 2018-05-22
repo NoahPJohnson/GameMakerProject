@@ -26,7 +26,19 @@ if (alarm[7] = -1 && alarm[8] = -1)
        {
         hspd = dir * chsSpeed;
        }
-   }       
+   }
+   
+
+if (dir == -1)
+   {
+    image_xscale = -1;
+   }
+else if (dir == 1)
+   {
+    image_xscale = 1;
+   }      
+   
+          
 //Fire when in long range mode
 if (longRange = true)
    {
@@ -61,7 +73,7 @@ if (longRange = true)
     
     if (alarm[0] = -1 && firing = false && longRange = true)
        {
-        alarm[0] = room_speed * (firSpeed/60); 
+        alarm[0] = room_speed * ((firSpeed/60) * (1+first_shot)); 
        }
    }    
 else if (longRange = false)

@@ -33,7 +33,7 @@ else
     sliding = false;
     if (swinging = false && recovery = false)
        {
-        mspd = 8;
+        mspd = mspd_normal;
        }
    } 
 
@@ -43,7 +43,7 @@ if (key_C_released)
     //sliding = false;
     if (charging = false && chargeOne = false && chargeTwo = false && recovery = false)
        { 
-        mspd = 8;
+        mspd = mspd_normal;
        }
     else
        {

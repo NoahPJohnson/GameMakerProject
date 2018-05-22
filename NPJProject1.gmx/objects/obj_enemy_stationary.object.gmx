@@ -25,28 +25,40 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd = 0;
+            <string>///Initialize Variables
+//Movement
+hspd = 0;
 vspd = 0;
 jspd = 0;
 jumping = false;
 dir = 0;
-firing = false;
 grv = 0;
 frc = 0.5;
 slope_mod = 2;
+
+//Attacks
+firing = false;
+first_shot = true;
+fir_speed = 36;
+melee_hitbox = noone;
+
+//Damage and Hit Reaction
 hit = false;
 hitdir = 0;
 impetus = 1;
 hitstun = false;
 stopped = true;
 valid = false;
+
+//Crash State
 mxspd = 40;
 hp = 1;
 hp_max = 1;
+crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
-fir_speed = 40;
-melee_hitbox = noone;
+
+
 state = e_state.idle
 </string>
           </argument>
@@ -176,7 +188,10 @@ firing = true;
 hspd = 0;
 projectile = instance_create(x,y, obj_projectile);
 //alarm[0] = room_speed * (fir_speed/60);
-alarm[2] = room_speed * (7/60);
+if (alarm[2] == -1)
+   {
+    alarm[2] = room_speed * (30/60);
+   }
 </string>
           </argument>
         </arguments>

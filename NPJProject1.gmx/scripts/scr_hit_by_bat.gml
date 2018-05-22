@@ -11,13 +11,15 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
     impetus = 13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
     speed = (abs(speed) * hitdir) + (impetus * hitdir);
     direction = 0;
-    hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);
+    hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
     if (state != e_state.crash)
        {
         alarm[1] = room_speed * (13/60);
         hitstun = true;
+        scr_collision_bounce();
         state = e_state.hitstun;
-       }   
+       }
+    //show_debug_message("Hit by the bat! " + string(direction) + " | " + string(speed) + " | " + string(vspeed));   
    }          
 
 if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
@@ -33,13 +35,15 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
     impetus = 13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
     speed = (abs(speed) * hitdir) + (impetus * hitdir);
     direction = (90-(obj_player.chargeOne*10)-(obj_player.chargeTwo*20)) * hitdir;
-    hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);    
+    hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));    
     if (state != e_state.crash)
        {
         alarm[1] = room_speed * (13/60);
         hitstun = true;
+        scr_collision_bounce();
         state = e_state.hitstun;
        }
+    //show_debug_message("Hit by the LAUNCHER! " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
    }          
 
 if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit = false)
@@ -69,6 +73,7 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit = false)
        {
         alarm[1] = room_speed * (13/60);
         hitstun = true;
+        scr_collision_bounce();
         state = e_state.hitstun;
        }
    }   

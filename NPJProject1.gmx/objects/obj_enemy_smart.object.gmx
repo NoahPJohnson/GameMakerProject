@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Modes
+            <string>///Initialize Variables
+//Modes
 longRange = true;
 antiAir = false;
 
@@ -42,8 +43,10 @@ slope_mod = 2;
 
 //Attacks
 firing = false;
+first_shot = true;
 firSpeed = 40;
 meleeAttack = false;
+melee_hitbox = noone;
 
 //Damage and Hit Reaction
 hit = false;
@@ -57,9 +60,10 @@ valid = false;
 mxspd = 40;
 hp = 2;
 hp_max = 2;
+crash_sprite = spr_enemy_crash;
 cp = 2;
 cp_max = 2;
-melee_hitbox = noone;
+
 state = e_state.idle
 </string>
           </argument>

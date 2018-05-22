@@ -31,6 +31,12 @@ enum proj_state
       normal,
       struck,
       destroyed
+     }
+enum camera_state
+     {
+      neutral,
+      lock_on
+      
      }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

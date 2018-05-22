@@ -37,7 +37,8 @@ vspd = 0;
 jspd = 14;
 jump = 14;
 jumping = false;
-mspd = 8;
+mspd_normal = 7;
+mspd = mspd_normal;
 slope_mod = 1;
 wallBounce = false;
 
@@ -70,6 +71,7 @@ doubleTapWindow = false;
 directionMemory = false;
 dash = 1;
 dashing = false;
+dash_speed = 12;
 drive = false;
 dashJump = false;
 
@@ -148,20 +150,25 @@ sprite_index = spr_player_crouching2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Invincibility End
+            <string>///Knockback End
 jspd = jump;
 if (vspd &lt; 0)// &amp;&amp; !key_J_held)
    {
     vspd = max(vspd,-jspd/4);
    }  
 //vspd = 0;
-iframes = false;
+//iframes = false;
+charging = false;
+chargeOne = false;
+chargeTwo = false;
+swinging = false;
+recovery = false;
 wallBounce = false;
 dashing = false;
 crouching = false;
-mspd = 8;
+mspd = mspd_normal;
 doubleTapWindow = false;
-sprite_index = spr_player;
+sprite_index = spr_player_iframes;
 alarm[0] = -1;
 alarm[1] = -1;
 alarm[2] = -1;
@@ -169,10 +176,11 @@ alarm[3] = -1;
 alarm[4] = -1;
 alarm[5] = -1;
 alarm[6] = -1;
-alarm[7] = -1;
+//alarm[7] = -1;
 alarm[9] = -1;
 alarm[10] = -1;
 state = states.normal;
+
 </string>
           </argument>
         </arguments>
@@ -195,16 +203,16 @@ state = states.normal;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Invincibility
-iframes = true;
+            <string>///Invincibility End
+iframes = false;
 jumping = false;
-sprite_index = spr_player_iframes;
-if (alarm[8] = -1)
+sprite_index = spr_player;
+/*if (alarm[8] = -1)
    {
     alarm[8] = room_speed * (20/60);
-   }
+   }*/
 
-scr_movement();
+//scr_movement();
 </string>
           </argument>
         </arguments>
@@ -441,7 +449,7 @@ else
             <kind>1</kind>
             <string>///Recovery Ends
 recovery = false;
-mspd = 8;
+mspd = mspd_normal;
 jspd = jump;
 chargeOne = false;
 chargeTwo = false;
@@ -503,7 +511,7 @@ if (right = true)
     recovery = true;
     if (alarm[1] = -1)
        {
-        alarm[1] = room_speed * (5/60);
+        alarm[1] = room_speed * (8/60);
         sprite_index = spr_player_recovery;
        }
    }
@@ -533,7 +541,7 @@ else
     recovery = true;
     if (alarm[1] = -1)
        {
-        alarm[1] = 5;
+        alarm[1] = room_speed * (8/60);
         sprite_index = spr_player_recovery;
        }
    }

@@ -9,15 +9,16 @@ if (obj_player.state = states.knockback)
     dir = 0; 
    }
    
-if (alarm[0] == -1)
+if (alarm[0] == -1 && firing == false)
    {
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
        {
-        alarm[0] = room_speed * (fir_speed/60);
+        alarm[0] = room_speed * ((fir_speed/60) / (1+first_shot));
+        first_shot = false;
        } 
    }
      
-if (distance_to_object(obj_player) > 444)
+if (distance_to_object(obj_player) > 550)
    {
     alarm[0] = -1;
     state = e_state.idle;

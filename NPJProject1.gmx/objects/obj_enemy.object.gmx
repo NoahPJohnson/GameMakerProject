@@ -25,30 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd = 0;
+            <string>///Initialize Variables
+//Movement
+hspd = 0;
 vspd = 0;
 jspeed = 0;
 chsSpeed = 2;
 jumping = false;
 dir = 0;
-firing = false;
-firSpeed = 45;
-meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
+
+//Attacks
+firing = false;
+first_shot = true;
+firSpeed = 48;
+meleeAttack = false;
+melee_hitbox = noone;
+
+//Damage and Hit Reaction
 hit = false;
 hitdir = 0;
 impetus = 1;
 hitstun = false;
 stopped = true;
 valid = false;
+
+//Crash State
 mxspd = 40;
-hp = 2;
-hp_max = 2;
-cp = 2;
-cp_max = 2;
-melee_hitbox = noone;
+hp = 3;
+hp_max = 3;
+crash_sprite = spr_enemy_crash;
+cp = 3;
+cp_max = 3;
+
 state = e_state.idle
 </string>
           </argument>
@@ -131,7 +142,7 @@ if (jumping = false)
    }
 else
    {
-    if (!place_meeting(x, y+1, obj_boundary))
+    if (!place_meeting(x, y+1, obj_boundary) &amp;&amp; !place_meeting(x, y+1, obj_player))
        {
         if (!instance_exists(melee_hitbox))
            {
@@ -149,10 +160,11 @@ else
                 melee_hitbox = instance_create(x+24, y+32, obj_enemy_divekick_hitbox);
                 //xoffset = 24;
                }
-           }    
-        hspd = dir * chsSpeed * 3;
-        vspd = 13;
-        //grv = 0.8;
+           }
+        jumped = true;   
+        hspd = dir * 4;
+        vspd = 11;
+        grv = 0.8;
         
         if (alarm[8] = -1)
            { 
@@ -290,13 +302,13 @@ state = e_state.idle;
           <argument>
             <kind>1</kind>
             <string>///Stop and Prepare to Fire
-if (!collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true))
-   {
-    firing = true;
-    hspd = 0;
-    //sprite_index = spr_player;
-    //alarm[0] = 53;
-    alarm[2] = room_speed * (15/60);
+firing = true;
+hspd = 0;
+//sprite_index = spr_player;
+//alarm[0] = 53;
+if (alarm[2] == -1)
+   {  
+    alarm[2] = room_speed * (20/60);
    }
 </string>
           </argument>

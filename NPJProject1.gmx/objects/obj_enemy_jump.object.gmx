@@ -25,31 +25,41 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd = 0;
+            <string>///Initialize Variables
+//Movement
+hspd = 0;
 vspd = 0;
 jspeed = 15;
-chsSpeed = 1.8;
+chsSpeed = 1.5;
 jumping = true;
 jumped = true;
 dir = 0;
-firing = false;
-firSpeed = -1;
-meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
+
+//Attacks
+firing = false;
+firSpeed = -1;
+meleeAttack = false;
+melee_hitbox = noone;
+
+//Damage and Hit Reaction
 hit = false;
 hitdir = 0;
 impetus = 1;
 hitstun = false;
 stopped = true;
 valid = false;
+
+//Crash State
 mxspd = 40;
-hp = 2;
-hp_max = 2;
-cp = 2;
-cp_max = 2;
-melee_hitbox = noone;
+hp = 3;
+hp_max = 3;
+crash_sprite = spr_enemy_crash;
+cp = 3;
+cp_max = 3;
+
 state = e_state.idle
 </string>
           </argument>
@@ -74,7 +84,7 @@ state = e_state.idle
           <argument>
             <kind>1</kind>
             <string>///Stuck after dive end
-chsSpeed = 1.8;
+chsSpeed = 1.5;
 jumped = false;
 //sprite_index = spr_enemy_jump;
 
@@ -101,15 +111,15 @@ jumped = false;
           <argument>
             <kind>1</kind>
             <string>///Jump
-if (place_meeting(x, y+1, obj_boundary))
+if (place_meeting(x, y+1, obj_boundary) || place_meeting(x,y+1, obj_player) || place_meeting(x,y+1, obj_enemy))
    {
     //hspd = (hspd/2);
-    chsSpeed = 3.5;
+    chsSpeed = 3;
     vspd = -jspeed;
    }
 else
    {
-    alarm[5] = room_speed * (94/60); 
+    //alarm[5] = room_speed * (94/60); 
    }           
        
 </string>
@@ -207,12 +217,9 @@ firing = false;
           <argument>
             <kind>1</kind>
             <string>///Hitstun End
-hit = false;
 hitstun = false;
-stopped = true;
-speed = 0;
-direction = 0;
-state = e_state.idle
+hit = false;
+
 </string>
           </argument>
         </arguments>

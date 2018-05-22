@@ -1,7 +1,7 @@
 //Crash
 alarm[0] = -1;
 alarm[7] = -1;
-sprite_index = spr_player_charging;
+sprite_index = crash_sprite;
 if (!place_meeting(x,y+vspeed, obj_boundary))   
    {
     vspeed += 0.8;

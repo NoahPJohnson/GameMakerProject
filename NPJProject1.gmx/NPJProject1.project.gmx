@@ -15,9 +15,11 @@
     <sprite>sprites\spr_boundary_slope_UL</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_enemy</sprite>
+    <sprite>sprites\spr_enemy_crash</sprite>
     <sprite>sprites\spr_enemy_smart</sprite>
     <sprite>sprites\spr_enemy_jump</sprite>
     <sprite>sprites\spr_enemy_stationary</sprite>
+    <sprite>sprites\spr_enemy_stationary_crash</sprite>
     <sprite>sprites\spr_projectile</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player</sprite>
@@ -105,12 +107,14 @@
       <script>scripts\scr_enemy_targeted.gml</script>
       <script>scripts\scr_enemy_melee.gml</script>
       <script>scripts\scr_melee_conditional.gml</script>
+      <script>scripts\scr_enemy_chase_jump.gml</script>
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
     <script>scripts\scr_unused2.gml</script>
     <script>scripts\scr_unused3.gml</script>
     <script>scripts\scr_target.gml</script>
+    <script>scripts\scr_camera_lock_on.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="player">
@@ -155,6 +159,7 @@
     <object>objects\obj_boundary_slope_UL</object>
     <object>objects\obj_ball</object>
     <object>objects\obj_Game_Over_Quit</object>
+    <object>objects\obj_camera_control</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test2</room>
