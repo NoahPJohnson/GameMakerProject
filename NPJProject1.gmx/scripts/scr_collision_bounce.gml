@@ -1,8 +1,41 @@
 ///Collision Bounce
-if (place_meeting(x,y,obj_player))
+if (place_meeting(x,y,obj_boundary))
    {
-    show_debug_message("Clipping before ANY collision");
+    show_debug_message("Clipping before ANY collision. ID = " + string(instance_place(x,y,obj_boundary)));
    }
+   
+if (place_meeting(x+hspeed,y,obj_player))
+   {
+    incidence = direction;
+     
+    new_dir = 180 - incidence;
+    if (new_dir < 0)
+       {
+        new_dir += 360;
+       }
+    direction = new_dir;
+    speed *= .7;
+    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
+   }
+/*if (place_meeting(x+hspeed,y,obj_enemy))
+   {
+    colliding_object = instance_place(x+hspeed,y,obj_enemy);
+    if (colliding_object.state == e_state.crash)
+       {
+        incidence = direction;
+     
+        new_dir = 180 - incidence;
+        if (new_dir < 0)
+           {
+            new_dir += 360;
+           }
+        direction = new_dir;
+        speed *= .7;
+        //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+       } 
+   }*/   
+      
+   
 //Horizontal Collision
 if (place_meeting(x+hspeed,y,obj_boundary))
    {
@@ -129,26 +162,56 @@ if (place_meeting(x+hspeed,y,obj_boundary))
         //show_debug_message("Hit regular boundary. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
        }
    }
-if (place_meeting(x+hspeed,y,obj_player))
-   {
-    incidence = direction;
-     
-    new_dir = 180 - incidence;
-    if (new_dir < 0)
-       {
-        new_dir += 360;
-       }
-    direction = new_dir;
-    speed *= .7;
-    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
-   }   
-   
-if (place_meeting(x,y,obj_player))
+
+if (place_meeting(x,y,obj_boundary))
    {
     show_debug_message("Clipping before vertical collision");
    }
    
 //Vertical Collision
+if (place_meeting(x,y+vspeed,obj_player))
+   {
+    incidence = direction;
+    new_dir = 360 - incidence;
+    if (new_dir < 0)
+       {
+        new_dir += 360;
+       }
+    direction = new_dir;
+    if (speed > 2)
+       {
+        speed *= .7; 
+       }
+    else
+       {
+        speed = 0;
+       }
+    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+   }
+/*if (place_meeting(x,y+vspeed,obj_enemy))
+   {
+    colliding_object = instance_place(x,y+vspeed,obj_enemy);
+    if (colliding_object.state == e_state.crash)
+       {
+        incidence = direction;
+     
+        new_dir = 360 - incidence;
+        if (new_dir < 0)
+           {
+            new_dir += 360;
+           }
+        direction = new_dir;
+        if (speed > 2)
+           {
+            speed *= .7; 
+           }
+        else
+           {
+            speed = 0;
+           }
+        show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+       } 
+   }*/
 if (place_meeting(x,y+vspeed,obj_boundary))
    {
     colliding_object = instance_place(x,y+vspeed,obj_boundary);
@@ -329,27 +392,9 @@ if (place_meeting(x,y+vspeed,obj_boundary))
         //show_debug_message("Hit Boundary. V  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
        }    
    }
-if (place_meeting(x,y+vspeed,obj_player))
-   {
-    incidence = direction;
-    new_dir = 360 - incidence;
-    if (new_dir < 0)
-       {
-        new_dir += 360;
-       }
-    direction = new_dir;
-    if (speed > 2)
-       {
-        speed *= .7; 
-       }
-    else
-       {
-        speed = 0;
-       }
-    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
-   }
+
    
-if (place_meeting(x,y,obj_player))
+if (place_meeting(x,y,obj_boundary))
    {
     show_debug_message("Clipping!!");
    }

@@ -1,4 +1,6 @@
 ///Enemy Chase
+speed = 0;
+direction = 0;
 if (obj_player.state = states.knockback)
    {
     dir = 0;
@@ -8,11 +10,11 @@ if (obj_player.state = states.knockback)
 vspd = (min(7, vspd + grv));
 if (alarm[7] = -1 && alarm[8] = -1)
    {
-    if (obj_player.sliding == false && jumping == false)
+    if (obj_player.sliding == false && jumping_type == false)
        { 
         dir = sign(obj_player.x - x);
        }
-    else if (obj_player.sliding == false && jumping == true)
+    else if (obj_player.sliding == false && jumping_type == true)
        {
         if (abs((obj_player.x+60) - x) < abs((obj_player.x-60) - x))
            {
@@ -48,8 +50,12 @@ else if (dir == 1)
    }
    
    
-if (jumping = true)
+if (jumping_type == true)
    {
+    if ((place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && alarm[5] > 0)
+       {
+        jumping = false;
+       }
     if ((place_meeting(x,y+1, obj_boundary)) && jumped == true)
        {
         hspd = 0;
@@ -85,7 +91,7 @@ if (distance_to_object(obj_player) < 128)
     alarm[0] = -1;
     alarm[2] = -1;
     firing = false;
-    if (jumping = true)
+    if (jumping_type = true)
        {
         if (place_meeting(x, y+1, obj_boundary) && jumped = false)
            {
@@ -117,7 +123,7 @@ scr_hit_by_projectile();
 scr_enemy_hp_zero();
 
 //Collision with Enemy
-scr_enemy_collision();
+//scr_enemy_collision();
 
 //Collision
 scr_collision();

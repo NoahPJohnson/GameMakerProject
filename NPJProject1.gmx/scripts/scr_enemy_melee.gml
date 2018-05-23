@@ -4,7 +4,7 @@ if (instance_exists(melee_hitbox))
     melee_hitbox.x += hspd; 
     melee_hitbox.y = y;  
    }
-if (jumping = false)
+if (jumping_type = false)
    {
     //Lunge Melee
     //meleeAttack = true;

@@ -31,7 +31,8 @@ hspd = 0;
 vspd = 0;
 jspeed = 15;
 chsSpeed = 1.5;
-jumping = true;
+jumping_type = true;
+jumping = false;
 jumped = true;
 dir = 0;
 grv = 0.8;
@@ -115,6 +116,7 @@ if (place_meeting(x, y+1, obj_boundary) || place_meeting(x,y+1, obj_player) || p
    {
     //hspd = (hspd/2);
     chsSpeed = 3;
+    jumping = true;
     vspd = -jspeed;
    }
 else

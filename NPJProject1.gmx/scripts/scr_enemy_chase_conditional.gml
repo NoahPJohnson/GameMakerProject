@@ -130,7 +130,7 @@ scr_hit_by_projectile();
 scr_enemy_hp_zero();
 
 //Collision with Enemy
-scr_enemy_collision();
+//scr_enemy_collision();
 
 //Collision
 scr_collision();

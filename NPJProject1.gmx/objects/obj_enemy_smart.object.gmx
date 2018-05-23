@@ -35,6 +35,7 @@ hspd = 0;
 vspd = 0;
 jspeed = 13;
 chsSpeed = 1.5;
+jumping_type = false;
 jumping = false;
 dir = 0;
 grv = 0.8;

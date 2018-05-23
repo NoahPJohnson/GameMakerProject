@@ -30,6 +30,7 @@
 hspd = 0;
 vspd = 0;
 jspd = 0;
+jumping_type = false;
 jumping = false;
 dir = 0;
 grv = 0;

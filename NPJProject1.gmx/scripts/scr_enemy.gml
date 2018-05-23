@@ -1,4 +1,6 @@
 ///scr_enemy
+speed = 0;
+direction = 0;
 hspd = 0;
 vspd = (min(7, vspd + grv))
 if (distance_to_object(obj_player) < 500) 
@@ -23,7 +25,7 @@ scr_hit_by_projectile();
 scr_enemy_hp_zero();
 
 //Collision with Enemy
-scr_enemy_collision(); 
+//scr_enemy_collision(); 
 
 //Collision
 scr_collision();

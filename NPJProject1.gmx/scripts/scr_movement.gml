@@ -49,31 +49,63 @@ if (mve = -1)
 if (crouching = true)
    {
     if (key_J && right = true && sliding = false && sp > 45)
-       { 
-        sliding = true;
-        sp -= 45;
-        hspd = (jspd * 2.2);
-        siframes = true;  
-        if (alarm[9] = -1)
+       {
+        if (!place_meeting(x+160,y,obj_enemy) && !place_meeting(x+200,y,obj_enemy))
            { 
-            alarm[9] = room_speed * (5/60);
-            frc = 1;
+            sliding = true;
+            sp -= 45;
+            hspd = (jspd * 2.2);
+            siframes = true;  
+            if (alarm[9] = -1)
+               { 
+                alarm[9] = room_speed * (5/60);
+                frc = 1;
+               }
+            state = states.sliding;
            }
-        state = states.sliding
+        else
+           {
+            sliding = true;
+            sp -= 45;
+            hspd = (jspd);
+            siframes = true;  
+            if (alarm[9] = -1)
+               { 
+                alarm[9] = room_speed * (5/60);
+                frc = 1;
+               }
+            state = states.sliding;
+           }
        }
     
     if (key_J && right = false && sliding = false && sp > 45)
-       { 
-        sliding = true;
-        sp -= 45;
-        hspd = (-jspd * 2.2);
-        siframes = true;  
-        if (alarm[9] = -1)
+       {
+        if (!place_meeting(x-160,y,obj_enemy) && !place_meeting(x-200,y,obj_enemy))
            { 
-            alarm[9] = room_speed * (5/60);
-            frc = 1;
+            sliding = true;
+            sp -= 45;
+            hspd = (-jspd * 2.2);
+            siframes = true;  
+            if (alarm[9] = -1)
+               { 
+                alarm[9] = room_speed * (5/60);
+                frc = 1;
+               }
+            state = states.sliding
            }
-        state = states.sliding
+        else
+           {
+            sliding = true;
+            sp -= 45;
+            hspd = (-jspd);
+            siframes = true;  
+            if (alarm[9] = -1)
+               { 
+                alarm[9] = room_speed * (5/60);
+                frc = 1;
+               }
+            state = states.sliding
+           }
        }
    }
    

@@ -29,6 +29,7 @@
 vspd = 0;
 jspeed = 0;
 chsSpeed = 2;
+jumping_type = false;
 jumping = false;
 dir = 0;
 firing = false;

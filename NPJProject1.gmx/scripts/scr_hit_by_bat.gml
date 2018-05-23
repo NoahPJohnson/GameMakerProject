@@ -14,7 +14,7 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
     if (state != e_state.crash)
        {
-        alarm[1] = room_speed * (13/60);
+        alarm[1] = room_speed * (30/60);
         hitstun = true;
         scr_collision_bounce();
         state = e_state.hitstun;
@@ -38,7 +38,7 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));    
     if (state != e_state.crash)
        {
-        alarm[1] = room_speed * (13/60);
+        alarm[1] = room_speed * (25/60);
         hitstun = true;
         scr_collision_bounce();
         state = e_state.hitstun;
@@ -71,7 +71,7 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit = false)
     hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);
     if (state != e_state.crash)
        {
-        alarm[1] = room_speed * (13/60);
+        alarm[1] = room_speed * (20/60);
         hitstun = true;
         scr_collision_bounce();
         state = e_state.hitstun;

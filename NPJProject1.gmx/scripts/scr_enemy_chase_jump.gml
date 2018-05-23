@@ -1,5 +1,5 @@
 ///Jumping Enemy
-if (jumping == true)
+if (jumping_type == true)
    {
     if ((place_meeting(x,y+1, obj_boundary) || place_meeting(x,y+1,obj_player)) && jumped = true)
        {
@@ -21,7 +21,7 @@ if (distance_to_object(obj_player) < 128)
     alarm[0] = -1;
     alarm[2] = -1;
     firing = false;
-    if (jumping = true)
+    if (jumping_type = true)
        {
         if (place_meeting(x, y+1, obj_boundary) && jumped = false)
            {

@@ -31,6 +31,7 @@ hspd = 0;
 vspd = 0;
 jspeed = 0;
 chsSpeed = 2;
+jumping_type = false;
 jumping = false;
 dir = 0;
 grv = 0.8;
@@ -114,7 +115,7 @@ if (instance_exists(melee_hitbox))
           <argument>
             <kind>1</kind>
             <string>///Melee Lunge Begins
-if (jumping = false)
+if (jumping_type = false)
    {
     if (!instance_exists(melee_hitbox))
        {

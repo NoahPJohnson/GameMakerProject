@@ -16,8 +16,9 @@ if (projectile_meeting != noone)
         projectile_meeting.state = proj_state.destroyed
         if (state != e_state.crash)
            {
-            alarm[1] = room_speed * (13/60);
+            alarm[1] = room_speed * (15/60);
             hitstun = true;
+            scr_collision_bounce();
             state = e_state.hitstun;
            }
        }
