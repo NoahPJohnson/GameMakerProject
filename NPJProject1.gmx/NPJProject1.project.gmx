@@ -46,6 +46,7 @@
         <sprite>sprites\spr_launcher2</sprite>
         <sprite>sprites\spr_launcher_L</sprite>
         <sprite>sprites\spr_spike_L</sprite>
+        <sprite>sprites\spr_bunt_bat</sprite>
       </sprites>
     </sprites>
     <sprites name="hit cones">
@@ -75,6 +76,7 @@
       <script>scripts\scr_crouching.gml</script>
       <script>scripts\scr_jumping_swing.gml</script>
       <script>scripts\scr_stamina.gml</script>
+      <script>scripts\scr_bunt.gml</script>
       <scripts name="player_swinging">
         <script>scripts\scr_swing.gml</script>
         <script>scripts\scr_looking_up.gml</script>
@@ -111,7 +113,6 @@
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
-    <script>scripts\scr_unused2.gml</script>
     <script>scripts\scr_unused3.gml</script>
     <script>scripts\scr_target.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
@@ -125,6 +126,7 @@
         <object>objects\obj_bat_launcher_L</object>
         <object>objects\obj_bat_spike</object>
         <object>objects\obj_bat_spike_L</object>
+        <object>objects\obj_bunt_bat</object>
       </objects>
     </objects>
     <objects name="hit cones">

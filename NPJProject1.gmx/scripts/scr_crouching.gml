@@ -37,7 +37,7 @@ else
        }
    } 
 
-if (key_C_released)
+if (key_C_released && !place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy))
    {
     crouching = false;
     //sliding = false;

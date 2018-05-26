@@ -8,21 +8,38 @@ if (obj_player.state = states.knockback)
    }
    
 vspd = (min(7, vspd + grv));
-if (alarm[7] = -1 && alarm[8] = -1)
+if (/*alarm[7] = -1 && */alarm[8] = -1)
    {
     if (obj_player.sliding == false && jumping_type == false)
-       { 
-        dir = sign(obj_player.x - x);
-       }
-    else if (obj_player.sliding == false && jumping_type == true)
        {
-        if (abs((obj_player.x+60) - x) < abs((obj_player.x-60) - x))
+        if (abs(obj_player.y - y) < 130)
            {
-            dir = sign((obj_player.x+60) - x)
+            
+            if (abs((obj_player.x+120) - x) < abs((obj_player.x-120) - x))
+               {
+                dir = sign((obj_player.x+120) - x);
+                //show_debug_message("direction = " + string(dir));
+               }
+            else
+               {
+                dir = sign((obj_player.x-120) - x);
+                //show_debug_message("DIRECTION = " + string(dir));
+               }
            }
         else
            {
-            dir = sign((obj_player.x-60) - x)
+            dir = sign((obj_player.x) - x);
+           } 
+       }
+    else if (obj_player.sliding == false && jumping_type == true)
+       {
+        if (abs((obj_player.x+70) - x) < abs((obj_player.x-70) - x))
+           {
+            dir = sign((obj_player.x+70) - x)
+           }
+        else
+           {
+            dir = sign((obj_player.x-70) - x)
            } 
        }
     if (firing == false)
@@ -32,7 +49,7 @@ if (alarm[7] = -1 && alarm[8] = -1)
    } 
 if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
    {
-    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
        {
         alarm[0] = room_speed * ((firSpeed/60) / (1+first_shot));
         first_shot = false; 
@@ -100,10 +117,10 @@ if (distance_to_object(obj_player) < 128)
        }
     else
        {
-        if (meleeAttack = false)
+        /*if (meleeAttack == false)
            {
             hspd = dir * chsSpeed;
-           } 
+           }*/ 
        } 
    }
    

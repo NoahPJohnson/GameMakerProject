@@ -1,6 +1,6 @@
-if (sp < sp_max)
+if (sp < sp_max && sliding == false && !instance_exists(obj_bunt_bat))
    {
-    sp += 1;
+    sp += room_speed * (0.6/60);
    }
 if (sp < 0)
    {

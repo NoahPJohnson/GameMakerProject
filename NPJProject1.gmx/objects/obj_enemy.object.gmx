@@ -41,7 +41,8 @@ slope_mod = 2;
 //Attacks
 firing = false;
 first_shot = true;
-firSpeed = 48;
+firSpeed = 40;
+melee_dir = 0;
 meleeAttack = false;
 melee_hitbox = noone;
 
@@ -123,18 +124,18 @@ if (jumping_type = false)
            {
             dir = sign(obj_player.x - x);
            }*/
-        if (dir &lt; 0)
+        if (melee_dir &lt; 0)
            {
-            melee_hitbox = instance_create(x-32, y, obj_enemy_melee);
+            melee_hitbox = instance_create(x-30, y, obj_enemy_melee);
             //xoffset = -24;
            }
         else
            {
-            melee_hitbox = instance_create(x+32, y, obj_enemy_melee);
+            melee_hitbox = instance_create(x+30, y, obj_enemy_melee);
             //xoffset = 24;
            }
        }
-    hspd = dir * chsSpeed * 4;
+    hspd = melee_dir * chsSpeed * 4;
 
     if (alarm[8] = -1)
        { 
@@ -149,9 +150,9 @@ else
            {
             if (obj_player.state != states.sliding)
                {
-                dir = sign(obj_player.x - x);
+                melee_dir = sign(obj_player.x - x);
                }
-            if (dir &lt; 0)
+            if (melee_dir &lt; 0)
                {
                 melee_hitbox = instance_create(x-24, y+32, obj_enemy_divekick_hitbox);
                 //xoffset = -24;
@@ -163,7 +164,7 @@ else
                }
            }
         jumped = true;   
-        hspd = dir * 4;
+        hspd = melee_dir * 4;
         vspd = 11;
         grv = 0.8;
         

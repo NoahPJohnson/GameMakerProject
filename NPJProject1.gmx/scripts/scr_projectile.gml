@@ -96,15 +96,33 @@ if (place_meeting(x, y, obj_bat_spike))
            }
         else
            {
-           direction = 255;
+            direction = 255;
             speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
            }
        }
     state = proj_state.struck;
-   }  
+   }
+   
+//Collision with Bunt   
+if (place_meeting(x,y,obj_bunt_bat))
+   {
+    bunted = true;
+    obj_player.sp -= 20;
+    if (obj_player.right = true)
+       {
+        direction = 55;
+        speed = 4;
+       }
+    else
+       {
+        direction = 125;
+        speed = 4;
+       }
+    state = proj_state.struck;
+   } 
         
 
-//Collsion with Wall
+//Collsion with Wall and Prop
 if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
    {
     instance_destroy();

@@ -35,9 +35,12 @@ if (abs(hspd) < 1)
        }
     else
        {
-        mspd = 8;
-        crouching = false;
-        sprite_index = spr_player; 
+        if (!place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy))
+           {
+            mspd = 8;
+            crouching = false;
+            sprite_index = spr_player;
+           }
        }
     state = states.normal
    }

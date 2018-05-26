@@ -5,7 +5,7 @@ key_U_released = keyboard_check_released(ord("W"))
 
 if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
    {
-    if (swinging = false && recovery = false)
+    if (swinging == false && recovery == false && crouching == false)
        { 
         if (key_U)
            {
@@ -37,7 +37,7 @@ if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
 else
    {
     up = false;
-    if (recovery = false && iframes = false)
+    if (recovery == false && iframes == false && crouching == false)
        {
         sprite_index = spr_player;
        }
@@ -57,7 +57,7 @@ if (swinging = false && key_U_released)
        {
         sprite_index = spr_player_charged2;
        }
-    else
+    if (charging == false && chargeOne == false && chargeTwo == false && crouching == false)
        {   
         sprite_index = spr_player;    
        }

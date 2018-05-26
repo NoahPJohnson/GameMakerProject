@@ -25,25 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hspd = 0;
+            <string>///Initialize Variables
+//Movement
+hspd = 0;
 vspd = 0;
 jspeed = 0;
 chsSpeed = 2;
 jumping_type = false;
 jumping = false;
 dir = 0;
-firing = false;
-firSpeed = 40;
-meleeAttack = false;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
+
+//Attacks
+firing = false;
+firSpeed = 40;
+meleeAttack = false;
+
+//Damage and Hitstun
 hit = false;
 hitdir = 0;
 impetus = 1;
 hitstun = false;
 stopped = true;
 valid = false;
+
+//Crash
+crash_sprite = spr_player_charged1;
 mxspd = 40;
 hp = 2;
 hp_max = 2;

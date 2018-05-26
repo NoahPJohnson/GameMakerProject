@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>hp = 2;
 struck = false;
+bunted = false;
 state = proj_state.normal;
 move_towards_point(obj_player.x, obj_player.y, 6);
 

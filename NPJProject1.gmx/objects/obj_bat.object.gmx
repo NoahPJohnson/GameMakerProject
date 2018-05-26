@@ -126,7 +126,7 @@ instance_destroy()
    }
 if (obj_player.right = false)
    {
-    x = obj_player.x - (80)
+    x = obj_player.x - (93)
     y = obj_player.y
    } 
 if (place_meeting(x,y,obj_enemy))

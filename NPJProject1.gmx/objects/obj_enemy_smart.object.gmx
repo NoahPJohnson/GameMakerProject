@@ -59,8 +59,8 @@ valid = false;
 
 //Crash State
 mxspd = 40;
-hp = 2;
-hp_max = 2;
+hp = 4;
+hp_max = 4;
 crash_sprite = spr_enemy_crash;
 cp = 2;
 cp_max = 2;
@@ -318,10 +318,10 @@ firing = false;
             <string>///Hitstun End
 hit = false;
 hitstun = false;
-stopped = true;
+/*stopped = true;
 speed = 0;
 direction = 0;
-state = e_state.idle
+state = e_state.idle*/
 </string>
           </argument>
         </arguments>

@@ -127,7 +127,10 @@ doubleTapWindow = false;
             <string>///Slide Part 2
 frc = 1.7;
 siframes = false;
-sprite_index = spr_player_crouching2;
+if (sliding == true)
+   {
+    sprite_index = spr_player_crouching2;
+   } 
 </string>
           </argument>
         </arguments>
@@ -392,7 +395,7 @@ if (charging = true)
           <argument>
             <kind>1</kind>
             <string>///Charged Swing
-if (keyboard_check(vk_numpad2))
+if (/*keyboard_check(vk_numpad2)*/key_Swing_Held)
    {
     if (up = true)
        {
@@ -511,7 +514,7 @@ if (right = true)
     recovery = true;
     if (alarm[1] = -1)
        {
-        alarm[1] = room_speed * (8/60);
+        alarm[1] = room_speed * (15/60);
         sprite_index = spr_player_recovery;
        }
    }
@@ -541,7 +544,7 @@ else
     recovery = true;
     if (alarm[1] = -1)
        {
-        alarm[1] = room_speed * (8/60);
+        alarm[1] = room_speed * (15/60);
         sprite_index = spr_player_recovery;
        }
    }

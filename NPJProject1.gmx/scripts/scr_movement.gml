@@ -4,7 +4,9 @@ key_R = keyboard_check(ord("D"));
 key_L = -keyboard_check(ord("A"));
 key_J = keyboard_check_pressed(vk_space);
 key_J_held = keyboard_check(vk_space);
-
+key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift);
+key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift);
+key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift);
 
 
 mve = key_L + key_R;
@@ -143,11 +145,14 @@ scr_zero_health();
 //Collision            
 scr_collision();  
 
+//Bunting
+scr_bunt();
+
 //Swinging
 ///Input Swing
-if (swinging = false && recovery = false && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
+if (crouching == false && swinging == false && recovery == false && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
    { 
-    if (keyboard_check_pressed(vk_numpad2))
+    if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Pressed)
        { 
         if (up = true)
            {

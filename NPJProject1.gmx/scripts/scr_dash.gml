@@ -8,7 +8,7 @@ key_R_released = keyboard_check_released(ord("D"));
 key_L_released = keyboard_check_released(ord("A"));
 
 //Initiate with Double Tap
-if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
+if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && crouching == false)
    {
     //Key pressed while double tap window is open and it is in the same direction
     if ((key_R_pressed || key_L_pressed) && alarm[10] > 0 && directionMemory = right)
@@ -52,7 +52,7 @@ if (dashing = false && drive = true)
    }   
    
 //Stop by releasing keys
-if (dashing = true)
+if (dashing == true)
    {
     if (key_R_released || key_L_released || sp < 3)
        {
@@ -77,7 +77,7 @@ if (crouching = false && sliding = false && dashing = true)
         if (hspd < dash_speed)
            {
             hspd += dash;
-            sp -= 2;
+            sp -= room_speed * (1/60);
            }
        }
     else if (-key_L && !key_R && sp > 3)
@@ -85,7 +85,7 @@ if (crouching = false && sliding = false && dashing = true)
         if (hspd > -dash_speed)
            {
             hspd -= dash;
-            sp -= 2;
+            sp -= room_speed * (1/60);
            }
        }
     else
@@ -121,7 +121,7 @@ if (dashing = true)
             sprite_index = spr_player_charging;
            }
         drive = true;
-        sp -= 2.3;
+        sp -= room_speed * (1.5/60);
         if (alarm[3] = -1 && charging = false)
            {
             charging = true;

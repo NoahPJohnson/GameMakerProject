@@ -11,6 +11,11 @@ if (projectile_meeting != noone)
        } 
    }
 
+if (bunted == true)
+   {
+    vspeed += 0.9;
+   }
+
 //Collsion with Wall
 if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
    {
