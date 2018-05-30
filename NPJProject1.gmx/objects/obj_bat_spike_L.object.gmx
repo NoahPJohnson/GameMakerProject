@@ -118,11 +118,11 @@ alarm[0] = room_speed * (4/60);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player.right = false)
-   {
+            <string>//if (obj_player.right = false)
+//   {
     x = obj_player.x - (16)
     y = obj_player.y
-   }
+//   }
 if (place_meeting(x,y,obj_enemy))
    {
     if (alarm[1] = -1)

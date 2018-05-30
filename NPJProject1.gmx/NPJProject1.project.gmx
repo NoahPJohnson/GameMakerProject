@@ -76,6 +76,7 @@
       <script>scripts\scr_crouching.gml</script>
       <script>scripts\scr_jumping_swing.gml</script>
       <script>scripts\scr_stamina.gml</script>
+      <script>scripts\scr_player_hitstop.gml</script>
       <script>scripts\scr_bunt.gml</script>
       <scripts name="player_swinging">
         <script>scripts\scr_swing.gml</script>
@@ -89,6 +90,7 @@
     <script>scripts\scr_homing_projectile.gml</script>
     <script>scripts\scr_projectile.gml</script>
     <script>scripts\scr_projectile_destroyed.gml</script>
+    <script>scripts\scr_projectile_hitstop.gml</script>
     <script>scripts\scr_projectile_struck.gml</script>
     <scripts name="enemy">
       <script>scripts\scr_enemy.gml</script>
@@ -109,11 +111,11 @@
       <script>scripts\scr_enemy_targeted.gml</script>
       <script>scripts\scr_enemy_melee.gml</script>
       <script>scripts\scr_melee_conditional.gml</script>
-      <script>scripts\scr_enemy_chase_jump.gml</script>
+      <script>scripts\scr_hitstop.gml</script>
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
-    <script>scripts\scr_unused3.gml</script>
+    <script>scripts\scr_pause_screen.gml</script>
     <script>scripts\scr_target.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
   </scripts>
@@ -162,6 +164,7 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_Game_Over_Quit</object>
     <object>objects\obj_camera_control</object>
+    <object>objects\obj_pause_object</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test2</room>

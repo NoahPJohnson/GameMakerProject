@@ -34,7 +34,12 @@ antiAir = false;
 hspd = 0;
 vspd = 0;
 jspeed = 13;
-chsSpeed = 1.5;
+switched = false;
+chsSpeed = 2;
+chsSpeed_LR = 2;
+chsSpeed_CR = 4;
+destination_distance_LR = 300;
+destination_distance_CR = 120;
 jumping_type = false;
 jumping = false;
 dir = 0;
@@ -45,15 +50,23 @@ slope_mod = 2;
 //Attacks
 firing = false;
 first_shot = true;
-firSpeed = 40;
+firSpeed = 36;
+melee_dir = 0;
 meleeAttack = false;
 melee_hitbox = noone;
 
 //Damage and Hit Reaction
 hit = false;
 hitdir = 0;
+old_speed = 0;
 impetus = 1;
 hitstun = false;
+hitstun_direction = 0;
+hitstop = false;
+damage_hitstop = false;
+old_state = e_state.idle;
+alarm_array[0] = -1;
+air_recovery = true;
 stopped = true;
 valid = false;
 
@@ -92,6 +105,8 @@ state = e_state.idle
 hspd = dir * chsSpeed;
 vspd = (min(7, vspd + grv));
 grv = 0.8;
+longRange = true;
+switched = true;
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = room_speed * (1/60);
@@ -119,19 +134,19 @@ if (instance_exists(melee_hitbox))
           <argument>
             <kind>1</kind>
             <string>///Melee Decision is made, attack begins
-if (longRange = false)
+if (longRange == false)
    {
     if (place_meeting(x, y+1, obj_boundary))
        {
         if (!instance_exists(melee_hitbox))
            {
-            if (obj_player.state != states.sliding)
+            /*if (obj_player.state != states.sliding)
                {
-                dir = sign(obj_player.x - x);
-               }
-            if (antiAir = false)
+                melee_dir = sign(obj_player.x - x);
+               }*/
+            if (antiAir == false)
                {
-                if (dir &lt; 0)
+                if (melee_dir &lt; 0)
                    {
                     melee_hitbox = instance_create(x-32, y, obj_enemy_melee);
                    }
@@ -139,30 +154,32 @@ if (longRange = false)
                    {
                     melee_hitbox = instance_create(x+32, y, obj_enemy_melee);
                    }
+                
                }    
             else
                {
-                if (dir &lt; 0)
+                if (melee_dir &lt; 0)
                    {
-                    melee_hitbox = instance_create(x-24, y-32, obj_anti_air_hitbox);
+                    melee_hitbox = instance_create(x-21, y-32, obj_anti_air_hitbox);
                    }
                 else
                    {
-                    melee_hitbox = instance_create(x+24, y-32, obj_anti_air_hitbox);
+                    melee_hitbox = instance_create(x+21, y-32, obj_anti_air_hitbox);
                    }
-               }            
+               }
+            melee_hitbox.enemy_parent = self;            
            }
        }    
-    if (antiAir = false)
+    if (antiAir == false)
        {
-        hspd = dir * chsSpeed * 3;
+        hspd = melee_dir * chsSpeed * 2;
        }
     else
        {
         if (place_meeting(x, y+1, obj_boundary))
            {
-            vspd = -(jspeed+3);
-            hspd = dir * chsSpeed * .8;
+            vspd = -(jspeed+4);
+            hspd = melee_dir * chsSpeed * .8;
            }
        }
     if (alarm[8] = -1)
@@ -388,6 +405,11 @@ switch (state)
         case e_state.hitstun:
              {
               scr_hit_stun();
+              break;
+             }
+        case e_state.hitstop:
+             {
+              scr_hitstop();
               break;
              }
         case e_state.crash:

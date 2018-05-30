@@ -2,6 +2,7 @@
 alarm[0] = -1;
 alarm[7] = -1;
 sprite_index = crash_sprite;
+
 if (!place_meeting(x,y+vspeed, obj_boundary))   
    {
     vspeed += 0.8;
@@ -54,5 +55,6 @@ scr_enemy_cp_zero();
 //Hit by Bat      
 scr_hit_by_bat();
 
+//show_debug_message("State = " + string(state));
 //Bounce
 scr_collision_bounce();

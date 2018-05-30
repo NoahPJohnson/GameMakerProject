@@ -46,8 +46,15 @@ melee_hitbox = noone;
 //Damage and Hit Reaction
 hit = false;
 hitdir = 0;
+old_speed = 0;
 impetus = 1;
 hitstun = false;
+hitstun_direction = 0;
+hitstop = false;
+damage_hitstop = false;
+old_state = e_state.idle;
+alarm_array[0] = -1;
+air_recovery = false;
 stopped = true;
 valid = false;
 
@@ -158,10 +165,10 @@ firing = false;
             <string>///Hitstun End
 hit = false;
 hitstun = false;
-stopped = true;
+/*stopped = true;
 speed = 0;
 direction = 0;
-state = e_state.idle
+state = e_state.idle*/
 </string>
           </argument>
         </arguments>
@@ -231,6 +238,11 @@ switch (state)
         case e_state.hitstun:
              {
               scr_hit_stun();
+              break;
+             }
+        case e_state.hitstop:
+             {
+              scr_hitstop();
               break;
              }
         case e_state.crash:

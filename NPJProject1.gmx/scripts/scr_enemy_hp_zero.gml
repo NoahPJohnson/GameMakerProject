@@ -12,4 +12,5 @@ if (hp < 1)
     hitstun = false;
     alarm[1] = -1;
     state = e_state.crash
+    
    }

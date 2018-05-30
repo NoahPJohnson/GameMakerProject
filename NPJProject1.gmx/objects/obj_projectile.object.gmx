@@ -28,10 +28,47 @@
             <string>crashed_enemy_meeting = noone;
 hp = 2;
 struck = false;
+struck_speed = 0;
+struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
 move_towards_point(obj_player.x, obj_player.y, 5);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End Hitstop
+if (instance_exists(obj_test) &amp;&amp; bunted == false)
+   {
+    target = instance_nearest(obj_player.x, obj_player.y, obj_test);
+    enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
+    move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
+   }
+else
+   {
+    direction = struck_direction; 
+    speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+   }
+state = proj_state.struck;
 </string>
           </argument>
         </arguments>
@@ -66,6 +103,11 @@ switch (state)
              {
               scr_projectile_struck(); 
               break;        
+             }
+        case proj_state.hitstop:
+             {
+              scr_projectile_hitstop();
+              break;
              }
         case proj_state.destroyed: 
              {

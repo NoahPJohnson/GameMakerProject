@@ -16,11 +16,11 @@ if (jumping_type = false)
            {
             //hspd = 0;
             
-            if (obj_player.state != states.sliding)
-               {
+            //if (obj_player.state != states.sliding)
+            //   {
                 melee_dir = sign(obj_player.x - x);
-               }
-            show_debug_message("Dir = " + string(dir));
+            //   }
+            //show_debug_message("Dir = " + string(dir));
             /*dir = sign(obj_player.x - x);
             if (dir < 0)
                {

@@ -49,8 +49,15 @@ melee_hitbox = noone;
 //Damage and Hit Reaction
 hit = false;
 hitdir = 0;
+old_speed = 0;
 impetus = 1;
 hitstun = false;
+hitstun_direction = 0;
+hitstop = false;
+damage_hitstop = false;
+old_state = e_state.idle;
+alarm_array[0] = -1;
+air_recovery = false;
 stopped = true;
 valid = false;
 
@@ -62,7 +69,61 @@ crash_sprite = spr_enemy_crash;
 cp = 3;
 cp_max = 3;
 
-state = e_state.idle
+state = e_state.idle;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End Hitstop
+if (damage_hitstop == false)
+   {
+    for (i = 0; i &lt; 9 i++)
+        {
+         if (alarm[i] != noone)
+            {
+             //show_debug_message("alarm_array: " + string(i) + " = "/* + string(alarm_array[i])*/);
+             alarm[i] = alarm_array[i];
+            }
+        }
+    //show_debug_message("Old State is " + string(old_state));
+    hitstop = false;
+    state = old_state;
+   }
+else
+   {
+    speed = (abs(old_speed) * hitdir) + (impetus * hitdir);
+    direction = hitstun_direction;
+    if (old_state != e_state.crash)
+       {
+        alarm[1] = room_speed * (30/60);
+        hitstun = true;
+        scr_collision_bounce();
+        state = e_state.hitstun;
+       }
+    else
+       {
+        scr_collision_bounce();
+        state = e_state.crash;
+       }
+   }
 </string>
           </argument>
         </arguments>
@@ -134,6 +195,7 @@ if (jumping_type = false)
             melee_hitbox = instance_create(x+30, y, obj_enemy_melee);
             //xoffset = 24;
            }
+        melee_hitbox.enemy_parent = self;
        }
     hspd = melee_dir * chsSpeed * 4;
 
@@ -162,6 +224,7 @@ else
                 melee_hitbox = instance_create(x+24, y+32, obj_enemy_divekick_hitbox);
                 //xoffset = 24;
                }
+            melee_hitbox.enemy_parent = self;
            }
         jumped = true;   
         hspd = melee_dir * 4;
@@ -274,6 +337,7 @@ firing = false;
             <string>///Hitstun End
 hitstun = false;
 hit = false;
+show_debug_message("Hitstun over.");
 //sprite_index = spr_player_charging;
 /*
 stopped = true;
@@ -352,13 +416,17 @@ switch (state)
               scr_hit_stun();
               break;
              }
+        case e_state.hitstop:
+             {
+              scr_hitstop();
+              break;
+             }
         case e_state.crash:
              {
               scr_crash();
               break;
-             }
+             }  
        }
-       
 </string>
           </argument>
         </arguments>

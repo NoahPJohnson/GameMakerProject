@@ -15,6 +15,7 @@ enum states
      {
       normal,
       knockback,
+      hitstop,
       swinging,
       sliding,
       powerslide
@@ -24,12 +25,14 @@ enum e_state
       idle,
       chase,
       hitstun,
+      hitstop,
       crash
      }
 enum proj_state
      {
       normal,
       struck,
+      hitstop,
       destroyed
      }
 enum camera_state

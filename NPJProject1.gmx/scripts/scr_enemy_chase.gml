@@ -137,7 +137,7 @@ scr_hit_by_bat();
 scr_hit_by_projectile();
 
 //Out of HP
-scr_enemy_hp_zero();
+//scr_enemy_hp_zero();
 
 //Collision with Enemy
 //scr_enemy_collision();

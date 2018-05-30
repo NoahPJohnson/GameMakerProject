@@ -59,7 +59,13 @@ recovery = false;
 hp_max = 100;
 hp = 100;
 iframes = false;
+hitstop = false;
+damage_hitstop = false;
+old_state = states.normal;
+alarm_array[0] = -1;
 hitdir = 0;
+invincibility_time = 0;
+knockback_time = 0;
 knock_force = 1;
 
 //Stamina
@@ -76,8 +82,60 @@ drive = false;
 dashJump = false;
 
 //State
-state = states.normal
+state = states.normal;
    
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///End Player Hitstop
+if (damage_hitstop == false)
+   {
+    for (i = 0; i &lt; 11; i++)
+        {
+         //show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
+         alarm[i] = alarm_array[i];
+        }
+    show_debug_message("player's Old State is " + string(old_state));
+    hitstop = false;
+    state = old_state;
+   }
+else
+   {
+    if (alarm[7] == -1)
+       {
+        iframes = true; 
+        alarm[7] = room_speed * (invincibility_time/60);
+       }
+    if (alarm[8] = -1)
+       {
+                    
+        jumping = false;
+        sprite_index = spr_player_iframes;
+        alarm[8] = room_speed * (knockback_time/60);
+        //knock_force = 4;
+        state = states.knockback;
+       }
+   }
+
 </string>
           </argument>
         </arguments>
@@ -275,7 +333,7 @@ else
 if (right = true)
    {
     instance_create(x+16,y+32,obj_hit_cone_spike);
-    instance_create(x,y,obj_bat_spike);
+    spike = instance_create(x,y,obj_bat_spike);
     swinging = false;
     recovery = true;
     if (alarm[6] = -1)
@@ -283,12 +341,17 @@ if (right = true)
         alarm[6] = room_speed * (11/60);
         sprite_index = spr_player_recovery;
        }
+    /*with (spike)
+         {
+          //show_debug_message("Call the script please.");
+          scr_wall_bounce();
+         }*/
    }
 
 else
    {
     instance_create(x-16,y+32,obj_hit_cone_spike_L);
-    instance_create(x,y,obj_bat_spike_L)
+    spike = instance_create(x,y,obj_bat_spike_L)
     swinging = false;
     recovery = true;
     if (alarm[6] = -1)
@@ -296,6 +359,11 @@ else
         alarm[6] = room_speed * (11/60);
         sprite_index = spr_player_recovery;
        }
+    /*with (spike)
+         {
+          //show_debug_message("Call the OTHER script please.");
+          scr_wall_bounce_L();
+         }*/
    }
 
 
@@ -572,6 +640,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Switch States
+
 switch (state)
        {
         case states.normal: 
@@ -583,6 +652,11 @@ switch (state)
              {
               scr_knockback(); 
               break; 
+             }
+        case states.hitstop:
+             {
+              scr_player_hitstop();
+              break;
              }
         case states.swinging: 
              {
