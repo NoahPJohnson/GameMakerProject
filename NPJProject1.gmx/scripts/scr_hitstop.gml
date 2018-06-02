@@ -19,7 +19,7 @@ else
     
     speed = 0;
     direction = 0;
-    show_debug_message("IN damage hitstop. Speed: " + string(speed) + " name is " + string(id));
+    //show_debug_message("IN damage hitstop. Speed: " + string(speed) + " name is " + string(id));
     alarm[0] = -1;
     alarm[1] = -1;
     alarm[2] = -1;

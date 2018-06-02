@@ -8,7 +8,7 @@ if (jumping_type = false)
    {
     //Lunge Melee
     //meleeAttack = true;
-    if (distance_to_object(obj_player) < 120 && (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && obj_player.state != states.knockback && meleeAttack = false)
+    if (distance_to_object(obj_player) < 120 && (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.knockback && meleeAttack = false)
        {
         //sprite_index = spr_player_charging;
         meleeAttack = true;

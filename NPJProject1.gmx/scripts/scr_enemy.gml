@@ -5,8 +5,10 @@ hspd = 0;
 vspd = (min(7, vspd + grv))
 if (distance_to_object(obj_player) < 500) 
    {
+    //show_debug_message("Within distance.")
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
        {
+        //show_debug_message("clear line of sight!");
         first_shot = true;
         state = e_state.chase;
        }

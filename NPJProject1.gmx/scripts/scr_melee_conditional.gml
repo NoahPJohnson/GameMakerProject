@@ -8,7 +8,7 @@ if (longRange == false)
    {
     //Lunge Melee
     //meleeAttack = true;
-    if (distance_to_object(obj_player) < 120 && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false)
+    if (distance_to_object(obj_player) < 120 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false)
        {
         meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)

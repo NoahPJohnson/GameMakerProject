@@ -86,7 +86,20 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
            }
         projectile_meeting.state = proj_state.destroyed;
        }    
-   }   
+   }
+else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == true))
+   {
+    //A little bit of hitstop for sliding by projectile 
+    projectile_meeting = instance_place(x,y, obj_projectile)
+    if (projectile_meeting.struck = false)
+       {
+        hitstop = false;
+        damage_hitstop = false;
+        alarm[11] = room_speed * (3/60);
+        old_state = state;
+        state = states.hitstop;
+       }
+   }
 
 //Hit by melee attack   
 if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
@@ -144,4 +157,15 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
     //knock_force = 6;
     //state = states.knockback;
     melee_meeting.alarm[0] = 1;
-   }              
+   }
+/*else if (place_meeting(x, y, obj_enemy_melee) && (iframes == true || siframes == true))
+   {
+    //A little bit of hitstop for sliding by melee  
+    melee_meeting = instance_place(x,y, obj_enemy_melee);
+    melee_meeting.alarm[0] = 1;
+    hitstop = false;
+    damage_hitstop = false;
+    alarm[11] = room_speed * (3/60);
+    old_state = state;
+    state = states.hitstop;
+   }*/              

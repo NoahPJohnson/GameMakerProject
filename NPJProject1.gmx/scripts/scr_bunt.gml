@@ -1,7 +1,7 @@
 ///Bunting
 if (crouching == true && sliding == false)
    {
-    if (key_Swing_Held && !instance_exists(obj_bunt_bat) && sp > 75)
+    if (key_Swing_Held && !instance_exists(obj_bunt_bat) && sp > 30)
        {
         if (right == true)
            {

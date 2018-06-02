@@ -1,5 +1,7 @@
 if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
    {
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
+       {
     if (obj_player.right = true)
        {
         hitdir = 1; 
@@ -16,7 +18,7 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
     hitstun_direction = 0;
     old_state = state;
     alarm[7] = -1;
-    alarm[9] = room_speed * (5/60);
+    alarm[9] = room_speed * ((5 + (obj_player.chargeTwo*2))/60);
     //Player Hitstop
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
@@ -42,11 +44,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
         state = e_state.hitstun;
        }
     */
-    //show_debug_message("Hit by the bat! " + string(direction) + " | " + string(speed) + " | " + string(vspeed));   
+    //show_debug_message("Hit by the bat! " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+       }   
    }          
 
-if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
+if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
    {
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
+       {
     if (obj_player.right = true)
        {
         hitdir = 1; 
@@ -62,7 +67,7 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
     hitstun_direction = (90-(obj_player.chargeOne*10)-(obj_player.chargeTwo*20)) * hitdir;
     old_state = state;
     alarm[7] = -1;
-    alarm[9] = room_speed * (5/60);
+    alarm[9] = room_speed * ((5 + (obj_player.chargeTwo*2))/60);
     //Player Hitstop
     obj_player.damage_hitstop = false;
     obj_player.alarm[11] = alarm[9];
@@ -85,7 +90,8 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit = false)
         scr_collision_bounce();
         state = e_state.hitstun;
        }*/
-    //show_debug_message("Hit by the LAUNCHER! " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
+    //show_debug_message("Hit by the LAUNCHER! " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+       } 
    }          
 
 if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
@@ -98,6 +104,8 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
        {
         hitdir = -1;
        }
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
+       {
     hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);
     scr_enemy_hp_zero();
     old_speed = speed;
@@ -154,9 +162,28 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
         scr_collision_bounce();
         state = e_state.hitstun;
        }*/
+       }
+    else
+       {
+        //Player Wall Bounce
+        if (obj_player.alarm[8] == -1)
+           {
+            obj_player.alarm[8] = room_speed * (18/60);
+           }
+        if (obj_player.alarm[7] == -1)
+           {
+            obj_player.alarm[7] = room_speed * (20/60);
+           }
+    
+        obj_player.iframes = true;
+        obj_player.hitdir = -hitdir;
+        obj_player.knock_force = 12;
+        //show_debug_message("Change the player's state to knockback. Current is: " + string(obj_player.state));
+        obj_player.state = states.knockback;
+       }
    }
 
-if (place_meeting(x,y,obj_bunt_bat) && hitstun == false)
+if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == false)
    {
     if (obj_player.right = true)
        {
@@ -168,8 +195,8 @@ if (place_meeting(x,y,obj_bunt_bat) && hitstun == false)
        }
     hp -= 1;
     scr_enemy_hp_zero();
-    old_speed = speed;
-    impetus = 4;
+    old_speed = 0;
+    impetus = 5;
     hitstun_direction = 20 * hitdir;
     old_state = state;
     alarm[7] = -1;

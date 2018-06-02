@@ -19,6 +19,7 @@
     <sprite>sprites\spr_enemy_smart</sprite>
     <sprite>sprites\spr_enemy_jump</sprite>
     <sprite>sprites\spr_enemy_stationary</sprite>
+    <sprite>sprites\spr_enemy_stationary_H</sprite>
     <sprite>sprites\spr_enemy_stationary_crash</sprite>
     <sprite>sprites\spr_projectile</sprite>
     <sprites name="player">
@@ -146,6 +147,7 @@
       <object>objects\obj_enemy_smart</object>
       <object>objects\obj_enemy_jump</object>
       <object>objects\obj_enemy_stationary</object>
+      <object>objects\obj_enemy_stationary_H</object>
       <object>objects\obj_enemy_target</object>
       <object>objects\obj_projectile</object>
       <object>objects\obj_projectile_homing</object>

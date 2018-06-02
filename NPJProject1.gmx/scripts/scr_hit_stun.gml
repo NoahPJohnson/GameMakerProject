@@ -1,6 +1,7 @@
 ///Hitstun
 grv = 0.8;  
 stopped = false;
+firing = false;
 alarm[0] = -1;
 alarm[7] = -1;
 alarm[8] = -1;
@@ -9,6 +10,7 @@ if (hitstun == false)
    {
     if ((place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player) || place_meeting(x,y+1,obj_enemy)) || air_recovery == true)
        {
+        show_debug_message("Hitstun is REALLY over");
         //sprite_index = spr_player_charging;
         stopped = true;
         speed = 0;

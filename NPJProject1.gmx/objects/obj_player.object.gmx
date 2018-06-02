@@ -71,6 +71,7 @@ knock_force = 1;
 //Stamina
 sp_max = 100;
 sp = 100;
+sp_regain_rate = 0;
 
 //Dashing
 doubleTapWindow = false;
@@ -114,7 +115,7 @@ if (damage_hitstop == false)
          //show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
          alarm[i] = alarm_array[i];
         }
-    show_debug_message("player's Old State is " + string(old_state));
+    //show_debug_message("player's Old State is " + string(old_state));
     hitstop = false;
     state = old_state;
    }
@@ -390,7 +391,7 @@ else
           <argument>
             <kind>1</kind>
             <string>///Second Charge
-if (charging = true)
+if (charging == true)
    {
     if (up = true)
        {
@@ -426,7 +427,7 @@ if (charging = true)
           <argument>
             <kind>1</kind>
             <string>///First Charge
-if (charging = true)
+if (charging == true)
    {
     if (up = true)
        {
@@ -465,7 +466,7 @@ if (charging = true)
             <string>///Charged Swing
 if (/*keyboard_check(vk_numpad2)*/key_Swing_Held)
    {
-    if (up = true)
+    if (up == true)
        {
         sprite_index = spr_player_up_charging;
        }
@@ -473,15 +474,19 @@ if (/*keyboard_check(vk_numpad2)*/key_Swing_Held)
        {   
         sprite_index = spr_player_charging;
        }
-    charging = true;
+    
     mspd = 0;
     hspd = 0;
     jspd = 0;
-    alarm[3] = room_speed * (16/60);
+    if (charging == false)
+       {
+        charging = true;
+        alarm[3] = room_speed * (16/60);
+       }
    }
 else
    {
-    if (swinging = false &amp;&amp; recovery = false &amp;&amp; charging = false)   
+    if (swinging == false &amp;&amp; recovery == false &amp;&amp; charging == false)   
        { 
         charging = false;     
         swinging = true;
@@ -615,6 +620,14 @@ else
         alarm[1] = room_speed * (15/60);
         sprite_index = spr_player_recovery;
        }
+   }
+if (chargeOne == true)
+   {
+    show_debug_message("Charge One is true.");
+   }
+if (chargeTwo == true)
+   {
+    show_debug_message("Charge TWO is true.");
    }
 
 </string>

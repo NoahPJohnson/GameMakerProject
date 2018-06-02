@@ -5,7 +5,7 @@ key_C_released = keyboard_check_released(ord("S"))
 
 if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && recovery = false && drive = false)
    {
-    if (key_C_held && sliding = false)
+    if (key_C_held && sliding == false)
        {
         crouching = true;
         mspd = 0;
@@ -31,13 +31,13 @@ else
    {
     crouching = false;
     sliding = false;
-    if (swinging = false && recovery = false)
+    if (swinging == false && recovery == false)
        {
         mspd = mspd_normal;
        }
    } 
 
-if (key_C_released && !place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy))
+if ((key_C_released || !key_C_held) && !place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy) && crouching == true)
    {
     crouching = false;
     //sliding = false;

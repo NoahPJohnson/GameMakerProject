@@ -114,7 +114,7 @@ if (crouching = true)
 //Jumping
 if (crouching = false)
    {
-    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && !place_meeting(x, y, obj_enemy))
+    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy) || place_meeting(x-(hspd*2), y+1, obj_boundary) || place_meeting(x-(hspd*2), y+1, obj_enemy)) && !place_meeting(x, y, obj_enemy))
        {
         vspd = key_J * -jspd;
         jumping = true;
@@ -154,7 +154,7 @@ if (crouching == false && swinging == false && recovery == false && (place_meeti
    { 
     if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Pressed)
        { 
-        if (up = true)
+        if (up == true)
            {
             up = true;
            }

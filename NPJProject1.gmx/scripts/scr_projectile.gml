@@ -2,12 +2,13 @@
 //Collision with Bat
 if (place_meeting(x, y, obj_bat))
    {
+    //Projectile Hitstop
+    if (alarm[0] == -1)
+       {
+        alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
+       }
     if (obj_player.right == true)
        {
-        if (alarm[0] == -1)
-           {
-            alarm[0] = room_speed * (3/60);
-           }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
         struck_direction = 0;
         state = proj_state.hitstop;
@@ -25,10 +26,10 @@ if (place_meeting(x, y, obj_bat))
        }
     else
        {
-        if (alarm[0] == -1)
+        /*if (alarm[0] == -1)
            {
-            alarm[0] = room_speed * (3/60);
-           }
+            alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
+           }*/
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
         struck_direction = 180;
         state = proj_state.hitstop;
@@ -65,7 +66,7 @@ if (place_meeting(x, y, obj_bat_launcher))
        { 
         if (alarm[0] == -1)
            {
-            alarm[0] = room_speed * (3/60);
+            alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
         struck_direction = 75;
@@ -86,7 +87,7 @@ if (place_meeting(x, y, obj_bat_launcher))
        {
         if (alarm[0] == -1)
            {
-            alarm[0] = room_speed * (3/60);
+            alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
         struck_direction = 105;
@@ -147,7 +148,7 @@ if (place_meeting(x, y, obj_bat_spike))
             alarm[0] = room_speed * (3/60);
            }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 285;
+        struck_direction = 255;
         state = proj_state.hitstop;
         /*if (instance_exists(obj_test))
            {
