@@ -48,7 +48,7 @@ if (longRange == true)
     sprite_index = spr_enemy_smart;
     chsSpeed = chsSpeed_LR;
     //If player gets too far
-    if (distance_to_object(obj_player) > 360 && longRange == true)
+    if (distance_to_object(obj_player) > 380 && longRange == true)
        {
         //Begin approach
         //longRange = false;
@@ -69,17 +69,24 @@ if (longRange == true)
     //Otherwise, when in long range maintain a distance from the player
     else if (distance_to_object(obj_player) < 360 && longRange == true)
        {
-        if (obj_player.sliding = false)
+        if (y < obj_player.y - 32)
            {
-            if (abs((obj_player.x+300) - x) < abs((obj_player.x-300) - x))
+            dir = sign(obj_player.x - x);
+           }
+        else
+           {
+            if (obj_player.sliding = false)
                {
-                dir = sign((obj_player.x+300) - x);
-                //show_debug_message("direction = " + string(dir));
-               }
-            else
-               {
-                dir = sign((obj_player.x-300) - x);
-                //show_debug_message("DIRECTION = " + string(dir));
+                if (abs((obj_player.x+360) - x) < abs((obj_player.x-360) - x))
+                   {
+                    dir = sign((obj_player.x+360) - x);
+                    //show_debug_message("direction = " + string(dir));
+                   }
+                else
+                   {
+                    dir = sign((obj_player.x-360) - x);
+                    //show_debug_message("DIRECTION = " + string(dir));
+                   }
                }
            } 
        }

@@ -40,6 +40,13 @@ enum camera_state
       neutral,
       lock_on
       
+     }
+enum ball_n_chain_state
+     {
+      neutral,
+      attacking,
+      hitstop,
+      reversed
      }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

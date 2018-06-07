@@ -223,6 +223,29 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
         state = e_state.hitstun;
        }*/
    }    
+
+//Hit by explosion or other neutral damage
+if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
+   {
+    if (x < obj_explosion_hitbox)
+       {
+        hitdir = -1;
+       }
+    else
+       {
+        hitdir = 1;
+       }
+    hp -= 1;
+    scr_enemy_hp_zero();
+    old_speed = 0;
+    impetus = 19;
+    hitstun_direction = 75 * hitdir;
+    old_state = state;
+    alarm[7] = -1;
+    alarm[9] = room_speed * (5/60);
+    damage_hitstop = true;
+    state = e_state.hitstop;
+   }
    
 //Out of HP
 //scr_enemy_hp_zero();                

@@ -18,7 +18,12 @@
     <sprite>sprites\spr_enemy_crash</sprite>
     <sprite>sprites\spr_enemy_smart</sprite>
     <sprite>sprites\spr_enemy_jump</sprite>
+    <sprite>sprites\spr_enemy_large</sprite>
+    <sprite>sprites\spr_enemy_large_crash</sprite>
     <sprite>sprites\spr_enemy_stationary</sprite>
+    <sprite>sprites\spr_enemy_stationary_B</sprite>
+    <sprite>sprites\spr_enemy_stationary_G</sprite>
+    <sprite>sprites\spr_enemy_stationary_R</sprite>
     <sprite>sprites\spr_enemy_stationary_H</sprite>
     <sprite>sprites\spr_enemy_stationary_crash</sprite>
     <sprite>sprites\spr_projectile</sprite>
@@ -62,6 +67,8 @@
     <sprite>sprites\spr_enemy_melee</sprite>
     <sprite>sprites\spr_enemy_divekick_hitbox</sprite>
     <sprite>sprites\spr_anti_air_hitbox</sprite>
+    <sprite>sprites\spr_explosion_hitbox</sprite>
+    <sprite>sprites\spr_enemy_ball_hitbox</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -88,14 +95,10 @@
         <script>scripts\scr_power_slide.gml</script>
       </scripts>
     </scripts>
-    <script>scripts\scr_homing_projectile.gml</script>
-    <script>scripts\scr_projectile.gml</script>
-    <script>scripts\scr_projectile_destroyed.gml</script>
-    <script>scripts\scr_projectile_hitstop.gml</script>
-    <script>scripts\scr_projectile_struck.gml</script>
     <scripts name="enemy">
       <script>scripts\scr_enemy.gml</script>
       <script>scripts\scr_enemy_chase.gml</script>
+      <script>scripts\scr_enemy_chase_large.gml</script>
       <script>scripts\scr_enemy_chase_conditional.gml</script>
       <script>scripts\scr_enemy_stationary_triggered.gml</script>
       <script>scripts\scr_enemy_hp_zero.gml</script>
@@ -111,14 +114,33 @@
       <script>scripts\scr_enemy_collision_hitstun.gml</script>
       <script>scripts\scr_enemy_targeted.gml</script>
       <script>scripts\scr_enemy_melee.gml</script>
+      <script>scripts\scr_enemy_ball_melee.gml</script>
       <script>scripts\scr_melee_conditional.gml</script>
       <script>scripts\scr_hitstop.gml</script>
+    </scripts>
+    <scripts name="projectiles">
+      <script>scripts\scr_ricochet_projectile.gml</script>
+      <script>scripts\scr_homing_projectile.gml</script>
+      <script>scripts\scr_bomb_projectile.gml</script>
+      <script>scripts\scr_grenade_projectile.gml</script>
+      <script>scripts\scr_collision_ricochet.gml</script>
+      <script>scripts\scr_projectile.gml</script>
+      <script>scripts\scr_projectile_destroyed.gml</script>
+      <script>scripts\scr_projectile_hitstop.gml</script>
+      <script>scripts\scr_projectile_struck.gml</script>
+      <script>scripts\scr_projectile_bomb_struck.gml</script>
+      <script>scripts\scr_projectile_grenade_struck.gml</script>
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
     <script>scripts\scr_pause_screen.gml</script>
     <script>scripts\scr_target.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
+    <script>scripts\scr_ball_n_chain_neutral.gml</script>
+    <script>scripts\scr_ball_n_chain_attacking.gml</script>
+    <script>scripts\scr_ball_n_chain_reversed.gml</script>
+    <script>scripts\scr_ball_hit_by_bat.gml</script>
+    <script>scripts\scr_ball_collision_bounce.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="player">
@@ -144,16 +166,25 @@
     </objects>
     <objects name="enemies">
       <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy_large</object>
       <object>objects\obj_enemy_smart</object>
       <object>objects\obj_enemy_jump</object>
       <object>objects\obj_enemy_stationary</object>
+      <object>objects\obj_enemy_stationary_G</object>
+      <object>objects\obj_enemy_stationary_B</object>
+      <object>objects\obj_enemy_stationary_R</object>
       <object>objects\obj_enemy_stationary_H</object>
       <object>objects\obj_enemy_target</object>
       <object>objects\obj_projectile</object>
+      <object>objects\obj_projectile_grenade</object>
+      <object>objects\obj_projectile_bomb</object>
+      <object>objects\obj_projectile_ricochet</object>
       <object>objects\obj_projectile_homing</object>
       <object>objects\obj_enemy_melee</object>
+      <object>objects\obj_enemy_ball_hitbox</object>
       <object>objects\obj_enemy_divekick_hitbox</object>
       <object>objects\obj_anti_air_hitbox</object>
+      <object>objects\obj_explosion_hitbox</object>
       <object>objects\obj_prop</object>
     </objects>
     <object>objects\obj_boundary</object>

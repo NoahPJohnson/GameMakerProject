@@ -24,7 +24,7 @@
 if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
    {   
     projectile_meeting = instance_place(x,y, obj_projectile)
-    if (projectile_meeting.struck = false)
+    if (projectile_meeting.struck == false)
        {
         if (projectile_meeting.x > x)
            {
@@ -157,6 +157,47 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
     //knock_force = 6;
     //state = states.knockback;
     melee_meeting.alarm[0] = 1;
+   }
+   
+//Hit by environment or other neutral damage
+if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = false)
+   {
+    if (!collision_line(x,y,obj_explosion_hitbox.x,obj_explosion_hitbox.y,obj_boundary,false,true))
+       {
+        explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
+        if (explosion_meeting.x > x)
+           {
+            hitdir = -1;
+           } 
+        else
+           {
+            hitdir = 1;
+           }
+        hp -= 18;
+     
+        if (iframes == false)
+           {
+            crouching = false;
+            charging = false;
+            chargeOne = false;
+            chargeTwo = false;
+            alarm[3] = -1;
+            alarm[4] = -1;
+            //Invincibility
+
+            invincibility_time = 100;
+            knockback_time = 30;
+            knock_force = 8;
+            damage_hitstop = true;
+            alarm[11] = room_speed * (3/60);
+
+            //explosion_meeting.alarm[0] = 1;
+      
+            state = states.hitstop;         
+           }
+
+        //melee_meeting.alarm[0] = 1;
+       }
    }
 /*else if (place_meeting(x, y, obj_enemy_melee) && (iframes == true || siframes == true))
    {

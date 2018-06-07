@@ -1,6 +1,6 @@
 ///Projectile Struck
 struck = true;
-//hp = 2;
+//hp = 1;
 projectile_meeting = instance_place(x,y, obj_projectile)
 if (projectile_meeting != noone)
    {
@@ -11,26 +11,17 @@ if (projectile_meeting != noone)
        } 
    }
 
-if (bunted == true)
-   {
-    vspeed += 0.9;
-   }
+vspeed += 0.8;
 
 //Collsion with Wall
-if (object_index != obj_projectile_ricochet)
-   {
     if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
        {
-        instance_destroy();
+        speed = 0;
+        alarm[2] = 1;
        }
-   }
-else
-   {
-    scr_collision_ricochet();
-   }
    
 if (hp < 1)
    {
-    instance_destroy();
+    alarm[2] = 1;
    }
       
