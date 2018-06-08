@@ -103,9 +103,9 @@
       <script>scripts\scr_enemy_stationary_triggered.gml</script>
       <script>scripts\scr_enemy_hp_zero.gml</script>
       <script>scripts\scr_hit_by_bat.gml</script>
-      <script>scripts\scr_hit_by_bat_stationary.gml</script>
+      <script>scripts\scr_hit_by_bat_armored.gml</script>
       <script>scripts\scr_hit_by_projectile.gml</script>
-      <script>scripts\scr_hit_by_projectile_stationary.gml</script>
+      <script>scripts\scr_hit_by_projectile_armored.gml</script>
       <script>scripts\scr_hit_stun.gml</script>
       <script>scripts\scr_crash.gml</script>
       <script>scripts\scr_collision_bounce.gml</script>
@@ -140,6 +140,7 @@
     <script>scripts\scr_ball_n_chain_attacking.gml</script>
     <script>scripts\scr_ball_n_chain_reversed.gml</script>
     <script>scripts\scr_ball_hit_by_bat.gml</script>
+    <script>scripts\scr_ball_n_chain_hitstop.gml</script>
     <script>scripts\scr_ball_collision_bounce.gml</script>
   </scripts>
   <objects name="objects">

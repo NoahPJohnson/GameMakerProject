@@ -32,41 +32,17 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
+show_debug_message("Bomb is here!");
 //alarm[2] = room_speed * (90/60);
-speed = 12;
-if (distance_to_object(obj_player) &lt; 180)
-   {
-    if (obj_player.x &lt; x)
+speed = 15;
+if (obj_player.x &lt; x)
        {
-        direction = 105;
+        direction = 130;
        }
     else 
        {
-        direction = 75;
+        direction = 50;
        } 
-   }
-else if (distance_to_object(obj_player) &lt; 340)
-   {
-    if (obj_player.x &lt; x)
-       {
-        direction = 120;
-       }
-    else 
-       {
-        direction = 60;
-       } 
-   }
-else
-   {
-    if (obj_player.x &lt; x)
-       {
-        direction = 135;
-       }
-    else 
-       {
-        direction = 45;
-       } 
-   }
 
 </string>
           </argument>

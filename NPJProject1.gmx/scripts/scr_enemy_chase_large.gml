@@ -15,14 +15,15 @@ if (/*alarm[7] = -1 && */alarm[8] = -1)
         if (abs(obj_player.y - y) < 170)
            {
             
-            if (abs((obj_player.x+180) - x) < abs((obj_player.x-180) - x))
+            if (abs((obj_player.x+150) - x) < abs((obj_player.x-150) - x))
                {
-                dir = sign((obj_player.x+180) - x);
+                dir = sign(sign(floor(obj_player.x+150) - x) + sign(floor(obj_player.x+160) - x));
+                
                 //show_debug_message("direction = " + string(dir));
                }
             else
                {
-                dir = sign((obj_player.x-180) - x);
+                dir = sign(sign(floor(obj_player.x-150) - x) + sign(floor(obj_player.x-160) - x));
                 //show_debug_message("DIRECTION = " + string(dir));
                }
            }
@@ -76,7 +77,7 @@ if (distance_to_object(obj_player) > 590)
     state = e_state.idle;
    }
    
-if (distance_to_object(obj_player) < 190)
+if (distance_to_object(obj_player) < 150)
    {
     alarm[0] = -1;
     alarm[2] = -1;
@@ -89,11 +90,25 @@ scr_enemy_ball_melee();
 //Valid Target
 scr_enemy_targeted();
    
-//Hit by the Bat   
-scr_hit_by_bat();
+//Hit by the Bat
+if (armored == false)
+   {   
+    scr_hit_by_bat();
+   }
+else
+   {
+    scr_hit_by_bat_armored();
+   }
 
 //Hit by a Projectile
-scr_hit_by_projectile();
+if (armored == false)
+   {  
+    scr_hit_by_projectile();
+   }
+else
+   {
+    scr_hit_by_projectile_armored();
+   }
 
 //Out of HP
 //scr_enemy_hp_zero();

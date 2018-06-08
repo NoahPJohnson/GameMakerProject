@@ -37,7 +37,7 @@ if (distance_to_object(obj_player) < 190 && (place_meeting(x,y+1,obj_boundary) |
         melee_dir = sign(obj_player.x - x);
         //   }
         //show_debug_message("Dir = " + string(dir));    
-        alarm[7] = room_speed * (155/60);
+        alarm[7] = room_speed * (55/60);
        }
    }
 else if (alarm[7] = -1 && alarm[8] > 0 && meleeAttack == true)

@@ -91,7 +91,7 @@ instance_destroy();
             <kind>1</kind>
             <string>///End Hitstop
 direction = round(struck_direction/10)*10;
-direction += choose(-10, 0, 10); 
+//direction += choose(-10, 0, 10); 
 speed = struck_speed;
    
 state = proj_state.struck;

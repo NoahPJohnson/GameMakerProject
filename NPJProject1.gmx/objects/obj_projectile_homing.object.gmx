@@ -92,7 +92,7 @@ if (target_object != noone)
        {
         if (target_object != noone)
            { 
-            limited_turn = max((25 * (distance_to_object(target_object)/350)), 5);
+            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
             //show_debug_message("Positive");
            }
        }
@@ -100,7 +100,7 @@ if (target_object != noone)
        {
         if (target_object != noone)
            {
-            limited_turn = max((25 * (distance_to_object(target_object)/350)), 5);
+            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
             limited_turn = -limited_turn;
             //show_debug_message("NEGATIVE");
            }       

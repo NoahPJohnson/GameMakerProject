@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_projectile</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,6 +32,10 @@ struck = false;
 impetus = 0;
 hitstun_direction = 0;
 
+damage_hitstop = false;
+hitstop = false;
+old_state = ball_n_chain_state.neutral;
+alarm_array[0] = -1;
 
 stop = false;
 center_X = 0;
@@ -93,39 +97,35 @@ state = ball_n_chain_state.neutral;
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-//if (damage_hitstop == false)
-//   {
-    //for (i = 0; i &lt; 9 i++)
-    //    {
-    //     if (alarm[i] != noone)
-    //        {
-    //         //show_debug_message("alarm_array: " + string(i) + " = "/* + string(alarm_array[i])*/);
-    //         alarm[i] = alarm_array[i];
-    //        }
-    //    }
-    //show_debug_message("Old State is " + string(old_state));
-    //hitstop = false;
-    //state = old_state;
-//   }
-//else
-//   {
+if (damage_hitstop == false)
+   {
+    speed = 0;
+    direction = 0;
+    for (i = 0; i &lt; 5 i++)
+        {
+         if (alarm[i] != noone)
+            {
+             if (i != 3)
+                {
+                 //show_debug_message("alarm_array: " + string(i) + " = "/* + string(alarm_array[i])*/);
+                 alarm[i] = alarm_array[i];
+                }
+            }
+        }
+    show_debug_message("BALL's old State is " + string(old_state));
+    hitstop = false;
+    damage_hitstop = false;
+    state = old_state;
+   }
+else
+   {
+    hitstop = false;
+    damage_hitstop = false;
     speed = (impetus * hitdir);
     direction = hitstun_direction;
-    alarm[4] = room_speed * (80/60);
+    alarm[4] = room_speed * (65/60);
     state = ball_n_chain_state.reversed;
-    /*if (old_state != e_state.crash)
-       {
-        alarm[1] = room_speed * (30/60);
-        hitstun = true;
-        scr_collision_bounce();
-        state = e_state.hitstun;
-       }
-    else
-       {
-        scr_collision_bounce();
-        state = e_state.crash;
-       }*/
-//   }
+   }
 </string>
           </argument>
         </arguments>
@@ -148,7 +148,8 @@ state = ball_n_chain_state.neutral;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>speed = 0;
+            <string>///End Stop
+speed = 0;
 direction = 0;
 radius = 80;
 stop = false;
@@ -174,7 +175,8 @@ stop = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//radius = 150;
+            <string>///Set Stop to true;
+//radius = 150;
 stop = true;
 </string>
           </argument>
@@ -237,7 +239,7 @@ switch (state)
              }
         case ball_n_chain_state.hitstop:
              {
-              scr_projectile_hitstop();
+              scr_ball_n_chain_hitstop();
               break;
              }
         case ball_n_chain_state.reversed: 

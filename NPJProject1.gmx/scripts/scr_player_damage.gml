@@ -159,6 +159,49 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
     melee_meeting.alarm[0] = 1;
    }
    
+//Hit by enemy ball n chain
+if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == false)
+   {
+    ball_meeting = instance_place(x,y, obj_enemy_ball_hitbox)
+    if (ball_meeting.state != ball_n_chain_state.reversed)
+       {
+        if (ball_meeting.x > x)
+           {
+            hitdir = -1;
+           } 
+        else
+           {
+            hitdir = 1;
+           }
+        hp -= 12;
+        if (iframes == false)
+           {
+            crouching = false;
+            charging = false;
+            chargeOne = false;
+            chargeTwo = false;
+            alarm[3] = -1;
+            alarm[4] = -1; 
+            
+            invincibility_time = 90;
+            knockback_time = 25;
+            knock_force = 6;
+            damage_hitstop = true;
+            show_debug_message("Hit by Ball n Chain");
+            alarm[11] = room_speed * (3/60);
+            
+            //Ball N Chain Hitstop
+            ball_meeting.damage_hitstop = false;
+            ball_meeting.alarm[3] = alarm[11];
+            ball_meeting.old_state = ball_meeting.state;
+            ball_meeting.state = ball_n_chain_state.hitstop;
+            
+            
+            state = states.hitstop;
+           }
+       }
+   }
+   
 //Hit by environment or other neutral damage
 if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = false)
    {

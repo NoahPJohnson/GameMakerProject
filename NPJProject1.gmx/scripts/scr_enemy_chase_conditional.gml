@@ -58,7 +58,7 @@ if (longRange == true)
         dir = sign(obj_player.x - x);
        }
      //If player gets too close, switch modes.
-    else if (distance_to_object(obj_player) < 170 && longRange == true && switched == false)
+    else if (distance_to_object(obj_player) < 100 && longRange == true && switched == false)
        {
         //show_debug_message("Too close: stop shooting and switch to close range");
         longRange = false;

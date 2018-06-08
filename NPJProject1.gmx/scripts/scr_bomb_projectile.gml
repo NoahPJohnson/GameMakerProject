@@ -162,6 +162,7 @@ if (place_meeting(x+hspeed, y+vspeed, obj_boundary) || place_meeting(x+hspeed, y
    {
     speed = 0;
     alarm[2] = 1;
+    show_debug_message("Hit the boundary.");
    }
 
 //Collision with Crashed Enemy   
@@ -173,6 +174,8 @@ if (place_meeting(x+hspeed, y+vspeed, obj_enemy))
         speed = 0;
         alarm[2] = 1;
        }
+    show_debug_message("Hit crashed enemy.");
    }
+show_debug_message("I'm still here!");
 
             

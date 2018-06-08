@@ -42,7 +42,7 @@ slope_mod = 2;
 //Attacks
 firing = false;
 first_shot = true;
-firSpeed = 40;
+firSpeed = 60;
 melee_dir = 0;
 meleeAttack = false;
 melee_hitbox = noone;
@@ -68,7 +68,7 @@ valid = false;
 mxspd = 40;
 hp = 5;
 hp_max = 5;
-crash_sprite = spr_enemy_crash;
+crash_sprite = spr_enemy_large_crash;
 cp = 3;
 cp_max = 3;
 
@@ -116,7 +116,7 @@ else
     direction = hitstun_direction;
     if (old_state != e_state.crash)
        {
-        alarm[1] = room_speed * (30/60);
+        alarm[1] = room_speed * (22/60);
         hitstun = true;
         scr_collision_bounce();
         state = e_state.hitstun;
@@ -336,13 +336,16 @@ state = e_state.idle;
             <string>///Stop and Prepare to Fire
 firing = true;
 hspd = 0;
-//projectile = instance_create(x,y-32, obj_projectile_bomb);
+projectile = instance_create(x,y-32, obj_projectile_bomb);
+//projectile.speed = 13 * (obj_player.x-x);
+//projectile.direction = 50 * (obj_player.x-x);
 //sprite_index = spr_player;
 //alarm[0] = 53;
 if (alarm[2] == -1)
    {  
-    alarm[2] = room_speed * (20/60);
+    alarm[2] = room_speed * (30/60);
    }
+show_debug_message("SHOOOOOOOOOT!!");
 </string>
           </argument>
         </arguments>
