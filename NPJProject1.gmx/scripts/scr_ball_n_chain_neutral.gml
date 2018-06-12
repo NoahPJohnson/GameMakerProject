@@ -35,4 +35,6 @@ if (place_meeting(x,y,obj_bunt_bat))
     //instance_destroy();*/
    }
 
+
+   
 scr_ball_hit_by_bat();

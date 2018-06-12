@@ -110,17 +110,19 @@ state = states.normal;
             <string>///End Player Hitstop
 if (damage_hitstop == false)
    {
+    show_debug_message("Player damage Hitstop is false");
     for (i = 0; i &lt; 11; i++)
         {
-         //show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
+         show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
          alarm[i] = alarm_array[i];
         }
-    //show_debug_message("player's Old State is " + string(old_state));
+    show_debug_message("player's Old State is " + string(old_state));
     hitstop = false;
     state = old_state;
    }
 else
    {
+    show_debug_message("player is coming out of damage hitstop.");
     if (alarm[7] == -1)
        {
         iframes = true; 
@@ -495,7 +497,7 @@ else
             mspd = 0;
             hspd = 0;
             jspd = 0;
-            alarm[0] = room_speed * (7/60);
+            alarm[0] = room_speed * (9/60);
            }     
                 
        }

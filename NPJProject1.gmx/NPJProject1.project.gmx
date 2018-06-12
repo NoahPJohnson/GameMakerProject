@@ -14,19 +14,6 @@
     <sprite>sprites\spr_boundary_slope_U</sprite>
     <sprite>sprites\spr_boundary_slope_UL</sprite>
     <sprite>sprites\spr_ball</sprite>
-    <sprite>sprites\spr_enemy</sprite>
-    <sprite>sprites\spr_enemy_crash</sprite>
-    <sprite>sprites\spr_enemy_smart</sprite>
-    <sprite>sprites\spr_enemy_jump</sprite>
-    <sprite>sprites\spr_enemy_large</sprite>
-    <sprite>sprites\spr_enemy_large_crash</sprite>
-    <sprite>sprites\spr_enemy_stationary</sprite>
-    <sprite>sprites\spr_enemy_stationary_B</sprite>
-    <sprite>sprites\spr_enemy_stationary_G</sprite>
-    <sprite>sprites\spr_enemy_stationary_R</sprite>
-    <sprite>sprites\spr_enemy_stationary_H</sprite>
-    <sprite>sprites\spr_enemy_stationary_crash</sprite>
-    <sprite>sprites\spr_projectile</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_player_iframes</sprite>
@@ -67,8 +54,27 @@
     <sprite>sprites\spr_enemy_melee</sprite>
     <sprite>sprites\spr_enemy_divekick_hitbox</sprite>
     <sprite>sprites\spr_anti_air_hitbox</sprite>
+    <sprite>sprites\spr_melee_hitbox_anti_air_2</sprite>
+    <sprite>sprites\spr_melee_hitbox_leap</sprite>
     <sprite>sprites\spr_explosion_hitbox</sprite>
     <sprite>sprites\spr_enemy_ball_hitbox</sprite>
+    <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
+    <sprites name="enemies">
+      <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_enemy_melee_focus</sprite>
+      <sprite>sprites\spr_enemy_crash</sprite>
+      <sprite>sprites\spr_enemy_smart</sprite>
+      <sprite>sprites\spr_enemy_jump</sprite>
+      <sprite>sprites\spr_enemy_large</sprite>
+      <sprite>sprites\spr_enemy_large_crash</sprite>
+      <sprite>sprites\spr_enemy_stationary</sprite>
+      <sprite>sprites\spr_enemy_stationary_B</sprite>
+      <sprite>sprites\spr_enemy_stationary_G</sprite>
+      <sprite>sprites\spr_enemy_stationary_R</sprite>
+      <sprite>sprites\spr_enemy_stationary_crash</sprite>
+      <sprite>sprites\spr_projectile</sprite>
+      <sprite>sprites\spr_enemy_stationary_H</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -100,6 +106,7 @@
       <script>scripts\scr_enemy_chase.gml</script>
       <script>scripts\scr_enemy_chase_large.gml</script>
       <script>scripts\scr_enemy_chase_conditional.gml</script>
+      <script>scripts\scr_enemy_chase_melee_focus.gml</script>
       <script>scripts\scr_enemy_stationary_triggered.gml</script>
       <script>scripts\scr_enemy_hp_zero.gml</script>
       <script>scripts\scr_hit_by_bat.gml</script>
@@ -116,6 +123,7 @@
       <script>scripts\scr_enemy_melee.gml</script>
       <script>scripts\scr_enemy_ball_melee.gml</script>
       <script>scripts\scr_melee_conditional.gml</script>
+      <script>scripts\scr_melee_focus.gml</script>
       <script>scripts\scr_hitstop.gml</script>
     </scripts>
     <scripts name="projectiles">
@@ -169,6 +177,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_enemy_large</object>
       <object>objects\obj_enemy_smart</object>
+      <object>objects\obj_enemy_melee_focus</object>
       <object>objects\obj_enemy_jump</object>
       <object>objects\obj_enemy_stationary</object>
       <object>objects\obj_enemy_stationary_G</object>
@@ -185,6 +194,9 @@
       <object>objects\obj_enemy_ball_hitbox</object>
       <object>objects\obj_enemy_divekick_hitbox</object>
       <object>objects\obj_anti_air_hitbox</object>
+      <object>objects\obj_melee_hitbox_anti_air_2</object>
+      <object>objects\obj_melee_hitbox_leap</object>
+      <object>objects\obj_melee_hitbox_long</object>
       <object>objects\obj_explosion_hitbox</object>
       <object>objects\obj_prop</object>
     </objects>
