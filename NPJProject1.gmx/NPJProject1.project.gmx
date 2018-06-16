@@ -61,6 +61,9 @@
     <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
     <sprites name="enemies">
       <sprite>sprites\spr_enemy</sprite>
+      <sprite>sprites\spr_enemy_range_focus</sprite>
+      <sprite>sprites\spr_enemy_flying</sprite>
+      <sprite>sprites\spr_enemy_flying_crash</sprite>
       <sprite>sprites\spr_enemy_melee_focus</sprite>
       <sprite>sprites\spr_enemy_crash</sprite>
       <sprite>sprites\spr_enemy_smart</sprite>
@@ -104,8 +107,10 @@
     <scripts name="enemy">
       <script>scripts\scr_enemy.gml</script>
       <script>scripts\scr_enemy_chase.gml</script>
+      <script>scripts\scr_enemy_chase_flying.gml</script>
       <script>scripts\scr_enemy_chase_large.gml</script>
       <script>scripts\scr_enemy_chase_conditional.gml</script>
+      <script>scripts\scr_enemy_chase_range_focus.gml</script>
       <script>scripts\scr_enemy_chase_melee_focus.gml</script>
       <script>scripts\scr_enemy_stationary_triggered.gml</script>
       <script>scripts\scr_enemy_hp_zero.gml</script>
@@ -175,8 +180,10 @@
     </objects>
     <objects name="enemies">
       <object>objects\obj_enemy</object>
+      <object>objects\obj_enemy_flying</object>
       <object>objects\obj_enemy_large</object>
       <object>objects\obj_enemy_smart</object>
+      <object>objects\obj_enemy_range_focus</object>
       <object>objects\obj_enemy_melee_focus</object>
       <object>objects\obj_enemy_jump</object>
       <object>objects\obj_enemy_stationary</object>
@@ -185,20 +192,30 @@
       <object>objects\obj_enemy_stationary_R</object>
       <object>objects\obj_enemy_stationary_H</object>
       <object>objects\obj_enemy_target</object>
-      <object>objects\obj_projectile</object>
-      <object>objects\obj_projectile_grenade</object>
-      <object>objects\obj_projectile_bomb</object>
-      <object>objects\obj_projectile_ricochet</object>
-      <object>objects\obj_projectile_homing</object>
-      <object>objects\obj_enemy_melee</object>
-      <object>objects\obj_enemy_ball_hitbox</object>
-      <object>objects\obj_enemy_divekick_hitbox</object>
-      <object>objects\obj_anti_air_hitbox</object>
-      <object>objects\obj_melee_hitbox_anti_air_2</object>
-      <object>objects\obj_melee_hitbox_leap</object>
-      <object>objects\obj_melee_hitbox_long</object>
-      <object>objects\obj_explosion_hitbox</object>
-      <object>objects\obj_prop</object>
+      <objects name="projectiles">
+        <object>objects\obj_projectile</object>
+        <object>objects\obj_projectile_grenade</object>
+        <object>objects\obj_projectile_bomb_2</object>
+        <object>objects\obj_projectile_bomb</object>
+        <object>objects\obj_projectile_ricochet</object>
+        <object>objects\obj_projectile_ricochet_spread</object>
+        <object>objects\obj_projectile_ricochet_spread_sub_1</object>
+        <object>objects\obj_projectile_ricochet_spread_sub_2</object>
+        <object>objects\obj_projectile_homing</object>
+      </objects>
+      <objects name="hitboxes">
+        <object>objects\obj_enemy_melee</object>
+        <object>objects\obj_enemy_ball_hitbox</object>
+        <object>objects\obj_enemy_divekick_hitbox</object>
+        <object>objects\obj_anti_air_hitbox</object>
+        <object>objects\obj_melee_hitbox_anti_air_2</object>
+        <object>objects\obj_melee_hitbox_leap</object>
+        <object>objects\obj_melee_hitbox_long</object>
+        <object>objects\obj_explosion_hitbox</object>
+      </objects>
+      <objects name="props">
+        <object>objects\obj_prop</object>
+      </objects>
     </objects>
     <object>objects\obj_boundary</object>
     <object>objects\obj_boundary_long</object>

@@ -41,6 +41,7 @@ if (enemy_parent.meleeAttack == true)
                    {
                     vspeed += 0.9;
                    }
+                
                 scr_ball_collision_bounce();
                }
            }

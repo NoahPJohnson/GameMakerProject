@@ -83,6 +83,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //show_debug_message("Hit slope L on wrong side. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
         //Heading toward the sloped part of Slope L
         else
@@ -94,6 +95,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //show_debug_message("Hit slope L. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));   
            }
        }
     else if (colliding_object.object_index == obj_boundary_slope_U)
@@ -276,6 +278,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
                {
                 speed = 0;
                }
+            //show_debug_message("Hit slope L. Vertical  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
         else
            {
@@ -293,6 +296,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
                {
                 speed = 0;
                }
+            //show_debug_message("Hit slope L on wrong side. Vertical.  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
        }
     else if (colliding_object.object_index == obj_boundary_slope_U)
@@ -314,6 +318,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
                {
                 speed = 0;
                }
+            //show_debug_message("Hit slope U. Vertical  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
         else
            {
@@ -331,6 +336,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
                {
                 speed = 0;
                }
+            //show_debug_message("Hit slope U on wrong side. Vertical.  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
        }
     else if (colliding_object.object_index == obj_boundary_slope_UL)

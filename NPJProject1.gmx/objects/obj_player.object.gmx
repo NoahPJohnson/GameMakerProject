@@ -540,7 +540,8 @@ else
     sprite_index = spr_player;
     up = false;
    }
-state = states.normal   
+state = states.normal;
+show_debug_message("Player Recovery is over.");   
 </string>
           </argument>
         </arguments>

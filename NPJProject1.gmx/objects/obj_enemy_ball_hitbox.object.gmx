@@ -175,7 +175,7 @@ stop = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Set Stop to true;
+            <string>///Set Stop to true
 //radius = 150;
 stop = true;
 </string>

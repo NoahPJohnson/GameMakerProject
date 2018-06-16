@@ -3,14 +3,17 @@ alarm[0] = -1;
 alarm[7] = -1;
 sprite_index = crash_sprite;
 
-if (!place_meeting(x,y+vspeed, obj_boundary))   
+//Bounce
+//scr_collision_bounce();
+
+if (!place_meeting(x,y+abs(vspeed),obj_boundary) && !place_meeting(x,y+abs(vspeed),obj_player))   
    {
     vspeed += 0.8;
    }
-else
-   {
-    vspeed += 0;
-   }   
+//else
+//   {
+    //vspeed += 0;
+//   }   
 
 //Friction
 if (place_meeting(x,y+1,obj_boundary))

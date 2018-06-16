@@ -345,7 +345,7 @@ if (alarm[2] == -1)
    {  
     alarm[2] = room_speed * (30/60);
    }
-show_debug_message("SHOOOOOOOOOT!!");
+//show_debug_message("SHOOOOOOOOOT!!");
 </string>
           </argument>
         </arguments>

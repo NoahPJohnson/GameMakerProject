@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_boundary</parentName>
+  <parentName>self</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -34,15 +34,7 @@ bunted = false;
 state = proj_state.normal;
 show_debug_message("Bomb is here!");
 //alarm[2] = room_speed * (90/60);
-speed = 11;
-if (obj_player.x &lt; x)
-       {
-        direction = 130;
-       }
-    else 
-       {
-        direction = 50;
-       } 
+
 
 </string>
           </argument>

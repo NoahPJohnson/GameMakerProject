@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_boundary</parentName>
+  <parentName>obj_projectile</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -32,17 +32,18 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-show_debug_message("Bomb is here!");
-//alarm[2] = room_speed * (90/60);
-speed = 11;
-if (obj_player.x &lt; x)
-       {
-        direction = 130;
-       }
-    else 
-       {
-        direction = 50;
-       } 
+speed = 7;
+direction = round(point_direction(x,y,obj_player.x,obj_player.y)/20)*20;
+instance_create(x,y,obj_projectile_ricochet_spread_sub_1);
+instance_create(x,y,obj_projectile_ricochet_spread_sub_2);
+//direction += choose(-30, -20, -10, 10, 20, 30);
+/*if (direction % 90 == 0)
+   {
+    direction += choose(-20, -10, 10, 20);
+   }*/
+
+alarm[2] = room_speed * (40/60);
+// move_towards_point(obj_player.x, obj_player.y, 5);
 
 </string>
           </argument>
@@ -66,8 +67,7 @@ if (obj_player.x &lt; x)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Detonate
-instance_create(x,y,obj_explosion_hitbox);
+            <string>///Destroy Projectile
 instance_destroy();
 </string>
           </argument>
@@ -92,8 +92,9 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-direction = struck_direction; 
-speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+direction = round(struck_direction/10)*10;
+//direction += choose(-10, 0, 10); 
+speed = struck_speed;
    
 state = proj_state.struck;
 </string>
@@ -123,12 +124,12 @@ switch (state)
        {
         case proj_state.normal: 
              {   
-              scr_bomb_projectile(); 
+              scr_ricochet_projectile(); 
               break;
              }
         case proj_state.struck: 
              {
-              scr_projectile_bomb_struck(); 
+              scr_projectile_struck(); 
               break;        
              }
         case proj_state.hitstop:

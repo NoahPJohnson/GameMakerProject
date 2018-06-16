@@ -25,7 +25,7 @@ if (place_meeting(x, y, obj_bat))
         state = proj_state.hitstop;
 
        }
-    alarm[2] += 30;
+    alarm[2] += 25;
     //Player Hitstop
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;

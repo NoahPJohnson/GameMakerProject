@@ -32,8 +32,8 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-alarm[2] = room_speed * (90/60);
-speed = 12;
+alarm[2] = room_speed * (75/60);
+speed = 14;
 if (distance_to_object(obj_player) &lt; 180)
    {
     if (obj_player.x &lt; x)
@@ -49,22 +49,48 @@ else if (distance_to_object(obj_player) &lt; 340)
    {
     if (obj_player.x &lt; x)
        {
+        if (obj_player.y &lt; y -32)
+           {
+            speed += 2;
+           }
         direction = 120;
        }
     else 
        {
+        if (obj_player.y &lt; y -32)
+           {
+            speed += 2;
+           }
         direction = 60;
        } 
    }
-else
+else //if (distance_to_object(obj_player) &lt; 400)
    {
     if (obj_player.x &lt; x)
        {
-        direction = 135;
+        //direction = 135;
+        if (obj_player.y &lt; y -32)
+           {
+            speed += 2;
+            direction = 125;
+           }
+        else
+           {
+            direction = 135;
+           }
        }
     else 
        {
-        direction = 45;
+        //direction = 45;
+        if (obj_player.y &lt; y -32)
+           {
+            speed += 2;
+            direction = 55;
+           }
+        else
+           {
+            direction = 45;
+           }
        } 
    }
 

@@ -1,5 +1,6 @@
 ///Projectile Normal
-vspeed += 0.8;
+vspeed += 0.6;
+vspeed = clamp(vspeed,-8,8);
 //Collision with Bat
 if (place_meeting(x, y, obj_bat))
    {
@@ -25,7 +26,7 @@ if (place_meeting(x, y, obj_bat))
         state = proj_state.hitstop;
 
        }
-    alarm[2] += 30;
+    //alarm[2] += 30;
     //Player Hitstop
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
@@ -64,7 +65,7 @@ if (place_meeting(x, y, obj_bat_launcher))
         state = proj_state.hitstop;
        }
     //Player Hitstop
-    alarm[2] += 30;
+    //alarm[2] += 30;
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
     obj_player.alarm[11] = alarm[0];
@@ -101,7 +102,7 @@ if (place_meeting(x, y, obj_bat_spike))
         state = proj_state.hitstop;
 
        }
-    alarm[2] += 30;
+    //alarm[2] += 30;
     //Player Hitstop
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
@@ -176,6 +177,6 @@ if (place_meeting(x+hspeed, y+vspeed, obj_enemy))
        }
     show_debug_message("Hit crashed enemy.");
    }
-show_debug_message("I'm still here!");
+//show_debug_message("I'm still here!");
 
             
