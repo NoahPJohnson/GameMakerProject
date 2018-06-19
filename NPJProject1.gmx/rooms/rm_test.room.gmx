@@ -47,6 +47,11 @@ enum ball_n_chain_state
       attacking,
       hitstop,
       reversed
+     }
+enum shield_state
+     {
+      active,
+      hitstop
      }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
