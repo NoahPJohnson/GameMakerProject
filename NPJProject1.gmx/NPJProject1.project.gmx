@@ -159,6 +159,7 @@
     <script>scripts\scr_camera_lock_on.gml</script>
     <script>scripts\scr_ball_n_chain_neutral.gml</script>
     <script>scripts\scr_shield.gml</script>
+    <script>scripts\scr_shield_hit_by_bat.gml</script>
     <script>scripts\scr_ball_n_chain_attacking.gml</script>
     <script>scripts\scr_ball_n_chain_reversed.gml</script>
     <script>scripts\scr_ball_hit_by_bat.gml</script>
@@ -222,7 +223,7 @@
         <object>objects\obj_melee_hitbox_anti_air_2</object>
         <object>objects\obj_melee_hitbox_leap</object>
         <object>objects\obj_melee_hitbox_long</object>
-        <object>objects\obj_enemy_hitbox_long_2</object>
+        <object>objects\obj_melee_hitbox_long_2</object>
         <object>objects\obj_explosion_hitbox</object>
       </objects>
       <objects name="props">

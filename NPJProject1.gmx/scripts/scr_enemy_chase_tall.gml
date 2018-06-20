@@ -8,29 +8,37 @@ if (obj_player.state == states.knockback)
    }
    
 vspd = (min(7, vspd + grv));
-if (/*alarm[7] = -1 && */alarm[8] = -1)
+if (alarm[7] = -1 && alarm[8] = -1)
    {
-    if (obj_player.sliding == false && jumping_type == false)
+    if (obj_player.sliding == false)
        {
-        if (abs(obj_player.y - y) < 170)
-           {
+        //if (abs(obj_player.y - y) < 170)
+        //   {
             
-            if (abs((obj_player.x+150) - x) < abs((obj_player.x-150) - x))
+            if (abs((obj_player.x+180) - x) < abs((obj_player.x-180) - x))
                {
-                dir = sign(sign(floor(obj_player.x+150) - x) + sign(floor(obj_player.x+160) - x));
+                dir = sign(sign(floor(obj_player.x+170) - x) + sign(floor(obj_player.x+180) - x));
                 
                 //show_debug_message("direction = " + string(dir));
                }
             else
                {
-                dir = sign(sign(floor(obj_player.x-150) - x) + sign(floor(obj_player.x-160) - x));
+                dir = sign(sign(floor(obj_player.x-170) - x) + sign(floor(obj_player.x-180) - x));
                 //show_debug_message("DIRECTION = " + string(dir));
                }
-           }
-        else
-           {
-            dir = sign((obj_player.x) - x);
-           } 
+        //   }
+        //else
+        //   {
+        //    dir = sign((obj_player.x) - x);
+        //   } 
+       }
+       
+    if (distance_to_object(obj_player) < 130)
+       {
+        dir = 0;
+        //alarm[0] = -1;
+        //alarm[2] = -1;
+        //firing = false;
        }
     if (firing == false)
        {
@@ -41,7 +49,7 @@ if (/*alarm[7] = -1 && */alarm[8] = -1)
    } 
 if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
    {
-    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
        {
         alarm[0] = room_speed * ((firSpeed/60) / (1+first_shot));
         first_shot = false; 
@@ -72,26 +80,55 @@ if (distance_to_object(obj_player) > 590)
     firing = false;
     state = e_state.idle;
    }
-   
-/*if (distance_to_object(obj_player) < 150)
-   {
-    alarm[0] = -1;
-    alarm[2] = -1;
-    firing = false;
-   }*/
+
    
 //Melee Attack
-scr_enemy_ball_melee();
+scr_enemy_tall_melee();
   
 //Valid Target
 scr_enemy_targeted();
    
-//Hit by the Bat  
-scr_hit_by_bat();
+if (shield != noone)
+   {
+    if (shield.sprite_index == spr_enemy_shield_L && obj_player.x > shield.x)
+       {
+        show_debug_message("Player is to the right of shield L");
+        //Hit by the Bat  
+        scr_hit_by_bat();
 
+        //Hit by a Projectile 
+        //scr_hit_by_projectile();
+       }
+    else if (shield.sprite_index == spr_enemy_shield_Up && obj_player.y > shield.y)
+       {
+        show_debug_message("Player is below shield Up");
+        //Hit by the Bat  
+        scr_hit_by_bat();
+
+        //Hit by a Projectile 
+        //scr_hit_by_projectile();
+       }
+    else if (shield.sprite_index == spr_enemy_shield_R && obj_player.x < shield.x)
+       {
+        show_debug_message("Player is to the left of shield R");
+        //Hit by the Bat  
+        scr_hit_by_bat();
+
+        //Hit by a Projectile 
+        //scr_hit_by_projectile();
+       }
+   }
+else
+   {
+    //Hit by the Bat  
+    scr_hit_by_bat();
+
+    //Hit by a Projectile 
+    //scr_hit_by_projectile();
+   }
+   
 //Hit by a Projectile 
 scr_hit_by_projectile();
-
 //Out of HP
 //scr_enemy_hp_zero();
 

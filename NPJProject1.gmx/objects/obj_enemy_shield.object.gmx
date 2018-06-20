@@ -32,17 +32,19 @@ struck = false;
 impetus = 0;
 hitstun_direction = 0;
 
+old_sprite = sprite_index;
+
 damage_hitstop = false;
 hitstop = false;
-old_state = ball_n_chain_state.neutral;
+old_state = shield_state.active;
 alarm_array[0] = -1;
 
 stop = false;
-center_X = 0;
-center_Y = 0;
+old_X = 0;
+old_Y = 0;
 
 //0 = left, 1 = up, 2 = right 
-guard_position = 0;
+guard_position = 2;
 //ANGLE_INCREMENT = 7;
 //radius = point_distance(center_X, center_Y, x, y);
 //phase = point_direction(center_X, center_Y, x, y);
@@ -114,7 +116,7 @@ if (damage_hitstop == false)
                 }
             }
         }
-    show_debug_message("BALL's old State is " + string(old_state));
+    show_debug_message("shield's old State is " + string(old_state));
     hitstop = false;
     damage_hitstop = false;
     state = old_state;
@@ -123,10 +125,7 @@ else
    {
     hitstop = false;
     damage_hitstop = false;
-    speed = (impetus * hitdir);
-    direction = hitstun_direction;
-    alarm[4] = room_speed * (65/60);
-    state = ball_n_chain_state.reversed;
+    instance_destroy();
    }
 </string>
           </argument>
@@ -180,27 +179,49 @@ stop = false;
             <string>///Change Guard Position
 if (guard_position == 0)
    {
+    show_debug_message("Change it to shield L!");
+    //object_set_sprite(self,spr_enemy_shield_L);
     sprite_index = spr_enemy_shield_L;
    }
 else if (guard_position == 1)
    {
+    //object_set_sprite(self,spr_enemy_shield_Up);
     sprite_index = spr_enemy_shield_Up;
    }
 else if (guard_position == 2)
    {
+    //object_set_sprite(self,spr_enemy_shield_R);
     sprite_index = spr_enemy_shield_R;
    }
    
-if (place_meeting(x,y,obj_player))
+    if (sprite_index == spr_enemy_shield_L)
+       {
+        //sprite_index = spr_enemy_shield_L;
+        x = enemy_parent.x - 48;
+        y = enemy_parent.y-48;
+       }
+    else if (sprite_index == spr_enemy_shield_Up)
+       {
+        //sprite_index = spr_enemy_shield_Up;
+        x = enemy_parent.x;
+        y = enemy_parent.y-48;
+       }
+    else if (sprite_index == spr_enemy_shield_R)
+       {
+        //sprite_index = spr_enemy_shield_R;
+        x = enemy_parent.x + 48;
+        y = enemy_parent.y-48;
+       }
+/*if (place_meeting(x,y,obj_player))
    {
-    show_debug_message("Shield Avoid Overlap.")
+    show_debug_message("Shield Avoid Overlap 2.")
     guard_position -= 1;
     if (guard_position &lt; 0)
        {
         guard_position = 1;
        }
     alarm[1] = 1;
-   }
+   }*/
 </string>
           </argument>
         </arguments>
