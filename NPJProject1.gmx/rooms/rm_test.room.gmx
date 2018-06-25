@@ -52,6 +52,11 @@ enum shield_state
      {
       active,
       hitstop
+     }
+enum enemy_spawner_state
+     {
+      idle,
+      active
      }</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

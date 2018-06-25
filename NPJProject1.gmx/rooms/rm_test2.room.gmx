@@ -110,7 +110,7 @@ enum camera_state
     <instance objName="obj_boundary_slope_U" x="896" y="992" name="inst_458A0C55" locked="0" code="" scaleX="0.00999999977648258" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_U" x="896" y="1024" name="inst_147FDCD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_U" x="864" y="992" name="inst_FBA2E332" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_slope_U" x="832" y="960" name="inst_C6EDB87C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_slope_U" x="864" y="960" name="inst_C6EDB87C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="1152" y="992" name="inst_909CF138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="1184" y="960" name="inst_59726D04" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="1184" y="320" name="inst_8D0947EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -815,7 +815,7 @@ enum camera_state
     <instance objName="obj_boundary" x="0" y="800" name="inst_2C2B1135" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="0" y="832" name="inst_1AC1DF96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pause_object" x="96" y="1472" name="inst_24CE9142" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_slope_L" x="672" y="1088" name="inst_5A33832F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_slope_L" x="672" y="1120" name="inst_5A33832F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_stationary_H" x="3584" y="768" name="inst_991BB83F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_stationary_H" x="7520" y="1024" name="inst_7BC1D941" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_smart" x="3264" y="1024" name="inst_C9A2EC9B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -838,7 +838,33 @@ enum camera_state
     <instance objName="obj_boundary" x="4576" y="800" name="inst_262D93E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4608" y="480" name="inst_B85CF293" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4608" y="640" name="inst_646D93E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_tall" x="608" y="1056" name="inst_D70C81D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="928" name="inst_80A5FC7C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="896" name="inst_48B42A3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="864" name="inst_618E1AEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="832" name="inst_19B05AB5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="800" name="inst_875B5DE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="768" name="inst_B6ED3DDA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="192" y="736" name="inst_9BA57CD0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="672" y="1088" name="inst_EA579989" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="704" y="1088" name="inst_9F1E05D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="736" y="1088" name="inst_B88BEE4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="768" y="1088" name="inst_2003F251" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="800" y="1088" name="inst_527D35CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="832" y="1056" name="inst_EDF8938B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="832" y="1024" name="inst_77A2463A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="832" y="992" name="inst_50A553A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="832" y="960" name="inst_53704EFA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_long" x="192" y="704" name="inst_7CA74A68" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner" x="768" y="928" name="inst_A80AF1BB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner_barrier" x="192" y="960" name="inst_E8989489" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner_barrier" x="192" y="992" name="inst_CD7DA46A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner_barrier" x="192" y="1056" name="inst_66D6FDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner_barrier" x="192" y="1024" name="inst_012737DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_spawner_trigger" x="256" y="960" name="inst_5827C330" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_slope_UL" x="224" y="960" name="inst_7F4BE5A1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="224" y="928" name="inst_66AE074D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="224" y="896" name="inst_9F14410C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_slope_L" x="224" y="864" name="inst_0923B7F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

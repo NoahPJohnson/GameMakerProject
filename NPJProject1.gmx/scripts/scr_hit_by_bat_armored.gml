@@ -222,4 +222,62 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
     alarm[9] = room_speed * (5/60);
     damage_hitstop = true;
     state = e_state.hitstop;
-   }              
+   }     
+   
+//Environment Damage  
+if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
+   {
+    hitdir = 1;
+    hp -= 1;
+    scr_enemy_hp_zero();
+    old_speed = 0;
+    impetus = 13;
+    hitstun_direction = 90;
+    old_state = state;
+    alarm[7] = -1;
+    alarm[9] = room_speed * (5/60);
+    damage_hitstop = true;
+    state = e_state.hitstop;
+   }
+if (place_meeting(x,y,obj_spike_wall_L) && hitstun == false)
+   {
+    hitdir = 1;
+    hp -= 1;
+    scr_enemy_hp_zero();
+    old_speed = 0;
+    impetus = 11;
+    hitstun_direction = 35;
+    old_state = state;
+    alarm[7] = -1;
+    alarm[9] = room_speed * (5/60);
+    damage_hitstop = true;
+    state = e_state.hitstop;
+   }
+if (place_meeting(x,y,obj_spike_wall_R) && hitstun == false)
+   {
+    hitdir = 1;
+    hp -= 1;
+    scr_enemy_hp_zero();
+    old_speed = 0;
+    impetus = 11;
+    hitstun_direction = 145;
+    old_state = state;
+    alarm[7] = -1;
+    alarm[9] = room_speed * (5/60);
+    damage_hitstop = true;
+    state = e_state.hitstop;
+   }
+if (place_meeting(x,y,obj_spike_ceiling) && hitstun == false)
+   {
+    hitdir = 1;
+    hp -= 1;
+    scr_enemy_hp_zero();
+    old_speed = 0;
+    impetus = 9;
+    hitstun_direction = 270;
+    old_state = state;
+    alarm[7] = -1;
+    alarm[9] = room_speed * (5/60);
+    damage_hitstop = true;
+    state = e_state.hitstop;
+   }                     

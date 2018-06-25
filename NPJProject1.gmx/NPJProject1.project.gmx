@@ -84,6 +84,13 @@
       <sprite>sprites\spr_enemy_tall</sprite>
       <sprite>sprites\spr_enemy_tall_crash</sprite>
     </sprites>
+    <sprite>sprites\spr_spike_floor</sprite>
+    <sprite>sprites\spr_spike_wall_L</sprite>
+    <sprite>sprites\spr_spike_wall_R</sprite>
+    <sprite>sprites\spr_spike_ceiling</sprite>
+    <sprite>sprites\spr_enemy_spawner</sprite>
+    <sprite>sprites\spr_enemy_spawner_barrier</sprite>
+    <sprite>sprites\spr_enemy_spawner_trigger</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -165,6 +172,8 @@
     <script>scripts\scr_ball_hit_by_bat.gml</script>
     <script>scripts\scr_ball_n_chain_hitstop.gml</script>
     <script>scripts\scr_ball_collision_bounce.gml</script>
+    <script>scripts\scr_enemy_spawner_active.gml</script>
+    <script>scripts\scr_enemy_spawner_idle.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="player">
@@ -228,6 +237,10 @@
       </objects>
       <objects name="props">
         <object>objects\obj_prop</object>
+        <object>objects\obj_spike_floor</object>
+        <object>objects\obj_spike_wall_L</object>
+        <object>objects\obj_spike_wall_R</object>
+        <object>objects\obj_spike_ceiling</object>
       </objects>
     </objects>
     <object>objects\obj_boundary</object>
@@ -241,6 +254,11 @@
     <object>objects\obj_Game_Over_Quit</object>
     <object>objects\obj_camera_control</object>
     <object>objects\obj_pause_object</object>
+    <objects name="spawners">
+      <object>objects\obj_enemy_spawner</object>
+      <object>objects\obj_enemy_spawner_barrier</object>
+      <object>objects\obj_enemy_spawner_trigger</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test2</room>
