@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>hit = false;
+            <string>//show_debug_message("Whyyyyy?!");
+hit = false;
 alarm[0] = room_speed * (4/60);
 
 </string>

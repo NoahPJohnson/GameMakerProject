@@ -21,7 +21,7 @@
        }
    }  */
 
-if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
+if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false && invincibility_active == false)
    {   
     projectile_meeting = instance_place(x,y, obj_projectile)
     if (projectile_meeting.struck == false)
@@ -87,7 +87,7 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false)
         projectile_meeting.state = proj_state.destroyed;
        }    
    }
-else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == true))
+else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == true || invincibility_active == true))
    {
     //A little bit of hitstop for sliding by projectile 
     projectile_meeting = instance_place(x,y, obj_projectile)
@@ -102,7 +102,7 @@ else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == 
    }
 
 //Hit by melee attack   
-if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
+if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false && invincibility_active == false)
    {   
     melee_meeting = instance_place(x,y, obj_enemy_melee);
     if (melee_meeting.x > x)
@@ -160,7 +160,7 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false)
    }
    
 //Hit by enemy ball n chain
-if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == false)
+if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == false && invincibility_active == false)
    {
     ball_meeting = instance_place(x,y, obj_enemy_ball_hitbox)
     if (ball_meeting.state != ball_n_chain_state.reversed)
@@ -203,7 +203,7 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == 
    }
    
 //Hit by explosion
-if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = false)
+if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = false && invincibility_active == false)
    {
     if (!collision_line(x,y,obj_explosion_hitbox.x,obj_explosion_hitbox.y,obj_boundary,false,true))
        {
@@ -243,7 +243,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
        }
    }
 //Hit by environment or other neutral damage
-if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false)
+if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false && invincibility_active == false)
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 0;
@@ -270,7 +270,7 @@ if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false)
             state = states.hitstop;         
            }
    }
-if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false)
+if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false && invincibility_active == false)
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 1;
@@ -297,7 +297,7 @@ if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false)
             state = states.hitstop;         
            }
    }
-if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false)
+if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false && invincibility_active == false)
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = -1;
@@ -324,7 +324,7 @@ if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false)
             state = states.hitstop;         
            }
    }
-if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false)
+if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false && invincibility_active == false)
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 0;

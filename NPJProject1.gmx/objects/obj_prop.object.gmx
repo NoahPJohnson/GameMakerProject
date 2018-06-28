@@ -47,6 +47,7 @@ meleeAttack = false;
 hit = false;
 hitdir = 0;
 impetus = 1;
+weight_factor = 1;
 hitstun = false;
 stopped = true;
 valid = false;

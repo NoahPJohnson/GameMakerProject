@@ -10,6 +10,12 @@ key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_relea
 //key_J_held = keyboard_check(vk_space);
 
 mve = key_L + key_R;
+
+//Powerup
+if (constant_charge_active == true)
+   {
+    chargeTwo = true;
+   }
 //Direction      
 if (mve = 1)
    {

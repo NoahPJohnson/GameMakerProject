@@ -1,5 +1,5 @@
 ///Collision Bounce
-if (place_meeting(x,y,obj_boundary))
+if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping before ANY collision. ID = " + string(instance_place(x,y,obj_boundary)));
    }
@@ -165,7 +165,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        }
    }
 
-if (place_meeting(x,y,obj_boundary))
+if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping before vertical collision");
    }
@@ -400,7 +400,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
    }
 
    
-if (place_meeting(x,y,obj_boundary))
+if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping!!");
    }

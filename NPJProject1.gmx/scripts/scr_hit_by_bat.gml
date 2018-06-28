@@ -14,7 +14,7 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
     scr_enemy_hp_zero();
     old_speed = speed;
-    impetus = 13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
+    impetus = (13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7)) * weight_factor;
     hitstun_direction = 0;
     old_state = state;
     alarm[7] = -1;
@@ -63,7 +63,7 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
     scr_enemy_hp_zero();
     old_speed = speed;
-    impetus = 13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7);
+    impetus = (13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7)) * weight_factor;
     hitstun_direction = (90-(obj_player.chargeOne*10)-(obj_player.chargeTwo*20)) * hitdir;
     old_state = state;
     alarm[7] = -1;
@@ -111,14 +111,14 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
     old_speed = speed;
     if (hitstun == false && place_meeting(x,y+1, obj_boundary))
        {
-        impetus = 7;
+        impetus = 7 * weight_factor;
         hitstun_direction = 60 * hitdir;
         //speed = (abs(speed) * hitdir) + (impetus * hitdir);
         //direction = 60 * hitdir;
        }
     else
        {
-        impetus = 7;
+        impetus = 7 * weight_factor;
         hitstun_direction = -60 * hitdir;
         //speed = (abs(speed) * hitdir) + (impetus * hitdir);
         //direction = -60 * hitdir;
@@ -196,7 +196,7 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
     hp -= 1;
     scr_enemy_hp_zero();
     old_speed = 0;
-    impetus = 5;
+    impetus = 5 * weight_factor;
     hitstun_direction = 20 * hitdir;
     old_state = state;
     alarm[7] = -1;
@@ -238,7 +238,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
     hp -= 1;
     scr_enemy_hp_zero();
     old_speed = 0;
-    impetus = 19;
+    impetus = 19 * weight_factor;
     hitstun_direction = 75 * hitdir;
     old_state = state;
     alarm[7] = -1;

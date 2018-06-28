@@ -82,6 +82,12 @@ dash_speed = 12;
 drive = false;
 dashJump = false;
 
+//Powerups
+big_bat_active = false;
+invincibility_active = false;
+infinite_stamina_active = false;
+constant_charge_active = false;
+
 //State
 state = states.normal;
    
@@ -335,8 +341,16 @@ else
             <string>///Air Spike
 if (right = true)
    {
-    instance_create(x+16,y+32,obj_hit_cone_spike);
-    spike = instance_create(x,y,obj_bat_spike);
+    if (big_bat_active == false)
+       {
+        instance_create(x+16,y+32,obj_hit_cone_spike);
+        spike = instance_create(x,y,obj_bat_spike);
+       }
+    else
+       {
+        instance_create(x+16,y+32,obj_hit_cone_spike);
+        spike = instance_create(x,y,obj_spike_big);
+       }
     swinging = false;
     recovery = true;
     if (alarm[6] = -1)
@@ -353,8 +367,16 @@ if (right = true)
 
 else
    {
-    instance_create(x-16,y+32,obj_hit_cone_spike_L);
-    spike = instance_create(x,y,obj_bat_spike_L)
+    if (big_bat_active == false)
+       {
+        instance_create(x-16,y+32,obj_hit_cone_spike_L);
+        spike = instance_create(x,y,obj_bat_spike_L);
+       }
+    else
+       {
+        instance_create(x-16,y+32,obj_hit_cone_spike_L);
+        spike = instance_create(x,y,obj_spike_L_big);
+       }
     swinging = false;
     recovery = true;
     if (alarm[6] = -1)
@@ -569,22 +591,48 @@ if (right = true)
    {
     if (up = true &amp;&amp; right = true or key_U_held &amp;&amp; right = true)
        {
-        instance_create(x+16,y-32, obj_hit_cone_launcher);
-        instance_create(x,y,obj_bat_launcher);
+        if (big_bat_active == false)
+           {
+            show_debug_message("launcher");
+            instance_create(x+16,y-32, obj_hit_cone_launcher);
+            instance_create(x,y,obj_bat_launcher);
+           }
+        else
+           {
+            show_debug_message("big launcher");
+            instance_create(x+16,y-32, obj_hit_cone_launcher);
+            instance_create(x,y,obj_bat_launcher_big);
+           }
         jspd = jump;
         state = states.normal
        }
     else if (right = false) 
        {
-        instance_create(x-16,y-32, obj_hit_cone_launcher_L);
-        instance_create(x,y,obj_bat_launcher_L);
+        if (big_bat_active == false)
+           {
+            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
+            instance_create(x,y,obj_bat_launcher_L);
+           }
+        else
+           {
+            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
+            instance_create(x,y,obj_bat_launcher_L_big);
+           }
         jspd = jump;
         state = states.normal
        }
     else
        {
-        instance_create(x+16,y, obj_hit_cone);
-        instance_create(x,y,obj_bat)
+        if (big_bat_active == false)
+           {
+            instance_create(x+16,y, obj_hit_cone);
+            instance_create(x,y,obj_bat);
+           }
+        else
+           {
+            instance_create(x+16,y, obj_hit_cone);
+            instance_create(x,y,obj_bat_big);
+           }
        }
     swinging = false;
     recovery = true;
@@ -599,22 +647,49 @@ else
    {
     if (up = true &amp;&amp; right = false or key_U_held &amp;&amp; right = false)
        {
-        instance_create(x-16,y-32, obj_hit_cone_launcher_L);
-        instance_create(x,y,obj_bat_launcher_L);
+        if (big_bat_active == false)
+           {
+            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
+            instance_create(x,y,obj_bat_launcher_L);
+           }
+        else
+           {
+            
+            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
+            instance_create(x,y,obj_bat_launcher_L_big);
+           }
         jspd = jump;
         state = states.normal;
        }
     else if (right = true) 
        {
-        instance_create(x+16,y-32, obj_hit_cone_launcher);
-        instance_create(x,y,obj_bat_launcher);
+        if (big_bat_active == false)
+           {
+            show_debug_message("launcher 2");
+            instance_create(x+16,y-32, obj_hit_cone_launcher);
+            instance_create(x,y,obj_bat_launcher);
+           }
+        else
+           {
+            show_debug_message("big launcher 2");
+            instance_create(x+16,y-32, obj_hit_cone_launcher);
+            instance_create(x,y,obj_bat_launcher_big);
+           }
         jspd = jump;
         state = states.normal
        }
     else
        {
-        instance_create(x-16,y, obj_hit_cone_L);
-        instance_create(x,y,obj_bat)
+        if (big_bat_active == false)
+           {
+            instance_create(x-16,y, obj_hit_cone_L);
+            instance_create(x,y,obj_bat);
+           }
+        else
+           {
+            instance_create(x-16,y, obj_hit_cone_L);
+            instance_create(x,y,obj_bat_big);
+           }
        }
     swinging = false;
     recovery = true;

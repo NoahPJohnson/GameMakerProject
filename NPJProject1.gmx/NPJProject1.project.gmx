@@ -35,8 +35,13 @@
       </sprites>
       <sprites name="player bat">
         <sprite>sprites\spr_bat</sprite>
+        <sprite>sprites\spr_bat_big</sprite>
         <sprite>sprites\spr_spike</sprite>
+        <sprite>sprites\spr_spike_big</sprite>
+        <sprite>sprites\spr_spike_L_big</sprite>
         <sprite>sprites\spr_launcher2</sprite>
+        <sprite>sprites\spr_launcher_big</sprite>
+        <sprite>sprites\spr_launcher_L_big</sprite>
         <sprite>sprites\spr_launcher_L</sprite>
         <sprite>sprites\spr_spike_L</sprite>
         <sprite>sprites\spr_bunt_bat</sprite>
@@ -51,18 +56,6 @@
       <sprite>sprites\spr_hit_cone_spike_L</sprite>
       <sprite>sprites\spr_test</sprite>
     </sprites>
-    <sprite>sprites\spr_enemy_melee</sprite>
-    <sprite>sprites\spr_enemy_divekick_hitbox</sprite>
-    <sprite>sprites\spr_anti_air_hitbox</sprite>
-    <sprite>sprites\spr_melee_hitbox_anti_air_2</sprite>
-    <sprite>sprites\spr_melee_hitbox_leap</sprite>
-    <sprite>sprites\spr_explosion_hitbox</sprite>
-    <sprite>sprites\spr_enemy_ball_hitbox</sprite>
-    <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
-    <sprite>sprites\spr_enemy_melee_hitbox_long_2</sprite>
-    <sprite>sprites\spr_enemy_shield_L</sprite>
-    <sprite>sprites\spr_enemy_shield_R</sprite>
-    <sprite>sprites\spr_enemy_shield_Up</sprite>
     <sprites name="enemies">
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_enemy_range_focus</sprite>
@@ -84,6 +77,20 @@
       <sprite>sprites\spr_enemy_tall</sprite>
       <sprite>sprites\spr_enemy_tall_crash</sprite>
     </sprites>
+    <sprites name="hitboxes">
+      <sprite>sprites\spr_enemy_melee</sprite>
+      <sprite>sprites\spr_enemy_divekick_hitbox</sprite>
+      <sprite>sprites\spr_anti_air_hitbox</sprite>
+      <sprite>sprites\spr_melee_hitbox_anti_air_2</sprite>
+      <sprite>sprites\spr_melee_hitbox_leap</sprite>
+      <sprite>sprites\spr_enemy_melee_hitbox_long_2</sprite>
+      <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
+      <sprite>sprites\spr_explosion_hitbox</sprite>
+      <sprite>sprites\spr_enemy_ball_hitbox</sprite>
+      <sprite>sprites\spr_enemy_shield_L</sprite>
+      <sprite>sprites\spr_enemy_shield_R</sprite>
+      <sprite>sprites\spr_enemy_shield_Up</sprite>
+    </sprites>
     <sprite>sprites\spr_spike_floor</sprite>
     <sprite>sprites\spr_spike_wall_L</sprite>
     <sprite>sprites\spr_spike_wall_R</sprite>
@@ -91,6 +98,11 @@
     <sprite>sprites\spr_enemy_spawner</sprite>
     <sprite>sprites\spr_enemy_spawner_barrier</sprite>
     <sprite>sprites\spr_enemy_spawner_trigger</sprite>
+    <sprite>sprites\spr_powerup_health</sprite>
+    <sprite>sprites\spr_powerup_charge</sprite>
+    <sprite>sprites\spr_powerup_infinite_stamina</sprite>
+    <sprite>sprites\spr_powerup_invincibility</sprite>
+    <sprite>sprites\spr_powerup_big_bat</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -180,10 +192,15 @@
       <object>objects\obj_player</object>
       <objects name="bats">
         <object>objects\obj_bat</object>
+        <object>objects\obj_bat_big</object>
         <object>objects\obj_bat_launcher</object>
         <object>objects\obj_bat_launcher_L</object>
+        <object>objects\obj_bat_launcher_big</object>
+        <object>objects\obj_bat_launcher_L_big</object>
         <object>objects\obj_bat_spike</object>
         <object>objects\obj_bat_spike_L</object>
+        <object>objects\obj_spike_big</object>
+        <object>objects\obj_spike_L_big</object>
         <object>objects\obj_bunt_bat</object>
       </objects>
     </objects>
@@ -259,6 +276,12 @@
       <object>objects\obj_enemy_spawner_barrier</object>
       <object>objects\obj_enemy_spawner_trigger</object>
     </objects>
+    <object>objects\obj_powerup_health</object>
+    <object>objects\obj_powerup_big_bat</object>
+    <object>objects\obj_powerup_invincibility</object>
+    <object>objects\obj_powerup_infinite_stamina</object>
+    <object>objects\obj_powerup_charge</object>
+    <object>objects\obj_powerup_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_test2</room>

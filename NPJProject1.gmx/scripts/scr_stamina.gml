@@ -18,6 +18,10 @@ if (sp > sp_max)
    {
     sp = sp_max;
    }
+if (infinite_stamina_active == true)
+   {
+    sp = sp_max;
+   }
 /*if (sp < 10 && sp_regain_rate > 0.1)
    {
     sp_regain_rate = 0.1;

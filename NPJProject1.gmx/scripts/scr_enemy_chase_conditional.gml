@@ -45,7 +45,7 @@ else if (dir == 1)
 //Fire when in long range mode
 if (longRange == true)
    {
-    sprite_index = spr_enemy_smart;
+    //sprite_index = spr_enemy_smart;
     chsSpeed = chsSpeed_LR;
     //If player gets too far
     if (distance_to_object(obj_player) > 380 && longRange == true)
@@ -102,7 +102,7 @@ if (longRange == true)
    }    
 else
    {
-    sprite_index = spr_enemy_jump;
+    //sprite_index = spr_enemy_jump;
     if (obj_player.sliding = false)
        {
         if (abs((obj_player.x+120) - x) < abs((obj_player.x-120) - x))

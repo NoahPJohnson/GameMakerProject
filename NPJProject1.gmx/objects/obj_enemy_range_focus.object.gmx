@@ -62,6 +62,7 @@ hit = false;
 hitdir = 0;
 old_speed = 0;
 impetus = 1;
+weight_factor = 1;
 hitstun = false;
 hitstun_direction = 0;
 hitstop = false;
