@@ -14,6 +14,7 @@ if (projectile_meeting != noone)
             hitstun_direction = projectile_meeting.direction;
            }
         hp -= .5;
+        scr_score_tracker_script_ball();
         scr_enemy_hp_zero();
         old_speed = 7;
         impetus = 0;
@@ -50,6 +51,7 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox))
             hitstun_direction = ball_meeting.direction;
            }
         hp -= 1;
+        scr_score_tracker_script_ball();
         scr_enemy_hp_zero();
         old_speed = 10;
         impetus = 0;

@@ -12,6 +12,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
        }
     
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), false); 
+       }
     scr_enemy_hp_zero();
     old_speed = speed;
     impetus = (13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7)) * weight_factor;
@@ -61,6 +69,14 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
         hitdir = -1;
        }
     hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), false); 
+       }
     scr_enemy_hp_zero();
     old_speed = speed;
     impetus = (13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10) + (instance_exists(melee_hitbox) * 7)) * weight_factor;
@@ -107,6 +123,14 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
     hp -= (1 + obj_player.chargeOne + obj_player.chargeTwo);
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = speed;
     if (hitstun == false && place_meeting(x,y+1, obj_boundary))
@@ -194,6 +218,14 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
         hitdir = -1;
        }
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 5 * weight_factor;
@@ -236,6 +268,14 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
         hitdir = 1;
        }
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 19 * weight_factor;
@@ -251,6 +291,14 @@ if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 18;
@@ -265,6 +313,14 @@ if (place_meeting(x,y,obj_spike_wall_L) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 16;
@@ -279,6 +335,14 @@ if (place_meeting(x,y,obj_spike_wall_R) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 16;
@@ -293,6 +357,14 @@ if (place_meeting(x,y,obj_spike_ceiling) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true);
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 14;

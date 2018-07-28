@@ -17,6 +17,15 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 hp -= 1;
                 scr_enemy_hp_zero();
                 enemy_struck.hp -= 1;
+                //Update the score!
+                if (enemy_struck.hp < 1)
+                   {
+                    scr_score_tracker_script_run(1, true);
+                   }
+                else
+                   {
+                    scr_score_tracker_script_run(1, false); 
+                   }
                 with (enemy_struck)
                      {
                       scr_enemy_hp_zero();
