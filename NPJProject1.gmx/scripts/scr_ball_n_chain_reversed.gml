@@ -3,7 +3,8 @@ struck = true;
 stop = false;
 if (!place_meeting(x,y+vspeed,obj_boundary))
    {
-    vspeed += 0.9;
+    //vspeed += 0.9;
+    motion_add(270, 0.9);
    }
 
 if (enemy_parent != noone)

@@ -8,7 +8,8 @@ sprite_index = crash_sprite;
 
 if (!place_meeting(x,y+abs(vspeed),obj_boundary) && !place_meeting(x,y+abs(vspeed),obj_player))   
    {
-    vspeed += 0.8;
+    //vspeed += 0.8;
+    motion_add(270, 0.8);
    }
 //else
 //   {

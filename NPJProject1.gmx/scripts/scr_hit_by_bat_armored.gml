@@ -12,6 +12,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
            }
     
         hp -= (0 + obj_player.chargeOne + (obj_player.chargeTwo*2));
+        if (hp < 1)
+           {
+            scr_score_tracker_script_run(0 + obj_player.chargeOne + (obj_player.chargeTwo*2), true, (state == e_state.crash));
+           }
+        else
+           {
+            scr_score_tracker_script_run(0 + obj_player.chargeOne + (obj_player.chargeTwo*2), false, (state == e_state.crash)); 
+           }
         scr_enemy_hp_zero();
         if (obj_player.chargeOne || obj_player.chargeTwo)
            {
@@ -58,6 +66,14 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
             hitdir = -1;
            }
         hp -= (0 + obj_player.chargeOne + (obj_player.chargeTwo*2));
+        if (hp < 1)
+           {
+            scr_score_tracker_script_run(0 + obj_player.chargeOne + (obj_player.chargeTwo*2), true, (state == e_state.crash));
+           }
+        else
+           {
+            scr_score_tracker_script_run(0 + obj_player.chargeOne + (obj_player.chargeTwo*2), false, (state == e_state.crash)); 
+           }
         scr_enemy_hp_zero();
         if (obj_player.chargeOne || obj_player.chargeTwo)
            {
@@ -105,6 +121,14 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
         hp -= 0;
+        if (hp < 1)
+           {
+            scr_score_tracker_script_run(0, true, (state == e_state.crash));
+           }
+        else
+           {
+            scr_score_tracker_script_run(0, false, (state == e_state.crash)); 
+           }
         scr_enemy_hp_zero();
         //old_speed = speed;
         old_state = state;
@@ -171,6 +195,14 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
         hitdir = -1;
        }
     hp -= 0;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(0, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(0, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     /*old_speed = 0;
     impetus = 5;
@@ -213,6 +245,14 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
         hitdir = 1;
        }
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 12;
@@ -229,6 +269,14 @@ if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 13;
@@ -243,6 +291,14 @@ if (place_meeting(x,y,obj_spike_wall_L) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 11;
@@ -257,6 +313,14 @@ if (place_meeting(x,y,obj_spike_wall_R) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 11;
@@ -271,6 +335,14 @@ if (place_meeting(x,y,obj_spike_ceiling) && hitstun == false)
    {
     hitdir = 1;
     hp -= 1;
+    if (hp < 1)
+       {
+        scr_score_tracker_script_run(1, true, (state == e_state.crash));
+       }
+    else
+       {
+        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+       }
     scr_enemy_hp_zero();
     old_speed = 0;
     impetus = 9;

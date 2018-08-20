@@ -64,7 +64,7 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
             hspd = 0;
            }
        }    
-    if (place_meeting(x+hspd,y,obj_player))
+    if (place_meeting(x+hspd,y-40,obj_player))
        {
         player_collision = instance_place(x+hspd,y, obj_player);
         if (player_collision.state != states.sliding)

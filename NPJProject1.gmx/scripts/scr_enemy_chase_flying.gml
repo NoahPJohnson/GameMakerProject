@@ -40,7 +40,7 @@ if (/*alarm[7] = -1 && */alarm[8] = -1)
    {
     if (obj_player.sliding == false)
        {   
-        if (abs(obj_player.x - x) > 130)
+        if (abs(obj_player.x - x) > 130 || obj_player.y < y+96)
            {
             selected_projectile = obj_projectile;
             if (abs((obj_player.x+150) - x) < abs((obj_player.x-150) - x))

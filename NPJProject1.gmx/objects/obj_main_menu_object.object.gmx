@@ -26,19 +26,29 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-pause_menu = true;
+pause_menu = false;
 paused = false;
 
-button_array[0] = obj_menu_button_resume;
+button_array[0] = obj_menu_button_start;
 button_array[1] = obj_menu_button_options;
 button_array[2] = obj_menu_button_quit;
+button_array[3] = obj_menu_button_leave_game;
 
 selected_button_index = 0;
 starting_selected_button_index = selected_button_index;
 
-menu_text = "Paused";
 
-//button_array[starting_selected_button_index].button_selected = true;
+
+for (i = 0; i &lt; array_length_1d(button_array); i ++)
+    {
+     instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(128-(i*128))), button_array[i]);
+    }
+
+button_array[starting_selected_button_index].button_selected = true;
+
+menu_text = "Main Menu";
+
+
 </string>
           </argument>
         </arguments>
@@ -61,7 +71,7 @@ menu_text = "Paused";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Handle Pause and Unpause
+            <string>///Handle Menu Functions
 scr_pause_screen();
 </string>
           </argument>
@@ -86,9 +96,10 @@ scr_pause_screen();
           <argument>
             <kind>1</kind>
             <string>///Draw Menu Text
+//draw_self();
 draw_set_font(fnt_button_font);
 draw_set_halign(fa_center);
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,paused);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,1);
 draw_set_halign(fa_left);
 
 </string>

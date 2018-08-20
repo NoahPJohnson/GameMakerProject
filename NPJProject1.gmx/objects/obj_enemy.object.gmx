@@ -122,6 +122,7 @@ else
        }
     else
        {
+        show_debug_message("Crashed: Speed = " + string(speed) + " Direction = " + string(direction));
         scr_collision_bounce();
         state = e_state.crash;
        }

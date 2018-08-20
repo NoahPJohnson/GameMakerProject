@@ -16,7 +16,10 @@ if (damage_hitstop == false)
    }
 else
    {
-    
+    /*if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
+       {
+        show_debug_message("Clipping during hitstop. ID = " + string(instance_place(x,y,obj_boundary)));
+       }*/
     speed = 0;
     direction = 0;
     //show_debug_message("IN damage hitstop. Speed: " + string(speed) + " name is " + string(id));

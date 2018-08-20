@@ -111,6 +111,8 @@
     <sprite>sprites\spr_score_tracker_strike</sprite>
     <sprite>sprites\spr_score_tracker_ball</sprite>
     <sprite>sprites\spr_score_tracker_ball_strike_empty</sprite>
+    <sprite>sprites\spr_menu_button</sprite>
+    <sprite>sprites\spr_menu_button_selected</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -181,23 +183,36 @@
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
-    <script>scripts\scr_pause_screen.gml</script>
     <script>scripts\scr_target.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
-    <script>scripts\scr_ball_n_chain_neutral.gml</script>
-    <script>scripts\scr_shield.gml</script>
-    <script>scripts\scr_shield_hit_by_bat.gml</script>
-    <script>scripts\scr_ball_n_chain_attacking.gml</script>
-    <script>scripts\scr_ball_n_chain_reversed.gml</script>
-    <script>scripts\scr_ball_hit_by_bat.gml</script>
-    <script>scripts\scr_ball_n_chain_hitstop.gml</script>
-    <script>scripts\scr_ball_collision_bounce.gml</script>
     <script>scripts\scr_enemy_spawner_active.gml</script>
     <script>scripts\scr_enemy_spawner_idle.gml</script>
     <script>scripts\scr_score_tracker_script_run.gml</script>
     <script>scripts\scr_score_tracker_script_strike.gml</script>
     <script>scripts\scr_score_tracker_script_ball.gml</script>
+    <scripts name="menu">
+      <script>scripts\scr_menu_button_resume_script.gml</script>
+      <script>scripts\scr_menu_button_start_script.gml</script>
+      <script>scripts\scr_menu_button_quit_script.gml</script>
+      <script>scripts\scr_menu_button_leave_script.gml</script>
+      <script>scripts\scr_menu_button_options_script.gml</script>
+      <script>scripts\scr_pause_screen.gml</script>
+    </scripts>
+    <scripts name="enemy equipment">
+      <script>scripts\scr_shield.gml</script>
+      <script>scripts\scr_shield_hit_by_bat.gml</script>
+      <script>scripts\scr_ball_n_chain_neutral.gml</script>
+      <script>scripts\scr_ball_n_chain_attacking.gml</script>
+      <script>scripts\scr_ball_n_chain_reversed.gml</script>
+      <script>scripts\scr_ball_hit_by_bat.gml</script>
+      <script>scripts\scr_ball_n_chain_hitstop.gml</script>
+      <script>scripts\scr_ball_collision_bounce.gml</script>
+    </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_score_font</font>
+    <font>fonts\fnt_button_font</font>
+  </fonts>
   <objects name="objects">
     <objects name="player">
       <object>objects\obj_player</object>
@@ -281,7 +296,6 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_Game_Over_Quit</object>
     <object>objects\obj_camera_control</object>
-    <object>objects\obj_pause_object</object>
     <objects name="spawners">
       <object>objects\obj_enemy_spawner</object>
       <object>objects\obj_enemy_spawner_barrier</object>
@@ -294,8 +308,21 @@
     <object>objects\obj_powerup_charge</object>
     <object>objects\obj_powerup_manager</object>
     <object>objects\obj_scoring_manager</object>
+    <objects name="menus and buttons">
+      <object>objects\obj_pause_object</object>
+      <object>objects\obj_main_menu_object</object>
+      <object>objects\obj_game_over_menu_object</object>
+      <object>objects\obj_menu_button</object>
+      <object>objects\obj_menu_button_resume</object>
+      <object>objects\obj_menu_button_start</object>
+      <object>objects\obj_menu_button_restart</object>
+      <object>objects\obj_menu_button_quit</object>
+      <object>objects\obj_menu_button_leave_game</object>
+      <object>objects\obj_menu_button_options</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>

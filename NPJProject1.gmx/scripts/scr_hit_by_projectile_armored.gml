@@ -7,6 +7,7 @@ if (place_meeting(x,y,obj_projectile))
            {
             //speed = 7;       
             hp -= 0;
+            scr_score_tracker_script_ball();
             scr_enemy_hp_zero();
             
             old_state = state;
@@ -35,6 +36,7 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox))
             hitstun_direction = ball_meeting.direction;
            }
         hp -= 1;
+        scr_score_tracker_script_ball();
         scr_enemy_hp_zero();
         old_speed = 10;
         impetus = 0;

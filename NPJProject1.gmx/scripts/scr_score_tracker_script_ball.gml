@@ -1,7 +1,7 @@
 ///scr_score_tracker_script_ball()
 
 obj_scoring_manager.balls += 1;
-obj_scoring_manager.alarm[0] = obj_scoring_manager.out_time;
+
 if (obj_scoring_manager.balls > 3)
    {
     obj_scoring_manager.balls = 0;
@@ -44,3 +44,7 @@ for (i = 0; i < 3; i ++)
          obj_scoring_manager.sprites_array[obj_scoring_manager.bases_array[i]-1] = true;
         }
     }
+if (obj_scoring_manager.bases_array[0] != 0 || obj_scoring_manager.bases_array[1] != 0 || obj_scoring_manager.bases_array[2] != 0)
+   {
+    obj_scoring_manager.alarm[0] = obj_scoring_manager.out_time;
+   }

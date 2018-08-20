@@ -42,6 +42,7 @@ slope_mod = 2;
 firing = false;
 firSpeed = 40;
 meleeAttack = false;
+melee_hitbox = noone;
 
 //Damage and Hitstun
 hit = false;
@@ -49,17 +50,18 @@ hitdir = 0;
 impetus = 1;
 weight_factor = 1;
 hitstun = false;
+old_state = e_state.crash;
 stopped = true;
 valid = false;
 
 //Crash
-crash_sprite = spr_player_charged1;
 mxspd = 40;
 hp = 2;
 hp_max = 2;
+crash_sprite = spr_player_charged1;
 cp = 2;
 cp_max = 2;
-melee_hitbox = noone;
+
 state = e_state.crash;
 </string>
           </argument>
@@ -151,6 +153,11 @@ switch (state)
         case e_state.hitstun:
              {
               scr_hit_stun();
+              break;
+             }
+        case e_state.hitstop:
+             {
+              scr_hitstop();
               break;
              }
         case e_state.crash:
