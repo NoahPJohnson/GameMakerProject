@@ -27,14 +27,14 @@ if (place_meeting(x, y, obj_bat))
        }
     alarm[2] += 25;
     //Player Hitstop
-    obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;
+        obj_player.hitstop = false;
+        obj_player.damage_hitstop = false;
+        obj_player.alarm[11] = alarm[0];
+        obj_player.old_state = obj_player.state;  
+        obj_player.state = states.hitstop;
+       }   
         
     //state = proj_state.struck;
    }
@@ -65,14 +65,14 @@ if (place_meeting(x, y, obj_bat_launcher))
        }
     //Player Hitstop
     alarm[2] += 30;
-    obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;    
+        obj_player.hitstop = false;
+        obj_player.damage_hitstop = false;
+        obj_player.alarm[11] = alarm[0];
+        obj_player.old_state = obj_player.state;  
+        obj_player.state = states.hitstop;
+       }    
     //state = proj_state.struck;
    }
 
@@ -103,15 +103,15 @@ if (place_meeting(x, y, obj_bat_spike))
        }
     alarm[2] += 30;
     //Player Hitstop
-    obj_player.hitstop = false;
+    /*obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
     obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
         obj_player.old_state = obj_player.state;
        }
-    obj_player.state = states.hitstop;
-    show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
+    obj_player.state = states.hitstop;*/
+    //show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
     //state = proj_state.struck;
    }
    

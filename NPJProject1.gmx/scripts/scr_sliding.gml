@@ -49,7 +49,7 @@ if (abs(hspd) < 1)
 scr_player_damage();
 
 //HP = 0
-scr_zero_health();
+//scr_zero_health();
       
 //Stamina
 scr_stamina();

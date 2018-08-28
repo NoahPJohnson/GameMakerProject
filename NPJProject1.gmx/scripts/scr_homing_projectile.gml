@@ -21,14 +21,14 @@ if (place_meeting(x, y, obj_bat))
         state = proj_state.hitstop;
        }
     //Player Hitstop
-    obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;
+        obj_player.hitstop = false;
+        obj_player.damage_hitstop = false;
+        obj_player.alarm[11] = alarm[0];
+        obj_player.old_state = obj_player.state;  
+        obj_player.state = states.hitstop;
+       }   
    }
 
    
@@ -58,14 +58,14 @@ if (place_meeting(x, y, obj_bat_launcher))
         state = proj_state.hitstop;
        }
     //Player Hitstop
-    obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;    
+        obj_player.hitstop = false;
+        obj_player.damage_hitstop = false;
+        obj_player.alarm[11] = alarm[0];
+        obj_player.old_state = obj_player.state;  
+        obj_player.state = states.hitstop;
+       }   
    }
 
 
@@ -90,15 +90,15 @@ if (place_meeting(x, y, obj_bat_spike))
         state = proj_state.hitstop;
        }
     //Player Hitstop
-    obj_player.hitstop = false;
+    /*obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
     obj_player.alarm[11] = alarm[0];
     if (obj_player.state != states.hitstop)
        {
         obj_player.old_state = obj_player.state;
        }
-    obj_player.state = states.hitstop;
-    show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
+    obj_player.state = states.hitstop;*/
+    //show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
    }
    
 //Collision with Bunt   

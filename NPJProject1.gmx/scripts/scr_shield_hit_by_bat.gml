@@ -16,15 +16,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
         damage_hitstop = true;
         alarm[3] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
         //Player Hitstop
-        obj_player.hitstop = false;
-        obj_player.damage_hitstop = false;
-        obj_player.alarm[11] = alarm[3];
         if (obj_player.state != states.hitstop)
            {
-            //watch out for a potential issue where player returns to wrong state. just in case
+            obj_player.hitstop = false;
+            obj_player.damage_hitstop = false;
+            obj_player.alarm[11] = alarm[3];
             obj_player.old_state = obj_player.state;
+            obj_player.state = states.hitstop;
            }
-        obj_player.state = states.hitstop;
         //damage_hitstop = true;
         if (state != ball_n_chain_state.reversed)
            {
@@ -55,14 +54,14 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
         alarm[3] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
         
         //Player Hitstop
-        obj_player.damage_hitstop = false;
-        obj_player.alarm[11] = alarm[3];
         if (obj_player.state != states.hitstop)
            {
-            //watch out for a potential issue where player returns to wrong state. just in case
+            obj_player.hitstop = false;
+            obj_player.damage_hitstop = false;
+            obj_player.alarm[11] = alarm[3];
             obj_player.old_state = obj_player.state;
+            obj_player.state = states.hitstop;
            }
-        obj_player.state = states.hitstop;
         
         if (state != ball_n_chain_state.reversed)
            {

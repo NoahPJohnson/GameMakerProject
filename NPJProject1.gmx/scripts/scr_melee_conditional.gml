@@ -4,7 +4,7 @@ if (instance_exists(melee_hitbox))
     melee_hitbox.x += hspd; 
     melee_hitbox.y = y;  
    }
-if (longRange == false)
+if (longRange == false && (place_meeting(x,y+1,obj_boundary)))
    {
     //Lunge Melee
     //meleeAttack = true;

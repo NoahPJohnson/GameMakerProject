@@ -140,7 +140,7 @@ scr_stamina();
 scr_player_damage();  
 
 //HP = 0
-scr_zero_health();
+//scr_zero_health();
 
 //Collision            
 scr_collision();  
@@ -152,7 +152,7 @@ scr_bunt();
 ///Input Swing
 if (crouching == false && swinging == false && recovery == false && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
    { 
-    if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Pressed)
+    if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Held)
        { 
         if (up == true)
            {

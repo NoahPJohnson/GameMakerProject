@@ -18,14 +18,14 @@ if (longRange == false)
             if (obj_player.jumping = true || obj_player.y < y-60)
                {
                 antiAir = true;
-                alarm[7] = room_speed * (20/60);
-                show_debug_message("Anti Air Slice in 6");
+                alarm[7] = room_speed * (18/60);
+                show_debug_message("Anti Air Slice in 18");
                }
             else
                {
                 antiAir = false;
-                alarm[7] = room_speed * (32/60);
-                show_debug_message("Normal Slice in 30");
+                alarm[7] = room_speed * (26/60);
+                show_debug_message("Normal Slice in 28");
                }
            }
        }

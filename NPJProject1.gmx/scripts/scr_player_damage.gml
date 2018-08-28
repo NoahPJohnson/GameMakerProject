@@ -34,7 +34,7 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false &
            {
             hitdir = 1;
            }
-        hp -= 7;
+        hp -= 11;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -69,7 +69,15 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false &
                 knock_force = 4;
                 damage_hitstop = true;
                 show_debug_message("Hit by projectile.");
-                alarm[11] = room_speed * (3/60);
+                if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
+                //alarm[11] = room_speed * (3/60);
                 state = states.hitstop;
                 //scr_movement();  
                }
@@ -78,7 +86,14 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false &
                 show_debug_message("Hit by projectile during DRIVE.");
                 hitstop = false;
                 damage_hitstop = false;
-                alarm[11] = room_speed * (3/60);
+                if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
                 old_state = state;
                 state = states.hitstop;
                }
@@ -116,7 +131,7 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false 
            {
             hitdir = 1;
            }
-        hp -= 12;
+        hp -= 16;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -144,7 +159,14 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false 
             knockback_time = 25;
             knock_force = 6;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
             //Enemy Hitstop
             melee_meeting.enemy_parent.damage_hitstop = false;
             melee_meeting.enemy_parent.alarm[9] = alarm[11];
@@ -179,7 +201,7 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == 
                {
                 hitdir = 1;
                }
-            hp -= 12;
+            hp -= 16;
             scr_score_tracker_script_strike();
             if (iframes == false)
                {
@@ -195,7 +217,14 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == 
                 knock_force = 6;
                 damage_hitstop = true;
                 show_debug_message("Hit by Ball n Chain");
-                alarm[11] = room_speed * (3/60);
+                if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
             
                 //Ball N Chain Hitstop
                 ball_meeting.damage_hitstop = false;
@@ -224,7 +253,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
            {
             hitdir = 1;
            }
-        hp -= 18;
+        hp -= 20;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -240,7 +269,14 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
             knockback_time = 30;
             knock_force = 8;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
 
             //explosion_meeting.alarm[0] = 1;
       
@@ -255,7 +291,7 @@ if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false &&
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 0;
-        hp -= 18;
+        hp -= 19;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -271,7 +307,14 @@ if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false &&
             knockback_time = 24;
             knock_force = 8;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
 
             //explosion_meeting.alarm[0] = 1;
       
@@ -282,7 +325,7 @@ if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false &
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 1;
-        hp -= 18;
+        hp -= 19;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -298,7 +341,14 @@ if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false &
             knockback_time = 22;
             knock_force = 6;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
 
             //explosion_meeting.alarm[0] = 1;
       
@@ -309,7 +359,7 @@ if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false &
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = -1;
-        hp -= 18;
+        hp -= 19;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -325,7 +375,14 @@ if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false &
             knockback_time = 22;
             knock_force = 6;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
 
             //explosion_meeting.alarm[0] = 1;
       
@@ -336,7 +393,7 @@ if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false 
    {
         //explosion_meeting = instance_place(x,y, obj_explosion_hitbox);
         hitdir = 0;
-        hp -= 18;
+        hp -= 19;
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
@@ -352,7 +409,14 @@ if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false 
             knockback_time = 24;
             knock_force = 6;
             damage_hitstop = true;
-            alarm[11] = room_speed * (3/60);
+            if (hp < 1)
+                   {
+                    alarm[11] = room_speed * (40/60);
+                   }
+                else
+                   {
+                    alarm[11] = room_speed * (3/60);
+                   }
 
             //explosion_meeting.alarm[0] = 1;
       

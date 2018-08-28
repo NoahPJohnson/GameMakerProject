@@ -29,8 +29,9 @@
 pause_menu = false;
 paused = false;
 
-button_array[0] = obj_menu_button_restart;
-button_array[1] = obj_menu_button_quit;
+button_array[0] = obj_menu_button_checkpoint;
+button_array[1] = obj_menu_button_restart;
+button_array[2] = obj_menu_button_quit;
 
 
 selected_button_index = 0;
@@ -46,6 +47,44 @@ for (i = 0; i &lt; array_length_1d(button_array); i ++)
 button_array[starting_selected_button_index].button_selected = true;
 
 menu_text = "Game Over";
+
+
+//Checkpoint stuff
+checkpoint_active = false;
+
+player_checkpoint_x = 0;
+player_checkpoint_y = 0;
+
+active_enemies_type_array[0] = noone;
+active_enemies_location_x_array[0] = 0;
+active_enemies_location_y_array[0] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Destroy the menu components
+/*for (i = 0; i &lt; array_length_1d(button_array); i++)
+    {
+     instance_destroy(button_array[i]);
+    }*/
 </string>
           </argument>
         </arguments>

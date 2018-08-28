@@ -2,8 +2,19 @@
 //Height = 750 :: 768
 //Width = 1000 :: 1024
 //following player - h = 600, v = 256
-view_hview[0] = 900;
-view_wview[0] = 1150;
+
+key_lock_on_press = keyboard_check_pressed(ord("L"));
+key_lock_on_release = keyboard_check_released(ord("L"));
+key_lock_on_hold = keyboard_check(ord("L"));
+
+//Disable lock on
+if (key_lock_on_release)
+   {
+    state = camera_state.neutral;
+   }
+
+//view_hview[0] = 900;
+//view_wview[0] = 1150;
 camera_field_x_left = view_xview[0];
 camera_field_x_right = view_xview[0] + view_wview[0];
 camera_field_y_top = view_yview[0];

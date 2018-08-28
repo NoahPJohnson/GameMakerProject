@@ -64,12 +64,12 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
             hspd = 0;
            }
        }    
-    if (place_meeting(x+hspd,y-40,obj_player))
+    if (place_meeting(x+hspd,y-34,obj_player))
        {
-        player_collision = instance_place(x+hspd,y, obj_player);
+        player_collision = instance_place(x+hspd,y-34, obj_player);
         if (player_collision.state != states.sliding)
            {
-            while (!place_meeting(x+sign(hspd),y,obj_player))
+            while (!place_meeting(x+sign(hspd),y-34,obj_player))
                   {
                    x += sign(hspd);
                   }

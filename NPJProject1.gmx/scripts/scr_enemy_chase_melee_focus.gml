@@ -64,7 +64,7 @@ if (longRange == true)
        {
         if (y < obj_player.y - 32)
            {
-            dir = sign(obj_player.x - x);
+            dir = sign(sign(floor(obj_player.x+86) - x) + sign(floor(obj_player.x+92) - x));
            }
         else
            {
@@ -119,7 +119,7 @@ if (longRange == true)
    }
 
 //Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && antiAir == false)
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
    {
     hspd *= 0;
    } 

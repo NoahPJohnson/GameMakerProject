@@ -108,7 +108,7 @@ if (alarm[0] == -1 && firing == false && meleeAttack == false)
    }
 
 //Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && antiAir == false)
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
    {
     hspd *= 0;
    } 

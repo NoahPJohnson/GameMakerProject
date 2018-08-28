@@ -103,7 +103,7 @@ if (longRange == true)
 else
    {
     //sprite_index = spr_enemy_jump;
-    if (obj_player.sliding = false)
+    if (obj_player.sliding == false)
        {
         if (abs((obj_player.x+120) - x) < abs((obj_player.x-120) - x))
            {
@@ -120,8 +120,9 @@ else
    }
 
 //Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && antiAir == false)
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
    {
+    //show_debug_message("Don't walk off ledge.");
     hspd *= 0;
    } 
 
@@ -151,7 +152,7 @@ if (distance_to_object(obj_player) < 100)
     alarm[0] = -1;
     alarm[2] = -1;
     firing = false;
-    if (meleeAttack = false)
+    if (meleeAttack == false)
        {
         hspd = dir * chsSpeed;
        } 

@@ -39,15 +39,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
            }
         
         //Player Hitstop
-        obj_player.hitstop = false;
-        obj_player.damage_hitstop = false;
-        obj_player.alarm[11] = alarm[9];
         if (obj_player.state != states.hitstop)
            {
-            //watch out for a potential issue where player returns to wrong state. just in case
+            obj_player.hitstop = false;
+            obj_player.damage_hitstop = false;
+            obj_player.alarm[11] = alarm[9];
             obj_player.old_state = obj_player.state;
+            obj_player.state = states.hitstop;
            }
-        obj_player.state = states.hitstop;
         //damage_hitstop = true;
         state = e_state.hitstop;
        }   
@@ -93,14 +92,14 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
            }
         
         //Player Hitstop
-        obj_player.damage_hitstop = false;
-        obj_player.alarm[11] = alarm[9];
         if (obj_player.state != states.hitstop)
            {
-            //watch out for a potential issue where player returns to wrong state. just in case
+            obj_player.hitstop = false;
+            obj_player.damage_hitstop = false;
+            obj_player.alarm[11] = alarm[9];
             obj_player.old_state = obj_player.state;
+            obj_player.state = states.hitstop;
            }
-        obj_player.state = states.hitstop;
         
         state = e_state.hitstop;
         //show_debug_message("Hit by launcher. State is now: " + string(state));
@@ -152,14 +151,14 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
         obj_player.state = states.knockback;
     
         //Player Hitstop
-        obj_player.damage_hitstop = false;
-        obj_player.alarm[11] = alarm[9];
         if (obj_player.state != states.hitstop)
            {
-            //watch out for a potential issue where player returns to wrong state. just in case
+            obj_player.hitstop = false;
+            obj_player.damage_hitstop = false;
+            obj_player.alarm[11] = alarm[9];
             obj_player.old_state = obj_player.state;
+            obj_player.state = states.hitstop;
            }
-        obj_player.state = states.hitstop;
         //show_debug_message("Hit by spike. player state is: " + string(obj_player.state) + " old state is " + string(obj_player.old_state));
         
         state = e_state.hitstop;

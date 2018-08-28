@@ -113,6 +113,7 @@
     <sprite>sprites\spr_score_tracker_ball_strike_empty</sprite>
     <sprite>sprites\spr_menu_button</sprite>
     <sprite>sprites\spr_menu_button_selected</sprite>
+    <sprite>sprites\spr_checkpoint</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -185,6 +186,7 @@
     <script>scripts\scr_wall_bounce_L.gml</script>
     <script>scripts\scr_target.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
+    <script>scripts\scr_camera_neutral.gml</script>
     <script>scripts\scr_enemy_spawner_active.gml</script>
     <script>scripts\scr_enemy_spawner_idle.gml</script>
     <script>scripts\scr_score_tracker_script_run.gml</script>
@@ -197,6 +199,7 @@
       <script>scripts\scr_menu_button_leave_script.gml</script>
       <script>scripts\scr_menu_button_options_script.gml</script>
       <script>scripts\scr_pause_screen.gml</script>
+      <script>scripts\scr_menu_button_checkpoint_script.gml</script>
     </scripts>
     <scripts name="enemy equipment">
       <script>scripts\scr_shield.gml</script>
@@ -208,6 +211,9 @@
       <script>scripts\scr_ball_n_chain_hitstop.gml</script>
       <script>scripts\scr_ball_collision_bounce.gml</script>
     </scripts>
+    <script>scripts\scr_checkpoint_create.gml</script>
+    <script>scripts\scr_checkpoint_load.gml</script>
+    <script>scripts\scr_checkpoint_use.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -316,10 +322,13 @@
       <object>objects\obj_menu_button_resume</object>
       <object>objects\obj_menu_button_start</object>
       <object>objects\obj_menu_button_restart</object>
+      <object>objects\obj_menu_button_checkpoint</object>
       <object>objects\obj_menu_button_quit</object>
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>
     </objects>
+    <object>objects\obj_checkpoint</object>
+    <object>objects\obj_checkpoint_manager</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

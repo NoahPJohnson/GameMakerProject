@@ -70,7 +70,7 @@ scr_looking_up();
 scr_player_damage();
 
 //HP = 0
-scr_zero_health();
+//scr_zero_health();
 
 //Crouching
 scr_crouching();

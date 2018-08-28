@@ -291,7 +291,7 @@ if (place_meeting(x,y+vspeed,obj_boundary))
    }
 
    
-if (place_meeting(x,y,obj_boundary))
+/*if (place_meeting(x,y,obj_boundary))
    {
     show_debug_message("Clipping!!");
-   }     
+   } */    

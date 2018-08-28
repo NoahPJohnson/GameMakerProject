@@ -20,11 +20,11 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 //Update the score!
                 if (enemy_struck.hp < 1)
                    {
-                    scr_score_tracker_script_run(1, true, (state == e_state.crash));
+                    scr_score_tracker_script_run(1, true, (enemy_struck.state == e_state.crash));
                    }
                 else
                    {
-                    scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+                    scr_score_tracker_script_run(1, false, (enemy_struck.state == e_state.crash)); 
                    }
                 with (enemy_struck)
                      {
