@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Button's Variables
-button_text = "Options";
+button_text = "Level 1";
 button_selected = false;
 
 button_sprite = spr_menu_button;
 button_selected_sprite = spr_menu_button_selected;
 
-button_script = scr_menu_button_options_script;
+button_script = scr_menu_button_level_1_script;
 </string>
           </argument>
         </arguments>

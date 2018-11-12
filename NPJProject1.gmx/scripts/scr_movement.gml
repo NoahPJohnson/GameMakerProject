@@ -174,7 +174,7 @@ scr_looking_up();
 scr_jumping_swing(); 
 
 #define scr_player_bounce
-if (place_meeting(x, y+1, obj_enemy) && !place_meeting(x,y,obj_enemy))
+/*if (place_meeting(x, y+1, obj_enemy) && !place_meeting(x,y,obj_enemy))
    {
     enemy_bouncing_on = instance_place(x,y+1, obj_enemy)
     if (enemy_bouncing_on.state != e_state.crash || enemy_bouncing_on.stopped == false)
@@ -186,4 +186,4 @@ if (place_meeting(x, y+1, obj_enemy) && !place_meeting(x,y,obj_enemy))
 if (vspd < 0 && !key_J_held)
    {
     vspd = max(vspd,-jspd/4);
-   }
+   }*/

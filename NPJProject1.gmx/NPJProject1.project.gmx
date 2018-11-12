@@ -87,9 +87,11 @@
       <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
       <sprite>sprites\spr_explosion_hitbox</sprite>
       <sprite>sprites\spr_enemy_ball_hitbox</sprite>
+      <sprite>sprites\spr_claw_hitbox_boss</sprite>
       <sprite>sprites\spr_enemy_shield_L</sprite>
       <sprite>sprites\spr_enemy_shield_R</sprite>
       <sprite>sprites\spr_enemy_shield_Up</sprite>
+      <sprite>sprites\spr_explosion_hitbox_boss</sprite>
     </sprites>
     <sprite>sprites\spr_spike_floor</sprite>
     <sprite>sprites\spr_spike_wall_L</sprite>
@@ -98,22 +100,34 @@
     <sprite>sprites\spr_enemy_spawner</sprite>
     <sprite>sprites\spr_enemy_spawner_barrier</sprite>
     <sprite>sprites\spr_enemy_spawner_trigger</sprite>
-    <sprite>sprites\spr_powerup_health</sprite>
-    <sprite>sprites\spr_powerup_charge</sprite>
-    <sprite>sprites\spr_powerup_infinite_stamina</sprite>
-    <sprite>sprites\spr_powerup_invincibility</sprite>
-    <sprite>sprites\spr_powerup_big_bat</sprite>
-    <sprite>sprites\spr_score_tracker_ring</sprite>
-    <sprite>sprites\spr_score_tracker_timer</sprite>
-    <sprite>sprites\spr_score_tracker_base</sprite>
-    <sprite>sprites\spr_score_tracker_home_base</sprite>
-    <sprite>sprites\spr_score_tracker_base_occupied</sprite>
-    <sprite>sprites\spr_score_tracker_strike</sprite>
-    <sprite>sprites\spr_score_tracker_ball</sprite>
-    <sprite>sprites\spr_score_tracker_ball_strike_empty</sprite>
     <sprite>sprites\spr_menu_button</sprite>
     <sprite>sprites\spr_menu_button_selected</sprite>
     <sprite>sprites\spr_checkpoint</sprite>
+    <sprites name="powerups">
+      <sprite>sprites\spr_powerup_health</sprite>
+      <sprite>sprites\spr_powerup_charge</sprite>
+      <sprite>sprites\spr_powerup_infinite_stamina</sprite>
+      <sprite>sprites\spr_powerup_invincibility</sprite>
+      <sprite>sprites\spr_powerup_big_bat</sprite>
+    </sprites>
+    <sprites name="scoretracker">
+      <sprite>sprites\spr_score_tracker_ring</sprite>
+      <sprite>sprites\spr_score_tracker_timer</sprite>
+      <sprite>sprites\spr_score_tracker_base</sprite>
+      <sprite>sprites\spr_score_tracker_home_base</sprite>
+      <sprite>sprites\spr_score_tracker_base_occupied</sprite>
+      <sprite>sprites\spr_score_tracker_strike</sprite>
+      <sprite>sprites\spr_score_tracker_ball</sprite>
+      <sprite>sprites\spr_score_tracker_ball_strike_empty</sprite>
+    </sprites>
+    <sprites name="boss">
+      <sprite>sprites\spr_boss_weakpoint</sprite>
+      <sprite>sprites\spr_boss_main_body</sprite>
+      <sprite>sprites\spr_boss_claw</sprite>
+      <sprite>sprites\spr_boss_claw_broken</sprite>
+      <sprite>sprites\spr_boss_claw_attack</sprite>
+      <sprite>sprites\spr_boss_canister</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -195,11 +209,14 @@
     <scripts name="menu">
       <script>scripts\scr_menu_button_resume_script.gml</script>
       <script>scripts\scr_menu_button_start_script.gml</script>
+      <script>scripts\scr_menu_button_level_1_script.gml</script>
+      <script>scripts\scr_menu_button_level_2_script.gml</script>
       <script>scripts\scr_menu_button_quit_script.gml</script>
       <script>scripts\scr_menu_button_leave_script.gml</script>
       <script>scripts\scr_menu_button_options_script.gml</script>
       <script>scripts\scr_pause_screen.gml</script>
       <script>scripts\scr_menu_button_checkpoint_script.gml</script>
+      <script>scripts\scr_menu_button_level_select_script.gml</script>
     </scripts>
     <scripts name="enemy equipment">
       <script>scripts\scr_shield.gml</script>
@@ -214,6 +231,22 @@
     <script>scripts\scr_checkpoint_create.gml</script>
     <script>scripts\scr_checkpoint_load.gml</script>
     <script>scripts\scr_checkpoint_use.gml</script>
+    <scripts name="boss behavior">
+      <script>scripts\scr_boss_movement.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_1.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_2.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_3.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_4.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_5.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_6.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_7.gml</script>
+      <script>scripts\scr_boss_pattern_selector.gml</script>
+      <script>scripts\scr_boss_collision.gml</script>
+      <script>scripts\scr_boss_hit_by_bat.gml</script>
+      <script>scripts\scr_boss_hit_by_projectile.gml</script>
+      <script>scripts\scr_boss_hitstop.gml</script>
+      <script>scripts\scr_boss_hitstun.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -263,6 +296,7 @@
       <object>objects\obj_enemy_target</object>
       <objects name="projectiles">
         <object>objects\obj_projectile</object>
+        <object>objects\obj_projectile_canister</object>
         <object>objects\obj_projectile_grenade</object>
         <object>objects\obj_projectile_bomb_2</object>
         <object>objects\obj_projectile_bomb</object>
@@ -283,6 +317,8 @@
         <object>objects\obj_melee_hitbox_long</object>
         <object>objects\obj_melee_hitbox_long_2</object>
         <object>objects\obj_explosion_hitbox</object>
+        <object>objects\obj_claw_hitbox_boss</object>
+        <object>objects\obj_explosion_hitbox_boss</object>
       </objects>
       <objects name="props">
         <object>objects\obj_prop</object>
@@ -317,24 +353,36 @@
     <objects name="menus and buttons">
       <object>objects\obj_pause_object</object>
       <object>objects\obj_main_menu_object</object>
+      <object>objects\obj_level_select_menu_object</object>
       <object>objects\obj_game_over_menu_object</object>
       <object>objects\obj_menu_button</object>
       <object>objects\obj_menu_button_resume</object>
       <object>objects\obj_menu_button_start</object>
+      <object>objects\obj_menu_button_level_1</object>
+      <object>objects\obj_menu_button_level_2</object>
       <object>objects\obj_menu_button_restart</object>
       <object>objects\obj_menu_button_checkpoint</object>
       <object>objects\obj_menu_button_quit</object>
+      <object>objects\obj_menu_button_back_to_main</object>
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>
+      <object>objects\obj_menu_button_level_select</object>
     </objects>
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
+    <objects name="bosses">
+      <object>objects\obj_boss_main_body</object>
+      <object>objects\obj_boss_weakpoint</object>
+      <object>objects\obj_boss_claw</object>
+      <object>objects\obj_boss_canister</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>
+    <room>rooms\rm_Level_Select</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

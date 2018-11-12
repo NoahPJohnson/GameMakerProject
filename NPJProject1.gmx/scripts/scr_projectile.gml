@@ -220,9 +220,12 @@ if (place_meeting(x,y,obj_bunt_bat))
         
 
 //Collsion with Wall and Prop
-if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
+if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop) || place_meeting(x,y,obj_explosion_hitbox))
    {
-    instance_destroy();
+    if (!place_meeting(x,y,obj_boss_canister))
+       {
+        instance_destroy();
+       }
    }
 
 //Collision with Crashed Enemy   
