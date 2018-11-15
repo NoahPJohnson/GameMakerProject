@@ -32,15 +32,9 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-if (instance_exists(obj_boss_canister))
-   {
-    move_towards_point(obj_boss_canister.x, obj_boss_canister.y, 6);
-   }
-else
-   {
-    direction = 225;
-    speed = 6;
-   }
+direction = 148;
+speed = 7;
+
 
 </string>
           </argument>

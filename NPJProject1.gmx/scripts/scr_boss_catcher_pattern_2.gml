@@ -18,7 +18,7 @@ if (firing == false)
         appendage.hspd = dir;
        }
     //show_debug_message("Distance from Destination: " + string(abs(destination - appendage.x)));
-    show_debug_message("HSPD = " + string(hspd) + "    Step = " + string(step) + "Dir = " + string(dir));
+    //show_debug_message("HSPD = " + string(hspd) + "    Step = " + string(step) + "Dir = " + string(dir));
    }
 else
    {
@@ -33,7 +33,8 @@ else
             if (obj_boss_canister.contained_detonation == true)
                {
                 appendage.sprite_index = spr_boss_claw_broken;
-                instance_create(appendage.x-10,appendage.y+20,obj_claw_hitbox_boss);
+                hp -= 7;
+                instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
                }
             else
                {
@@ -51,11 +52,11 @@ else
         //show_debug_message("Succ");
         //Player affected
         appendage.vspd = sin(shot_timer);
-        if (appendage.x-obj_player.x > 5 && appendage.x-obj_player.x < 200 && abs(appendage.y-obj_player.y) > 5 && abs(appendage.y-obj_player.y) < 64)
+        if (appendage.x-obj_player.x > 5 && appendage.x-obj_player.x < tractor_beam_range && abs(appendage.y-obj_player.y) > 5 && abs(appendage.y-obj_player.y) < 64)
            {
             if (obj_player.state != states.hitstop && obj_player.state != states.knockback)
                {
-                if (appendage.x-obj_player.x > 5 && appendage.x-obj_player.x < 200)
+                if (appendage.x-obj_player.x > 5 && appendage.x-obj_player.x < tractor_beam_range)
                    {
                     with (obj_player)
                          {
@@ -93,9 +94,9 @@ else
         //Canister Affected
         if (instance_exists(obj_boss_canister))
            {
-            if (appendage.x-obj_boss_canister.x > 5 && appendage.x-obj_boss_canister.x < 200 && abs(appendage.y-obj_boss_canister.y) > 5 && abs(appendage.y-obj_boss_canister.y) < 64)
+            if (appendage.x-obj_boss_canister.x > 5 && appendage.x-obj_boss_canister.x < tractor_beam_range && abs(appendage.y-obj_boss_canister.y) > 5 && abs(appendage.y-obj_boss_canister.y) < 64)
                {
-                if (appendage.x-obj_boss_canister.x > 5 && appendage.x-obj_boss_canister.x < 200)
+                if (appendage.x-obj_boss_canister.x > 5 && appendage.x-obj_boss_canister.x < tractor_beam_range)
                    {
                     with (obj_boss_canister)
                          {
@@ -134,7 +135,7 @@ else
        }
    }
 
-if (abs(destination - appendage.x) < 0.2 && firing == false)
+if ((sign(destination - appendage.x) != dir || dir == 0) && firing == false)
    {
     appendage.hspd = 0;
     dir = 0;
@@ -147,7 +148,7 @@ if (destination_established == false && firing == false)
     //Extend Arm
     if (step == 0)
        {
-        
+        weakpoint.vulnerable = false;
         destination = x - 160;
         destination_established = true;
         step = 1;
@@ -156,6 +157,7 @@ if (destination_established == false && firing == false)
     //Activate Tractor Beam
     else if (step == 1)
        {
+        weakpoint.vulnerable = true;
         player_caught = false;
         destination = appendage.x;
         shot_timer = room_speed * (310/60);

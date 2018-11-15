@@ -32,16 +32,44 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-if (instance_exists(obj_boss_canister))
-   {
-    move_towards_point(obj_boss_canister.x, obj_boss_canister.y, 6);
-   }
-else
-   {
-    direction = 225;
-    speed = 6;
-   }
 
+fire_drop_range = 32;
+//show_debug_message("Bomb is here!");
+//alarm[2] = room_speed * (90/60);
+speed = 10;
+direction = 60;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Detonate
+instance_create(x,y,obj_explosion_small_hitbox);
+if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
+   {
+    //show_debug_message("FIRE HAS HIT THE FLOOR");
+    boundary_meeting = instance_place(x, y+fire_drop_range, obj_boundary);
+    instance_create(x,boundary_meeting.y-1,obj_fire_hitbox_boss);
+   }
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -65,17 +93,9 @@ else
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-if (instance_exists(obj_test) &amp;&amp; bunted == false)
-   {
-    target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-    enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-    move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
-   }
-else
-   {
-    direction = struck_direction; 
-    speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-   }
+direction = struck_direction; 
+speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+   
 state = proj_state.struck;
 </string>
           </argument>
@@ -104,12 +124,12 @@ switch (state)
        {
         case proj_state.normal: 
              {   
-              scr_projectile(); 
+              scr_bomb_projectile(); 
               break;
              }
         case proj_state.struck: 
              {
-              scr_projectile_struck(); 
+              scr_projectile_bomb_struck(); 
               break;        
              }
         case proj_state.hitstop:

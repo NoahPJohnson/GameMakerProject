@@ -86,8 +86,10 @@
       <sprite>sprites\spr_enemy_melee_hitbox_long_2</sprite>
       <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
       <sprite>sprites\spr_explosion_hitbox</sprite>
+      <sprite>sprites\spr_explosion_small_hitbox</sprite>
       <sprite>sprites\spr_enemy_ball_hitbox</sprite>
       <sprite>sprites\spr_claw_hitbox_boss</sprite>
+      <sprite>sprites\spr_fire_hitbox_boss</sprite>
       <sprite>sprites\spr_enemy_shield_L</sprite>
       <sprite>sprites\spr_enemy_shield_R</sprite>
       <sprite>sprites\spr_enemy_shield_Up</sprite>
@@ -122,12 +124,14 @@
     </sprites>
     <sprites name="boss">
       <sprite>sprites\spr_boss_weakpoint</sprite>
+      <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_main_body</sprite>
       <sprite>sprites\spr_boss_claw</sprite>
       <sprite>sprites\spr_boss_claw_broken</sprite>
       <sprite>sprites\spr_boss_claw_attack</sprite>
       <sprite>sprites\spr_boss_canister</sprite>
     </sprites>
+    <sprite>sprites\spr_door_to_room</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -240,12 +244,14 @@
       <script>scripts\scr_boss_catcher_pattern_5.gml</script>
       <script>scripts\scr_boss_catcher_pattern_6.gml</script>
       <script>scripts\scr_boss_catcher_pattern_7.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_8.gml</script>
       <script>scripts\scr_boss_pattern_selector.gml</script>
       <script>scripts\scr_boss_collision.gml</script>
       <script>scripts\scr_boss_hit_by_bat.gml</script>
       <script>scripts\scr_boss_hit_by_projectile.gml</script>
       <script>scripts\scr_boss_hitstop.gml</script>
       <script>scripts\scr_boss_hitstun.gml</script>
+      <script>scripts\scr_boss_hp_zero.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -297,6 +303,10 @@
       <objects name="projectiles">
         <object>objects\obj_projectile</object>
         <object>objects\obj_projectile_canister</object>
+        <object>objects\obj_projectile_canister_air_burst</object>
+        <object>objects\obj_projectile_fire_canister</object>
+        <object>objects\obj_projectile_fire_canister_sub_1</object>
+        <object>objects\obj_projectile_fire_canister_sub_2</object>
         <object>objects\obj_projectile_grenade</object>
         <object>objects\obj_projectile_bomb_2</object>
         <object>objects\obj_projectile_bomb</object>
@@ -317,8 +327,10 @@
         <object>objects\obj_melee_hitbox_long</object>
         <object>objects\obj_melee_hitbox_long_2</object>
         <object>objects\obj_explosion_hitbox</object>
+        <object>objects\obj_explosion_small_hitbox</object>
         <object>objects\obj_claw_hitbox_boss</object>
         <object>objects\obj_explosion_hitbox_boss</object>
+        <object>objects\obj_fire_hitbox_boss</object>
       </objects>
       <objects name="props">
         <object>objects\obj_prop</object>
@@ -355,6 +367,7 @@
       <object>objects\obj_main_menu_object</object>
       <object>objects\obj_level_select_menu_object</object>
       <object>objects\obj_game_over_menu_object</object>
+      <object>objects\obj_level_complete_menu_object</object>
       <object>objects\obj_menu_button</object>
       <object>objects\obj_menu_button_resume</object>
       <object>objects\obj_menu_button_start</object>
@@ -376,6 +389,7 @@
       <object>objects\obj_boss_claw</object>
       <object>objects\obj_boss_canister</object>
     </objects>
+    <object>objects\obj_door_to_room</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

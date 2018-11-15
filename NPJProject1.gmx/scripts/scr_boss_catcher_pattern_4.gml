@@ -1,4 +1,4 @@
-//Move back and forth and fire shots at the player in between
+//Shoot the canister
 
 //Head and Appendage
 weakpoint.hspd = hspd;
@@ -31,17 +31,17 @@ else
         //create projectile
         instance_create(weakpoint.x, weakpoint.y, obj_projectile_canister);
         shots_fired += 1;
-        shot_timer = room_speed * (25/60);  
+        shot_timer = room_speed * (30/60);  
        }
     else if (shots_fired == max_shots && shot_timer <= 0)
        {
         show_debug_message("Stop shooting.");
         firing = false;
-        step += 1;
+        step = 2;
        }
    }
    
-if (abs(destination - x) < 0.2 && firing == false && step > 0)
+if ((sign(destination - x) != dir || dir == 0) && firing == false && step > 0)
    {
     destination_established = false;
     show_debug_message("Destination reached for step: " + string(step));
@@ -52,6 +52,7 @@ if (destination_established == false && firing == false)
    {
     if (step == 0)
        {
+        weakpoint.vulnerable = true;
         destination = boss_starting_position_x;
         destination_established = true;
         step = 1;

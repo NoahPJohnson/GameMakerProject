@@ -29,7 +29,7 @@ else
         if (step == 2)
            {
             //show_debug_message("Shoot Canister");
-            instance_create(x+32,y-120,obj_boss_canister);
+            instance_create(x-16,y-150,obj_boss_canister);
             shot_timer = room_speed * (130/60);
             //firing = false;
             step = 3;
@@ -42,7 +42,7 @@ else
        }
    }
 
-if ((destination - x) < 0.2 && firing == false)
+if ((sign(destination - x) != dir || dir == 0) && firing == false)
    {
     destination_established = false;
     //show_debug_message("Destination reached for step: " + string(step));
@@ -53,7 +53,7 @@ if (destination_established == false && firing == false)
     //Go to starting position
     if (step == 0)
        {
-        
+        weakpoint.vulnerable = false;
         destination = boss_starting_position_x;
         destination_established = true;
         step = 1;
@@ -62,6 +62,7 @@ if (destination_established == false && firing == false)
     //Shoot canister
     else if (step == 1)
        {
+        weakpoint.vulnerable = true;
         shot_timer = room_speed * (80/60);
         step = 2;
         firing = true;

@@ -62,7 +62,35 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
             hspd = 0;
            }   
        }
-    if (place_meeting(x+hspd,y,obj_boundary))
+    
+    if (place_meeting(x+hspd,y,obj_boss_canister))
+       {
+        player_collision = instance_place(x+hspd,y, obj_boss_canister);
+        //player_collision.x += hspd;
+        
+        var player_blocked = false;
+        var reference_hspd = hspd;
+        with (player_collision)
+             {
+              if (!place_meeting(x + reference_hspd,y,obj_boundary) && !place_meeting(x + reference_hspd,y,obj_boss_main_body) && !place_meeting(x + reference_hspd,y,obj_boss_claw) && !place_meeting(x + reference_hspd,y,obj_boss_weakpoint))
+                 {
+                  x += reference_hspd;
+                 }
+              else
+                 {
+                  player_blocked = true;
+                 }
+             }
+        if (player_blocked == true)
+           {
+            while (!place_meeting(x+sign(hspd),y,obj_boss_canister))
+                  {
+                   x += sign(hspd);
+                  }
+            hspd = 0;
+           }   
+       }       
+    else if (place_meeting(x+hspd,y,obj_boundary))
        {
         while (!place_meeting(x+sign(hspd),y,obj_boundary))
               {
@@ -110,10 +138,10 @@ if (place_meeting(x,y+vspd,obj_player))
          }
     if (player_blocked == true)
        {
-        while (!place_meeting(x,y+sign(vspd),obj_player))
+        /*while (!place_meeting(x,y+sign(vspd),obj_player))
               {
                y += sign(vspd);
-              }
+              }*/
         vspd = 0;
        }
     //player_collision.y += vspd;   

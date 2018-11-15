@@ -41,7 +41,7 @@ else
        }
    }
    
-if (abs(destination - x) < 0.2 && firing == false)
+if ((sign(destination - x) != dir || dir == 0) && firing == false)
    {
     destination_established = false;
     //show_debug_message("Destination reached for step: " + string(step));
@@ -54,7 +54,7 @@ if (destination_established == false && firing == false)
     //Move Forward
     if (step == 0)
        {
-        
+        weakpoint.vulnerable = false;
         destination = x - 192;
         destination_established = true;
         step = 1;
@@ -63,6 +63,7 @@ if (destination_established == false && firing == false)
     //Move Backward
     else if (step == 2)
        {
+        //weakpoint.vulnerable = false;
         destination = x + 128;
         destination_established = true;
         step = 3;
@@ -71,6 +72,7 @@ if (destination_established == false && firing == false)
     //Move Forward
     else if (step == 4)
        {
+        //weakpoint.vulnerable = false;
         destination = x - 192;
         destination_established = true;
         step = 5;
@@ -79,6 +81,7 @@ if (destination_established == false && firing == false)
     //Shoot
     else if (step == 1 || step == 3 || step == 5)
        {
+        weakpoint.vulnerable = true;
         destination = x;
         firing = true;
         shots_fired = 0;

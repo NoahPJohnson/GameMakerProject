@@ -121,6 +121,14 @@ state = boss_state.neutral;
    {
     motion_add(270, 0.8);
    }*/
+if (vulnerable == false)
+   {
+    sprite_index = spr_boss_weakpoint_mask;
+   }
+else
+   {
+    sprite_index = spr_boss_weakpoint;
+   }
 
 scr_enemy_targeted();
 

@@ -26,6 +26,9 @@ else
        {
         hitstun = false;
         state = boss_state.neutral;
+        pattern_selected = true;
+        pattern_selector_timer = room_speed * (30/60);
+        weakpoint.vulnerable = false;
         weakpoint.state = state;
         weakpoint.x = x + weakpoint_position_x;
         weakpoint.y = y + weakpoint_position_y;

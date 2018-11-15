@@ -71,8 +71,8 @@ hp = max_hp;
 //boss stuff
 vulnerable = false;
 
-pattern_count = 7;
-pattern_index = 2;
+pattern_count = 8;
+pattern_index = 0;
 pattern_array[0] = scr_boss_catcher_pattern_1;
 pattern_array[1] = scr_boss_catcher_pattern_2;
 pattern_array[2] = scr_boss_catcher_pattern_3;
@@ -80,6 +80,11 @@ pattern_array[3] = scr_boss_catcher_pattern_4;
 pattern_array[4] = scr_boss_catcher_pattern_5;
 pattern_array[5] = scr_boss_catcher_pattern_6;
 pattern_array[6] = scr_boss_catcher_pattern_7;
+pattern_array[7] = scr_boss_catcher_pattern_8;
+
+pattern_selector_timer = room_speed * (45/60);
+saved_pattern_selector_timer = pattern_selector_timer;
+pattern_selected = true;
 
 boss_starting_position_x = x;
 boss_starting_position_y = y;
@@ -93,6 +98,7 @@ weakpoint_switch = true;
 appendage = obj_boss_claw;
 appendage_position_x = appendage.x - x;
 appendage_position_y = appendage.y - y;
+tractor_beam_range = 600;
 
 
 hitstun_timer = room_speed * (60/60);
@@ -105,6 +111,29 @@ max_shots = 0;
 step = 0;
 
 state = boss_state.neutral;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Placeholder alarm that alarm 0 can reference
 </string>
           </argument>
         </arguments>
@@ -130,7 +159,7 @@ state = boss_state.neutral;
             <string>///End Hitstop
 if (damage_hitstop == false)
    {
-    show_debug_message("NOT IN DAMAGE HITSTOP: HP = " + string(hp) + " Old State = " + string(old_state));
+    show_debug_message("BOSS NOT IN DAMAGE HITSTOP: HP = " + string(hp) + " Old State = " + string(old_state));
     shot_timer = saved_shot_timer;
     //show_debug_message("Old State is " + string(old_state));
     damage_hitstop = false;
@@ -143,10 +172,11 @@ if (damage_hitstop == false)
     appendage.damage_hitstop = false;
     appendage.hitstop = false;
     appendage.state = state;
+    scr_boss_hp_zero();
    }
 else
    {
-    show_debug_message("damage hitstop: HP = " + string(hp) + " Old State = " + string(old_state));
+    show_debug_message("Boss damage hitstop: HP = " + string(hp) + " Old State = " + string(old_state));
     shot_timer = 0;
     //show_debug_message("Old State is " + string(old_state));
     damage_hitstop = false;
@@ -164,6 +194,7 @@ else
     appendage.damage_hitstop = false;
     appendage.hitstop = false;
     appendage.state = state;
+    scr_boss_hp_zero();
    }
 </string>
           </argument>
