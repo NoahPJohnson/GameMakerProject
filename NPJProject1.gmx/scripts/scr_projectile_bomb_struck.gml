@@ -19,6 +19,13 @@ vspeed += 0.8;
         speed = 0;
         alarm[2] = 1;
        }
+       
+//Collision with Enemy
+if (place_meeting(x, y, obj_enemy))
+   {
+    speed = 0;
+    alarm[2] = 1;
+   }
    
 if (hp < 1)
    {

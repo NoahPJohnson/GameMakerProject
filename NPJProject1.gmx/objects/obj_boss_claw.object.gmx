@@ -37,10 +37,53 @@ grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
 
+//Hit Reaction
+hit = false;
+hitdir = 0;
+old_speed = 0;
+impetus = 1;
+weight_factor = 0.5;
+hitstun = false;
+hitstun_direction = 0;
+hitstop = false;
+damage_hitstop = false;
+old_state = boss_state.neutral;
+alarm_array[0] = -1;
+air_recovery = false;
+stopped = true;
+valid = false;
+
 //Boss Stuff
 vulnerable = false;
+shot_timer = 0;
+saved_shot_timer = 0;
 
-state = noone;
+special_HP = 2;
+
+state = boss_state.neutral;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Placeholder Hitstop End
 </string>
           </argument>
         </arguments>
@@ -63,7 +106,14 @@ state = noone;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Collision
+            <string>
+if (instance_exists(obj_boss_claw_grab_hitbox))
+   {
+    obj_boss_claw_grab_hitbox.hspd = hspd;
+    obj_boss_claw_grab_hitbox.vspd = vspd;
+   }
+
+///Collision
 scr_boss_collision();
 </string>
           </argument>

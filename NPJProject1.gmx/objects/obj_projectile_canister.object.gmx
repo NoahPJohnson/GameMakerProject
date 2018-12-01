@@ -65,17 +65,17 @@ else
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-if (instance_exists(obj_test) &amp;&amp; bunted == false)
+/*if (instance_exists(obj_test) &amp;&amp; bunted == false)
    {
     target = instance_nearest(obj_player.x, obj_player.y, obj_test);
     enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
     move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
    }
 else
-   {
+   {*/
     direction = struck_direction; 
     speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-   }
+   //}
 state = proj_state.struck;
 </string>
           </argument>

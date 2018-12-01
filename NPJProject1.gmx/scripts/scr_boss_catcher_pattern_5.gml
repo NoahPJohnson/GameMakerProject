@@ -5,6 +5,8 @@ weakpoint.hspd = hspd;
 weakpoint.vspd = vspd;
 appendage.hspd = hspd;
 appendage.vspd = vspd;
+blocker.hspd   = hspd;
+blocker.vspd   = vspd;
 
 if (shot_timer > 0)
    {
@@ -27,7 +29,7 @@ else
        {
         
         
-        show_debug_message("Bang. shots fired = " + string(shots_fired));
+        //show_debug_message("Bang. shots fired = " + string(shots_fired));
         //create projectile
         instance_create(weakpoint.x, weakpoint.y, obj_projectile);
         shots_fired += 1;
@@ -35,7 +37,7 @@ else
        }
     else if (shots_fired == max_shots && shot_timer <= 0)
        {
-        show_debug_message("Stop shooting.");
+        //show_debug_message("Stop shooting.");
         firing = false;
         step += 1;
        }
@@ -95,34 +97,6 @@ if (destination_established == false && firing == false)
     dir = sign(destination - x);
    }
 
-//Hit by the bat
-
-//Hit by projectile
-scr_boss_hit_by_projectile();
-
-with (weakpoint)
-     {
-      scr_boss_hit_by_projectile();
-     }
-
-   
-//Hit by bat
-scr_boss_hit_by_bat();
-
-with (weakpoint)
-     {
-      scr_boss_hit_by_bat();
-     }
-
-
-if (weakpoint.state == boss_state.hitstop)
-   {
-    saved_shot_timer = shot_timer;
-    old_state = state;
-    alarm[0] = weakpoint.alarm[0];
-    damage_hitstop = weakpoint.damage_hitstop;
-    state = boss_state.hitstop;
-   }
      
 //Collision
 scr_boss_collision();

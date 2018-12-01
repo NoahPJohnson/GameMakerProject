@@ -30,8 +30,8 @@ else
         pattern_selector_timer = room_speed * (30/60);
         weakpoint.vulnerable = false;
         weakpoint.state = state;
-        weakpoint.x = x + weakpoint_position_x;
-        weakpoint.y = y + weakpoint_position_y;
+        //weakpoint.x = x + weakpoint_position_x;
+        //weakpoint.y = y + weakpoint_position_y;
         weakpoint.speed = 0;
         weakpoint.direction = 0;
         appendage.state = state;
@@ -126,8 +126,11 @@ appendage.hspd = 0;
 appendage.vspd = 0;
 hp = weakpoint.hp;
 
+//Boss Damage
+scr_boss_damage();
+
 //Hit by bat
-scr_boss_hit_by_bat();
+/*scr_boss_hit_by_bat();
 
 with (weakpoint)
      {
@@ -141,7 +144,7 @@ if (weakpoint.state == boss_state.hitstop)
     alarm[0] = weakpoint.alarm[0];
     damage_hitstop = weakpoint.damage_hitstop;
     state = boss_state.hitstop;
-   }
+   }*/
      
 //Collision
 scr_collision();

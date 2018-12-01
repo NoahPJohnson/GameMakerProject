@@ -8,8 +8,10 @@ weakpoint.speed = 0;
 weakpoint.direction = 0;
 appendage.hspd = 0;
 appendage.vspd = 0;
+blocker.hspd = 0;
+blocker.vspd = 0;
 hp = weakpoint.hp;
 
 //Collision
-scr_collision();
+scr_boss_collision();
 

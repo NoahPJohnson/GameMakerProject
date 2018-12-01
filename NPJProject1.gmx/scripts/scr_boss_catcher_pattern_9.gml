@@ -1,4 +1,5 @@
-//Fire explosive canister, shoot it, switch to grab if shot fails, shoot again
+//Fire explosive canister and pre shoot to detonate it low to the ground 
+//(player can reflect projectile to detonate canister on head)
 
 //Head and Appendage
 weakpoint.hspd = hspd;
@@ -31,15 +32,40 @@ else
         if (step == 2)
            {
             //show_debug_message("Shoot Canister");
-            instance_create(x-16,y-150,obj_boss_canister);
-            shot_timer = room_speed * (130/60);
+            //instance_create(x-80,y-250,obj_boss_canister);
+            //shot_timer = room_speed * (14/60);
+            shots_fired = 0;
+            max_shots = 4;
+            //instance_create(weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+            scr_create_projectile(6.5,227,weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+            shots_fired += 1;
+            shot_timer = room_speed * (28/60);
             //firing = false;
             step = 3;
            }
+        else if (step == 3 && shots_fired >= max_shots)
+           {
+            firing = false;
+            step = 4;
+           }
         else if (step == 3)
            {
-            show_debug_message("Done shooting.");
-            firing = false;
+            if (shots_fired == 2)
+               {
+                show_debug_message("Shoot Canister");
+                //instance_create(x-80,y-260,obj_boss_canister);
+                scr_create_projectile(14,115,x-24,y-225,obj_boss_canister);
+                //shot_timer += room_speed * (9/60);
+                //shots_fired += 1;
+               }
+            if (shots_fired < max_shots)
+               {
+                scr_create_projectile(6.5,230,weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+                shots_fired += 1;
+                shot_timer = room_speed * (28/60);
+               }
+            //show_debug_message("Done shooting.");
+            //firing = false;
            }
        }
    }
@@ -70,14 +96,15 @@ if (destination_established == false && firing == false)
         firing = true;
         //show_debug_message("Move back. Step = " + string(step) + " Destination = " + string(destination));
        }
-    else if (step == 3)
+    else if (step == 4)
        {
         //PatternComplete
-        show_debug_message("Pattern 3 complete.");
+        show_debug_message("Pattern 8 complete.");
         state = boss_state.neutral;
        }
     dir = sign(destination - appendage.x);
    }
-     
+
+   
 //Collision
 scr_boss_collision();

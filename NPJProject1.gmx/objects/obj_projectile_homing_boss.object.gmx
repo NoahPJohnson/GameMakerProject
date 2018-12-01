@@ -27,15 +27,124 @@
             <kind>1</kind>
             <string>crashed_enemy_meeting = noone;
 hp = 2;
+target_object = obj_player;
+reverse_target_object = obj_boss_weakpoint;
+target_direction = point_direction(x,y,target_object.x,target_object.y);
+alarm[1] = room_speed * (12/60);
 struck = false;
 struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-direction = 148;
-speed = 7;
+speed = 4;
+max_speed = 6;
+direction = 90;
+//show_debug_message("launch");
+//move_towards_point(obj_player.x, obj_player.y, 4);
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Direction Correction
+if (bunted == false &amp;&amp; struck == true)
+   {
+    target_object = instance_nearest(x,y,reverse_target_object);
+    if (distance_to_object(target_object) &gt; 620)
+       {
+        //show_debug_message("too far");
+        target_object = noone;
+        bunted = true;
+       }
+   }
+if (target_object != noone)
+   {
+    //show_debug_message("target = " + string(object_get_name(target_object.object_index)));
+    target_direction = point_direction(x,y,target_object.x,target_object.y);
+    //show_debug_message("target direction = " + string(target_direction));
+    check_direction = 0;
+    limited_turn = 0;
+    original_direction = direction;
+    /*if (speed &lt; max_speed)
+       {
+        //speed += 0.5;
+       }*/
+    
+    if (angle_difference(target_direction, direction) &gt; 0)
+       {
+        if (target_object != noone)
+           { 
+            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
+            //show_debug_message("Positive");
+           }
+       }
+    else if (angle_difference(target_direction, direction) &lt; 0)
+       {
+        if (target_object != noone)
+           {
+            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
+            limited_turn = -limited_turn;
+            //show_debug_message("NEGATIVE");
+           }       
+       }      
+    check_direction = limited_turn * 4;
+    direction += check_direction;
+    //show_debug_message("first direction is " + string(direction));
+    if (collision_line(x,y,x+(hspeed*16),y+(vspeed*16),obj_boundary, false, true) &amp;&amp; !collision_line(x,y,x+(hspeed*16),y+(vspeed*16),target_object, false, true))
+       {
+        //needs to turn left or right
+        //favor side closest to target
+        //show_debug_message("Turn 1");
+        direction = original_direction;
+        //limited_turn = 0;
+        //show_debug_message("second direction is " + string(direction));
+        if (collision_line(x,y,x+(hspeed*16),y+(vspeed*16),obj_boundary, false, true) &amp;&amp; !collision_line(x,y,x+(hspeed*16),y+(vspeed*16),target_object, false, true))
+           {
+            //show_debug_message("Turn 2");
+            direction += -check_direction;
+            limited_turn = -limited_turn;
+            //show_debug_message("third direction is " + string(direction));
+           }
+        else
+           {
+            limited_turn = 0;
+           }
+       }
+    direction = original_direction + limited_turn;
+    //show_debug_message("new direction is " + string(direction));
+   }
+else
+   {
+    /*if (bunted == false &amp;&amp; struck == true)
+       {
+        target_object = instance_nearest(x,y,obj_enemy);
+        if (distance_to_object(target_object) &gt; 320)
+           {
+            target_object = noone;
+            bunted = true;
+           }
+       }*/
+   }
+alarm[1] = room_speed * (6/60);
 </string>
           </argument>
         </arguments>
@@ -59,17 +168,18 @@ speed = 7;
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-/*if (instance_exists(obj_test) &amp;&amp; bunted == false)
+if (bunted == false)
    {
-    target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-    enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-    move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
+    target_object = instance_nearest(obj_player.x,obj_player.y,obj_enemy);
+    
    }
-else
-   {*/
-    direction = struck_direction; 
-    speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-   //}
+
+if (distance_to_object(target_object) &gt; 600)
+   {
+    target_object = noone;
+   }
+direction = struck_direction; 
+speed = struck_speed;
 state = proj_state.struck;
 </string>
           </argument>
@@ -98,7 +208,7 @@ switch (state)
        {
         case proj_state.normal: 
              {   
-              scr_projectile(); 
+              scr_homing_projectile(); 
               break;
              }
         case proj_state.struck: 

@@ -1,9 +1,12 @@
 ///Collision
 /*if (place_meeting(x,y,obj_player) && object_index == obj_enemy && distance_to_object(obj_player) < 600)
    {
-    show_debug_message("Normal Collision Clipping before ANY");
+    show_debug_message("*Normal Collision Clipping before ANY");
    }*/
-
+/*if (place_meeting(x,y,obj_enemy) && object_index == obj_player)
+   {
+    show_debug_message("*Normal Collision Clipping before ANY");
+   }*/
 
 //Horizontal Collision
 /*if (place_meeting(x,y,obj_boundary) && object_index == obj_enemy && distance_to_object(obj_player) < 600)
@@ -55,14 +58,14 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
        }
     if (place_meeting(x+hspd,y,obj_enemy))
        {
-        if (state != states.sliding)
-           {
+        //if (state != states.sliding)
+        //   {
             while (!place_meeting(x+sign(hspd),y,obj_enemy))
                   {
                    x += sign(hspd);
                   }
             hspd = 0;
-           }
+        //   }
        }    
     if (place_meeting(x+hspd,y-34,obj_player))
        {
@@ -103,21 +106,28 @@ x += hspd;
 */
 /*if (place_meeting(x,y,obj_player) && object_index == obj_enemy && distance_to_object(obj_player) < 600)
    {
-    show_debug_message("Normal Collision Clipping before VERTICAL");
+    show_debug_message("*Normal Collision Clipping before VERTICAL");
+   }*/
+/*if (place_meeting(x,y,obj_enemy) && object_index == obj_player)
+   {
+    show_debug_message("*Normal Collision Clipping before VERTICAL");
    }*/
 
 //Vertical Collision
 if (place_meeting(x,y+vspd,obj_enemy))
    {
-    if (state != states.sliding)
-       {
+    //if (state != states.sliding)
+    //   {
+    enemy_collision = instance_place(x,y+vspd, obj_enemy);
         while (!place_meeting(x,y+sign(vspd),obj_enemy))
               {
                y += sign(vspd);
                //sprite_index = spr_enemy_jump;
               }
         vspd = 0;
-       }       
+    
+    show_debug_message("Vertical Collision with enemy. Distance = " + string(distance_to_object(enemy_collision)));
+    //   }       
     
    }    
 if (place_meeting(x,y+vspd,obj_player))
@@ -160,6 +170,10 @@ if ((!place_meeting(x,y+1,obj_boundary) && jumping = false))
    
 /*if (place_meeting(x,y,obj_boundary))
    {
-    show_debug_message("Normal Collision Clipping after");
+    show_debug_message("*Normal Collision Clipping after");
+   }*/
+/*if (place_meeting(x,y,obj_enemy) && object_index == obj_player)
+   {
+    show_debug_message("*Normal Collision Clipping after");
    }*/
 

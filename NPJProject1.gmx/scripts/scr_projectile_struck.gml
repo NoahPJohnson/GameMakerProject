@@ -22,7 +22,10 @@ if (object_index != obj_projectile_ricochet)
    {
     if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
        {
-        instance_destroy();
+        if (!place_meeting(x,y,obj_boss_canister))
+           {
+            instance_destroy();
+           }
        }
    }
 else

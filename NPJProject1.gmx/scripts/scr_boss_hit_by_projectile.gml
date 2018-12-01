@@ -25,7 +25,7 @@ if (projectile_meeting != noone)
             //alarm[7] = -1;
             alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
             damage_hitstop = false;
-            //show_debug_message("Weakpoint Hit.");
+            show_debug_message("Weakpoint Hit by Projectile.");
            }
         else
            {

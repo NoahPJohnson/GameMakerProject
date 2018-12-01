@@ -270,6 +270,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
         //alarm[7] = -1;
         alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
         damage_hitstop = true;
+        show_debug_message("Head hit by an explosion.");
        }
     else
        {
@@ -285,31 +286,35 @@ if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
    {
     if (vulnerable == true)
        {
-        hitdir = 1;
-        hp -= 1;
-        if (hp < 1)
+        if (!place_meeting(x,y,obj_fire_hitbox_blocker))
            {
-            scr_score_tracker_script_run(1, true, (state == e_state.crash));
+            hitdir = 1;
+            hp -= 1;
+            if (hp < 1)
+               {
+                scr_score_tracker_script_run(1, true, (state == e_state.crash));
+               }
+            else
+               {
+                scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+               }
+            //scr_enemy_hp_zero();
+            old_speed = 0;
+            impetus = 18;
+            hitstun_direction = 90;
+            old_state = state;
+            //alarm[7] = -1;
+            alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+            damage_hitstop = true;
+            state = boss_state.hitstop;
            }
-        else
-           {
-            scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
-           }
-        //scr_enemy_hp_zero();
-        old_speed = 0;
-        impetus = 18;
-        hitstun_direction = 90;
-        old_state = state;
-        //alarm[7] = -1;
-        alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
-        damage_hitstop = true;
-        state = boss_state.hitstop;
        }
     else
        {
         if (place_meeting(x,y,obj_fire_hitbox_boss))
            {
-            obj_fire_hitbox_boss.alarm[0] = 1;
+            fire_meeting = instance_place(x,y,obj_fire_hitbox_boss);
+            fire_meeting.alarm[0] = 1;
            }
        }
    }

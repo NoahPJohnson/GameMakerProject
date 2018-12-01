@@ -50,6 +50,14 @@ alarm[0] = room_speed * (4/60);
           <argument>
             <kind>1</kind>
             <string>///Destroy
+if (place_meeting(x,y,obj_boundary))
+   {
+    boundary_meeting = instance_place(x,y,obj_boundary);
+    if (y &lt; boundary_meeting.y)
+       {
+        instance_create(x,boundary_meeting.y-1,obj_fire_hitbox_boss);
+       } 
+   }
 instance_destroy();
 </string>
           </argument>
@@ -74,7 +82,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Blocked by Bunt
-if (place_meeting(x,y,obj_bunt_bat))
+/*if (place_meeting(x,y,obj_bunt_bat))
    {
     obj_player.sp -= 30;
     
@@ -89,7 +97,7 @@ if (place_meeting(x,y,obj_bunt_bat))
     obj_player.state = states.hitstop;
     
     instance_destroy();
-   }
+   }*/
 </string>
           </argument>
         </arguments>

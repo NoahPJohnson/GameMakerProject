@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_projectile</parentName>
+  <parentName>obj_projectile_fire_canister</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -63,12 +63,12 @@ direction = 60;
             <kind>1</kind>
             <string>///Detonate
 instance_create(x,y,obj_explosion_small_hitbox);
-if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
+/*if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
    {
     //show_debug_message("FIRE HAS HIT THE FLOOR");
     boundary_meeting = instance_place(x, y+fire_drop_range, obj_boundary);
     instance_create(x,boundary_meeting.y-1,obj_fire_hitbox_boss);
-   }
+   }*/
 instance_destroy();
 </string>
           </argument>

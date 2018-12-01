@@ -1,5 +1,8 @@
 if (hp < 1)
    {
+    instance_destroy(weakpoint);
+    instance_destroy(appendage);
+    instance_destroy(blocker);
     show_debug_message("Time to end the level.");
     instance_create(x,y, obj_level_complete_menu_object);
     //scr_checkpoint_load();

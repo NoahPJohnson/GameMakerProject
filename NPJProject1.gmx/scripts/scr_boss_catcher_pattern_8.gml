@@ -5,6 +5,8 @@ weakpoint.hspd = hspd;
 weakpoint.vspd = vspd;
 appendage.hspd = hspd;
 appendage.vspd = vspd;
+blocker.hspd   = hspd;
+blocker.vspd   = vspd;
 
 if (shot_timer > 0)
    {
@@ -40,7 +42,7 @@ else
            {
             instance_create(weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
             shots_fired += 1;
-            shot_timer = room_speed * (35/60);
+            shot_timer = room_speed * (65/60);
             //show_debug_message("Done shooting.");
             //firing = false;
            }
@@ -88,32 +90,5 @@ if (destination_established == false && firing == false)
    }
 
    
-//Hit by projectile
-scr_boss_hit_by_projectile();
-
-with (weakpoint)
-     {
-      scr_boss_hit_by_projectile();
-     }
-
-   
-//Hit by bat
-scr_boss_hit_by_bat();
-
-with (weakpoint)
-     {
-      scr_boss_hit_by_bat();
-     }
-
-
-if (weakpoint.state == boss_state.hitstop)
-   {
-    saved_shot_timer = shot_timer;
-    old_state = state;
-    alarm[0] = weakpoint.alarm[0];
-    damage_hitstop = weakpoint.damage_hitstop;
-    state = boss_state.hitstop;
-   }
-     
 //Collision
 scr_boss_collision();

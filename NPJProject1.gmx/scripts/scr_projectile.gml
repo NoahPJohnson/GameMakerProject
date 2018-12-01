@@ -70,7 +70,7 @@ if (place_meeting(x, y, obj_bat_launcher))
             alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 75;
+        struck_direction = 70;
         state = proj_state.hitstop;
         /*if (instance_exists(obj_test))
            {
@@ -91,7 +91,7 @@ if (place_meeting(x, y, obj_bat_launcher))
             alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 105;
+        struck_direction = 110;
         state = proj_state.hitstop;
         /*if (instance_exists(obj_test))
            {

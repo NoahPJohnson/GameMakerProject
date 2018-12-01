@@ -1,8 +1,8 @@
 ///Collision Bounce
-if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
+/*if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping before ANY collision. ID = " + string(instance_place(x,y,obj_boundary)));
-   }
+   }*/
    
 if (place_meeting(x+hspeed,y,obj_player))
    {
@@ -165,10 +165,10 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        }
    }
 
-if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
+/*if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping before vertical collision");
-   }
+   }*/
    
 //Vertical Collision
 if (place_meeting(x,y+vspeed,obj_player))
@@ -188,7 +188,7 @@ if (place_meeting(x,y+vspeed,obj_player))
        {
         speed = 0;
        }
-    //show_debug_message("Hit player. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
+    //show_debug_message("Hit player. V  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
    }
 /*if (place_meeting(x,y+vspeed,obj_enemy))
    {
@@ -395,15 +395,34 @@ if (place_meeting(x,y+vspeed,obj_boundary))
            {
             speed = 0;
            }
+        if (place_meeting(x,y+vspeed,obj_player))
+           {
+            show_debug_message("Hitting player on the rebound.");
+            incidence = direction;
+            new_dir = 360 - incidence;
+            if (new_dir < 0)
+               {
+                new_dir += 360;
+               }
+            direction = new_dir;
+            if (speed > 2)
+               {
+                speed *= .7; 
+               }
+            else
+               {
+                speed = 0;
+               }
+           }
         //show_debug_message("Hit Boundary. V  " + string(direction) + " | " + string(speed) + " | " + string(vspeed));
        }    
    }
 
    
-if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
+/*if (place_meeting(x,y,obj_boundary) || place_meeting(x,y,obj_player))
    {
     show_debug_message("Clipping!!");
-   }
+   }*/
 
 /*   
 //Right or Down Collision with slope

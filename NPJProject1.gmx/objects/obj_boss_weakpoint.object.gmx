@@ -67,7 +67,7 @@ shot_timer = 0;
 saved_shot_timer = 0;
 
 mxspd = 40;
-max_hp = 20;
+max_hp = 50;
 hp = max_hp;
 
 state = boss_state.neutral;

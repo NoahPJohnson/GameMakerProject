@@ -63,6 +63,8 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
            }   
        }
     
+    
+    
     if (place_meeting(x+hspd,y,obj_boss_canister))
        {
         player_collision = instance_place(x+hspd,y, obj_boss_canister);
@@ -99,7 +101,26 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
         hspd = 0;
        }
    }
-   
+
+if (place_meeting(x,y-1,obj_player))
+       {
+        player_collision = instance_place(x,y-1,obj_player)
+        //show_debug_message("There's a player on top while boss is moving horizontally.");
+        var player_blocked = false;
+        var reference_hspd = hspd;
+        with (player_collision)
+             {
+              if (!place_meeting(x + reference_hspd,y,obj_boundary) && !place_meeting(x+reference_hspd,y,obj_enemy))
+                 {
+                  x += reference_hspd;
+                 }
+              else
+                 {
+                  player_blocked = true;
+                  //show_debug_message("player is BLOCKED.");
+                 }
+             }
+       }
 //show_debug_message("Horizontal Speed = " + string(hspd));
    
 x += hspd;
@@ -127,7 +148,7 @@ if (place_meeting(x,y+vspd,obj_player))
     var reference_vspd = vspd;
     with (player_collision)
          {
-          if (!place_meeting(x,y + reference_vspd,obj_boundary) && !place_meeting(x,y + reference_vspd,obj_boss_main_body) && !place_meeting(x,y + reference_vspd,obj_boss_claw) && !place_meeting(x,y + reference_vspd,obj_boss_weakpoint))
+          if (!place_meeting(x,y + reference_vspd,obj_boundary) && !place_meeting(x,y + reference_vspd,obj_enemy))
              {
               y += reference_vspd;
              }
@@ -146,6 +167,9 @@ if (place_meeting(x,y+vspd,obj_player))
        }
     //player_collision.y += vspd;   
    }
+   
+
+   
 if (place_meeting(x,y+vspd,obj_boundary))
    {
     while (!place_meeting(x,y+sign(vspd),obj_boundary))
@@ -155,7 +179,38 @@ if (place_meeting(x,y+vspd,obj_boundary))
     vspd = 0;
    }   
     
-y += vspd; 
+//y += vspd; 
+
+
+
+if (place_meeting(x,y-1,obj_player))
+   {
+    player_collision = instance_place(x,y-1, obj_player);
+    //var player_blocked;
+    //var reference_vspd;
+    y += vspd; 
+    var player_blocked = false;
+    var reference_vspd = vspd;
+    with (player_collision)
+         {
+          if (place_meeting(x,y + reference_vspd,obj_enemy))
+             {
+              while (!place_meeting(x,y+sign(reference_vspd),obj_enemy))
+                    {
+                     y += sign(reference_vspd);
+                    }  
+              reference_vspd = 0;
+             }
+          y += reference_vspd;
+         }
+    
+   }
+else
+   {
+    y += vspd; 
+   }
+   
+   
 
 //Going Down Slope
 if ((!place_meeting(x,y+1,obj_boundary) && jumping = false))

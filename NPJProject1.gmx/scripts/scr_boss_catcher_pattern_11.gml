@@ -1,4 +1,4 @@
-//Attack player by swinging the broken claw
+//Attack player by swinging the broken claw and shooting between swings
 
 //Head and Appendage
 weakpoint.hspd = hspd;
@@ -189,7 +189,7 @@ if (destination_established == false && firing == false)
     //Reset to step 2
     else if (step == 6)
        {
-        //instance_create(weakpoint.x,weakpoint.y,obj_projectile);
+        instance_create(weakpoint.x,weakpoint.y,obj_projectile);
         step = 2;
        }
     //End the attack H

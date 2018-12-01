@@ -62,13 +62,16 @@ if (place_meeting(x,y,obj_bat) || place_meeting(x,y,obj_bat_launcher) || place_m
     instance_destroy();
     if (contained_detonation == false)
        {
-        instance_create(x,y,obj_projectile_fire_canister);
+        //instance_create(x,y,obj_projectile_fire_canister);
+        scr_create_projectile(12,90,x,y,obj_projectile_fire_canister);
+        scr_create_projectile(10,120,x,y,obj_projectile_fire_canister);
+        scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
         instance_create(x,y,obj_explosion_hitbox_boss);
        }
    }
 
 //Gravity
-if (!place_meeting(x,y+4,obj_boundary))
+if (!place_meeting(x,y+4,obj_boundary) &amp;&amp; contained_detonation == false)
    {
     motion_add(270,grv);
    }

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_projectile</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -36,8 +36,10 @@ state = proj_state.normal;
 fire_drop_range = 32;
 //show_debug_message("Bomb is here!");
 //alarm[2] = room_speed * (90/60);
-instance_create(x,y,obj_projectile_fire_canister_sub_1);
-instance_create(x,y,obj_projectile_fire_canister_sub_2);
+//instance_create(x,y,obj_projectile_fire_canister_sub_1);
+//instance_create(x,y,obj_projectile_fire_canister_sub_2);
+//scr_create_projectile(10,120,x,y,obj_projectile_fire_canister);
+//scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
 speed = 12;
 direction = 90;
 
@@ -65,12 +67,12 @@ direction = 90;
             <kind>1</kind>
             <string>///Detonate
 instance_create(x,y,obj_explosion_small_hitbox);
-if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
+/*if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
    {
     //show_debug_message("FIRE HAS HIT THE FLOOR");
     boundary_meeting = instance_place(x, y+fire_drop_range, obj_boundary);
     instance_create(x,boundary_meeting.y-1,obj_fire_hitbox_boss);
-   }
+   }*/
 instance_destroy();
 </string>
           </argument>

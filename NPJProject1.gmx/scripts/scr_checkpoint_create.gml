@@ -10,6 +10,7 @@ with (obj_enemy)
           obj_checkpoint.active_enemy_x_array[obj_checkpoint.enemy_index] = x;
           obj_checkpoint.active_enemy_y_array[obj_checkpoint.enemy_index] = y;
           obj_checkpoint.enemy_index += 1;
+          //show_debug_message("I am: " + object_get_name(self) + " index = " + obj_checkpoint.enemy_index)
          }
      } 
 
