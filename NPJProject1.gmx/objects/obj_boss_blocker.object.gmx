@@ -37,6 +37,8 @@ grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
 
+slide_through = false;
+
 //Boss Stuff
 vulnerable = false;
 fire = instance_create(x-64,y,obj_fire_hitbox_blocker)

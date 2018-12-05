@@ -58,6 +58,10 @@ active_enemies_location_y_array[0] = 0;
           <argument>
             <kind>1</kind>
             <string>///Run Checkpoint Script
+if (room == rm_main_menu)
+   {
+    checkpoint_active = false;
+   }
 if (checkpoint_active == true)
    {
     show_debug_message("Next, run the USE script.");

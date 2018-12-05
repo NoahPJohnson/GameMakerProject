@@ -54,6 +54,8 @@ air_recovery = false;
 stopped = true;
 valid = false;
 
+slide_through = false;
+
 //Weakpoint Hit Reactions
 weakpoint_hit_path = -1;
 weakpoint_hit_direction = 30;

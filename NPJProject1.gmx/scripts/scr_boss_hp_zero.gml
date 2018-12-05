@@ -5,6 +5,7 @@ if (hp < 1)
     instance_destroy(blocker);
     show_debug_message("Time to end the level.");
     instance_create(x,y, obj_level_complete_menu_object);
+    obj_level_complete_menu_object.saved_player_score = obj_scoring_manager.runs;
     //scr_checkpoint_load();
     //scr_checkpoint_use();
     instance_deactivate_all(false);

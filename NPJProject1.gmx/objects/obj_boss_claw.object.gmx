@@ -53,6 +53,8 @@ air_recovery = false;
 stopped = true;
 valid = false;
 
+slide_through = false;
+
 //Boss Stuff
 vulnerable = false;
 shot_timer = 0;

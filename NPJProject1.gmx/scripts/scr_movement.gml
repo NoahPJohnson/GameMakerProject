@@ -52,8 +52,8 @@ if (crouching = true)
    {
     if (key_J && right = true && sliding = false && sp > 45)
        {
-        if (!place_meeting(x+160,y,obj_enemy) && !place_meeting(x+200,y,obj_enemy))
-           { 
+        /*if (!place_meeting(x+160,y,obj_enemy) && !place_meeting(x+200,y,obj_enemy))
+           {*/ 
             sliding = true;
             sp -= 45;
             hspd = (jspd * 2.2);
@@ -64,7 +64,7 @@ if (crouching = true)
                 frc = 1;
                }
             state = states.sliding;
-           }
+        /*   }
         else
            {
             sliding = true;
@@ -77,7 +77,7 @@ if (crouching = true)
                 frc = 1;
                }
             state = states.sliding;
-           }
+           }*/
        }
     
     if (key_J && right = false && sliding = false && sp > 45)

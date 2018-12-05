@@ -1,6 +1,7 @@
 ///HP = 0
 if (hp < 1)
    {
+    hp = 0;
     instance_create(x,y, obj_game_over_menu_object);
     scr_checkpoint_load();
     //scr_checkpoint_use();

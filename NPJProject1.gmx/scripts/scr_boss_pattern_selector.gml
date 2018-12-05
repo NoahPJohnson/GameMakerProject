@@ -66,23 +66,58 @@ if (pattern_selected == false)
     
     if (current_index == condition_index)
        {
+        show_debug_message("C H E C K  TO SWITCH SET!!! Set: " + string(set_index) + "* * * * *");
         if (set_index == 0)
            {
-            if (instance_exists(obj_boss_canister))
+            if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
                {
                 set_index = 1;
                 set_selected = false;
                }
+            if (appendage.sprite_index == spr_boss_claw_broken)
+               {
+                set_index = 2;
+                set_selected = false;
+               }
+           }
+        else if (set_index == 1)
+           {
+            if (appendage.sprite_index == spr_boss_claw_broken)
+               {
+                set_index = 2;
+                set_selected = false;
+               }
+           }
+        else if (set_index == 2)
+           {
+            if (hp < (max_hp*0.5))
+               {
+                set_index = 3;
+                set_selected = false;
+               }
+           }
+        else if (set_index == 3)
+           {
+            if (hp < (max_hp*0.24))
+               {
+                set_index = 4;
+                set_selected = false;
+               }
            }
        }
-    
-    pattern_index = set_array[current_index];
-    current_index += 1;
-    
     if (current_index >= count)
        {
         current_index = repeat_index;
        }
+    /*else
+       {
+        show_debug_message("Current Index: " + string(current_index) + " < Count: " + string(count));
+       }*/
+       
+    pattern_index = set_array[current_index];
+    current_index += 1;
+    
+    
 
 
     if (set_selected == true)

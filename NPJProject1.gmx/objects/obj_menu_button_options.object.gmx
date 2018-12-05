@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Button's Variables
-button_text = "Options";
+button_text = "Controls";
 button_selected = false;
 
 button_sprite = spr_menu_button;

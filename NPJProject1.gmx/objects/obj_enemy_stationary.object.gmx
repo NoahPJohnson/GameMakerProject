@@ -59,6 +59,8 @@ air_recovery = false;
 stopped = true;
 valid = false;
 
+slide_through = true;
+
 //Crash State
 mxspd = 40;
 hp = 1;

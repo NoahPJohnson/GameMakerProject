@@ -61,7 +61,7 @@ air_recovery = false;
 stopped = true;
 valid = false;
 
-
+slide_through = true;
 
 
 //Crash State

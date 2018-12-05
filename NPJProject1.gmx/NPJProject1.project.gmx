@@ -134,8 +134,12 @@
       <sprite>sprites\spr_boss_canister</sprite>
       <sprite>sprites\spr_boss_blocker</sprite>
       <sprite>sprites\spr_boss_claw_grab_hitbox</sprite>
+      <sprite>sprites\spr_boss_health_bar</sprite>
+      <sprite>sprites\spr_boss_health_bar_background</sprite>
     </sprites>
     <sprite>sprites\spr_door_to_room</sprite>
+    <sprite>sprites\spr_door_from_room</sprite>
+    <sprite>sprites\spr_level_transition_curtain</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -239,6 +243,8 @@
     <script>scripts\scr_checkpoint_create.gml</script>
     <script>scripts\scr_checkpoint_load.gml</script>
     <script>scripts\scr_checkpoint_use.gml</script>
+    <script>scripts\scr_level_transition.gml</script>
+    <script>scripts\scr_level_transition_receiver.gml</script>
     <scripts name="boss behavior">
       <script>scripts\scr_boss_movement.gml</script>
       <script>scripts\scr_boss_catcher_pattern_1.gml</script>
@@ -267,6 +273,7 @@
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
     <font>fonts\fnt_button_font</font>
+    <font>fonts\fnt_controls_font</font>
   </fonts>
   <objects name="objects">
     <objects name="player">
@@ -379,6 +386,7 @@
       <object>objects\obj_level_select_menu_object</object>
       <object>objects\obj_game_over_menu_object</object>
       <object>objects\obj_level_complete_menu_object</object>
+      <object>objects\obj_controls_menu_object</object>
       <object>objects\obj_menu_button</object>
       <object>objects\obj_menu_button_resume</object>
       <object>objects\obj_menu_button_start</object>
@@ -403,6 +411,7 @@
       <object>objects\obj_boss_trigger</object>
     </objects>
     <object>objects\obj_door_to_room</object>
+    <object>objects\obj_door_from_room</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

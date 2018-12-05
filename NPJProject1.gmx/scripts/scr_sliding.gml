@@ -35,7 +35,7 @@ if (abs(hspd) < 1)
        }
     else
        {
-        if (!place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy))
+        if (!place_meeting(x,y-30,obj_boundary) && (!place_meeting(x,y-30,obj_enemy) || place_meeting(x,y,obj_enemy)))
            {
             mspd = 8;
             crouching = false;

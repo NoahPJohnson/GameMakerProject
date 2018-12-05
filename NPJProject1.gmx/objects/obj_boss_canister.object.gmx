@@ -65,7 +65,14 @@ if (place_meeting(x,y,obj_bat) || place_meeting(x,y,obj_bat_launcher) || place_m
         //instance_create(x,y,obj_projectile_fire_canister);
         scr_create_projectile(12,90,x,y,obj_projectile_fire_canister);
         scr_create_projectile(10,120,x,y,obj_projectile_fire_canister);
-        scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
+        if (y &lt; obj_boss_weakpoint.y)
+           {
+            scr_create_projectile(10,105,x,y,obj_projectile_fire_canister);
+           }
+        else
+           {
+            scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
+           }
         instance_create(x,y,obj_explosion_hitbox_boss);
        }
    }

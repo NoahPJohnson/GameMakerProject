@@ -37,7 +37,7 @@ else
        }
    } 
 
-if ((key_C_released || !key_C_held) && !place_meeting(x,y-30,obj_boundary) && !place_meeting(x,y-30,obj_enemy) && crouching == true)
+if ((key_C_released || !key_C_held) && !place_meeting(x,y-30,obj_boundary) && (!place_meeting(x,y-30,obj_enemy) || place_meeting(x,y,obj_enemy)) && crouching == true)
    {
     crouching = false;
     //sliding = false;

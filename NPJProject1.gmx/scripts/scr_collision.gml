@@ -58,21 +58,25 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
        }
     if (place_meeting(x+hspd,y,obj_enemy))
        {
-        //if (state != states.sliding)
-        //   {
-            while (!place_meeting(x+sign(hspd),y,obj_enemy))
-                  {
-                   x += sign(hspd);
-                  }
-            hspd = 0;
-        //   }
+        enemy_collision = instance_place(x+hspd,y,obj_enemy);
+        if (!place_meeting(x,y,obj_enemy) || enemy_collision.slide_through == false)
+           {
+            if (state != states.sliding || enemy_collision.slide_through == false)
+               {
+                while (!place_meeting(x+sign(hspd),y,obj_enemy))
+                      {
+                       x += sign(hspd);
+                      }
+                hspd = 0;
+               }
+           }
        }    
-    if (place_meeting(x+hspd,y-34,obj_player))
+    if (place_meeting(x+hspd,y,obj_player) && !place_meeting(x,y,obj_player))
        {
-        player_collision = instance_place(x+hspd,y-34, obj_player);
+        player_collision = instance_place(x+hspd,y, obj_player);
         if (player_collision.state != states.sliding)
            {
-            while (!place_meeting(x+sign(hspd),y-34,obj_player))
+            while (!place_meeting(x+sign(hspd),y,obj_player))
                   {
                    x += sign(hspd);
                   }
@@ -116,21 +120,25 @@ x += hspd;
 //Vertical Collision
 if (place_meeting(x,y+vspd,obj_enemy))
    {
-    //if (state != states.sliding)
-    //   {
-    enemy_collision = instance_place(x,y+vspd, obj_enemy);
-        while (!place_meeting(x,y+sign(vspd),obj_enemy))
-              {
-               y += sign(vspd);
-               //sprite_index = spr_enemy_jump;
-              }
-        vspd = 0;
+    enemy_collision = instance_place(x,y+vspd,obj_enemy);
+    if (!place_meeting(x,y,obj_enemy) || enemy_collision.slide_through == false)
+       {
+        if (state != states.sliding || enemy_collision.slide_through == false)
+           {
+            enemy_collision = instance_place(x,y+vspd, obj_enemy);
+            while (!place_meeting(x,y+sign(vspd),obj_enemy))
+                  {
+                   y += sign(vspd);
+                   //sprite_index = spr_enemy_jump;
+                  }
+            vspd = 0;
     
-    show_debug_message("Vertical Collision with enemy. Distance = " + string(distance_to_object(enemy_collision)));
-    //   }       
+            show_debug_message("Vertical Collision with enemy. Distance = " + string(distance_to_object(enemy_collision)));
+           }
+       }       
     
    }    
-if (place_meeting(x,y+vspd,obj_player))
+if (place_meeting(x,y+vspd,obj_player) && !place_meeting(x,y,obj_player))
    {
     player_collision = instance_place(x,y+vspd, obj_player);
     if (player_collision.state != states.sliding)

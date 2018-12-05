@@ -195,10 +195,10 @@ if (place_meeting(x,y-1,obj_player))
          {
           if (place_meeting(x,y + reference_vspd,obj_enemy))
              {
-              while (!place_meeting(x,y+sign(reference_vspd),obj_enemy))
+              /*while (!place_meeting(x,y+sign(reference_vspd),obj_enemy))
                     {
                      y += sign(reference_vspd);
-                    }  
+                    }*/  
               reference_vspd = 0;
              }
           y += reference_vspd;

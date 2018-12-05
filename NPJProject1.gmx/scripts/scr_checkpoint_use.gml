@@ -2,8 +2,15 @@
 //room_goto(rm_test2);
     show_debug_message("USE THE CHECKPOINT!");
     //show_debug_message("Where is the player? " + string(obj_player.x));
-    obj_player.x = player_checkpoint_x;
-    obj_player.y = player_checkpoint_y;
+    if (instance_exists(obj_player))
+       {
+        obj_player.x = player_checkpoint_x;
+        obj_player.y = player_checkpoint_y;
+       }
+    else
+       {
+        instance_create(player_checkpoint_x,player_checkpoint_y,obj_player);
+       }
     if (instance_exists(obj_enemy))
        {
         with (obj_enemy)

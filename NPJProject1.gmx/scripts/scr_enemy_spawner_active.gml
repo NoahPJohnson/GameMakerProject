@@ -10,6 +10,7 @@
 if (!instance_exists(barrier))
    {
     instance_activate_object(barrier);
+    barrier.barrier_active = true;
    }
 if (i < waves)
    {
