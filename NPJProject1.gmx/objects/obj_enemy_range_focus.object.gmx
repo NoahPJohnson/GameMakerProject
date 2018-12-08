@@ -143,6 +143,7 @@ else
 show_debug_message("PANIC!!");
 meleeAttack = true;
 projectile = instance_create(x,y-32,obj_projectile_grenade);
+//scr_create_grenade_projectile();
 dir = -sign(obj_player.x - x);
 //hspd = dir * 8;
 alarm[8] = room_speed * (35/60);
@@ -347,7 +348,7 @@ if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) &amp
    }
 else
    {
-    projectile = instance_create(x,y-32, obj_projectile_grenade);
+    scr_create_grenade_projectile();
     if (alarm[2] == -1)
        {
         alarm[2] = room_speed * (30/60);

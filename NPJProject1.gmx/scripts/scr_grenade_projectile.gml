@@ -1,5 +1,6 @@
 ///Projectile Normal
-vspeed += 0.8;
+//vspeed += 0.8;
+motion_add(270,0.8);
 //Collision with Bat
 if (place_meeting(x, y, obj_bat))
    {

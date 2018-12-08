@@ -14,8 +14,20 @@ if (enemy_crash == false)
         {
          if (obj_scoring_manager.bases_array[i] > 0)
             {
-             obj_scoring_manager.bases_array[i] += strength;
-             if (obj_scoring_manager.bases_array[i] > 3)
+             //Cap non permanent bases at 4 so they don't mistakenly become permanent and cause an error
+             if (obj_scoring_manager.bases_array[i] < 5)
+                {
+                 obj_scoring_manager.bases_array[i] += strength;
+                 obj_scoring_manager.bases_array[i] = clamp(obj_scoring_manager.bases_array[i],0,4);
+                }
+             //Cap permanent bases at 9 so they don't reset their number and avoid getting counted as runs
+             else if (obj_scoring_manager.bases_array[i] > 5)
+                {
+                 obj_scoring_manager.bases_array[i] += strength;
+                 obj_scoring_manager.bases_array[i] = clamp(obj_scoring_manager.bases_array[i],6,9);
+                }
+             //So if the mod result is 4, revert it to zero and add a run to the player's score
+             if ((obj_scoring_manager.bases_array[i] % 5) > 3)
                 {
                  obj_scoring_manager.runs += 1;
                  obj_scoring_manager.bases_array[i] = 0;
@@ -27,7 +39,9 @@ if (enemy_crash == false)
          if (obj_scoring_manager.bases_array[i] == 0)
             {
              obj_scoring_manager.bases_array[i] += strength;
-             if (obj_scoring_manager.bases_array[i] > 3)
+             //Just to be safe, cap the new runner too
+             obj_scoring_manager.bases_array[i] = clamp(obj_scoring_manager.bases_array[i],0,4);
+             if ((obj_scoring_manager.bases_array[i] % 5) > 3)
                 {
                  obj_scoring_manager.runs += 1;
                  obj_scoring_manager.bases_array[i] = 0;
@@ -39,17 +53,23 @@ if (enemy_crash == false)
     for (i = 0; i < 3; i ++)
         {
          obj_scoring_manager.sprites_array[i] = false;
+         obj_scoring_manager.permanent_sprites_array[i] = false;
         }
     
     for (i = 0; i < 3; i ++)
         {
          if (obj_scoring_manager.bases_array[i] > 0)
             {
-             obj_scoring_manager.sprites_array[obj_scoring_manager.bases_array[i]-1] = true;
+             obj_scoring_manager.sprites_array[(obj_scoring_manager.bases_array[i]%5)-1] = true;
+            }
+         if (obj_scoring_manager.bases_array[i] > 5)
+            {
+             obj_scoring_manager.sprites_array[(obj_scoring_manager.bases_array[i]%5)-1] = false;
+             obj_scoring_manager.permanent_sprites_array[(obj_scoring_manager.bases_array[i]%5)-1] = true;
             }
         }
    }
-if (obj_scoring_manager.bases_array[0] != 0 || obj_scoring_manager.bases_array[1] != 0 || obj_scoring_manager.bases_array[2] != 0)
+if (obj_scoring_manager.bases_array[0] != 0 && obj_scoring_manager.bases_array[0] < 5 || obj_scoring_manager.bases_array[1] != 0 && obj_scoring_manager.bases_array[1] < 5 || obj_scoring_manager.bases_array[2] != 0 && obj_scoring_manager.bases_array[2] < 5)
    {
     obj_scoring_manager.alarm[0] = obj_scoring_manager.out_time;
    }

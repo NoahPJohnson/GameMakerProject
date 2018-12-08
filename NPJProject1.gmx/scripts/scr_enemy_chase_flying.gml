@@ -2,23 +2,19 @@
 speed = 0;
 direction = 0;
 
-//bob += room_speed * (0.1/60);
-//vspd = (2*sin(bob));
-//if (melee_hitbox != obj_projectile_bomb_2)
-//   {
     if (collision_line(x,y,x,y+130,obj_boundary,false,true) && !place_meeting(x+hspd,y-64, obj_boundary))
        {
-        vspd = -4;
+        //vspd = -4;
         show_debug_message("Go up.");
        }
     else if (!place_meeting(x+hspd,y+130, obj_boundary) && place_meeting(x+hspd,y-24, obj_boundary))
        {
-        vspd = 3;
+        //vspd = 3;
         show_debug_message("Go DOWN.");
        }
     else if (/*!place_meeting(x+hspd,y+220, obj_boundary)*/!collision_line(x,y,x,y+240,obj_boundary,false,true))
        {
-        vspd = 3;
+        //vspd = 3;
         show_debug_message("Too high, descend.");
        }
     else
@@ -28,15 +24,9 @@ direction = 0;
         vspd = (3*sin(bob));
         show_debug_message("Ok! Just bob up and down.");
        }
-//   }
-//else
-//   {
-//    bob += room_speed * (0.1/60);
-//    vspd = (2*sin(bob));
-//   }
 
-//vspd = (min(7, vspd + grv));
-if (/*alarm[7] = -1 && */alarm[8] = -1)
+
+if (alarm[8] = -1)
    {
     if (obj_player.sliding == false)
        {   
@@ -60,7 +50,7 @@ if (/*alarm[7] = -1 && */alarm[8] = -1)
                {
                 //vspd = ((obj_player.x-x)*-dir)/30;
                }
-            selected_projectile = obj_projectile_bomb_2;
+            //selected_projectile = obj_projectile_bomb_2;
            }
        }
     if (firing == false)
@@ -108,9 +98,6 @@ if (obj_player.state == states.knockback)
     alarm[0] = -1; 
    }
 
-   
-//Melee Attack
-//scr_enemy_melee();
   
 //Valid Target
 scr_enemy_targeted();
@@ -121,11 +108,6 @@ scr_hit_by_bat();
 //Hit by a Projectile
 scr_hit_by_projectile();
 
-//Out of HP
-//scr_enemy_hp_zero();
-
-//Collision with Enemy
-//scr_enemy_collision();
 
 //Collision
 scr_collision();

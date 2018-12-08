@@ -30,6 +30,11 @@ runs = 0; //Times the player has hit an enemy/ points based on hits and distance
 balls = 0; //Times the player has hit a projectile
 strikes = 0; //Times the player has gotten hit
 //?outs = 0; //Every 3 strikes?
+
+//Base array ranges from 0,1,2,3,4 and 6,7,8,9
+//Scoring happens on 4 and 9, then the number reverts to zero
+//bases listed as zero can be used as fresh runners, at least one should always be available because runners on base are moved first
+//6,7,8,9 reflects permanent bases, these don't get timed out and result from walks
 bases_array[0] = 0;
 bases_array[1] = 0;
 bases_array[2] = 0;
@@ -38,6 +43,10 @@ bases_array[2] = 0;
 sprites_array[0] = false;
 sprites_array[1] = false;
 sprites_array[2] = false;
+
+permanent_sprites_array[0] = false;
+permanent_sprites_array[1] = false;
+permanent_sprites_array[2] = false;
 
 out_time = room_speed * (270/60);
 
@@ -69,14 +78,16 @@ furthest = 0;
 furthest_index = -1;
 for (i = 0; i &lt; 3; i ++)
     {
-     if (bases_array[i] &gt; furthest)
+     //only select a base that isn't permanent
+     if (bases_array[i] &gt; furthest &amp;&amp; bases_array[i] &lt; 5)
         {
          furthest = bases_array[i];
          furthest_index = i;
         }
     }
-if (furthest_index &gt; -1)
+if (furthest_index &gt; -1 &amp;&amp; furthest &lt; 5)
    {
+    //Call the furthest non permanent runner out
     bases_array[furthest_index] = 0;
     //show_debug_message("Out at base number: " + string(furthest_index) + " value: " + string(furthest));
    }
@@ -84,6 +95,7 @@ if (furthest_index &gt; -1)
 for (i = 0; i &lt; 3; i ++)
     {
      sprites_array[i] = false;
+     permanent_sprites_array[i] = false;
     }
     
 for (i = 0; i &lt; 3; i ++)
@@ -91,10 +103,16 @@ for (i = 0; i &lt; 3; i ++)
      //show_debug_message("Base: " + string(i) + " = " + string(bases_array[i]));
      if (bases_array[i] &gt; 0)
         {
-         sprites_array[bases_array[i]-1] = true;
+         sprites_array[(bases_array[i]%5)-1] = true;
         }
-    }   
-if (bases_array[0] != 0 || bases_array[1] != 0 || bases_array[2] != 0)
+     if (bases_array[i] &gt; 5)
+        {
+         sprites_array[(bases_array[i] % 5)-1] = false;
+         permanent_sprites_array[(bases_array[i] % 5)-1] = true;
+        }
+    }  
+//Only set the timer if there are occupied, temporary runners on base 
+if (bases_array[0] != 0 &amp;&amp; bases_array[0] &lt; 5 || bases_array[1] != 0 &amp;&amp; bases_array[1] &lt; 5 || bases_array[2] != 0 &amp;&amp; bases_array[2] &lt; 5)
    {
     alarm[0] = out_time;
    }
@@ -144,40 +162,51 @@ if (bases_array[0] != 0 || bases_array[1] != 0 || bases_array[2] != 0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(spr_score_tracker_timer,1,view_xview[0]+1000, view_yview[0]+130, obj_scoring_manager.alarm[0]/obj_scoring_manager.out_time, obj_scoring_manager.alarm[0]/obj_scoring_manager.out_time, 0, c_white,1);
+            <string>
+//Draw the timer and circle that connects the bases
+draw_sprite_ext(spr_score_tracker_timer,1,view_xview[0]+1000, view_yview[0]+130, obj_scoring_manager.alarm[0]/obj_scoring_manager.out_time, obj_scoring_manager.alarm[0]/obj_scoring_manager.out_time, 0, c_white,1);
 draw_sprite_ext(spr_score_tracker_ring,1,view_xview[0]+1000, view_yview[0]+130, 1, 1, 0, c_white,1);
 
 
-
+//Draw the empty bases
 draw_sprite_ext(spr_score_tracker_base,1,view_xview[0]+1000, view_yview[0]+60, 1, 1, 0, c_white, !obj_scoring_manager.sprites_array[1]);
 draw_sprite_ext(spr_score_tracker_base,1,view_xview[0]+1070, view_yview[0]+130, 1, 1, 0, c_white,!obj_scoring_manager.sprites_array[0]);
 draw_sprite_ext(spr_score_tracker_base,1,view_xview[0]+930, view_yview[0]+130, 1, 1, 0, c_white, !obj_scoring_manager.sprites_array[2]);
 
+//Draw the occupied bases, 2nd, 1st, 3rd
 draw_sprite_ext(spr_score_tracker_base_occupied,1,view_xview[0]+1000, view_yview[0]+60, 1, 1, 0, c_white, obj_scoring_manager.sprites_array[1]);
 draw_sprite_ext(spr_score_tracker_base_occupied,1,view_xview[0]+1070, view_yview[0]+130, 1, 1, 0, c_white,obj_scoring_manager.sprites_array[0]);
 draw_sprite_ext(spr_score_tracker_base_occupied,1,view_xview[0]+930, view_yview[0]+130, 1, 1, 0, c_white, obj_scoring_manager.sprites_array[2]);
 
+//Draw the pemanent bases, 2nd, 1st, 3rd
+draw_sprite_ext(spr_score_tracker_base_occupied_permanent,1,view_xview[0]+1000, view_yview[0]+60, 1, 1, 0, c_white, obj_scoring_manager.permanent_sprites_array[1]);
+draw_sprite_ext(spr_score_tracker_base_occupied_permanent,1,view_xview[0]+1070, view_yview[0]+130, 1, 1, 0, c_white,obj_scoring_manager.permanent_sprites_array[0]);
+draw_sprite_ext(spr_score_tracker_base_occupied_permanent,1,view_xview[0]+930, view_yview[0]+130, 1, 1, 0, c_white, obj_scoring_manager.permanent_sprites_array[2]);
 
 
+//Draw the empty strike circles
 draw_sprite_ext(spr_score_tracker_ball_strike_empty,1,view_xview[0]+940, view_yview[0]+210, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_score_tracker_ball_strike_empty,1,view_xview[0]+940, view_yview[0]+250, 1, 1, 0, c_white, 1);
 
+//Draw the counted strikes
 draw_sprite_ext(spr_score_tracker_strike,1,view_xview[0]+940, view_yview[0]+210, 1, 1, 0, c_white, (obj_scoring_manager.strikes &gt;= 1));
 draw_sprite_ext(spr_score_tracker_strike,1,view_xview[0]+940, view_yview[0]+250, 1, 1, 0, c_white, (obj_scoring_manager.strikes &gt;= 2));
 
-
+//Draw the empty ball circles
 draw_sprite_ext(spr_score_tracker_ball_strike_empty,1,view_xview[0]+1060, view_yview[0]+210, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_score_tracker_ball_strike_empty,1,view_xview[0]+1060, view_yview[0]+250, 1, 1, 0, c_white, 1);
 draw_sprite_ext(spr_score_tracker_ball_strike_empty,1,view_xview[0]+1060, view_yview[0]+290, 1, 1, 0, c_white, 1);
 
+//Draw the counted balls
 draw_sprite_ext(spr_score_tracker_ball,1,view_xview[0]+1060, view_yview[0]+210, 1, 1, 0, c_white, (obj_scoring_manager.balls &gt;= 1));
 draw_sprite_ext(spr_score_tracker_ball,1,view_xview[0]+1060, view_yview[0]+250, 1, 1, 0, c_white, (obj_scoring_manager.balls &gt;= 2));
 draw_sprite_ext(spr_score_tracker_ball,1,view_xview[0]+1060, view_yview[0]+290, 1, 1, 0, c_white, (obj_scoring_manager.balls &gt;= 3));
 
 
-
+//Draw home base, where the score is displayed
 draw_sprite(spr_score_tracker_home_base,1,view_xview[0]+1000, view_yview[0]+200);
 
+//Draw the score
 draw_set_font(fnt_score_font);
 draw_text_transformed_colour(view_xview[0]+972, view_yview[0]+190, obj_scoring_manager.runs, 1, 1, 0,c_gray,c_black,c_black,c_black,1);
 //draw_sprite_ext(spr_stamina_bar,1,view_xview[0]+15, view_yview[0]+45, obj_player.sp/100, 1, 0, c_white,1);
