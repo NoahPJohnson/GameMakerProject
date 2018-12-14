@@ -40,7 +40,7 @@ slope_mod = 2;
 //Attacks
 firing = false;
 first_shot = true;
-fir_speed = 36;
+fir_speed = 45;
 melee_hitbox = noone;
 
 //Damage and Hit Reaction
@@ -197,8 +197,42 @@ state = e_state.idle*/
             <string>///Fire Projectile
 firing = true;
 hspd = 0;
-projectile = instance_create(x,y, obj_projectile_ricochet);
+//projectile = instance_create(x,y, obj_projectile_ricochet);
 //alarm[0] = room_speed * (fir_speed/60);
+if (collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true) || collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
+   {
+    var firing_range = distance_to_object(obj_player)/1.5;
+    var firing_angle = point_direction(x,y,obj_player.x,obj_player.y);
+    var original_firing_angle = firing_angle;
+    for (i = 1; i &lt; 4; i++)
+        {
+         firing_angle += (i*15);
+         //show_debug_message("Try: " + string(firing_angle));
+         //instance_create(x+lengthdir_x(firing_range,firing_angle),y+lengthdir_y(firing_range,firing_angle),obj_test2);
+         if (!collision_line(x,y,x+lengthdir_x(firing_range,firing_angle),y+lengthdir_y(firing_range,firing_angle),obj_boundary,false,true))
+            {
+             scr_create_projectile(7,firing_angle,x,y,obj_projectile_ricochet);
+             break;
+            }
+         firing_angle = original_firing_angle;
+         firing_angle -= (i*15);
+         //show_debug_message("NOW TRY: " + string(firing_angle));
+         //instance_create(x+lengthdir_x(firing_range,firing_angle),y+lengthdir_y(firing_range,firing_angle),obj_test2);
+         if (!collision_line(x,y,x+lengthdir_x(firing_range,firing_angle),y+lengthdir_y(firing_range,firing_angle),obj_boundary,false,true))
+            {
+             scr_create_projectile(7,firing_angle,x,y,obj_projectile_ricochet);
+             break;
+            }
+         firing_angle = original_firing_angle;
+        }
+   }
+else
+   {
+    //show_debug_message("No obstruction!!");
+    var firing_angle = round(point_direction(x,y,obj_player.x,obj_player.y)/10)*10;
+    scr_create_projectile(7,firing_angle,x,y,obj_projectile_ricochet);
+    
+   }
 if (alarm[2] == -1)
    {
     alarm[2] = room_speed * (26/60);
@@ -230,12 +264,12 @@ switch (state)
        {
         case e_state.idle: 
              {   
-              scr_enemy(); 
+              scr_enemy_no_wall_check(); 
               break;
              }
         case e_state.chase: 
              {
-              scr_enemy_stationary_triggered(); 
+              scr_enemy_stationary_ricochet_triggered(); 
               break;        
              }
         case e_state.hitstun:

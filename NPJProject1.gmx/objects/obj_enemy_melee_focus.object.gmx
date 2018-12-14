@@ -137,7 +137,7 @@ if (instance_exists(melee_hitbox))
    }
 else
    {
-    longRange = true;
+    //longRange = true;
    }
 if (hp &lt; 2)
    {
@@ -396,6 +396,7 @@ else if (!collision_line(obj_player.x,obj_player.y,obj_player.x+(50*teleport_dir
     x = obj_player.x + (40*teleport_dir);
     y = obj_player.y - 16;
    }
+
 //projectile = instance_create(x,y, obj_projectile);
 firing = false;
 //sprite_index = spr_enemy;

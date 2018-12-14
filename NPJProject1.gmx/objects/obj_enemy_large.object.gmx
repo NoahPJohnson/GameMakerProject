@@ -339,7 +339,15 @@ state = e_state.idle;
             <string>///Stop and Prepare to Fire
 firing = true;
 hspd = 0;
-projectile = instance_create(x,y-32, obj_projectile_bomb);
+if (obj_player.x - x &gt; 0)
+   {
+    //projectile = scr_create_projectile(12,50,x,y-32,obj_projectile_fire_canister);
+   }
+else
+   {
+    //projectile = scr_create_projectile(12,130,x,y-32,obj_projectile_fire_canister);
+   }
+instance_create(x,y-32, obj_projectile_bomb_medium);
 //projectile.speed = 13 * (obj_player.x-x);
 //projectile.direction = 50 * (obj_player.x-x);
 //sprite_index = spr_player;

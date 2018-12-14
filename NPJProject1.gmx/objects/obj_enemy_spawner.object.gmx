@@ -40,6 +40,9 @@ enemies_active_array[0] = 0;
 enemies_active_count = 0;
 time_between_spawns = 50;
 enemy_index = 0;
+
+spawn_point_array[0] = obj_enemy_spawner_point_A;
+spawn_point_array[1] = obj_enemy_spawner_point_B;
 state = enemy_spawner_state.idle;
 </string>
           </argument>
@@ -66,7 +69,14 @@ state = enemy_spawner_state.idle;
             <string>///Spawn an enemy.
 if (enemy_index &lt; array_length_1d(enemies_to_spawn_array))
    {
-    enemies_active_array[enemy_index+1] = instance_create(x,y,enemies_to_spawn_array[enemy_index]);
+    if (point_distance(spawn_point_array[0].x,spawn_point_array[0].y,obj_player.x,obj_player.y) &gt; point_distance(spawn_point_array[1].x,spawn_point_array[1].y,obj_player.x,obj_player.y))
+       {
+        enemies_active_array[enemy_index+1] = instance_create(spawn_point_array[0].x,spawn_point_array[0].y,enemies_to_spawn_array[enemy_index]);
+       }
+    else
+       {
+        enemies_active_array[enemy_index+1] = instance_create(spawn_point_array[1].x,spawn_point_array[1].y,enemies_to_spawn_array[enemy_index]);
+       }
     //enemies_active_count += 1;
     enemy_index += 1;
     started_spawning = true;

@@ -12,38 +12,24 @@ if (alarm[7] = -1 && alarm[8] = -1)
    {
     if (obj_player.sliding == false)
        {
-        //if (abs(obj_player.y - y) < 170)
-        //   {
-            
-            if (abs((obj_player.x+180) - x) < abs((obj_player.x-180) - x))
-               {
-                dir = sign(sign(floor(obj_player.x+170) - x) + sign(floor(obj_player.x+180) - x));
-                
-                //show_debug_message("direction = " + string(dir));
-               }
-            else
-               {
-                dir = sign(sign(floor(obj_player.x-170) - x) + sign(floor(obj_player.x-180) - x));
-                //show_debug_message("DIRECTION = " + string(dir));
-               }
-        //   }
-        //else
-        //   {
-        //    dir = sign((obj_player.x) - x);
-        //   } 
+        if (abs((obj_player.x+180) - x) < abs((obj_player.x-180) - x))
+           {
+            dir = sign(sign(floor(obj_player.x+170) - x) + sign(floor(obj_player.x+180) - x));
+            //show_debug_message("direction = " + string(dir));
+           }
+        else
+           {
+            dir = sign(sign(floor(obj_player.x-170) - x) + sign(floor(obj_player.x-180) - x));
+            //show_debug_message("DIRECTION = " + string(dir));
+           }
        }
        
     if (distance_to_object(obj_player) < 130)
        {
         dir = 0;
-        //alarm[0] = -1;
-        //alarm[2] = -1;
-        //firing = false;
        }
     if (firing == false)
        {
-        
-        //show_debug_message("Step: " + string(sin(step)));
         hspd = dir * chsSpeed;
        } 
    } 
@@ -92,7 +78,7 @@ if (shield != noone)
    {
     if (shield.sprite_index == spr_enemy_shield_L && obj_player.x > shield.x)
        {
-        show_debug_message("Player is to the right of shield L");
+        //show_debug_message("Player is to the right of shield L");
         //Hit by the Bat  
         scr_hit_by_bat();
 
@@ -101,7 +87,7 @@ if (shield != noone)
        }
     else if (shield.sprite_index == spr_enemy_shield_Up && obj_player.y > shield.y)
        {
-        show_debug_message("Player is below shield Up");
+        //show_debug_message("Player is below shield Up");
         //Hit by the Bat  
         scr_hit_by_bat();
 
@@ -110,7 +96,7 @@ if (shield != noone)
        }
     else if (shield.sprite_index == spr_enemy_shield_R && obj_player.x < shield.x)
        {
-        show_debug_message("Player is to the left of shield R");
+        //show_debug_message("Player is to the left of shield R");
         //Hit by the Bat  
         scr_hit_by_bat();
 
@@ -129,11 +115,6 @@ else
    
 //Hit by a Projectile 
 scr_hit_by_projectile();
-//Out of HP
-//scr_enemy_hp_zero();
-
-//Collision with Enemy
-//scr_enemy_collision();
 
 //Collision
 scr_collision();

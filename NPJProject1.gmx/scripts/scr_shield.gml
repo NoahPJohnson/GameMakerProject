@@ -5,89 +5,103 @@ if (enemy_parent != noone)
        {
         instance_destroy();
        }
-if (obj_player.sliding == false)
-   { 
-    if (obj_player.y < enemy_parent.y-160 && guard_position != 1 && alarm[1] == -1)
+    if (obj_player.sliding == false)
        {
-        show_debug_message("GUARD UP! player y = " + string(obj_player.y) + " enemy y = " + string(enemy_parent.y-160));
-        old_X = x;
-        old_Y = y;
-        x = enemy_parent.x;
-        y = enemy_parent.y-48;
-        old_sprite = sprite_index;
-        sprite_index = spr_enemy_shield_Up;
-        if (!place_meeting(x,y,obj_player))
+        if (enemy_parent.alarm[7] > 0 && guard_position != 1 && alarm[1] == -1)
            {
-            
-            sprite_index = old_sprite;
-            if (alarm[1] == -1)
+            show_debug_message("Melee attack, make room. player y = " + string(obj_player.y) + " enemy y = " + string(enemy_parent.y-160));
+            old_X = x;
+            old_Y = y;
+            x = enemy_parent.x;
+            y = enemy_parent.y-48;
+            old_sprite = sprite_index;
+            sprite_index = spr_enemy_shield_Up;
+            if (!place_meeting(x,y,obj_player))
                {
-                guard_position = 1;
-                alarm[1] = room_speed * (25/60);
+                sprite_index = old_sprite;
+                if (alarm[1] == -1)
+                   {
+                    guard_position = 1;
+                    alarm[1] = room_speed * (35/60);
+                   }
                }
-           }
-        x = old_X;
-        y = old_Y;
-        sprite_index = old_sprite;
-       }
-    else if (obj_player.y > enemy_parent.y-16 && obj_player.x < enemy_parent.x-32 && guard_position != 0 && alarm[1] == -1)
-       {
-        show_debug_message("Guard Left.");
-        old_X = x;
-        old_Y = y;
-        x = enemy_parent.x - 48;
-        y = enemy_parent.y-48;
-        old_sprite = sprite_index;
-        sprite_index = spr_enemy_shield_L;
-        if (!place_meeting(x,y,obj_player))
-           {
+            x = old_X;
+            y = old_Y;
             sprite_index = old_sprite;
-            if (alarm[1] == -1)
+           } 
+        else if (obj_player.y < enemy_parent.y-160 && guard_position != 1 && alarm[1] == -1)
+           {
+            //show_debug_message("GUARD UP! player y = " + string(obj_player.y) + " enemy y = " + string(enemy_parent.y-160));
+            old_X = x;
+            old_Y = y;
+            x = enemy_parent.x;
+            y = enemy_parent.y-48;
+            old_sprite = sprite_index;
+            sprite_index = spr_enemy_shield_Up;
+            if (!place_meeting(x,y,obj_player))
                {
-                guard_position = 0;
-                alarm[1] = room_speed * (25/60);
+                sprite_index = old_sprite;
+                if (alarm[1] == -1)
+                   {
+                    old_guard_position = guard_position;
+                    guard_position = 1;
+                    alarm[1] = room_speed * (15/60);
+                   }
                }
-           }
-        x = old_X;
-        y = old_Y;
-        sprite_index = old_sprite;
-        /*if (alarm[1] == -1)
-           {
-            guard_position = 0;
-            alarm[1] = room_speed * (55/60);
-           }*/
-       }
-    else if (obj_player.y > enemy_parent.y-16 && obj_player.x > enemy_parent.x+32 && guard_position != 2 && alarm[1] == -1)
-       {
-        show_debug_message("guard right");
-        old_X = x;
-        old_Y = y;
-        x = enemy_parent.x + 48;
-        y = enemy_parent.y-48;
-        old_sprite = sprite_index;
-        sprite_index = spr_enemy_shield_R;
-        if (!place_meeting(x,y,obj_player))
-           {
+            x = old_X;
+            y = old_Y;
             sprite_index = old_sprite;
-            if (alarm[1] == -1)
-               {
-                guard_position = 2;
-                alarm[1] = room_speed * (25/60);
-               }
            }
-        x = old_X;
-        y = old_Y;
-        sprite_index = old_sprite;
-        /*if (alarm[1] == -1)
+        else if (obj_player.y > enemy_parent.y-16 && obj_player.x < enemy_parent.x-32 && guard_position != 0 && alarm[1] == -1)
            {
-            guard_position = 2;
-            alarm[1] = room_speed * (55/60);
-           }*/
+            //show_debug_message("Guard Left.");
+            old_X = x;
+            old_Y = y;
+            x = enemy_parent.x - 48;
+            y = enemy_parent.y-48;
+            old_sprite = sprite_index;
+            sprite_index = spr_enemy_shield_L;
+            if (!place_meeting(x,y,obj_player) && !place_meeting(x,y,enemy_parent_hitbox))
+               {
+                sprite_index = old_sprite;
+                if (alarm[1] == -1)
+                   {
+                    old_guard_position = guard_position;
+                    guard_position = 0;
+                    alarm[1] = room_speed * (15/60);
+                   }
+               }
+            x = old_X;
+            y = old_Y;
+            sprite_index = old_sprite;
+           }
+        else if (obj_player.y > enemy_parent.y-16 && obj_player.x > enemy_parent.x+32 && guard_position != 2 && alarm[1] == -1)
+           {
+            //show_debug_message("guard right");
+            old_X = x;
+            old_Y = y;
+            x = enemy_parent.x + 48;
+            y = enemy_parent.y-48;
+            old_sprite = sprite_index;
+            sprite_index = spr_enemy_shield_R;
+            if (!place_meeting(x,y,obj_player) && !place_meeting(x,y,enemy_parent_hitbox))
+               {
+                sprite_index = old_sprite;
+                if (alarm[1] == -1)
+                   {
+                    old_guard_position = guard_position;
+                    guard_position = 2;
+                    alarm[1] = room_speed * (15/60);
+                   }
+               }
+            x = old_X;
+            y = old_Y;
+            sprite_index = old_sprite;
+           }
        }
-   }
     if (place_meeting(x,y,obj_player) && alarm[1] == -1)
        {
-        show_debug_message("Shield Avoid Overlap. guard_position = " + string(guard_position));
+        //show_debug_message("Shield Avoid Overlap. guard_position = " + string(guard_position));
         guard_position -= 1;
         if (guard_position < 0)
            {
@@ -111,7 +125,6 @@ if (obj_player.sliding == false)
             x = enemy_parent.x + 48;
             y = enemy_parent.y-48;
            }
-        //alarm[1] = 0;
        }
        
        
@@ -133,34 +146,8 @@ if (obj_player.sliding == false)
         x = enemy_parent.x + 48;
         y = enemy_parent.y-48;
        }
-    //x = enemy_parent.x + (32);
-    //y = enemy_parent.y-100; 
    }
 
-//Blocked by Bunt
-/*if (place_meeting(x,y,obj_bunt_bat))
-   {
-    obj_player.sp -= 30;
-    
-    //Player Hitstop
-    obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = room_speed * (3/60);
-    if (obj_player.state != states.hitstop)
-       {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;
-    
-    //Enemy Hitstop
-    enemy_parent.hitstop = false;
-    enemy_parent.damage_hitstop = false;
-    enemy_parent.alarm[9] = room_speed * (3/60);
-    enemy_parent.old_state = enemy_parent.state;
-    enemy_parent.state = e_state.hitstop;
-    //instance_destroy();
-   }*/
+//Hit By Bat
+scr_shield_hit_by_bat();
 
-
-   
-//scr_shield_hit_by_bat();

@@ -122,6 +122,7 @@ else
 //Don't walk off tall ledges   
 if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
    {
+    longRange = true;
     //show_debug_message("Don't walk off ledge.");
     hspd *= 0;
    } 

@@ -43,7 +43,10 @@ stop = false;
 old_X = 0;
 old_Y = 0;
 
-//0 = left, 1 = up, 2 = right 
+//0 = left, 1 = up, 2 = right
+shield_hitstun = false;
+enemy_parent_hitbox = obj_melee_hitbox_long_2;
+old_guard_position = 2; 
 guard_position = 2;
 //ANGLE_INCREMENT = 7;
 //radius = point_distance(center_X, center_Y, x, y);
@@ -51,6 +54,30 @@ guard_position = 2;
 
 state = shield_state.active;
 //alarm[0] = room_speed * (45/60);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Shield Hitstun is over
+shield_hitstun = false;
 </string>
           </argument>
         </arguments>
@@ -179,7 +206,7 @@ stop = false;
             <string>///Change Guard Position
 if (guard_position == 0)
    {
-    show_debug_message("Change it to shield L!");
+    //show_debug_message("Change it to shield L!");
     //object_set_sprite(self,spr_enemy_shield_L);
     sprite_index = spr_enemy_shield_L;
    }
@@ -194,34 +221,33 @@ else if (guard_position == 2)
     sprite_index = spr_enemy_shield_R;
    }
    
-    if (sprite_index == spr_enemy_shield_L)
-       {
-        //sprite_index = spr_enemy_shield_L;
-        x = enemy_parent.x - 48;
-        y = enemy_parent.y-48;
-       }
-    else if (sprite_index == spr_enemy_shield_Up)
-       {
-        //sprite_index = spr_enemy_shield_Up;
-        x = enemy_parent.x;
-        y = enemy_parent.y-48;
-       }
-    else if (sprite_index == spr_enemy_shield_R)
-       {
-        //sprite_index = spr_enemy_shield_R;
-        x = enemy_parent.x + 48;
-        y = enemy_parent.y-48;
-       }
-/*if (place_meeting(x,y,obj_player))
+if (sprite_index == spr_enemy_shield_L)
    {
-    show_debug_message("Shield Avoid Overlap 2.")
-    guard_position -= 1;
-    if (guard_position &lt; 0)
-       {
-        guard_position = 1;
-       }
-    alarm[1] = 1;
-   }*/
+    //sprite_index = spr_enemy_shield_L;
+    x = enemy_parent.x - 48;
+    y = enemy_parent.y-48;
+   }
+else if (sprite_index == spr_enemy_shield_Up)
+   {
+    //sprite_index = spr_enemy_shield_Up;
+    x = enemy_parent.x;
+    y = enemy_parent.y-48;
+   }
+else if (sprite_index == spr_enemy_shield_R)
+   {
+    //sprite_index = spr_enemy_shield_R;
+    x = enemy_parent.x + 48;
+    y = enemy_parent.y-48;
+   }
+
+if (place_meeting(x,y,obj_player) || place_meeting(x,y,enemy_parent_hitbox) || shield_hitstun == true)
+   {
+    show_debug_message("Shield overlapping!!!");
+    guard_position = old_guard_position;
+    sprite_index = old_sprite;
+    x = old_X;
+    y = old_Y;
+   }
 </string>
           </argument>
         </arguments>

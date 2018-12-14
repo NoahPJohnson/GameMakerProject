@@ -114,7 +114,7 @@ if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = room_speed * (1/60);
    }
-show_debug_message("Melee over.");
+//show_debug_message("Melee over.");
 </string>
           </argument>
         </arguments>
@@ -138,30 +138,26 @@ show_debug_message("Melee over.");
           <argument>
             <kind>1</kind>
             <string>///Melee Decision is made, attack begins
-    if (place_meeting(x, y+1, obj_boundary))
+if (place_meeting(x, y+1, obj_boundary))
+   {
+    if (!instance_exists(melee_hitbox))
        {
-        if (!instance_exists(melee_hitbox))
+        if (melee_dir &lt; 0)
            {
-            /*if (obj_player.state != states.sliding)
-               {
-                melee_dir = sign(obj_player.x - x);
-               }*/
-                if (melee_dir &lt; 0)
-                   {
-                    melee_hitbox = instance_create(x-80, y+thrust_height, obj_melee_hitbox_long_2);
-                   }
-                else
-                   {
-                    melee_hitbox = instance_create(x+80, y+thrust_height, obj_melee_hitbox_long_2);
-                   }
-            melee_hitbox.enemy_parent = self;            
+            melee_hitbox = instance_create(x-80, y+thrust_height, obj_melee_hitbox_long_2);
            }
-       }    
-    if (alarm[8] = -1)
-       { 
-        //show_debug_message("Alarm 8 is set?");
-        alarm[8] = room_speed * (105/60);
-       }   
+        else
+           {
+            melee_hitbox = instance_create(x+80, y+thrust_height, obj_melee_hitbox_long_2);
+           }
+        melee_hitbox.enemy_parent = self;            
+       }
+   }    
+if (alarm[8] = -1)
+   { 
+    //show_debug_message("Alarm 8 is set?");
+    alarm[8] = room_speed * (110/60);
+   }   
 </string>
           </argument>
         </arguments>

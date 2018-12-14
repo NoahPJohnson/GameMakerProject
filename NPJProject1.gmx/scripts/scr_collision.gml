@@ -157,6 +157,7 @@ if (place_meeting(x,y+vspd,obj_boundary))
            y += sign(vspd);
           }  
     vspd = 0;
+    
    }   
     
 y += vspd; 

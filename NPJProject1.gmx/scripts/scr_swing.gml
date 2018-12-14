@@ -31,6 +31,7 @@ if (mve = -1)
 
 if (!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_enemy))
    {
+    //show_debug_message("Off ground and swinging, go back to normal.");
     recovery = false;
     mspd = mspd_normal;
     jspd = jump;

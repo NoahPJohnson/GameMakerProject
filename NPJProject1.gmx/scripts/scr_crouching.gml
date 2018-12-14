@@ -21,7 +21,7 @@ if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) &&
         chargeOne = false;
         chargeTwo = false;
         sprite_index = spr_player_crouching;  
-        if (state != states.normal)
+        if (state != states.normal && state != states.hitstop && state != states.knockback)
            {
             state = states.normal
            }

@@ -4,10 +4,10 @@ if (enemy_parent.meleeAttack == true)
    {
    
         //radius += room_speed * (0.5/60);
-        if (alarm[2] == -1)
-           {
+        //if (alarm[2] == -1)
+        //   {
             phase += ANGLE_INCREMENT;
-           }
+        //   }
            
         if (stop == false)
            {
@@ -37,9 +37,9 @@ if (enemy_parent.meleeAttack == true)
                    {
                     alarm[2] = room_speed * (40/60);
                    }
-                if (!place_meeting(x,y+vspeed,obj_boundary))
+                if (!place_meeting(x,y+abs(vspeed),obj_boundary))
                    {
-                    vspeed += 0.9;
+                    motion_add(270,0.9);
                    }
                 
                 scr_ball_collision_bounce();

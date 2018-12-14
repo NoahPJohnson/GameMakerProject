@@ -2,7 +2,7 @@ if (damage_hitstop == false)
    {
     if (hitstop == false)
        {
-        //show_debug_message("Player is in hitstop for: " + string(alarm[11]) + " frames.")
+        show_debug_message("Player is in non damage hitstop for: " + string(alarm[11]) + " frames.")
         for (i = 0; i < 11; i++)
             {
              alarm_array[i] = alarm[i];
@@ -14,8 +14,9 @@ if (damage_hitstop == false)
    }
 else
    {
-   
+    show_debug_message("Player is in DAMAGE HITSTOP.");
    }
+
 //hspd = 0;
 //vspd = 0;
 //Collision

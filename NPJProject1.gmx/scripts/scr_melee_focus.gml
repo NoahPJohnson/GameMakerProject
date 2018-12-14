@@ -25,9 +25,27 @@ if (longRange == false)
                {
                 antiAir = false;
                 alarm[7] = room_speed * (26/60);
-                show_debug_message("Normal Slice in 28");
+                show_debug_message("Normal Slice in 26");
                }
            }
+       }
+    else if (distance_to_object(obj_player) < 104 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && !place_meeting(x,y+1,obj_boundary) && !collision_line(x,y,x,y+64,obj_boundary,false,true))
+       {
+        meleeAttack = true;
+        if (alarm[7] = -1 && alarm[8] = -1)
+           {
+            hspd = 0;
+            melee_dir = sign(obj_player.x - x);
+            follow_up_attack = true;
+            alarm[7] = room_speed * (10/60);
+            
+            show_debug_message("Air Attack!");
+           }
+       }
+    else if (distance_to_object(obj_player) < 280 && collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && place_meeting(x,y+1,obj_boundary))
+       {
+        longRange = true;
+        show_debug_message("Switch to long range because of obstacle.");
        }
     else if (alarm[7] = -1 && alarm[8] > 0 && !instance_exists(melee_hitbox) && meleeAttack == true)
        {

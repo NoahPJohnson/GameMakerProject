@@ -27,6 +27,7 @@
       <sprite>sprites\spr_player_up_charging</sprite>
       <sprite>sprites\spr_player_up_charged1</sprite>
       <sprite>sprites\spr_player_up_charged2</sprite>
+      <sprite>sprites\spr_player_test</sprite>
       <sprites name="player UI">
         <sprite>sprites\spr_health_bar_background</sprite>
         <sprite>sprites\spr_stamina_bar_background</sprite>
@@ -86,6 +87,7 @@
       <sprite>sprites\spr_enemy_melee_hitbox_long_2</sprite>
       <sprite>sprites\spr_enemy_melee_hitbox_long</sprite>
       <sprite>sprites\spr_explosion_hitbox</sprite>
+      <sprite>sprites\spr_explosion_med_hitbox</sprite>
       <sprite>sprites\spr_explosion_small_hitbox</sprite>
       <sprite>sprites\spr_enemy_ball_hitbox</sprite>
       <sprite>sprites\spr_claw_hitbox_boss</sprite>
@@ -103,6 +105,7 @@
     <sprite>sprites\spr_enemy_spawner</sprite>
     <sprite>sprites\spr_enemy_spawner_barrier</sprite>
     <sprite>sprites\spr_enemy_spawner_trigger</sprite>
+    <sprite>sprites\spr_enemy_spawner_point</sprite>
     <sprite>sprites\spr_menu_button</sprite>
     <sprite>sprites\spr_menu_button_selected</sprite>
     <sprite>sprites\spr_checkpoint</sprite>
@@ -169,6 +172,7 @@
     </scripts>
     <scripts name="enemy">
       <script>scripts\scr_enemy.gml</script>
+      <script>scripts\scr_enemy_no_wall_check.gml</script>
       <script>scripts\scr_enemy_chase.gml</script>
       <script>scripts\scr_enemy_chase_flying.gml</script>
       <script>scripts\scr_enemy_chase_large.gml</script>
@@ -177,6 +181,7 @@
       <script>scripts\scr_enemy_chase_range_focus.gml</script>
       <script>scripts\scr_enemy_chase_melee_focus.gml</script>
       <script>scripts\scr_enemy_stationary_triggered.gml</script>
+      <script>scripts\scr_enemy_stationary_ricochet_triggered.gml</script>
       <script>scripts\scr_enemy_hp_zero.gml</script>
       <script>scripts\scr_hit_by_bat.gml</script>
       <script>scripts\scr_hit_by_bat_armored.gml</script>
@@ -324,9 +329,11 @@
         <object>objects\obj_projectile_canister</object>
         <object>objects\obj_projectile_canister_air_burst</object>
         <object>objects\obj_projectile_fire_canister</object>
+        <object>objects\obj_projectile_fire</object>
         <object>objects\obj_projectile_grenade</object>
         <object>objects\obj_projectile_bomb_2</object>
         <object>objects\obj_projectile_bomb</object>
+        <object>objects\obj_projectile_bomb_medium</object>
         <object>objects\obj_projectile_ricochet</object>
         <object>objects\obj_projectile_ricochet_spread</object>
         <object>objects\obj_projectile_ricochet_spread_sub_1</object>
@@ -345,6 +352,7 @@
         <object>objects\obj_melee_hitbox_long</object>
         <object>objects\obj_melee_hitbox_long_2</object>
         <object>objects\obj_explosion_hitbox</object>
+        <object>objects\obj_explosion_med_hitbox</object>
         <object>objects\obj_explosion_small_hitbox</object>
         <object>objects\obj_claw_hitbox_boss</object>
         <object>objects\obj_explosion_hitbox_boss</object>
@@ -374,6 +382,8 @@
       <object>objects\obj_enemy_spawner</object>
       <object>objects\obj_enemy_spawner_barrier</object>
       <object>objects\obj_enemy_spawner_trigger</object>
+      <object>objects\obj_enemy_spawner_point_A</object>
+      <object>objects\obj_enemy_spawner_point_B</object>
     </objects>
     <object>objects\obj_powerup_health</object>
     <object>objects\obj_powerup_big_bat</object>

@@ -32,13 +32,13 @@ struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-speed = 7;
-direction = round(point_direction(x,y,obj_player.x,obj_player.y)/10)*10;
+//speed = 7;
+/*direction = round(point_direction(x,y,obj_player.x,obj_player.y)/10)*10;
 direction += choose(-30, -20, -10, 10, 20, 30);
 if (direction % 90 == 0)
    {
     direction += choose(-20, -10, 10, 20);
-   }
+   }*/
 
 alarm[2] = room_speed * (260/60);
 // move_towards_point(obj_player.x, obj_player.y, 5);

@@ -42,7 +42,7 @@ slope_mod = 2;
 //Attacks
 firing = false;
 first_shot = true;
-firSpeed = 45;
+firSpeed = 50;
 melee_dir = 0;
 meleeAttack = false;
 melee_hitbox = noone;
@@ -68,8 +68,8 @@ slide_through = true;
 
 //Crash State
 mxspd = 40;
-hp = 2;
-hp_max = 2;
+hp = 3;
+hp_max = 3;
 crash_sprite = spr_enemy_flying_crash;
 cp = 3;
 cp_max = 3;
@@ -181,67 +181,10 @@ if (instance_exists(melee_hitbox))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Melee Lunge Begins
-if (jumping_type = false)
-   {
-    if (!instance_exists(melee_hitbox))
-       {
-        /*if (obj_player.state != states.sliding)
-           {
-            dir = sign(obj_player.x - x);
-           }*/
-        if (melee_dir &lt; 0)
-           {
-            melee_hitbox = instance_create(x-30, y, obj_enemy_melee);
-            //xoffset = -24;
-           }
-        else
-           {
-            melee_hitbox = instance_create(x+30, y, obj_enemy_melee);
-            //xoffset = 24;
-           }
-        melee_hitbox.enemy_parent = self;
-       }
-    hspd = melee_dir * chsSpeed * 4;
+            <string>///Recovery After Shot
+firing = false;
 
-    if (alarm[8] = -1)
-       { 
-        alarm[8] = room_speed * (25/60);
-       }
-   }
-else
-   {
-    if (!place_meeting(x, y+1, obj_boundary) &amp;&amp; !place_meeting(x, y+1, obj_player))
-       {
-        if (!instance_exists(melee_hitbox))
-           {
-            if (obj_player.state != states.sliding)
-               {
-                melee_dir = sign(obj_player.x - x);
-               }
-            if (melee_dir &lt; 0)
-               {
-                melee_hitbox = instance_create(x-24, y+32, obj_enemy_divekick_hitbox);
-                //xoffset = -24;
-               }
-            else
-               {
-                melee_hitbox = instance_create(x+24, y+32, obj_enemy_divekick_hitbox);
-                //xoffset = 24;
-               }
-            melee_hitbox.enemy_parent = self;
-           }
-        jumped = true;   
-        hspd = melee_dir * 4;
-        vspd = 11;
-        grv = 0.8;
-        
-        if (alarm[8] = -1)
-           { 
-            alarm[8] = room_speed * (20/60);
-           }
-       }    
-   }    
+    
 </string>
           </argument>
         </arguments>
@@ -322,7 +265,11 @@ else
    {
     projectile = instance_create(x,y, selected_projectile);
    }
-firing = false;
+//firing = false;
+if (alarm[7] == -1)
+   {
+    alarm[7] = room_speed * (40/60);
+   }
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;
 </string>
@@ -388,18 +335,25 @@ firing = true;
 //bob = 0;
 //sprite_index = spr_player;
 //alarm[0] = 53;
-if (alarm[2] == -1)
+if (abs(obj_player.x - x) &lt; 80 &amp;&amp; !collision_line(x,y,x,y+190,obj_boundary,false,true) &amp;&amp; obj_player.y &gt; y+32)
    {
-    if (selected_projectile == obj_projectile_bomb_2)
-       {  
-        alarm[2] = room_speed * (15/60);
-       }
-    else
+    selected_projectile = obj_projectile_bomb_2;
+    if (alarm[2] == -1)
        {
         hspd = 0;
-        alarm[2] = room_speed * (40/60);
+        alarm[2] = room_speed * (15/60);
        }
    }
+else
+   {
+    selected_projectile = obj_projectile;
+    if (alarm[2] == -1)
+       {
+        hspd = 0;
+        alarm[2] = room_speed * (25/60);
+       }
+   }
+
 </string>
           </argument>
         </arguments>

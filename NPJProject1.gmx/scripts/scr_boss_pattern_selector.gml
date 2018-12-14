@@ -69,15 +69,18 @@ if (pattern_selected == false)
         show_debug_message("C H E C K  TO SWITCH SET!!! Set: " + string(set_index) + "* * * * *");
         if (set_index == 0)
            {
-            if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
-               {
-                set_index = 1;
-                set_selected = false;
-               }
             if (appendage.sprite_index == spr_boss_claw_broken)
                {
                 set_index = 2;
                 set_selected = false;
+                show_debug_message("SWITCH to set 2");
+               }
+            else if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
+               {
+                
+                set_index = 1;
+                set_selected = false;
+                show_debug_message("Switch to set 1");
                }
            }
         else if (set_index == 1)

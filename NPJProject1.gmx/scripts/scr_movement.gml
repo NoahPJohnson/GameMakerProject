@@ -48,7 +48,7 @@ if (mve = -1)
    }    
 
 //Sliding
-if (crouching = true)
+if (crouching == true)
    {
     if (key_J && right = true && sliding = false && sp > 45)
        {
@@ -114,7 +114,7 @@ if (crouching = true)
 //Jumping
 if (crouching = false)
    {
-    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy) || place_meeting(x-(hspd*2), y+1, obj_boundary) || place_meeting(x-(hspd*2), y+1, obj_enemy)) && !place_meeting(x, y, obj_enemy))
+    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy) || place_meeting(x-(hspd*2), y+1, obj_boundary) || place_meeting(x-(hspd*2), y+1, obj_enemy)) && key_J == true)
        {
         vspd = key_J * -jspd;
         jumping = true;
@@ -125,7 +125,7 @@ if (crouching = false)
         vspd = max(vspd,-jspd/4);
        }   
    }
-if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && key_J = false)
+if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && key_J == false)
    {
     jumping = false;
    }
@@ -150,10 +150,11 @@ scr_bunt();
 
 //Swinging
 ///Input Swing
-if (crouching == false && swinging == false && recovery == false && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
+if (crouching == false && swinging == false && recovery == false && state != states.hitstop && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
    { 
     if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Held)
-       { 
+       {
+        //show_debug_message("Switch to swing state."); 
         if (up == true)
            {
             up = true;

@@ -10,40 +10,28 @@ if (place_meeting(x, y, obj_bat))
     if (obj_player.right == true)
        {
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 0;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if (direction >= 135 && direction <= 225)
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 0; 
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 0;
+           }
+        state = proj_state.hitstop;
        }
     else
        {
-        /*if (alarm[0] == -1)
-           {
-            alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
-           }*/
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 180;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if ((direction >= 315 && direction <= 360) || (direction <= 45 && direction >= 0))
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 180;
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 180;
+           }
+        state = proj_state.hitstop;
        }
     alarm[2] += 200;
     //Player Hitstop
@@ -55,7 +43,6 @@ if (place_meeting(x, y, obj_bat))
         obj_player.old_state = obj_player.state;  
         obj_player.state = states.hitstop;
        }    
-    //state = proj_state.struck;
    }
 
    
@@ -69,19 +56,15 @@ if (place_meeting(x, y, obj_bat_launcher))
             alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 70;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if (direction >= 225 && direction <= 270)
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 75;
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 70;
+           }
+        state = proj_state.hitstop;
        }
     else
        {
@@ -90,19 +73,15 @@ if (place_meeting(x, y, obj_bat_launcher))
             alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
            }
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 110;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if (direction >= 270 && direction <= 315)
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 105;
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 110;
+           }
+        state = proj_state.hitstop;
        }
     //Player Hitstop
     alarm[2] += 200;
@@ -114,7 +93,6 @@ if (place_meeting(x, y, obj_bat_launcher))
         obj_player.old_state = obj_player.state;  
         obj_player.state = states.hitstop;
        }   
-    //state = proj_state.struck;
    }
 
 
@@ -128,19 +106,15 @@ if (place_meeting(x, y, obj_bat_spike))
             alarm[0] = room_speed * (3/60);
            }
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 285;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if (direction >= 90 && direction <= 150)
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 285;
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 285;
+           }
+        state = proj_state.hitstop;
        }
     else
        {
@@ -149,32 +123,17 @@ if (place_meeting(x, y, obj_bat_spike))
             alarm[0] = room_speed * (3/60);
            }
         struck_speed = 18 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-        struck_direction = 255;
-        state = proj_state.hitstop;
-        /*if (instance_exists(obj_test))
+        if (direction >= 30 && direction <= 90)
            {
-            target = instance_nearest(obj_player.x, obj_player.y, obj_test);
-            enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
-            move_towards_point(enemy_targeted.x, enemy_targeted.y, 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10));
+            struck_direction = direction + 180;
            }
         else
            {
-            direction = 255;
-            speed = 15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
-           }*/
+            struck_direction = 255;
+           }
+        state = proj_state.hitstop;
        }
     alarm[2] += 200;
-    //Player Hitstop
-    /*obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
-    if (obj_player.state != states.hitstop)
-       {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;*/
-    //show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
-    //state = proj_state.struck;
    }
    
 //Collision with Bunt   
@@ -191,8 +150,6 @@ if (place_meeting(x,y,obj_bunt_bat))
         struck_speed = 4;
         struck_direction = 55;
         state = proj_state.hitstop;
-        //direction = 55;
-        //speed = 4;
        }
     else
        {
@@ -203,8 +160,6 @@ if (place_meeting(x,y,obj_bunt_bat))
         struck_speed = 4;
         struck_direction = 125;
         state = proj_state.hitstop;
-        //direction = 125;
-        //speed = 4;
        }
     //Player Hitstop
     if (obj_player.state != states.hitstop)
@@ -215,25 +170,7 @@ if (place_meeting(x,y,obj_bunt_bat))
         obj_player.old_state = obj_player.state;
         obj_player.state = states.hitstop;
        }  
-    //state = proj_state.struck;
    } 
-        
-
-//Collsion with Wall and Prop
-/*if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
-   {
-    instance_destroy();
-   }
-
-//Collision with Crashed Enemy   
-if (place_meeting(x, y, obj_enemy))     
-   {
-    crashed_enemy_meeting = instance_place(x, y, obj_enemy);
-    if (crashed_enemy_meeting.state == e_state.crash)
-       {
-        instance_destroy();
-       }
-   }*/
 
 //Collision
 scr_collision_ricochet();            

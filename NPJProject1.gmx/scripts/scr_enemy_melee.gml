@@ -65,7 +65,7 @@ if (jumping_type = false)
 else
    {
     //Divekick Melee
-    if (distance_to_object(obj_player) < 80 && !collision_line(x,y,x,y+130,obj_boundary,false,true) && obj_player.state != states.sliding && obj_player.state != states.knockback)
+    if (distance_to_object(obj_player) < 80 && (!collision_line(x,y,x,y+130,obj_boundary,false,true) || place_meeting(x,y-2,obj_boundary)) && obj_player.state != states.sliding && obj_player.state != states.knockback)
        {
         if (alarm[7] = -1 && alarm[8] = -1)
            {

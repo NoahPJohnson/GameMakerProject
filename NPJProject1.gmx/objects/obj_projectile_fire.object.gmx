@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_projectile</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -27,27 +27,28 @@
             <kind>1</kind>
             <string>crashed_enemy_meeting = noone;
 hp = 2;
-target_object = obj_player;
-target_direction = point_direction(x,y,target_object.x,target_object.y);
-alarm[1] = room_speed * (12/60);
 struck = false;
 struck_speed = 0;
 struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
-speed = 4;
-max_speed = 6;
-direction = 90;
-//show_debug_message("launch");
-//move_towards_point(obj_player.x, obj_player.y, 4);
 
+fire_drop_range = 32;
+//show_debug_message("Bomb is here!");
+//alarm[2] = room_speed * (90/60);
+//instance_create(x,y,obj_projectile_fire_canister_sub_1);
+//instance_create(x,y,obj_projectile_fire_canister_sub_2);
+//scr_create_projectile(10,120,x,y,obj_projectile_fire_canister);
+//scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
+speed = 12;
+direction = 90;
 
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
+    <event eventtype="2" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -64,86 +65,15 @@ direction = 90;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Direction Correction
-if (bunted == false &amp;&amp; struck == true)
+            <string>///Detonate
+instance_create(x,y,obj_explosion_small_hitbox);
+/*if (collision_line(x,y,x,y+fire_drop_range,obj_boundary,false,true))
    {
-    target_object = instance_nearest(x,y,obj_enemy);
-    if (distance_to_object(target_object) &gt; 620)
-       {
-        //show_debug_message("too far");
-        target_object = noone;
-        bunted = true;
-       }
-   }
-if (target_object != noone)
-   {
-    //show_debug_message("target = " + string(object_get_name(target_object.object_index)));
-    target_direction = point_direction(x,y,target_object.x,target_object.y);
-    //show_debug_message("target direction = " + string(target_direction));
-    check_direction = 0;
-    limited_turn = 0;
-    original_direction = direction;
-    /*if (speed &lt; max_speed)
-       {
-        //speed += 0.5;
-       }*/
-    
-    if (angle_difference(target_direction, direction) &gt; 0)
-       {
-        if (target_object != noone)
-           { 
-            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
-            //show_debug_message("Positive");
-           }
-       }
-    else if (angle_difference(target_direction, direction) &lt; 0)
-       {
-        if (target_object != noone)
-           {
-            limited_turn = max((25 * (distance_to_object(target_object)/300)), 10);
-            limited_turn = -limited_turn;
-            //show_debug_message("NEGATIVE");
-           }       
-       }      
-    check_direction = limited_turn * 4;
-    direction += check_direction;
-    //show_debug_message("first direction is " + string(direction));
-    if (collision_line(x,y,x+(hspeed*16),y+(vspeed*16),obj_boundary, false, true) &amp;&amp; !collision_line(x,y,x+(hspeed*16),y+(vspeed*16),target_object, false, true))
-       {
-        //needs to turn left or right
-        //favor side closest to target
-        //show_debug_message("Turn 1");
-        direction = original_direction;
-        //limited_turn = 0;
-        //show_debug_message("second direction is " + string(direction));
-        if (collision_line(x,y,x+(hspeed*16),y+(vspeed*16),obj_boundary, false, true) &amp;&amp; !collision_line(x,y,x+(hspeed*16),y+(vspeed*16),target_object, false, true))
-           {
-            //show_debug_message("Turn 2");
-            direction += -check_direction;
-            limited_turn = -limited_turn;
-            //show_debug_message("third direction is " + string(direction));
-           }
-        else
-           {
-            limited_turn = 0;
-           }
-       }
-    direction = original_direction + limited_turn;
-    //show_debug_message("new direction is " + string(direction));
-   }
-else
-   {
-    /*if (bunted == false &amp;&amp; struck == true)
-       {
-        target_object = instance_nearest(x,y,obj_enemy);
-        if (distance_to_object(target_object) &gt; 320)
-           {
-            target_object = noone;
-            bunted = true;
-           }
-       }*/
-   }
-alarm[1] = room_speed * (6/60);
+    //show_debug_message("FIRE HAS HIT THE FLOOR");
+    boundary_meeting = instance_place(x, y+fire_drop_range, obj_boundary);
+    instance_create(x,boundary_meeting.y-1,obj_fire_hitbox_boss);
+   }*/
+instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -167,18 +97,9 @@ alarm[1] = room_speed * (6/60);
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
-if (bunted == false)
-   {
-    target_object = instance_nearest(obj_player.x,obj_player.y,obj_enemy);
-    
-   }
-
-if (distance_to_object(target_object) &gt; 600)
-   {
-    target_object = noone;
-   }
 direction = struck_direction; 
-speed = struck_speed;
+speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+   
 state = proj_state.struck;
 </string>
           </argument>
@@ -207,12 +128,12 @@ switch (state)
        {
         case proj_state.normal: 
              {   
-              scr_homing_projectile(); 
+              scr_bomb_projectile(); 
               break;
              }
         case proj_state.struck: 
              {
-              scr_projectile_struck(); 
+              scr_projectile_bomb_struck(); 
               break;        
              }
         case proj_state.hitstop:

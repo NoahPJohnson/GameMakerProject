@@ -1,25 +1,4 @@
-/*if (place_meeting(x, y, obj_enemy) && iframes = false && siframes = false)
-   {
-    attacking_enemy = instance_place(x,y, obj_enemy)
-    if (attacking_enemy.state != e_state.crash)
-       {
-        if (attacking_enemy.x > x)
-           {
-            hitdir = -1;
-           } 
-        else
-           {
-            hitdir = 1;
-           }
-        hp -= 15;
-        if (alarm[7] = -1)
-           {
-            alarm[7] = 7;   
-           }
-        knock_force = 8;
-        state = states.knockback;    
-       }
-   }  */
+
 
 if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false && invincibility_active == false)
    {   
@@ -120,7 +99,7 @@ else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == 
 //Hit by melee attack   
 if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false && invincibility_active == false)
    {   
-    if (!collision_line(x,y,obj_enemy_melee.x,obj_enemy_melee.y,obj_boundary,false,true) && !collision_line(x,y,obj_enemy_melee.x,obj_enemy_melee.y,obj_bunt_bat,false,true))
+    if (!collision_line(x,y,obj_enemy_melee.enemy_parent.x,obj_enemy_melee.enemy_parent.y,obj_boundary,false,true) && !collision_line(x,y,obj_enemy_melee.enemy_parent.x,obj_enemy_melee.enemy_parent.y,obj_bunt_bat,false,true))
        {
         melee_meeting = instance_place(x,y, obj_enemy_melee);
         if (melee_meeting.x > x)
@@ -257,6 +236,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
         scr_score_tracker_script_strike();
         if (iframes == false)
            {
+            show_debug_message("Player hit by explosion.");
             crouching = false;
             charging = false;
             chargeOne = false;
@@ -270,13 +250,13 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
             knock_force = 8;
             damage_hitstop = true;
             if (hp < 1)
-                   {
-                    alarm[11] = room_speed * (40/60);
-                   }
-                else
-                   {
-                    alarm[11] = room_speed * (3/60);
-                   }
+               {
+                alarm[11] = room_speed * (40/60);
+               }
+            else
+               {
+                alarm[11] = room_speed * (3/60);
+               }
 
             //explosion_meeting.alarm[0] = 1;
       
