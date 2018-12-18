@@ -39,7 +39,7 @@ if (abs(hspd) < 1)
            {
             mspd = 8;
             crouching = false;
-            sprite_index = spr_player;
+            //sprite_index = spr_player;
            }
        }
     state = states.normal

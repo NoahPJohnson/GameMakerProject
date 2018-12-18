@@ -26,8 +26,16 @@ if (key_pause)
     else
        {
         paused = false;
+        /*if (instance_exists(obj_controls_menu_object))
+           {
+            for (i = 0; i < array_length_1d(obj_controls_menu_object.button_array); i ++)
+                {
+                 instance_destroy(obj_controls_menu_object.button_array[i]);
+                }
+           }*/
         for (i = 0; i < array_length_1d(button_array); i ++)
             {
+             //instance_activate_object(button_array[i]);
              instance_destroy(button_array[i]);
             }
         instance_activate_all();

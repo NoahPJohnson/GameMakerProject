@@ -4,9 +4,9 @@ key_R = keyboard_check(ord("D"));
 key_L = -keyboard_check(ord("A"));
 key_J = keyboard_check_pressed(vk_space);
 key_J_held = keyboard_check(vk_space);
-key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift);
-key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift);
-key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift);
+key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift) || keyboard_check(vk_enter);
+key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift) || keyboard_check_pressed(vk_enter);
+key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift) || keyboard_check_released(vk_enter);
 
 
 mve = key_L + key_R;
@@ -50,7 +50,7 @@ if (mve = -1)
 //Sliding
 if (crouching == true)
    {
-    if (key_J && right = true && sliding = false && sp > 45)
+    if (key_J && right == true && sliding == false && sp > 45)
        {
         /*if (!place_meeting(x+160,y,obj_enemy) && !place_meeting(x+200,y,obj_enemy))
            {*/ 
@@ -80,10 +80,10 @@ if (crouching == true)
            }*/
        }
     
-    if (key_J && right = false && sliding = false && sp > 45)
+    if (key_J && right == false && sliding == false && sp > 45)
        {
-        if (!place_meeting(x-160,y,obj_enemy) && !place_meeting(x-200,y,obj_enemy))
-           { 
+        /*if (!place_meeting(x-160,y,obj_enemy) && !place_meeting(x-200,y,obj_enemy))
+           {*/ 
             sliding = true;
             sp -= 45;
             hspd = (-jspd * 2.2);
@@ -94,7 +94,7 @@ if (crouching == true)
                 frc = 1;
                }
             state = states.sliding
-           }
+        /*   }
         else
            {
             sliding = true;
@@ -107,7 +107,7 @@ if (crouching == true)
                 frc = 1;
                }
             state = states.sliding
-           }
+           }*/
        }
    }
    
@@ -154,7 +154,7 @@ if (crouching == false && swinging == false && recovery == false && state != sta
    { 
     if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Held)
        {
-        //show_debug_message("Switch to swing state."); 
+        show_debug_message("Switch to swing state."); 
         if (up == true)
            {
             up = true;

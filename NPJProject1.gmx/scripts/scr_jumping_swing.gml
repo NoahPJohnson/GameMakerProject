@@ -1,7 +1,7 @@
 ///Swing in the Air
 if (swinging = false && recovery = false && !place_meeting(x, y+1, obj_boundary) && !place_meeting(x, y+1, obj_enemy))
    {
-    if (keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift))
+    if (keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift) || keyboard_check_pressed(vk_enter))
        { 
         swinging = true;
         if (alarm[5] = -1)

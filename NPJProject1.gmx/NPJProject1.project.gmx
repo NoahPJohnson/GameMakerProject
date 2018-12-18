@@ -27,7 +27,8 @@
       <sprite>sprites\spr_player_up_charging</sprite>
       <sprite>sprites\spr_player_up_charged1</sprite>
       <sprite>sprites\spr_player_up_charged2</sprite>
-      <sprite>sprites\spr_player_test</sprite>
+      <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_running</sprite>
       <sprites name="player UI">
         <sprite>sprites\spr_health_bar_background</sprite>
         <sprite>sprites\spr_stamina_bar_background</sprite>
@@ -161,6 +162,7 @@
       <script>scripts\scr_stamina.gml</script>
       <script>scripts\scr_player_hitstop.gml</script>
       <script>scripts\scr_bunt.gml</script>
+      <script>scripts\scr_player_animation_control_script.gml</script>
       <scripts name="player_swinging">
         <script>scripts\scr_swing.gml</script>
         <script>scripts\scr_looking_up.gml</script>
@@ -235,6 +237,7 @@
       <script>scripts\scr_pause_screen.gml</script>
       <script>scripts\scr_menu_button_checkpoint_script.gml</script>
       <script>scripts\scr_menu_button_level_select_script.gml</script>
+      <script>scripts\scr_menu_button_back_script.gml</script>
     </scripts>
     <scripts name="enemy equipment">
       <script>scripts\scr_shield.gml</script>
@@ -407,6 +410,7 @@
       <object>objects\obj_menu_button_restart</object>
       <object>objects\obj_menu_button_checkpoint</object>
       <object>objects\obj_menu_button_quit</object>
+      <object>objects\obj_menu_button_back</object>
       <object>objects\obj_menu_button_back_to_main</object>
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>

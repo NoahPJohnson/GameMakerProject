@@ -8,7 +8,7 @@ chargeOne = false;
 chargeTwo = false;
 alarm[3] = -1;
 alarm[4] = -1;
-sprite_index = spr_player_crouching;
+//sprite_index = spr_player_crouching;
 
 //Stamina
 scr_stamina();
@@ -35,7 +35,7 @@ else
     hspd = 0;
     siframes = false;
     sliding = false;
-    sprite_index = spr_player;       
+    //sprite_index = spr_player;       
     state = states.normal
     mspd = mspd_normal;
    }

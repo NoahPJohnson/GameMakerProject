@@ -2,9 +2,9 @@
 //Input for direction
 key_R = keyboard_check(ord("D"));
 key_L = -keyboard_check(ord("A"));
-key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift);
-key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift);
-key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift);
+key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift)  || keyboard_check(vk_enter);
+key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift) || keyboard_check_pressed(vk_enter);
+key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift) || keyboard_check_released(vk_enter);
 
 //key_J = keyboard_check_pressed(vk_space);
 //key_J_held = keyboard_check(vk_space);
@@ -100,4 +100,13 @@ if (charging == true)
                }                     
            }
        }
-   } 
+   }
+
+/*if (alarm[2] > 0)
+   {
+    show_debug_message("Alarm 2 = " + string(alarm[2]));
+   }
+if (alarm[0] > 0)
+   {
+    show_debug_message("Alarm 0 = " + string(alarm[0]));
+   }  */

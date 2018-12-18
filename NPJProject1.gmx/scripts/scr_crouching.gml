@@ -20,7 +20,7 @@ if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) &&
         charging = false;
         chargeOne = false;
         chargeTwo = false;
-        sprite_index = spr_player_crouching;  
+        //sprite_index = spr_player_crouching;  
         if (state != states.normal && state != states.hitstop && state != states.knockback)
            {
             state = states.normal
@@ -49,5 +49,5 @@ if ((key_C_released || !key_C_held) && !place_meeting(x,y-30,obj_boundary) && (!
        {
         mspd = 0;
        }   
-    sprite_index = spr_player;
+    //sprite_index = spr_player;
    }    
