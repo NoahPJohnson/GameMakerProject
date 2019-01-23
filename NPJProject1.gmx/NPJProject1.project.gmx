@@ -28,7 +28,24 @@
       <sprite>sprites\spr_player_up_charged1</sprite>
       <sprite>sprites\spr_player_up_charged2</sprite>
       <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_charge</sprite>
+      <sprite>sprites\spr_player_charge_Level_One</sprite>
+      <sprite>sprites\spr_player_charge_Level_Two</sprite>
+      <sprite>sprites\spr_player_idle_up</sprite>
+      <sprite>sprites\spr_player_charge_up</sprite>
+      <sprite>sprites\spr_player_charge_up_Level_One</sprite>
+      <sprite>sprites\spr_player_charge_up_Level_Two</sprite>
+      <sprite>sprites\spr_player_jumping</sprite>
+      <sprite>sprites\spr_player_spike</sprite>
+      <sprite>sprites\spr_player_crouching_idle</sprite>
+      <sprite>sprites\spr_player_bunting</sprite>
+      <sprite>sprites\spr_player_sliding</sprite>
       <sprite>sprites\spr_player_running</sprite>
+      <sprite>sprites\spr_player_charge_dash</sprite>
+      <sprite>sprites\spr_player_charge_dash_Level_One</sprite>
+      <sprite>sprites\spr_player_charge_dash_Level_Two</sprite>
+      <sprite>sprites\spr_player_swinging</sprite>
+      <sprite>sprites\spr_player_swing_launcher</sprite>
       <sprites name="player UI">
         <sprite>sprites\spr_health_bar_background</sprite>
         <sprite>sprites\spr_stamina_bar_background</sprite>
@@ -48,6 +65,7 @@
         <sprite>sprites\spr_spike_L</sprite>
         <sprite>sprites\spr_bunt_bat</sprite>
       </sprites>
+      <sprite>sprites\spr_unused_sprites</sprite>
     </sprites>
     <sprites name="hit cones">
       <sprite>sprites\spr_hit_cone</sprite>
@@ -107,9 +125,6 @@
     <sprite>sprites\spr_enemy_spawner_barrier</sprite>
     <sprite>sprites\spr_enemy_spawner_trigger</sprite>
     <sprite>sprites\spr_enemy_spawner_point</sprite>
-    <sprite>sprites\spr_menu_button</sprite>
-    <sprite>sprites\spr_menu_button_selected</sprite>
-    <sprite>sprites\spr_checkpoint</sprite>
     <sprites name="powerups">
       <sprite>sprites\spr_powerup_health</sprite>
       <sprite>sprites\spr_powerup_charge</sprite>
@@ -142,9 +157,14 @@
       <sprite>sprites\spr_boss_health_bar</sprite>
       <sprite>sprites\spr_boss_health_bar_background</sprite>
     </sprites>
-    <sprite>sprites\spr_door_to_room</sprite>
-    <sprite>sprites\spr_door_from_room</sprite>
-    <sprite>sprites\spr_level_transition_curtain</sprite>
+    <sprites name="menus/utility">
+      <sprite>sprites\spr_menu_button</sprite>
+      <sprite>sprites\spr_menu_button_selected</sprite>
+      <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_level_transition_curtain</sprite>
+      <sprite>sprites\spr_door_to_room</sprite>
+      <sprite>sprites\spr_door_from_room</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -192,6 +212,7 @@
       <script>scripts\scr_hit_stun.gml</script>
       <script>scripts\scr_crash.gml</script>
       <script>scripts\scr_collision_bounce.gml</script>
+      <script>scripts\scr_collision_bounce_alternative.gml</script>
       <script>scripts\scr_enemy_cp_zero.gml</script>
       <script>scripts\scr_enemy_collision.gml</script>
       <script>scripts\scr_enemy_collision_hitstun.gml</script>
@@ -268,6 +289,7 @@
       <script>scripts\scr_boss_catcher_pattern_10.gml</script>
       <script>scripts\scr_boss_catcher_pattern_11.gml</script>
       <script>scripts\scr_boss_catcher_pattern_12.gml</script>
+      <script>scripts\scr_boss_catcher_pattern_13.gml</script>
       <script>scripts\scr_boss_pattern_selector.gml</script>
       <script>scripts\scr_boss_collision.gml</script>
       <script>scripts\scr_boss_hit_by_bat.gml</script>
@@ -361,6 +383,7 @@
         <object>objects\obj_explosion_hitbox_boss</object>
         <object>objects\obj_fire_hitbox_boss</object>
         <object>objects\obj_fire_hitbox_blocker</object>
+        <object>objects\obj_spike_hitbox_blocker</object>
         <object>objects\obj_boss_claw_grab_hitbox</object>
       </objects>
       <objects name="props">

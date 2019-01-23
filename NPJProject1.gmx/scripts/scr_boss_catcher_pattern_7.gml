@@ -12,98 +12,115 @@ if (shot_timer > 0)
    {
     shot_timer -= room_speed * (1/60);
    }
+   
+if (instance_exists(melee_hitbox))
+   {   
+    melee_hitbox.x += appendage.hspd; 
+    melee_hitbox.y += appendage.vspd;  
+   }
 
+/*if ((((sign(destination_x - appendage.x) != dir_x || dir_x == 0)) || (appendage.hspd == 0)) && destination_x_established == true && firing == false)
+   {
+    appendage.hspd = 0;
+    dir_x = 0;
+    destination_x_established = false;
+    if (step == 9 && player_caught = false)
+       {
+        if (obj_player.y <= appendage.y)
+           {
+            firing = true;
+            shot_timer = 180;
+           }
+       }
+    show_debug_message("Horizontal Destination reached for step: " + string(step));
+   }
+if ((((sign(destination_y - appendage.y) != dir_y || dir_y == 0)) || (appendage.vspd == 0)) && destination_y_established && firing == false)
+   {
+    appendage.vspd = 0;
+    dir_y = 0;
+    destination_y_established = false;
+    show_debug_message("Vertical Destination reached for step: " + string(step));
+   }*/
+   
 if (firing == false)
    {
-    
-    if ((step == 2 || step == 4 || step == 5 || step == 6 || step == 9) && destination_established == true)
+    if (step == 5)
        {
-        if (step == 5)
+        appendage.vspd = dir_y * acceleration_factor;
+        if (acceleration_factor < 10)
            {
-            appendage.vspd = dir * acceleration_factor;
-            if (acceleration_factor < 10)
-               {
-                acceleration_factor += room_speed * (0.6/60);
-                show_debug_message("Acc. = " + string(acceleration_factor));
-               }
+            acceleration_factor += room_speed * (0.6/60);
            }
-        else
-           {
-            appendage.vspd = dir * 4;
-           }
-        //appendage.y = dir*clamp(dir*appendage.y,dir*start_point,dir*destination);
        }
-    else if (step > 0 && destination_established == true)
+    else
        {
-
-        appendage.hspd = dir * 4;
-        //appendage.x = dir*clamp(dir*appendage.x,dir*start_point,dir*destination);
-        //show_debug_message("Distance from Destination: " + string(abs(destination - appendage.x)));
+        appendage.hspd = dir_x * 4;
+        appendage.vspd = dir_y * 4;
        }
-    //show_debug_message("Distance from Destination: " + string(abs(destination - appendage.x)));
-    //show_debug_message("HSPD = " + string(hspd) + "    Step = " + string(step) + " Dir = " + string(dir));
    }
 else
    {
     appendage.hspd = 0;
     dir = 0;
-    if (shot_timer <= 0)
+    dir_x = 0;
+    //dir_y = 0;
+    if (step == 9)
        {
-        player_caught = true;
-        firing = false;
-        step = 8;       
-       }
-    else 
-       {
-        appendage.vspd = 16*sin(shot_timer/3);
-       }
-   }
-if (step == 2 || step == 4 || step == 5 || step == 6 || step == 9)
-   {
-    if ((sign(destination - appendage.y) != dir || dir == 0) && firing == false)
-       {
-        appendage.vspd = 0;
-        dir = 0;
-        destination_established = false;
-        /*if (obj_player.y > appendage.y)
-           {
-            player_caught = false;
-           }
-        else
+        if (shot_timer <= 0)
            {
             player_caught = true;
-           }*/
-        //show_debug_message("Vertical Destination reached for step: " + string(step));
+            firing = false;
+            show_debug_message("Done shaking.");
+            //step = 9;       
+           }
+        else 
+           {
+            appendage.vspd = 16*sin(shot_timer/3);
+            show_debug_message("Shake!  " + string(shot_timer));
+           }
+       }
+    else
+       {
+        if (shot_timer <= 0)
+           {
+            firing = false;      
+            show_debug_message("Done waiting.");
+           }
        }
    }
-else
+
+if ((((sign(destination_x - appendage.x) != dir_x || dir_x == 0)) || (appendage.hspd == 0)) && destination_x_established == true && firing == false)
    {
-    if ((sign(destination - appendage.x) != dir || dir == 0) && firing == false)
+    appendage.hspd = 0;
+    dir_x = 0;
+    destination_x_established = false;
+    if (step == 9 && player_caught = false)
        {
-        appendage.hspd = 0;
-        dir = 0;
-        destination_established = false;
-        if (step == 8 && player_caught = false)
+        if (obj_player.y <= appendage.y)
            {
-            if (obj_player.y <= appendage.y)
-               {
-                firing = true;
-                shot_timer = 180;
-               }
+            firing = true;
+            shot_timer = 180;
            }
-        show_debug_message("Destination reached for step: " + string(step));
        }
+    show_debug_message("Horizontal Destination reached for step: " + string(step));
+   }
+if ((((sign(destination_y - appendage.y) != dir_y || dir_y == 0)) || (appendage.vspd == 0)) && destination_y_established && firing == false)
+   {
+    appendage.vspd = 0;
+    dir_y = 0;
+    destination_y_established = false;
+    show_debug_message("Vertical Destination reached for step: " + string(step));
    }
    
-if (destination_established == false && firing == false)
+if (destination_x_established == false && destination_y_established == false && firing == false)
    {
     
     //Extend Arm
     if (step == 0)
        {
         weakpoint.vulnerable = false;
-        destination = x - 180;
-        destination_established = true;
+        destination_x = x - 180;
+        destination_x_established = true;
         acceleration_factor = 1;
         step = 1;
         //show_debug_message("Move Forward! Step = " + string(step) + " Destination = " + string(destination));
@@ -114,8 +131,8 @@ if (destination_established == false && firing == false)
         weakpoint.vulnerable = true;
         shots_fired = 0;
         max_shots = 3;
-        destination = y-48;
-        destination_established = true;
+        destination_y = y-26;
+        destination_y_established = true;
         step = 2;
         
         //show_debug_message("Move back. Step = " + string(step) + " Destination = " + string(destination));
@@ -129,43 +146,40 @@ if (destination_established == false && firing == false)
             if (abs(x - obj_player.x) < 130)
                {
                 show_debug_message("player too close keep fist a minimum distance from the boss.");
-                destination = x - 160;
+                destination_x = x - 160;
                }
             //Seek them out if they are in range
             else if (abs(x - obj_player.x) < 340)
                {
                 show_debug_message("Player is in Range.");
-                destination = obj_player.x;
+                destination_x = obj_player.x;
                }
             //Or extend to this point if they are out of range
             else if (abs(x - obj_player.x) >= 340)
                {
                 show_debug_message("Player is TOO FAR!");
-                destination = x - 310; 
+                destination_x = x - 310; 
                }
-            destination_established = true;
+            destination_x_established = true;
             step = 3;
-            show_debug_message("Find next spot to pound. Destination = " + string(destination));
+            show_debug_message("Find next spot to pound. Destination = " + string(destination_x));
            }
         else
            {
-            step = 7;
+            step = 8;
+            show_debug_message("Player is on the claw, go to step 8.");
            }
+        
        }
     //Raise Claw before pound V
     else if (step == 3)
        {
-        if (shots_fired < max_shots)
-           {
-            shots_fired += 1;
-            destination = y-80;
-            destination_established = true;
-            step = 4;
-           }
-        else
-           {
-            step = 7;
-           }
+        shots_fired += 1;
+        destination_y = y-70;
+        destination_y_established = true;
+        step = 4;
+        melee_hitbox = instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
+        show_debug_message("Short Raise before pound.");
        }
     //Pound! V
     else if (step == 4)
@@ -173,51 +187,87 @@ if (destination_established == false && firing == false)
         //this step is for attacking
         //do three pounds
         //if player jumps on the claw, interrupt with shake off and go directly to next step
-        destination = y+70;
-        destination_established = true;
+        destination_y = y+70;
+        destination_y_established = true;
         step = 5;
-        show_debug_message("Begin Pound! Shots fired = " + string(shots_fired))
+        show_debug_message("Begin Pound! Shots fired = " + string(shots_fired));
        }
-    //Raise for next pound V
+    //Pause before lift
     else if (step == 5)
        {
-        acceleration_factor = 1;
-        destination = y-48;
-        destination_established = true;
+        firing = true;
+        shot_timer = room_speed * (25/60);
         step = 6;
+        show_debug_message("Wait a moment!");
+        if (instance_exists(melee_hitbox))
+           {
+            instance_destroy(melee_hitbox);
+           }
        }
-    //Reset to step 2
+    //Raise for next pound V
     else if (step == 6)
        {
-        //instance_create(weakpoint.x,weakpoint.y,obj_projectile);
-        step = 2;
+        acceleration_factor = 1;
+        destination_y = y-26;
+        destination_y_established = true;
+        step = 7;
+        show_debug_message("Raise the fist for next pound.");
        }
-    //End the attack H
+    //Reset to step 2
     else if (step == 7)
        {
-        destination = x - 180;
-        destination_established = true;
-        step = 8;
+        //instance_create(weakpoint.x,weakpoint.y,obj_projectile);
+        if (shots_fired < max_shots)
+           {
+            step = 2;
+            show_debug_message("Go back to step 2");
+           }
+        else
+           {
+            step = 8;
+            show_debug_message("Continue to step 8");
+           }
        }
-    //Return to y position V
+    //End the attack H
     else if (step == 8)
        {
-        appendage.vspd = 0;
-        destination = appendage_position_y+y;
-        destination_established = true;
+        /*destination_x = appendage_position_x+x;;
+        destination_x_established = true;
+        step = 9;*/
+        //End the attack H
+        destination_x = x - 180;
+        destination_x_established = true;
         step = 9;
+        show_debug_message("End the attack.");
+       }
+    //Return to y position V
+    else if (step == 9)
+       {
+        //weakpoint.vulnerable = false;
+        //player_caught = false;
+        appendage.vspd = 0;
+        destination_y = appendage_position_y+y;
+        destination_y_established = true;
+        step = 10;
+        melee_hitbox = instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
+        show_debug_message("Return to vertical position.");
        }
     //Return to x position H
-    else if (step == 9)
+    else if (step == 10)
        {
         weakpoint.vulnerable = false;
         player_caught = false;
         appendage.vspd = 0;
-        destination = appendage_position_x+x;
-        destination_established = true;
-        step = 10;
+        destination_x = appendage_position_x+x;
+        destination_x_established = true;
+        step = 11;
+        if (instance_exists(melee_hitbox))
+           {
+            instance_destroy(melee_hitbox);
+           }
+        show_debug_message("Return to HORIZONTAL position.");
        }
-    else if (step == 10)
+    else if (step == 11)
        {
         //PatternComplete
         if (appendage.sprite_index != spr_boss_claw_broken)
@@ -226,20 +276,19 @@ if (destination_established == false && firing == false)
            }
         state = boss_state.neutral;
        }
-    else if (step == 10)
+    start_point_x = appendage.x;
+    start_point_y = appendage.y;
+    if (destination_x_established == true)
        {
-        //step = 7;
+        dir_x = sign(destination_x - appendage.x);
        }
-    if (step == 2 || step == 4 || step == 5 || step == 6 || step == 9)
+    if (destination_y_established == true)
        {
-        start_point = appendage.y;
-        dir = sign(destination - appendage.y);
+        dir_y = sign(destination_y - appendage.y);
        }
-    else
-       {
-        start_point = appendage.x;
-        dir = sign(destination - appendage.x);
-       }
+    show_debug_message("dir_y = " + string(dir_y) + "  dir_x = " + string(dir_x) + " | step = " + string(step));
+        show_debug_message("Destination_Y_Established? " + string(destination_y_established) + "    destination_x_established? " + string(destination_x_established));
+        show_debug_message("Destination_Y = " + string(destination_y) + "  and  destination_x = " + string(destination_x));
    }
    
      

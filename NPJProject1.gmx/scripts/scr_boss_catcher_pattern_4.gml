@@ -30,8 +30,8 @@ else
         
         
         //show_debug_message("Bang. shots fired = " + string(shots_fired));
-        //create projectile
-        instance_create(weakpoint.x, weakpoint.y, obj_projectile_canister);
+        scr_create_projectile(6,point_direction(weakpoint.x,weakpoint.y,obj_boss_canister.x,obj_boss_canister.y+20),weakpoint.x,weakpoint.y,obj_projectile);
+        //instance_create(weakpoint.x, weakpoint.y, obj_projectile_canister);
         shots_fired += 1;
         shot_timer = room_speed * (30/60);  
        }

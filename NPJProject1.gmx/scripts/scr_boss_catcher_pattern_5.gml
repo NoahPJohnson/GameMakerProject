@@ -81,7 +81,7 @@ if (destination_established == false && firing == false)
         //show_debug_message("Move Forward Again. Step = " + string(step) + " Destination = " + string(destination));
        }
     //Shoot
-    else if (step == 1 || step == 3 || step == 5)
+    else if (step == 1 || step == 3)
        {
         weakpoint.vulnerable = true;
         destination = x;
@@ -89,7 +89,7 @@ if (destination_established == false && firing == false)
         shots_fired = 0;
         max_shots = 3;
        }
-    else if (step == 6)
+    else if (step == 5)
        {
         //PatternComplete
         state = boss_state.neutral;

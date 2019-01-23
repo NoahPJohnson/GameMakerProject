@@ -35,6 +35,8 @@ chsSpeed = 2;
 jumping_type = false;
 jumping = false;
 dir = 0;
+dir_x = 0;
+dir_y = 0;
 grv = 0.8;
 frc = 0.5;
 slope_mod = 2;
@@ -73,7 +75,7 @@ hp = max_hp;
 //boss stuff
 vulnerable = false;
 
-pattern_count = 12;
+pattern_count = 13;
 pattern_index = 0;
 pattern_array[0] = scr_boss_catcher_pattern_1;
 pattern_array[1] = scr_boss_catcher_pattern_2;
@@ -87,6 +89,7 @@ pattern_array[8] = scr_boss_catcher_pattern_9;
 pattern_array[9] = scr_boss_catcher_pattern_10;
 pattern_array[10] = scr_boss_catcher_pattern_11;
 pattern_array[11] = scr_boss_catcher_pattern_12;
+pattern_array[12] = scr_boss_catcher_pattern_13;
 
 set_selected = false;
 set_count = 4;
@@ -100,9 +103,12 @@ condition_index = 0;
 //1,11,7,2,11,5,8
 //11&lt;-,5c
 //6,0,8,6,4
-sets[0] = "0,1,2,3,0,4,5,;2_4";
-sets[1] = "1,11,7,2,11,5,8,;1_2"
-sets[2] = "6,0,11,6,4,7,8,2,;0_1"
+//sets[0] = "0,1,2,3,0,4,5,;2_4";
+sets[0] = "2,1,2,1,;0_1";
+//sets[1] = "1,11,7,2,11,5,8,;1_2"
+sets[1] = "12,9,6,9,;0_1";
+//sets[2] = "6,0,11,6,4,7,8,2,;0_1"
+sets[2] = "6,12,9,;0_1";
 sets[3] = "9,11,4,10,7,2,0,9,10,4,;4_6"
 sets[4] = "9,8,11,9,10,7,;0_2"
 set_array[0] = 0;
@@ -133,6 +139,7 @@ tractor_beam_range = 600;
 tractor_beam_power = 6.5;
 //blocker = obj_boss_blocker;
 blocker = instance_create(x+32,y-128,obj_boss_blocker);
+
 //show_debug_message("blocker: " + string(x - blocker.x) + " , " + string(y-blocker.y));
 
 
@@ -141,7 +148,11 @@ shot_timer = room_speed * (15/60);
 saved_shot_timer = shot_timer;
 shots_fired = 0;
 destination = x;
+destination_x = x;
+destination_y = y;
 destination_established = false;
+destination_x_established = false;
+destination_y_established = false;
 max_shots = 0;
 step = 0;
 

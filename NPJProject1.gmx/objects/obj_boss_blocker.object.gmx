@@ -41,7 +41,14 @@ slide_through = false;
 
 //Boss Stuff
 vulnerable = false;
-fire = instance_create(x-64,y,obj_fire_hitbox_blocker)
+fire = instance_create(x-64,y,obj_fire_hitbox_blocker);
+spikes[0] = instance_create(x-128,y+16,obj_spike_hitbox_blocker);
+spikes[1] = instance_create(x-128,y+48,obj_spike_hitbox_blocker);
+spikes[2] = instance_create(x-128,y+80,obj_spike_hitbox_blocker);
+spikes[3] = instance_create(x-128,y+112,obj_spike_hitbox_blocker);
+spikes[4] = instance_create(x-128,y+144,obj_spike_hitbox_blocker);
+spikes[5] = instance_create(x-128,y+176,obj_spike_hitbox_blocker);
+spikes[6] = instance_create(x-128,y+208,obj_spike_hitbox_blocker);
 //show_debug_message("Fire is at: " + string(x - fire.x) + " and " + string(y - fire.y)); 
 state = noone;
 </string>
@@ -93,6 +100,11 @@ instance_destroy(fire);
             <string>///Collision
 fire.hspd = hspd;
 fire.vspd = vspd;
+for (i = 0; i &lt; 7; i++)
+    {
+     spikes[i].hspd = hspd;
+     spikes[i].vspd = vspd;
+    }
 scr_boss_collision();
 </string>
           </argument>

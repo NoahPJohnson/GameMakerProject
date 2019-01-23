@@ -84,7 +84,7 @@ if (!place_meeting(x,y+4,obj_boundary) &amp;&amp; contained_detonation == false)
    }
    
 //Collision
-scr_collision_bounce();  
+scr_collision_bounce_alternative();  
 </string>
           </argument>
         </arguments>

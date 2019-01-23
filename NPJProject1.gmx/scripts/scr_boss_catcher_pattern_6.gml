@@ -26,7 +26,7 @@ else
    {
     appendage.hspd = 0;
     dir = 0;
-    if (shot_timer % 100 == 0)
+    if (shot_timer % 100 == 0 && shot_timer > 0)
        {
         if (shots_fired < max_shots)
            {
@@ -62,7 +62,7 @@ else
                 if (appendage.special_HP < 1)
                    {
                     appendage.sprite_index = spr_boss_claw_broken;
-                    instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
+                    //instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
                    }
                 weakpoint.hp -= 7;
                 hp -= 7;

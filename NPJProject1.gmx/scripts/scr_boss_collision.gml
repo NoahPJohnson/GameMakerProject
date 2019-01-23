@@ -168,6 +168,35 @@ if (place_meeting(x,y+vspd,obj_player))
     //player_collision.y += vspd;   
    }
    
+if (place_meeting(x,y+vspd,obj_boss_canister))
+   {
+    player_collision = instance_place(x,y+vspd, obj_boss_canister);
+    //var player_blocked;
+    //var reference_vspd;
+    var player_blocked = false;
+    var reference_vspd = vspd;
+    with (player_collision)
+         {
+          if (!place_meeting(x,y + reference_vspd,obj_boundary) && !place_meeting(x,y + reference_vspd,obj_enemy))
+             {
+              y += reference_vspd;
+             }
+          else
+             {
+              player_blocked = true;
+             }
+         }
+    if (player_blocked == true)
+       {
+        /*while (!place_meeting(x,y+sign(vspd),obj_player))
+              {
+               y += sign(vspd);
+              }*/
+        vspd = 0;
+       }
+    //player_collision.y += vspd;   
+   }
+   
 
    
 if (place_meeting(x,y+vspd,obj_boundary))

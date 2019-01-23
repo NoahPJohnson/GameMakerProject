@@ -105,11 +105,11 @@ state = noone;
           <argument>
             <kind>1</kind>
             <string>///Attach to and follow the claw appendage
-hspd = enemy_parent.hspd;
-vspd = enemy_parent.vspd;
+//hspd = enemy_parent.hspd;
+//vspd = enemy_parent.vspd;
 
-x += hspd;
-y += vspd;
+//x += hspd;
+//y += vspd;
 
 if (state == ball_n_chain_state.hitstop)
    {

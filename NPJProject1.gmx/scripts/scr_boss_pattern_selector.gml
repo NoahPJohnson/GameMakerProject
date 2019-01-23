@@ -61,9 +61,16 @@ if (pattern_selected == false)
     
     weakpoint.vulnerable = false;
     step = 0;
+    dir = 0;
+    dir_x = 0;
+    dir_y = 0;
     destination = 0;
+    destination_x = 0;
+    destination_y = 0;
     destination_established = false;
-    
+    destination_x_established = false;
+    destination_y_established = false;
+     
     if (current_index == condition_index)
        {
         show_debug_message("C H E C K  TO SWITCH SET!!! Set: " + string(set_index) + "* * * * *");
@@ -75,13 +82,13 @@ if (pattern_selected == false)
                 set_selected = false;
                 show_debug_message("SWITCH to set 2");
                }
-            else if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
+            /*else if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
                {
                 
                 set_index = 1;
                 set_selected = false;
                 show_debug_message("Switch to set 1");
-               }
+               }*/
            }
         else if (set_index == 1)
            {
@@ -153,7 +160,7 @@ else if (pattern_selector_timer <= 0 && pattern_selected == true)
    }
 
 //Boss Damage
-scr_boss_damage();
+//scr_boss_damage();
      
      
 //Collision
