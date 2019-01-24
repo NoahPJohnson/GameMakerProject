@@ -82,13 +82,12 @@ if (pattern_selected == false)
                 set_selected = false;
                 show_debug_message("SWITCH to set 2");
                }
-            /*else if (instance_exists(obj_boss_canister) && abs(x-obj_player.x) < 350)
+            else if (appendage.special_HP < 2)
                {
-                
                 set_index = 1;
                 set_selected = false;
                 show_debug_message("Switch to set 1");
-               }*/
+               }
            }
         else if (set_index == 1)
            {
@@ -108,7 +107,7 @@ if (pattern_selected == false)
            }
         else if (set_index == 3)
            {
-            if (hp < (max_hp*0.24))
+            if (hp < (max_hp*0.25))
                {
                 set_index = 4;
                 set_selected = false;

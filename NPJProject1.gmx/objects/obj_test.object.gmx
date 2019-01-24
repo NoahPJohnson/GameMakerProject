@@ -30,11 +30,14 @@ vspd = 0;
 dir = 0;
 grv = 0.8;
 destroyed = false;
+enemy = noone;
+target_state = e_state.crash;
 if (instance_place(x,y,obj_enemy) != noone)
    { 
-    enemy = instance_place(x,y,obj_enemy)
+    enemy = instance_place(x,y,obj_enemy);
+    target_state = enemy.state;
    } 
-state = e_state.idle;
+
 </string>
           </argument>
         </arguments>

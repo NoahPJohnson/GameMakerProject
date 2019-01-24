@@ -5,12 +5,12 @@ if (enemy != noone)
         instance_destroy();
        }
 
-    if (enemy.state = e_state.crash)
+    if (target_state == e_state.crash)
        {
         instance_destroy();
        }
 
-    if (enemy.state = e_state.hitstun)
+    if (target_state == e_state.hitstun)
        { 
         instance_destroy();
        } 
@@ -18,8 +18,7 @@ if (enemy != noone)
     hspd = enemy.hspd;
     vspd = enemy.vspd;
 
-    hspeed = enemy.hspeed;
-    vspeed = enemy.vspeed;
+    speed = enemy.speed;
     direction = enemy.direction;
    }
 

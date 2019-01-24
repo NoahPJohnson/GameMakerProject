@@ -31,7 +31,7 @@
 hspd = 0;
 vspd = 0;
 jspeed = 0;
-chsSpeed = 2;
+chsSpeed = 3;
 jumping_type = false;
 jumping = false;
 dir = 0;
@@ -69,7 +69,7 @@ valid = false;
 slide_through = false;
 
 //Hit Points and other stats
-max_hp = 50;
+max_hp = 42;
 hp = max_hp;
 
 //boss stuff
@@ -103,14 +103,13 @@ condition_index = 0;
 //1,11,7,2,11,5,8
 //11&lt;-,5c
 //6,0,8,6,4
-//sets[0] = "0,1,2,3,0,4,5,;2_4";
-sets[0] = "2,1,2,1,;0_1";
-//sets[1] = "1,11,7,2,11,5,8,;1_2"
-sets[1] = "12,9,6,9,;0_1";
-//sets[2] = "6,0,11,6,4,7,8,2,;0_1"
-sets[2] = "6,12,9,;0_1";
-sets[3] = "9,11,4,10,7,2,0,9,10,4,;4_6"
-sets[4] = "9,8,11,9,10,7,;0_2"
+//;x = repeat
+//_y = condition
+sets[0] = "0,1,2,3,1,11,5,;2_5";
+sets[1] = "5,11,2,11,5,0,5,;2_5"
+sets[2] = "6,0,11,6,4,7,2,;0_1"
+sets[3] = "9,4,10,7,2,0,9,10,11,;6_7"
+sets[4] = "9,7,10,11,12,7,;0_2"
 set_array[0] = 0;
 count = 0;
 //show_debug_message("HEY: " + string(string_char_at(sets[0],0))); 

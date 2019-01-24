@@ -18,29 +18,6 @@ if (instance_exists(melee_hitbox))
     melee_hitbox.x += appendage.hspd; 
     melee_hitbox.y += appendage.vspd;  
    }
-
-/*if ((((sign(destination_x - appendage.x) != dir_x || dir_x == 0)) || (appendage.hspd == 0)) && destination_x_established == true && firing == false)
-   {
-    appendage.hspd = 0;
-    dir_x = 0;
-    destination_x_established = false;
-    if (step == 9 && player_caught = false)
-       {
-        if (obj_player.y <= appendage.y)
-           {
-            firing = true;
-            shot_timer = 180;
-           }
-       }
-    show_debug_message("Horizontal Destination reached for step: " + string(step));
-   }
-if ((((sign(destination_y - appendage.y) != dir_y || dir_y == 0)) || (appendage.vspd == 0)) && destination_y_established && firing == false)
-   {
-    appendage.vspd = 0;
-    dir_y = 0;
-    destination_y_established = false;
-    show_debug_message("Vertical Destination reached for step: " + string(step));
-   }*/
    
 if (firing == false)
    {

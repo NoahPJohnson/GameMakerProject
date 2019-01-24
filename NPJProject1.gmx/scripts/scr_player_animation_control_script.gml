@@ -3,7 +3,7 @@
 
 if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
    {
-    if (mve != 0 && sprite_index != spr_player_running)
+    if (mve != 0 && swinging == false && recovery == false && sprite_index != spr_player_running)
        {
         sprite_index = spr_player_running;
         image_speed = 0.2;
@@ -27,7 +27,7 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
         sprite_index = spr_player_sliding;
         image_speed = 0.2;
        }
-    if (up == true && crouching == false && charging == false && swinging == false && recovery == false && mve == 0 && sprite_index != spr_player_up)
+    if (up == true && crouching == false && charging == false && swinging == false && recovery == false && sprite_index != spr_player_up)
        {
         sprite_index = spr_player_idle_up;
         image_speed = 0.2;
@@ -113,14 +113,15 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
    }
 else
    {
-    if (swinging == false && recovery == false)
+    if (swinging == false && recovery == false && sprite_index != spr_player_jumping)
        {
         sprite_index = spr_player_jumping;
         image_speed = 0.2;
        }
-    if ((swinging == true || recovery == true))
+    if ((swinging == true || recovery == true) && sprite_index != spr_player_spike)
        {
         sprite_index = spr_player_spike;
+        image_index = 0;
         image_speed = 0.5;
        }
    }

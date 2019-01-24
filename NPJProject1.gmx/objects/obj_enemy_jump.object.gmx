@@ -42,6 +42,7 @@ slope_mod = 2;
 //Attacks
 firing = false;
 firSpeed = -1;
+melee_dir = 0;
 meleeAttack = false;
 melee_hitbox = noone;
 

@@ -64,8 +64,8 @@ else
                     appendage.sprite_index = spr_boss_claw_broken;
                     //instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
                    }
-                weakpoint.hp -= 7;
-                hp -= 7;
+                weakpoint.hp -= 6;
+                hp -= 6;
                }
             else
                {

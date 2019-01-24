@@ -5,9 +5,9 @@ key_U_released = keyboard_check_released(ord("W"))
 
 if (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy))
    {
-    if (swinging == false && recovery == false && crouching == false)
+    if (swinging == false && recovery == false && crouching == false && up == false)
        { 
-        if (key_U)
+        if (key_U_held)
            {
             up = true;
             crouching = false;
@@ -39,7 +39,7 @@ else
     up = false;
     if (recovery == false && iframes == false && crouching == false)
        {
-        sprite_index = spr_player;
+        //sprite_index = spr_player;
        }
    }
 if (swinging = false && key_U_released)

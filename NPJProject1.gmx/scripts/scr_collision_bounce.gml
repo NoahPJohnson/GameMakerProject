@@ -128,7 +128,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        {
         incidence = direction;
         //NON Slope of Slope UL
-        if ((incidence >= 0 && incidence < 45) && (incidence > 225 && incidence < 360))
+        if ((incidence >= 0 && incidence < 45) || (incidence > 225 && incidence < 360))
            {
             new_dir = 180 - incidence;
             if (new_dir < 0)

@@ -8,6 +8,12 @@ weakpoint.vspd = vspd;
 blocker.hspd   = hspd;
 blocker.vspd   = vspd;
 
+if (instance_exists(melee_hitbox))
+   {   
+    melee_hitbox.x += appendage.hspd; 
+    melee_hitbox.y += appendage.vspd;  
+   }
+
 if (shot_timer > 0)
    {
     shot_timer -= room_speed * (1/60);
@@ -37,42 +43,55 @@ else
     appendage.hspd = 0;
     dir = 0;
     dir_x = 0;
-    dir_y = 0;
-    if (shot_timer <= 0)
+    //dir_y = 0;
+    if (step == 9)
        {
-        player_caught = true;
-        firing = false;
-        step = 8;       
+        if (shot_timer <= 0)
+           {
+            player_caught = true;
+            firing = false;
+            show_debug_message("Done shaking.");
+            //step = 9;       
+           }
+        else 
+           {
+            appendage.vspd = 16*sin(shot_timer/3);
+            show_debug_message("Shake!  " + string(shot_timer));
+           }
        }
-    else 
+    else
        {
-        appendage.vspd = 16*sin(shot_timer/3);
+        if (shot_timer <= 0)
+           {
+            firing = false;      
+            show_debug_message("Done waiting.");
+           }
        }
    }
 
-    if ((sign(destination_y - appendage.y) != dir_y || dir_y == 0) && firing == false)
-       {
-        appendage.vspd = 0;
-        dir_y = 0;
-        destination_y_established = false;
-        //show_debug_message("Vertical Destination reached for step: " + string(step));
-       }
+if ((sign(destination_y - appendage.y) != dir_y || dir_y == 0) && destination_y_established == true && firing == false)
+   {
+    appendage.vspd = 0;
+    dir_y = 0;
+    destination_y_established = false;
+    //show_debug_message("Vertical Destination reached for step: " + string(step));
+   }
 
-    if ((sign(destination_x - appendage.x) != dir_x || dir_x == 0) && firing == false)
+if ((sign(destination_x - appendage.x) != dir_x || dir_x == 0) && destination_x_established == true && firing == false)
+   {
+    appendage.hspd = 0;
+    dir_x = 0;
+    destination_x_established = false;
+    if (step == 8 && player_caught = false)
        {
-        appendage.hspd = 0;
-        dir_x = 0;
-        destination_x_established = false;
-        if (step == 8 && player_caught = false)
+        if (obj_player.y <= appendage.y)
            {
-            if (obj_player.y <= appendage.y)
-               {
-                firing = true;
-                shot_timer = 180;
-               }
+            firing = true;
+            shot_timer = 180;
            }
-        //show_debug_message("Destination reached for step: " + string(step));
        }
+    //show_debug_message("Destination reached for step: " + string(step));
+   }
    
 if (destination_x_established == false && destination_y_established == false && firing == false)
    {
@@ -80,7 +99,7 @@ if (destination_x_established == false && destination_y_established == false && 
     //Extend Arm
     if (step == 0)
        {
-        instance_create(appendage.x,appendage.y,obj_projectile);
+        instance_create(weakpoint.x,weakpoint.y,obj_projectile);
         weakpoint.vulnerable = false;
         destination_x = x - 180;
         destination_x_established = true;
@@ -159,7 +178,7 @@ if (destination_x_established == false && destination_y_established == false && 
     else if (step == 5)
        {
         firing = true;
-        shot_timer = room_speed * (25/60);
+        shot_timer = room_speed * (15/60);
         step = 6;
         show_debug_message("Wait a moment!");
         if (instance_exists(melee_hitbox))
@@ -182,7 +201,7 @@ if (destination_x_established == false && destination_y_established == false && 
         //instance_create(weakpoint.x,weakpoint.y,obj_projectile);
         if (shots_fired < max_shots)
            {
-            instance_create(appendage.x,appendage.y,obj_projectile);
+            instance_create(weakpoint.x,weakpoint.y,obj_projectile);
             step = 2;
             show_debug_message("Go back to step 2");
            }
