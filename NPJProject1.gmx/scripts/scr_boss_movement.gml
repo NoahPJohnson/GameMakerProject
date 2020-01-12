@@ -17,7 +17,8 @@ else if (dir == 1)
    {
     image_xscale = 1;
    }
-   
+blocker.x = x+32;
+blocker.y = y-128;   
 //Melee Attack
 //scr_enemy_melee();
   

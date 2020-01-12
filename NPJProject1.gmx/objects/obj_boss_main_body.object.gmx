@@ -241,6 +241,7 @@ else
     appendage.state = state;
     scr_boss_hp_zero();
    }
+
 </string>
           </argument>
         </arguments>

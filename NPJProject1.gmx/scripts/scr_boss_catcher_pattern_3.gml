@@ -31,7 +31,7 @@ else
         if (step == 2)
            {
             //show_debug_message("Shoot Canister");
-            instance_create(x-16,y-150,obj_boss_canister);
+            instance_create(x-16,y-192,obj_boss_canister);
             shot_timer = room_speed * (130/60);
             //firing = false;
             step = 3;

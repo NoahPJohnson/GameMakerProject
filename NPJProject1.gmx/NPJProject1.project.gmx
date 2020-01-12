@@ -166,9 +166,14 @@
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
     </sprites>
+    <sprite>sprites\spr_block_medium</sprite>
+    <sprite>sprites\spr_boundary_moving</sprite>
   </sprites>
   <backgrounds name="background"/>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\pth_up_down</path>
+    <path>paths\pth_left_right</path>
+  </paths>
   <scripts name="scripts">
     <scripts name="player_normal">
       <script>scripts\scr_movement.gml</script>
@@ -302,6 +307,8 @@
     </scripts>
     <script>scripts\scr_create_projectile.gml</script>
     <script>scripts\scr_create_grenade_projectile.gml</script>
+    <script>scripts\scr_boundary_move_collision.gml</script>
+    <script>scripts\scr_boundary_movement.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -389,6 +396,7 @@
       </objects>
       <objects name="props">
         <object>objects\obj_prop</object>
+        <object>objects\obj_block_medium</object>
         <object>objects\obj_spike_floor</object>
         <object>objects\obj_spike_wall_L</object>
         <object>objects\obj_spike_wall_R</object>
@@ -452,8 +460,10 @@
     </objects>
     <object>objects\obj_door_to_room</object>
     <object>objects\obj_door_from_room</object>
+    <object>objects\obj_boundary_moving</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_Level_2</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm_test</room>
