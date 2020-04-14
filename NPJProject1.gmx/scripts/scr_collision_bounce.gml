@@ -44,7 +44,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        {
         incidence = direction;
         //heading toward the non-sloped part of the slope
-        if (incidence > 45 && incidence < 225)
+        if ((incidence > 45 && incidence < 225) || y > colliding_object.y)
            {
             
             new_dir = 180 - incidence;
@@ -74,7 +74,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        {
         incidence = direction; 
         //Heading toward the non-sloped part of Slope L
-        if ((incidence > 315 && incidence < 360) || (incidence >= 0 && incidence < 135))
+        if ((incidence > 315 && incidence < 360) || (incidence >= 0 && incidence < 135) || y > colliding_object.y)
            {
             new_dir = 180 - incidence;
             if (new_dir < 0)
@@ -102,7 +102,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        {
         incidence = direction;
         //NON Slope of Slope U 
-        if (incidence > 135 && incidence < 315)
+        if ((incidence > 135 && incidence < 315) || y < colliding_object.y )
            {
             new_dir = 180 - incidence;
             if (new_dir < 0)
@@ -128,7 +128,7 @@ if (place_meeting(x+hspeed,y,obj_boundary))
        {
         incidence = direction;
         //NON Slope of Slope UL
-        if ((incidence >= 0 && incidence < 45) || (incidence > 225 && incidence < 360))
+        if ((incidence >= 0 && incidence < 45) || (incidence > 225 && incidence < 360) || y < colliding_object.y)
            {
             new_dir = 180 - incidence;
             if (new_dir < 0)

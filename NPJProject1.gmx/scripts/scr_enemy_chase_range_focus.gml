@@ -49,7 +49,10 @@ if (longRange == true && meleeAttack == false)
        {
         if (y < obj_player.y - 32)
            {
-            dir = sign(obj_player.x - x);
+            if (collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false))
+               { 
+                dir = sign(obj_player.x - x);
+               }
            }
         else
            {
@@ -58,12 +61,12 @@ if (longRange == true && meleeAttack == false)
                 if (abs((obj_player.x+400) - x) < abs((obj_player.x-400) - x))
                    {
                     dir = sign(sign(floor(obj_player.x+390) - x) + sign(floor(obj_player.x+400) - x));
-                    //show_debug_message("direction = " + string(dir));
+                    show_debug_message("direction = " + string(dir));
                    }
                 else
                    {
                     dir = sign(sign(floor(obj_player.x-390) - x) + sign(floor(obj_player.x-400) - x));
-                    //show_debug_message("DIRECTION = " + string(dir));
+                    show_debug_message("DIRECTION = " + string(dir));
                    }
                }
            } 
@@ -77,12 +80,12 @@ else if (longRange == false && meleeAttack == false)
         if (abs((obj_player.x+200) - x) < abs((obj_player.x-200) - x))
            {
             dir = sign(sign(floor(obj_player.x+180) - x) + sign(floor(obj_player.x+200) - x));
-            //show_debug_message("direction = " + string(dir));
+            show_debug_message("d = " + string(dir));
            }
         else
            {
             dir = sign(sign(floor(obj_player.x-180) - x) + sign(floor(obj_player.x-200) - x));
-            //show_debug_message("DIRECTION = " + string(dir));
+            show_debug_message("D = " + string(dir));
            }
        }
    }
@@ -119,6 +122,7 @@ if (distance_to_object(obj_player) > 580)
     alarm[0] = -1;
     alarm[2] = -1;
     firing = false;
+    meleeAttack = false;
     state = e_state.idle;
    }
    

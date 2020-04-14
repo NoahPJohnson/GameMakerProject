@@ -145,7 +145,7 @@ if (place_meeting(x,y-1,obj_enemy))
               else
                  {
                   player_blocked = true;
-                  show_debug_message("enemy is BLOCKED.");
+                  //show_debug_message("enemy is BLOCKED.");
                  }
              }
        }
@@ -198,7 +198,7 @@ if (place_meeting(x,y+vspd,obj_player))
    
 if (place_meeting(x,y+vspd,obj_enemy))
    {
-    show_debug_message("Vertical collision with enemy.");
+    //show_debug_message("Vertical collision with enemy.");
     player_collision = instance_place(x,y+vspd, obj_enemy);
     //var player_blocked;
     //var reference_vspd;
@@ -295,7 +295,7 @@ if (place_meeting(x,y+vspd,obj_boundary))
 
 if (place_meeting(x,y-1,obj_player))
    {
-   show_debug_message("Vertical collision 2 with Player.");
+   //show_debug_message("Vertical collision 2 with Player.");
     player_collision = instance_place(x,y-1, obj_player);
     //var player_blocked;
     //var reference_vspd;
@@ -318,7 +318,7 @@ if (place_meeting(x,y-1,obj_player))
    }
 else if (place_meeting(x,y-1,obj_enemy))
    {
-    show_debug_message("Vertical collision 2 with enemy.");
+    //show_debug_message("Vertical collision 2 with enemy.");
     player_collision = instance_place(x,y-1, obj_enemy);
     //var player_blocked;
     //var reference_vspd;

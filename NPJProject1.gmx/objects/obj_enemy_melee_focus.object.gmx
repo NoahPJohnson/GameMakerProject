@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialize Variables
 //Modes
-longRange = true;
+longRange = false;
 antiAir = false;
 
 //Movement

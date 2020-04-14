@@ -26,7 +26,7 @@ else if (dir == 1)
 //Fire when in long range mode
 if (longRange == true)
    {
-    show_debug_message("Long Range is true.");
+    //show_debug_message("Long Range is true.");
     chsSpeed = chsSpeed_LR;
     //If player gets too far
     if (distance_to_object(obj_player) > 340 && longRange == true)
@@ -58,7 +58,7 @@ if (longRange == true)
                }
            } 
        }
-    else if (distance_to_object(obj_player) < 200 && longRange == true)
+    else if (distance_to_object(obj_player) < 290 && longRange == true)
        {
         longRange = false;
        }
@@ -78,6 +78,11 @@ else
             //show_debug_message("DIRECTION = " + string(dir));
            }
        }
+    if (collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) || collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
+       {
+        longRange = true;
+       }
+    
     chsSpeed = chsSpeed_CR;
    }
 

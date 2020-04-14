@@ -10,7 +10,7 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
        }
     if (crouching == true && !instance_exists(obj_bunt_bat) && sliding == false && sprite_index != spr_player_crouching)
        {
-        sprite_index = spr_player_crouching_idle;
+        sprite_index = spr_player_crouching_idle_v2;
        }
     if (crouching == true && instance_exists(obj_bunt_bat) && sliding == false && sprite_index != spr_player_bunting)
        {
@@ -94,7 +94,7 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
        }
     if (mve == 0 && crouching == false && charging == false && swinging == false && recovery == false && up == false && sprite_index != spr_player_idle)
        {
-        sprite_index = spr_player_idle;
+        sprite_index = spr_player_idle_v2;
         image_speed = 0.2;
        }
     if (iframes == true && sprite_index != spr_player_iframes)
@@ -172,7 +172,7 @@ else
        {
         image_speed = 0.2;
        }
-    else if (sprite_index == spr_player_idle)
+    else if (sprite_index == spr_player_idle_v2)
        {
         image_speed = 0.2;
        }

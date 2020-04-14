@@ -43,6 +43,14 @@ enemy_index = 0;
 
 spawn_point_array[0] = obj_enemy_spawner_point_A;
 spawn_point_array[1] = obj_enemy_spawner_point_B;
+
+for (index = 0; index &lt; array_length_1d(spawn_point_array); index++)
+   {
+    spawn_point_priority[index] = spawn_point_array[index];
+   }
+
+//spawn_point_array[2] = obj_enemy_spawner_point_C;
+
 state = enemy_spawner_state.idle;
 </string>
           </argument>
@@ -69,13 +77,36 @@ state = enemy_spawner_state.idle;
             <string>///Spawn an enemy.
 if (enemy_index &lt; array_length_1d(enemies_to_spawn_array))
    {
-    if (point_distance(spawn_point_array[0].x,spawn_point_array[0].y,obj_player.x,obj_player.y) &gt; point_distance(spawn_point_array[1].x,spawn_point_array[1].y,obj_player.x,obj_player.y))
+    /*if (point_distance(spawn_point_array[0].x,spawn_point_array[0].y,obj_player.x,obj_player.y) &gt; point_distance(spawn_point_array[1].x,spawn_point_array[1].y,obj_player.x,obj_player.y))
        {
         enemies_active_array[enemy_index+1] = instance_create(spawn_point_array[0].x,spawn_point_array[0].y,enemies_to_spawn_array[enemy_index]);
        }
     else
        {
         enemies_active_array[enemy_index+1] = instance_create(spawn_point_array[1].x,spawn_point_array[1].y,enemies_to_spawn_array[enemy_index]);
+       }*/
+    minSafeDistance = 110;
+    priorityLevel = 0;
+    for (spawnIndex = 0; spawnIndex &lt; array_length_1d(spawn_point_array); spawnIndex++)
+       {
+        if (point_distance(spawn_point_array[spawnIndex].x,spawn_point_array[spawnIndex].y,obj_player.x,obj_player.y) &gt; minSafeDistance)
+           {
+            spawn_point_priority[priorityLevel] = spawn_point_array[spawnIndex];
+            priorityLevel += 1;
+            minSafeDistance = point_distance(spawn_point_array[spawnIndex].x,spawn_point_array[spawnIndex].y,obj_player.x,obj_player.y);  
+           }
+       }
+    for (k = 0; k &lt; array_length_1d(spawn_point_priority); k++)
+       {
+        if (place_empty(spawn_point_priority[k].x+16, spawn_point_priority[k].y+48) &amp;&amp; place_empty(spawn_point_priority[k].x-16, spawn_point_priority[k].y+48))
+           {
+            enemies_active_array[enemy_index+1] = instance_create(spawn_point_priority[k].x,spawn_point_priority[k].y,enemies_to_spawn_array[enemy_index]);
+            break;
+           }
+        if (k == array_length_1d(spawn_point_priority)-1)
+           {
+            enemies_active_array[enemy_index+1] = instance_create(spawn_point_priority[k].x,spawn_point_priority[k].y,enemies_to_spawn_array[enemy_index]);
+           }
        }
     //enemies_active_count += 1;
     enemy_index += 1;

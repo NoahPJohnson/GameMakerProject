@@ -28,6 +28,7 @@
       <sprite>sprites\spr_player_up_charged1</sprite>
       <sprite>sprites\spr_player_up_charged2</sprite>
       <sprite>sprites\spr_player_idle</sprite>
+      <sprite>sprites\spr_player_idle_v2</sprite>
       <sprite>sprites\spr_player_charge</sprite>
       <sprite>sprites\spr_player_charge_Level_One</sprite>
       <sprite>sprites\spr_player_charge_Level_Two</sprite>
@@ -419,6 +420,7 @@
       <object>objects\obj_enemy_spawner_trigger</object>
       <object>objects\obj_enemy_spawner_point_A</object>
       <object>objects\obj_enemy_spawner_point_B</object>
+      <object>objects\obj_enemy_spawner_point_C</object>
     </objects>
     <object>objects\obj_powerup_health</object>
     <object>objects\obj_powerup_big_bat</object>
@@ -463,9 +465,9 @@
     <object>objects\obj_boundary_moving</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_Level_2</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
+    <room>rooms\rm_Level_2</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>
     <room>rooms\rm_Level_Select</room>
