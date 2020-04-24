@@ -29,10 +29,11 @@
       <sprite>sprites\spr_player_up_charged2</sprite>
       <sprite>sprites\spr_player_idle</sprite>
       <sprite>sprites\spr_player_idle_v2</sprite>
+      <sprite>sprites\spr_player_idle_up</sprite>
       <sprite>sprites\spr_player_charge</sprite>
       <sprite>sprites\spr_player_charge_Level_One</sprite>
       <sprite>sprites\spr_player_charge_Level_Two</sprite>
-      <sprite>sprites\spr_player_idle_up</sprite>
+      <sprite>sprites\spr_player_idle_up_old</sprite>
       <sprite>sprites\spr_player_charge_up</sprite>
       <sprite>sprites\spr_player_charge_up_Level_One</sprite>
       <sprite>sprites\spr_player_charge_up_Level_Two</sprite>
@@ -68,6 +69,7 @@
         <sprite>sprites\spr_bunt_bat</sprite>
       </sprites>
       <sprite>sprites\spr_unused_sprites</sprite>
+      <sprite>sprites\spr_player_check_model</sprite>
     </sprites>
     <sprites name="hit cones">
       <sprite>sprites\spr_hit_cone</sprite>

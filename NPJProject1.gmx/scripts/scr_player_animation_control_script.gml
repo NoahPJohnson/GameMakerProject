@@ -10,7 +10,7 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
        }
     if (crouching == true && !instance_exists(obj_bunt_bat) && sliding == false && sprite_index != spr_player_crouching)
        {
-        sprite_index = spr_player_crouching_idle_v2;
+        sprite_index = spr_player_crouching_idle;
        }
     if (crouching == true && instance_exists(obj_bunt_bat) && sliding == false && sprite_index != spr_player_bunting)
        {
