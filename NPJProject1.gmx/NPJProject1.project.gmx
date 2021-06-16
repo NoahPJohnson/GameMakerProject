@@ -43,9 +43,9 @@
       <sprite>sprites\spr_player_bunting</sprite>
       <sprite>sprites\spr_player_sliding</sprite>
       <sprite>sprites\spr_player_running</sprite>
-      <sprite>sprites\spr_player_charge_dash</sprite>
       <sprite>sprites\spr_player_charge_dash_Level_One</sprite>
       <sprite>sprites\spr_player_charge_dash_Level_Two</sprite>
+      <sprite>sprites\spr_player_charge_dash</sprite>
       <sprite>sprites\spr_player_swinging</sprite>
       <sprite>sprites\spr_player_swinging_2</sprite>
       <sprite>sprites\spr_player_swing_launcher</sprite>
@@ -81,25 +81,83 @@
       <sprite>sprites\spr_test</sprite>
     </sprites>
     <sprites name="enemies">
-      <sprite>sprites\spr_enemy</sprite>
-      <sprite>sprites\spr_enemy_range_focus</sprite>
-      <sprite>sprites\spr_enemy_flying</sprite>
       <sprite>sprites\spr_enemy_flying_crash</sprite>
-      <sprite>sprites\spr_enemy_melee_focus</sprite>
       <sprite>sprites\spr_enemy_crash</sprite>
-      <sprite>sprites\spr_enemy_smart</sprite>
-      <sprite>sprites\spr_enemy_jump</sprite>
-      <sprite>sprites\spr_enemy_large</sprite>
       <sprite>sprites\spr_enemy_large_crash</sprite>
       <sprite>sprites\spr_enemy_stationary</sprite>
       <sprite>sprites\spr_enemy_stationary_B</sprite>
       <sprite>sprites\spr_enemy_stationary_G</sprite>
       <sprite>sprites\spr_enemy_stationary_R</sprite>
       <sprite>sprites\spr_enemy_stationary_crash</sprite>
-      <sprite>sprites\spr_projectile</sprite>
       <sprite>sprites\spr_enemy_stationary_H</sprite>
-      <sprite>sprites\spr_enemy_tall</sprite>
       <sprite>sprites\spr_enemy_tall_crash</sprite>
+      <sprite>sprites\spr_enemy_legs</sprite>
+      <sprite>sprites\spr_enemy_parts</sprite>
+      <sprites name="basic enemy">
+        <sprite>sprites\spr_enemy_idle</sprite>
+        <sprite>sprites\spr_enemy_hit</sprite>
+        <sprite>sprites\spr_enemy_firing</sprite>
+        <sprite>sprites\spr_enemy</sprite>
+        <sprite>sprites\spr_enemy_melee_attacking</sprite>
+        <sprite>sprites\spr_enemy_old</sprite>
+        <sprite>sprites\spr_enemy_weapon</sprite>
+      </sprites>
+      <sprites name="smart enemy">
+        <sprite>sprites\spr_enemy_smart</sprite>
+        <sprite>sprites\spr_enemy_smart_air</sprite>
+        <sprite>sprites\spr_enemy_smart_hit</sprite>
+        <sprite>sprites\spr_enemy_smart_air_attacking</sprite>
+        <sprite>sprites\spr_enemy_smart_melee_attacking</sprite>
+        <sprite>sprites\spr_enemy_smart_idle</sprite>
+        <sprite>sprites\spr_enemy_smart_firing</sprite>
+        <sprite>sprites\spr_enemy_smart_old</sprite>
+      </sprites>
+      <sprites name="enemy equipment">
+        <sprite>sprites\spr_enemy_melee_weapon</sprite>
+        <sprite>sprites\spr_enemy_melee_flash</sprite>
+        <sprite>sprites\spr_enemy_arm</sprite>
+        <sprite>sprites\spr_enemy_melee_weapon2</sprite>
+      </sprites>
+      <sprites name="spr_enemy_projectiles">
+        <sprite>sprites\spr_projectile</sprite>
+        <sprite>sprites\spr_projectile_returned</sprite>
+        <sprite>sprites\spr_projectile_old</sprite>
+        <sprite>sprites\spr_shot_spark</sprite>
+      </sprites>
+      <sprites name="tall enemy">
+        <sprite>sprites\spr_enemy_tall</sprite>
+        <sprite>sprites\spr_enemy_tall_old</sprite>
+      </sprites>
+      <sprites name="large enemy">
+        <sprite>sprites\spr_enemy_large</sprite>
+        <sprite>sprites\spr_enemy_large_old</sprite>
+      </sprites>
+      <sprites name="jumping enemy">
+        <sprite>sprites\spr_enemy_jump</sprite>
+        <sprite>sprites\spr_enemy_jump_idle</sprite>
+        <sprite>sprites\spr_enemy_jump_old</sprite>
+      </sprites>
+      <sprites name="flying enemy">
+        <sprite>sprites\spr_enemy_flying</sprite>
+        <sprite>sprites\spr_enemy_flying_hit</sprite>
+        <sprite>sprites\spr_enemy_flying_firing</sprite>
+        <sprite>sprites\spr_enemy_flying_firing2</sprite>
+        <sprite>sprites\spr_enemy_flying_old</sprite>
+      </sprites>
+      <sprites name="enemy melee focus">
+        <sprite>sprites\spr_enemy_melee_focus_old</sprite>
+        <sprite>sprites\spr_enemy_melee_focus</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_air</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_idle</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_teleporting</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_attacking</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_attacking_anti_air</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_attacking2</sprite>
+      </sprites>
+      <sprites name="enemy range focus">
+        <sprite>sprites\spr_enemy_range_focus_old</sprite>
+        <sprite>sprites\spr_enemy_range_focus</sprite>
+      </sprites>
     </sprites>
     <sprites name="hitboxes">
       <sprite>sprites\spr_enemy_melee</sprite>
@@ -232,6 +290,8 @@
       <script>scripts\scr_melee_focus.gml</script>
       <script>scripts\scr_enemy_tall_melee.gml</script>
       <script>scripts\scr_hitstop.gml</script>
+      <script>scripts\scr_enemy_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_accessory.gml</script>
     </scripts>
     <scripts name="projectiles">
       <script>scripts\scr_ricochet_projectile.gml</script>
@@ -245,6 +305,7 @@
       <script>scripts\scr_projectile_struck.gml</script>
       <script>scripts\scr_projectile_bomb_struck.gml</script>
       <script>scripts\scr_projectile_grenade_struck.gml</script>
+      <script>scripts\scr_projectile_animation_controller.gml</script>
     </scripts>
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
@@ -376,6 +437,7 @@
         <object>objects\obj_projectile_ricochet_spread_sub_2</object>
         <object>objects\obj_projectile_homing</object>
         <object>objects\obj_projectile_homing_boss</object>
+        <object>objects\obj_shot_spark</object>
       </objects>
       <objects name="hitboxes">
         <object>objects\obj_enemy_melee</object>
@@ -404,6 +466,9 @@
         <object>objects\obj_spike_wall_L</object>
         <object>objects\obj_spike_wall_R</object>
         <object>objects\obj_spike_ceiling</object>
+      </objects>
+      <objects name="enemy equipment">
+        <object>objects\obj_enemy_melee_flash</object>
       </objects>
     </objects>
     <object>objects\obj_boundary</object>

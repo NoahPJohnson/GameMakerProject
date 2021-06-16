@@ -81,6 +81,15 @@ crash_sprite = spr_enemy_crash;
 cp = 2;
 cp_max = 2;
 
+//Sprites
+idle_sprite = spr_enemy_smart_idle;
+move_sprite = spr_enemy_smart;
+fire_sprite = spr_enemy_smart_firing;
+melee_sprite = spr_enemy_smart_melee_attacking;
+damage_sprite = spr_enemy_smart_hit;
+melee2_sprite = spr_enemy_smart_air_attacking;
+air_sprite = spr_enemy_smart_air;
+
 state = e_state.idle
 </string>
           </argument>
@@ -421,7 +430,9 @@ switch (state)
               break;
              }
        }
-       
+
+//animations
+scr_enemy_animation_control_script();       
 </string>
           </argument>
         </arguments>
