@@ -44,6 +44,7 @@ first_shot = true;
 firSpeed = 40;
 melee_dir = 0;
 meleeAttack = false;
+antiAir = false;
 melee_hitbox = noone;
 selected_projectile = noone;
 
@@ -76,6 +77,10 @@ cp_max = 3;
 //Sprites
 idle_sprite = spr_enemy_idle;
 move_sprite = spr_enemy;
+fire_sprite = spr_enemy_firing;
+melee_sprite = spr_enemy_melee_attacking;
+damage_sprite = spr_enemy_hit;
+air_sprite = spr_enemy_hit;
 
 state = e_state.idle;
 </string>

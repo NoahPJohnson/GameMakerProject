@@ -3,7 +3,7 @@
   <spriteName>spr_projectile</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,6 +33,8 @@ struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
 move_towards_point(obj_player.x, obj_player.y, 5);
+image_angle = point_direction(x,y,obj_player.x,obj_player.y);
+instance_create(x,y,obj_shot_spark);
 
 </string>
           </argument>
@@ -62,6 +64,7 @@ if (instance_exists(obj_test) &amp;&amp; bunted == false)
     target = instance_nearest(obj_player.x, obj_player.y, obj_test);
     enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
     move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
+    image_angle = point_direction(x,y,enemy_targeted.x,enemy_targeted.x);
    }
 else
    {
@@ -115,6 +118,9 @@ switch (state)
               break;        
              }
        }
+       
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

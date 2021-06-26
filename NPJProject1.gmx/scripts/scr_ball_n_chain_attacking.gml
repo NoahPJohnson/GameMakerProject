@@ -72,4 +72,6 @@ if (place_meeting(x,y,obj_bunt_bat))
     //instance_destroy();
    }
 
+scr_ball_n_chain_links();
+   
 scr_ball_hit_by_bat();

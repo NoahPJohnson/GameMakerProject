@@ -14,6 +14,8 @@ if (enemy_parent != noone)
         direction = point_direction(x,y,enemy_parent.x,enemy_parent.y);
        }
    }
+   
+scr_ball_n_chain_links();
 
 scr_ball_hit_by_bat();
    

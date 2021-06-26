@@ -84,7 +84,6 @@
       <sprite>sprites\spr_enemy_flying_crash</sprite>
       <sprite>sprites\spr_enemy_crash</sprite>
       <sprite>sprites\spr_enemy_large_crash</sprite>
-      <sprite>sprites\spr_enemy_stationary</sprite>
       <sprite>sprites\spr_enemy_stationary_B</sprite>
       <sprite>sprites\spr_enemy_stationary_G</sprite>
       <sprite>sprites\spr_enemy_stationary_R</sprite>
@@ -92,6 +91,7 @@
       <sprite>sprites\spr_enemy_stationary_H</sprite>
       <sprite>sprites\spr_enemy_tall_crash</sprite>
       <sprite>sprites\spr_enemy_legs</sprite>
+      <sprite>sprites\spr_enemy_legs_idle</sprite>
       <sprite>sprites\spr_enemy_parts</sprite>
       <sprites name="basic enemy">
         <sprite>sprites\spr_enemy_idle</sprite>
@@ -120,21 +120,53 @@
       </sprites>
       <sprites name="spr_enemy_projectiles">
         <sprite>sprites\spr_projectile</sprite>
+        <sprite>sprites\spr_projectile_bounce</sprite>
+        <sprite>sprites\spr_projectile_bounce_returned</sprite>
         <sprite>sprites\spr_projectile_returned</sprite>
         <sprite>sprites\spr_projectile_old</sprite>
         <sprite>sprites\spr_shot_spark</sprite>
+        <sprite>sprites\spr_projectile_grenade</sprite>
+        <sprite>sprites\spr_projectile_grenade2</sprite>
+        <sprite>sprites\spr_projectile_grenade_returned</sprite>
+        <sprite>sprites\spr_projectile_grenade2_returned</sprite>
+        <sprite>sprites\spr_projectile_homing</sprite>
+        <sprite>sprites\spr_projectile_homing_returned</sprite>
+        <sprite>sprites\spr_projectile_bomb</sprite>
+        <sprite>sprites\spr_projectile_bomb_returned</sprite>
+        <sprite>sprites\spr_projectile_canister</sprite>
       </sprites>
       <sprites name="tall enemy">
         <sprite>sprites\spr_enemy_tall</sprite>
+        <sprite>sprites\spr_enemy_tall_firing</sprite>
+        <sprite>sprites\spr_enemy_tall_attacking1</sprite>
+        <sprite>sprites\spr_enemy_tall_attacking2</sprite>
+        <sprite>sprites\spr_enemy_tall_attacking3</sprite>
+        <sprite>sprites\spr_enemy_tall_idle</sprite>
+        <sprite>sprites\spr_enemy_tall_hit</sprite>
         <sprite>sprites\spr_enemy_tall_old</sprite>
+        <sprite>sprites\spr_shield_right</sprite>
+        <sprite>sprites\spr_shield_left</sprite>
+        <sprite>sprites\spr_shield_up</sprite>
       </sprites>
       <sprites name="large enemy">
         <sprite>sprites\spr_enemy_large</sprite>
+        <sprite>sprites\spr_enemy_large_2</sprite>
+        <sprite>sprites\spr_enemy_large_hit</sprite>
+        <sprite>sprites\spr_enemy_large_idle</sprite>
+        <sprite>sprites\spr_enemy_large_armor</sprite>
+        <sprite>sprites\spr_enemy_large_firing</sprite>
         <sprite>sprites\spr_enemy_large_old</sprite>
+        <sprite>sprites\spr_ball_n_chain_end</sprite>
+        <sprite>sprites\spr_ball_n_chain_link</sprite>
       </sprites>
       <sprites name="jumping enemy">
         <sprite>sprites\spr_enemy_jump</sprite>
         <sprite>sprites\spr_enemy_jump_idle</sprite>
+        <sprite>sprites\spr_enemy_jump_air</sprite>
+        <sprite>sprites\spr_enemy_jump_hit</sprite>
+        <sprite>sprites\spr_enemy_jump_attack_startup</sprite>
+        <sprite>sprites\spr_enemy_jump_attack</sprite>
+        <sprite>sprites\spr_enemy_jump_attack_recovery</sprite>
         <sprite>sprites\spr_enemy_jump_old</sprite>
       </sprites>
       <sprites name="flying enemy">
@@ -148,6 +180,7 @@
         <sprite>sprites\spr_enemy_melee_focus_old</sprite>
         <sprite>sprites\spr_enemy_melee_focus</sprite>
         <sprite>sprites\spr_enemy_melee_focus_air</sprite>
+        <sprite>sprites\spr_enemy_melee_focus_hit</sprite>
         <sprite>sprites\spr_enemy_melee_focus_idle</sprite>
         <sprite>sprites\spr_enemy_melee_focus_teleporting</sprite>
         <sprite>sprites\spr_enemy_melee_focus_attacking</sprite>
@@ -157,6 +190,21 @@
       <sprites name="enemy range focus">
         <sprite>sprites\spr_enemy_range_focus_old</sprite>
         <sprite>sprites\spr_enemy_range_focus</sprite>
+        <sprite>sprites\spr_enemy_range_focus_idle</sprite>
+        <sprite>sprites\spr_enemy_range_focus_air</sprite>
+        <sprite>sprites\spr_enemy_range_focus_hit</sprite>
+        <sprite>sprites\spr_enemy_range_focus_firing</sprite>
+        <sprite>sprites\spr_enemy_range_focus_firing2</sprite>
+        <sprite>sprites\spr_enemy_range_focus_firing3</sprite>
+      </sprites>
+      <sprites name="stationary enemies">
+        <sprite>sprites\spr_enemy_stationary</sprite>
+        <sprite>sprites\spr_enemy_stationary_homing</sprite>
+        <sprite>sprites\spr_enemy_stationary_bounce</sprite>
+        <sprite>sprites\spr_enemy_stationary_firing</sprite>
+        <sprite>sprites\spr_enemy_stationary_homing_firing</sprite>
+        <sprite>sprites\spr_enemy_stationary_bounce_firing</sprite>
+        <sprite>sprites\spr_enemy_stationary_old</sprite>
       </sprites>
     </sprites>
     <sprites name="hitboxes">
@@ -339,6 +387,7 @@
       <script>scripts\scr_ball_hit_by_bat.gml</script>
       <script>scripts\scr_ball_n_chain_hitstop.gml</script>
       <script>scripts\scr_ball_collision_bounce.gml</script>
+      <script>scripts\scr_ball_n_chain_links.gml</script>
     </scripts>
     <script>scripts\scr_checkpoint_create.gml</script>
     <script>scripts\scr_checkpoint_load.gml</script>
@@ -458,6 +507,7 @@
         <object>objects\obj_fire_hitbox_blocker</object>
         <object>objects\obj_spike_hitbox_blocker</object>
         <object>objects\obj_boss_claw_grab_hitbox</object>
+        <object>objects\obj_ball_n_chain_link</object>
       </objects>
       <objects name="props">
         <object>objects\obj_prop</object>
