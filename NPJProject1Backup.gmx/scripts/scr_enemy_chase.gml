@@ -1,4 +1,4 @@
-///Enemy Chase
+ ///Enemy Chase
 speed = 0;
 direction = 0;
 if (obj_player.state == states.knockback)

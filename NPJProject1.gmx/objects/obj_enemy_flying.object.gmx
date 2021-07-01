@@ -45,6 +45,8 @@ first_shot = true;
 firSpeed = 50;
 melee_dir = 0;
 meleeAttack = false;
+antiAir = false;
+melee_index = 0;
 melee_hitbox = noone;
 selected_projectile = noone;
 
@@ -73,6 +75,8 @@ hp_max = 3;
 crash_sprite = spr_enemy_flying_crash;
 cp = 3;
 cp_max = 3;
+
+animation_loop = true;
 
 state = e_state.idle;
 </string>
@@ -183,7 +187,7 @@ if (instance_exists(melee_hitbox))
             <kind>1</kind>
             <string>///Recovery After Shot
 firing = false;
-
+animation_loop = true;
     
 </string>
           </argument>
@@ -405,6 +409,29 @@ switch (state)
               break;
              }  
        }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_enemy_animation_end();
 </string>
           </argument>
         </arguments>

@@ -5,11 +5,12 @@ if (state == e_state.chase)
     {
         if (firing == true)
         {
-            sprite_index = fire_sprite;
-            image_speed = 0.2
-            if (image_index >= 7)
+            if (animation_loop == true)
             {
-                image_speed = 0;
+                image_index = 0;
+                sprite_index = fire_sprite;
+                image_speed = 0.2
+                animation_loop = false;
             }
         }
         else
@@ -17,12 +18,14 @@ if (state == e_state.chase)
             if (hspd != 0)
             {
                 sprite_index = move_sprite;
-                image_speed = 0.2;   
+                image_speed = 0.2;
+                animation_loop = true;   
             }
             else
             {
                 sprite_index = idle_sprite;
                 image_speed = 0.2;
+                animation_loop = true;
             }
         }
     }
@@ -30,27 +33,38 @@ if (state == e_state.chase)
     {
         if (antiAir)
         {
-            if (alarm[7] == 6)
+            if (animation_loop == true)
             {
-                instance_create(x,y-16,obj_enemy_melee_flash);
+                image_index = 0;
+                if (alarm[7] == 6)
+                {
+                    instance_create(x,y-16,obj_enemy_melee_flash);
+                }
+                sprite_index = anti_air_sprite;
+                image_speed = 0.4;
+                animation_loop = false;
             }
-            sprite_index = melee2_sprite;
-            image_speed = 0.4;
         }
         else
         {
-            if (alarm[7] == 30)
+            if (animation_loop == true)
             {
-                instance_create(x,y-16,obj_enemy_melee_flash);
+                image_index = 0;
+                if (alarm[7] == 30)
+                {
+                    instance_create(x,y-16,obj_enemy_melee_flash);
+                }
+                sprite_index = melee_sprite;
+                image_speed = 0.4;
+                animation_loop = false;
             }
-            sprite_index = melee_sprite;
-            image_speed = 0.4;
         }
     }
     if (!place_meeting(x,y+3,obj_boundary))
     {
         sprite_index = air_sprite;
         image_speed = 0.2;
+        animation_loop = false;
     }
 }
 else if (state == e_state.hitstop)
@@ -58,12 +72,14 @@ else if (state == e_state.hitstop)
     if (damage_hitstop == true)
     {
         sprite_index = damage_sprite;
+        animation_loop = false;
     }
 }
 else if (state == e_state.idle)
 {
     sprite_index = idle_sprite;
     image_speed = 0.2;
+    animation_loop = true;
 }
 
 

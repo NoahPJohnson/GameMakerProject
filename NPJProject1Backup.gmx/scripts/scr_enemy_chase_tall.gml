@@ -76,7 +76,7 @@ scr_enemy_targeted();
    
 if (shield != noone)
    {
-    if (shield.sprite_index == spr_enemy_shield_L && obj_player.x > shield.x)
+    if (shield.sprite_index == shield.shield_left_sprite && obj_player.x > shield.x)
        {
         //show_debug_message("Player is to the right of shield L");
         //Hit by the Bat  
@@ -85,7 +85,7 @@ if (shield != noone)
         //Hit by a Projectile 
         //scr_hit_by_projectile();
        }
-    else if (shield.sprite_index == spr_enemy_shield_Up && obj_player.y > shield.y)
+    else if (shield.sprite_index == shield.shield_up_sprite && obj_player.y > shield.y)
        {
         //show_debug_message("Player is below shield Up");
         //Hit by the Bat  
@@ -94,7 +94,7 @@ if (shield != noone)
         //Hit by a Projectile 
         //scr_hit_by_projectile();
        }
-    else if (shield.sprite_index == spr_enemy_shield_R && obj_player.x < shield.x)
+    else if (shield.sprite_index == shield.shield_right_sprite && obj_player.x < shield.x)
        {
         //show_debug_message("Player is to the left of shield R");
         //Hit by the Bat  

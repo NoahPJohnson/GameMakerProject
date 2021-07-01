@@ -20,6 +20,6 @@
   <width>32</width>
   <height>96</height>
   <frames>
-    <frame index="0">images\spr_enemy_shield_R_0.png</frame>
+    <frame index="0">images\spr_enemy_shield_R2_0.png</frame>
   </frames>
 </sprite>

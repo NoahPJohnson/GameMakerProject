@@ -118,7 +118,7 @@
         <sprite>sprites\spr_enemy_arm</sprite>
         <sprite>sprites\spr_enemy_melee_weapon2</sprite>
       </sprites>
-      <sprites name="spr_enemy_projectiles">
+      <sprites name="enemy projectiles">
         <sprite>sprites\spr_projectile</sprite>
         <sprite>sprites\spr_projectile_bounce</sprite>
         <sprite>sprites\spr_projectile_bounce_returned</sprite>
@@ -149,11 +149,12 @@
         <sprite>sprites\spr_shield_up</sprite>
       </sprites>
       <sprites name="large enemy">
+        <sprite>sprites\spr_enemy_large_attacking1</sprite>
         <sprite>sprites\spr_enemy_large</sprite>
-        <sprite>sprites\spr_enemy_large_2</sprite>
         <sprite>sprites\spr_enemy_large_hit</sprite>
         <sprite>sprites\spr_enemy_large_idle</sprite>
         <sprite>sprites\spr_enemy_large_armor</sprite>
+        <sprite>sprites\spr_enemy_large_armor_broken</sprite>
         <sprite>sprites\spr_enemy_large_firing</sprite>
         <sprite>sprites\spr_enemy_large_old</sprite>
         <sprite>sprites\spr_ball_n_chain_end</sprite>
@@ -222,9 +223,9 @@
       <sprite>sprites\spr_claw_hitbox_boss</sprite>
       <sprite>sprites\spr_fire_hitbox_boss</sprite>
       <sprite>sprites\spr_fire_hitbox_boss_2</sprite>
-      <sprite>sprites\spr_enemy_shield_L</sprite>
-      <sprite>sprites\spr_enemy_shield_R</sprite>
-      <sprite>sprites\spr_enemy_shield_Up</sprite>
+      <sprite>sprites\spr_enemy_shield_L2</sprite>
+      <sprite>sprites\spr_enemy_shield_R2</sprite>
+      <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
     </sprites>
     <sprite>sprites\spr_spike_floor</sprite>
@@ -339,7 +340,11 @@
       <script>scripts\scr_enemy_tall_melee.gml</script>
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_armor_control_script.gml</script>
       <script>scripts\scr_enemy_accessory.gml</script>
+      <script>scripts\scr_enemy_animation_end.gml</script>
+      <script>scripts\scr_enemy_tall_animation_end.gml</script>
     </scripts>
     <scripts name="projectiles">
       <script>scripts\scr_ricochet_projectile.gml</script>
@@ -459,6 +464,7 @@
       <object>objects\obj_enemy</object>
       <object>objects\obj_enemy_flying</object>
       <object>objects\obj_enemy_large</object>
+      <object>objects\obj_enemy_large_armor</object>
       <object>objects\obj_enemy_smart</object>
       <object>objects\obj_enemy_tall</object>
       <object>objects\obj_enemy_range_focus</object>

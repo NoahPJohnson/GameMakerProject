@@ -17,8 +17,8 @@ if (distance_to_object(obj_player) < 150 && !collision_line(shield.enemy_parent.
     
     if (alarm[7] = -1 && alarm[8] = -1)
        {
-        //meleeAttack = true;
-        //show_debug_message("Tall is preparing.")
+        meleeAttack = true;
+        show_debug_message("Tall is preparing.")
         hspd = 0;
         melee_dir = sign(obj_player.x - x);
         
@@ -27,6 +27,7 @@ if (distance_to_object(obj_player) < 150 && !collision_line(shield.enemy_parent.
             //antiAir = true;
             alarm[7] = room_speed * (45/60);
             thrust_height = -48;
+            melee_index = 0;
             //show_debug_message("upper stab");
            }
         else if (obj_player.y+32 <= y+16)
@@ -34,12 +35,14 @@ if (distance_to_object(obj_player) < 150 && !collision_line(shield.enemy_parent.
             
             alarm[7] = room_speed * (45/60);
             thrust_height = -16;
+            melee_index = 1;
             //show_debug_message("middle stab");
            }
         else if (obj_player.y+32 <= y+48 && obj_player.crouching == true)
            {
             alarm[7] = room_speed * (45/60);
             thrust_height = 16;
+            melee_index = 2;
             //show_debug_message("low stab");
            }
         else if (obj_player.y+32 <= y+48)
@@ -47,12 +50,14 @@ if (distance_to_object(obj_player) < 150 && !collision_line(shield.enemy_parent.
             
             alarm[7] = room_speed * (45/60);
             thrust_height = -16;
+            melee_index = 1;
             //show_debug_message("middle stab");
            }
         else //if (obj_player.y+32 > y+48)
            {
             alarm[7] = room_speed * (45/60);
             thrust_height = 16;
+            melee_index = 2;
             //show_debug_message("low stab");
            }
         

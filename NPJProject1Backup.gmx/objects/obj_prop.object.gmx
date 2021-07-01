@@ -64,6 +64,16 @@ crash_sprite = spr_player_charged1;
 cp = 2;
 cp_max = 2;
 
+//Sprites
+idle_sprite = spr_player_charged1;
+move_sprite = spr_player_charged1;
+fire_sprite = spr_player_charged1;
+melee_sprite = spr_player_charged1;
+damage_sprite = spr_player_charged1;
+air_sprite = spr_player_charged1;
+
+animation_loop = false;
+
 state = e_state.crash;
 </string>
           </argument>

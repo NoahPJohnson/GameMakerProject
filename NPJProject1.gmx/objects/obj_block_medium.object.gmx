@@ -64,6 +64,16 @@ crash_sprite = spr_block_medium;
 cp = 5;
 cp_max = 5;
 
+//Sprites
+idle_sprite = spr_block_medium;
+move_sprite = spr_block_medium;
+fire_sprite = spr_block_medium;
+melee_sprite = spr_block_medium;
+damage_sprite = spr_block_medium;
+air_sprite = spr_block_medium;
+
+animation_loop = false;
+
 state = e_state.crash;
 </string>
           </argument>

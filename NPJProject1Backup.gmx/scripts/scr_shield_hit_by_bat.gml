@@ -31,11 +31,11 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
            }
         //show_debug_message("Hit by launcher. State is now: " + string(state));
         
-        if (sprite_index != spr_enemy_shield_Up && (obj_player.chargeOne == true || obj_player.chargeTwo == true))
+        if (sprite_index != shield_up_sprite && (obj_player.chargeOne == true || obj_player.chargeTwo == true))
            {
             show_debug_message("Shield was launched!");
             shield_hitstun = true;
-            sprite_index = spr_enemy_shield_Up;
+            sprite_index = shield_up_sprite;
             x = enemy_parent.x;
             y = enemy_parent.y-48;
             old_sprite = sprite_index;

@@ -53,7 +53,10 @@ firSpeed = 85;
 melee_dir = 0;
 thrust_height = 0;
 meleeAttack = false;
+antiAir = false;
+melee_index = 0;
 melee_hitbox = noone;
+selected_projectile = noone;
 shield = noone;
 
 //Damage and Hit Reaction
@@ -82,6 +85,18 @@ crash_sprite = spr_enemy_tall_crash;
 cp = 2;
 cp_max = 2;
 
+//Sprites
+idle_sprite = spr_enemy_tall_idle;
+move_sprite = spr_enemy_tall;
+fire_sprite = spr_enemy_tall_firing;
+melee_sprites[0] = spr_enemy_tall_attacking1;
+melee_sprites[1] = spr_enemy_tall_attacking2;
+melee_sprites[2] = spr_enemy_tall_attacking3;
+damage_sprite = spr_enemy_tall_hit;
+air_sprite = spr_enemy_tall;
+
+animation_loop = true;
+
 state = e_state.idle
 </string>
           </argument>
@@ -109,12 +124,11 @@ state = e_state.idle
 hspd = dir * chsSpeed;
 vspd = (min(7, vspd + grv));
 grv = 0.8;
-meleeAttack = false;
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.alarm[0] = room_speed * (1/60);
    }
-//show_debug_message("Melee over.");
+meleeAttack = false;
 </string>
           </argument>
         </arguments>
@@ -376,6 +390,31 @@ switch (state)
              }
        }
        
+//animations
+scr_enemy_tall_animation_control_script();  
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_enemy_tall_animation_end();
 </string>
           </argument>
         </arguments>

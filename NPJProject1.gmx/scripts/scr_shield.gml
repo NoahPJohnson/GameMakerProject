@@ -15,7 +15,7 @@ if (enemy_parent != noone)
             x = enemy_parent.x;
             y = enemy_parent.y-48;
             old_sprite = sprite_index;
-            sprite_index = spr_enemy_shield_Up;
+            sprite_index = shield_up_sprite;
             if (!place_meeting(x,y,obj_player))
                {
                 sprite_index = old_sprite;
@@ -37,7 +37,7 @@ if (enemy_parent != noone)
             x = enemy_parent.x;
             y = enemy_parent.y-48;
             old_sprite = sprite_index;
-            sprite_index = spr_enemy_shield_Up;
+            sprite_index = shield_up_sprite;
             if (!place_meeting(x,y,obj_player))
                {
                 sprite_index = old_sprite;
@@ -60,7 +60,7 @@ if (enemy_parent != noone)
             x = enemy_parent.x - 48;
             y = enemy_parent.y-48;
             old_sprite = sprite_index;
-            sprite_index = spr_enemy_shield_L;
+            sprite_index = shield_left_sprite;
             if (!place_meeting(x,y,obj_player) && !place_meeting(x,y,enemy_parent_hitbox))
                {
                 sprite_index = old_sprite;
@@ -83,7 +83,7 @@ if (enemy_parent != noone)
             x = enemy_parent.x + 48;
             y = enemy_parent.y-48;
             old_sprite = sprite_index;
-            sprite_index = spr_enemy_shield_R;
+            sprite_index = shield_right_sprite;
             if (!place_meeting(x,y,obj_player) && !place_meeting(x,y,enemy_parent_hitbox))
                {
                 sprite_index = old_sprite;
@@ -109,38 +109,38 @@ if (enemy_parent != noone)
            }
         if (guard_position == 0)
            {
-            sprite_index = spr_enemy_shield_L;
+            sprite_index = shield_left_sprite;
             x = enemy_parent.x - 48;
             y = enemy_parent.y-48;
            }
         else if (guard_position == 1)
            {
-            sprite_index = spr_enemy_shield_Up;
+            sprite_index = shield_up_sprite;
             x = enemy_parent.x;
             y = enemy_parent.y-48;
            }
         else if (guard_position == 2)
            {
-            sprite_index = spr_enemy_shield_R;
+            sprite_index = shield_right_sprite;
             x = enemy_parent.x + 48;
             y = enemy_parent.y-48;
            }
        }
        
        
-    if (sprite_index == spr_enemy_shield_L)
+    if (sprite_index == shield_left_sprite)
        {
         //sprite_index = spr_enemy_shield_L;
         x = enemy_parent.x - 48;
         y = enemy_parent.y-48;
        }
-    else if (sprite_index == spr_enemy_shield_Up)
+    else if (sprite_index == shield_up_sprite)
        {
         //sprite_index = spr_enemy_shield_Up;
         x = enemy_parent.x;
         y = enemy_parent.y-48;
        }
-    else if (sprite_index == spr_enemy_shield_R)
+    else if (sprite_index == shield_right_sprite)
        {
         //sprite_index = spr_enemy_shield_R;
         x = enemy_parent.x + 48;

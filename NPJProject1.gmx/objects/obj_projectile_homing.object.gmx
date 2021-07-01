@@ -41,6 +41,14 @@ direction = 90;
 //show_debug_message("launch");
 //move_towards_point(obj_player.x, obj_player.y, 4);
 
+projectile_normal_sprite = spr_projectile_homing;
+projectile_short_fuse_sprite = spr_projectile_homing;
+projectile_returned_sprite = spr_projectile_homing_returned;
+projectile_short_fuse_returned_sprite = spr_projectile_homing_returned;
+
+update_angle = true;
+
+instance_create(x,y,obj_shot_spark);
 
 </string>
           </argument>
@@ -226,6 +234,9 @@ switch (state)
               break;        
              }
        }
+
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>
