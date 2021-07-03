@@ -67,9 +67,9 @@ else if (alarm[7] = -1 && alarm[8] > 0 && !instance_exists(melee_hitbox) && mele
    {
     hspd = 0;
    }
-else if (obj_player.state == states.knockback)
+/*else if (obj_player.state == states.knockback)
    {
     alarm[7] = -1;
     alarm[8] = -1;
-   }
+   }*/
  

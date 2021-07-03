@@ -4,6 +4,14 @@ if (animation_loop == false)
     {
         sprite_index = idle_sprite;
     }
+    else if (sprite_index == anti_air_sprite)
+    {
+        sprite_index = idle_sprite;
+    }
+    else if (sprite_index == follow_up_sprite)
+    {
+        sprite_index = idle_sprite;
+    }
     else if (sprite_index == fire_sprite)
     {
         sprite_index = idle_sprite;

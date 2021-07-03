@@ -19,13 +19,15 @@ if (state == e_state.chase)
             {
                 sprite_index = move_sprite;
                 image_speed = 0.2;
-                animation_loop = true;   
+                animation_loop = true; 
+                show_debug_message("moving no ATTACK = LOOP");   
             }
             else
             {
                 sprite_index = idle_sprite;
                 image_speed = 0.2;
                 animation_loop = true;
+                show_debug_message("no Hspeed = loop");  
             }
         }
     }
@@ -36,13 +38,28 @@ if (state == e_state.chase)
             if (animation_loop == true)
             {
                 image_index = 0;
-                if (alarm[7] == 6)
-                {
-                    instance_create(x,y-16,obj_enemy_melee_flash);
-                }
                 sprite_index = anti_air_sprite;
                 image_speed = 0.4;
                 animation_loop = false;
+            }
+            if (alarm[7] == anti_air_warning_time)
+            {
+                instance_create(x,y-16,obj_enemy_melee_flash);
+            }
+        }
+        else if (follow_up_attack)
+        {
+            if (animation_loop == true)
+            {
+                image_index = 0;
+                sprite_index = follow_up_sprite;
+                image_speed = 0.4;
+                animation_loop = false;
+                show_debug_message("follow up = NO loop");
+            }  
+            if (alarm[7] == follow_up_warning_time)
+            {
+                instance_create(x,y-16,obj_enemy_melee_flash);
             }
         }
         else
@@ -50,17 +67,17 @@ if (state == e_state.chase)
             if (animation_loop == true)
             {
                 image_index = 0;
-                if (alarm[7] == 30)
-                {
-                    instance_create(x,y-16,obj_enemy_melee_flash);
-                }
                 sprite_index = melee_sprite;
                 image_speed = 0.4;
                 animation_loop = false;
             }
+            if (alarm[7] == melee_warning_time)
+            {
+                instance_create(x,y-16,obj_enemy_melee_flash);
+            }
         }
     }
-    if (!place_meeting(x,y+3,obj_boundary))
+    if (!place_meeting(x,y+3,obj_boundary) && follow_up_attack == false)
     {
         sprite_index = air_sprite;
         image_speed = 0.2;
@@ -95,7 +112,22 @@ else
     }
     if (state == e_state.chase)
     {
-        image_speed = 0.2;
+        if (antiAir)
+        {
+            image_speed = 0.4;
+        }
+        else if (follow_up_attack)
+        {
+            image_speed = 0.4;
+        }
+        else if (meleeAttack)
+        {
+            image_speed = 0.4;
+        }
+        else
+        {
+            image_speed = 0.2;
+        }
     }
 }
 
@@ -113,4 +145,9 @@ if (state == e_state.crash)
 else
 {
     image_angle = 0;
+}
+
+if (dir != 0 && meleeAttack == false && animation_loop == true)
+{
+    image_xscale = dir;
 }

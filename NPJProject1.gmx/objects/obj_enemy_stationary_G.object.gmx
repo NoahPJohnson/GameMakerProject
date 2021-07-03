@@ -41,6 +41,7 @@ slope_mod = 2;
 firing = false;
 first_shot = true;
 fir_speed = 36;
+follow_up_attack = false;
 antiAir = false;
 melee_index = 0;
 melee_hitbox = noone;

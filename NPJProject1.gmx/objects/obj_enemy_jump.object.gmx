@@ -33,7 +33,7 @@ jspeed = 15;
 chsSpeed = 1.5;
 jumping_type = true;
 jumping = false;
-jumped = true;
+jumped = false;
 dir = 0;
 grv = 0.8;
 frc = 0.5;
@@ -44,6 +44,7 @@ firing = false;
 firSpeed = -1;
 melee_dir = 0;
 meleeAttack = false;
+follow_up_attack = false;
 antiAir = false;
 melee_index = 0;
 melee_hitbox = noone;
@@ -76,7 +77,20 @@ crash_sprite = spr_enemy_crash;
 cp = 3;
 cp_max = 3;
 
+idle_sprite = spr_enemy_jump_idle;
+move_sprite = spr_enemy_jump;
+air_sprite = spr_enemy_jump_air;
+fire_sprite = spr_enemy_jump;
+attack_start_sprite = spr_enemy_jump_attack_startup;
+attack_middle_sprite = spr_enemy_jump_attack;
+attack_end_sprite = spr_enemy_jump_attack_recovery;
+damage_sprite = spr_enemy_jump_hit;
+
 animation_loop = true;
+
+melee_warning_time = 9;
+anti_air_warning_time = 6;
+follow_up_warning_time = 9;
 
 state = e_state.idle
 </string>
@@ -319,6 +333,9 @@ switch (state)
              }
        }
        
+//Animations
+scr_enemy_jump_animation_control_script();
+       
 </string>
           </argument>
         </arguments>
@@ -341,7 +358,7 @@ switch (state)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_enemy_animation_end();
+            <string>scr_enemy_jump_animation_end();
 </string>
           </argument>
         </arguments>

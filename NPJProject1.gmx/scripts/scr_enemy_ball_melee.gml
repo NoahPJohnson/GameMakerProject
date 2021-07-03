@@ -48,7 +48,7 @@ else if (alarm[7] = -1 && alarm[8] = -1 && meleeAttack == true)
    {
     meleeAttack = false;
    }
-else if ((!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_player)) || obj_player.state == states.knockback)
+else if ((!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_player)))
    {
     alarm[7] = -1;
     alarm[8] = -1;

@@ -17,14 +17,14 @@ else if (firing == false && meleeAttack == true)
    }
    
 
-if (dir == -1)
+/*if (dir == -1)
    {
     image_xscale = -1;
    }
 else if (dir == 1)
    {
     image_xscale = 1;
-   }      
+   }*/      
    
           
 //Fire bursts when in long range mode

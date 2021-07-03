@@ -61,14 +61,14 @@ if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
    
 
    
-if (dir == -1)
+/*if (dir == -1)
    {
     image_xscale = -1;
    }
 else if (dir == 1)
    {
     image_xscale = 1;
-   }
+   }*/
    
 if (obj_player.state == states.knockback)
    {

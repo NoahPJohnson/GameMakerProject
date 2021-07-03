@@ -341,10 +341,12 @@
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
       <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_jump_animation_control_script.gml</script>
       <script>scripts\scr_enemy_armor_control_script.gml</script>
       <script>scripts\scr_enemy_accessory.gml</script>
       <script>scripts\scr_enemy_animation_end.gml</script>
       <script>scripts\scr_enemy_tall_animation_end.gml</script>
+      <script>scripts\scr_enemy_jump_animation_end.gml</script>
     </scripts>
     <scripts name="projectiles">
       <script>scripts\scr_ricochet_projectile.gml</script>

@@ -86,7 +86,21 @@ crash_sprite = spr_enemy_crash;
 cp = 2;
 cp_max = 2;
 
+//Sprites
+idle_sprite = spr_enemy_melee_focus_idle;
+move_sprite = spr_enemy_melee_focus;
+fire_sprite = spr_enemy_melee_focus_teleporting;
+melee_sprite = spr_enemy_melee_focus_attacking;
+follow_up_sprite = spr_enemy_melee_focus_attacking2;
+anti_air_sprite = spr_enemy_melee_focus_attacking_anti_air;
+damage_sprite = spr_enemy_melee_focus_hit;
+air_sprite = spr_enemy_melee_focus_air;
+
 animation_loop = true;
+
+melee_warning_time = 24;
+anti_air_warning_time = 6;
+follow_up_warning_time = 9;
 
 state = e_state.idle
 </string>
@@ -120,11 +134,12 @@ if (distance_to_object(obj_player) &lt; 170 &amp;&amp; follow_up_attack == false
     if (place_meeting(x, y+1, obj_boundary))
        {
         follow_up_attack = true;
+        antiAir = false;
         show_debug_message("Set follow up to true");
         show_debug_message("Conditions for follow up are met.");
         alarm[7] = room_speed * (20/60);
         vspd = -(jspeed);
-           
+        animation_loop = true;
        }
    }
 else
@@ -517,6 +532,8 @@ switch (state)
              }
        }
        
+//Animations
+scr_enemy_animation_control_script();
 </string>
           </argument>
         </arguments>

@@ -112,4 +112,7 @@ else
     image_angle = 0;
 }
 
-
+if (dir != 0)
+{
+    image_xscale = dir;
+}

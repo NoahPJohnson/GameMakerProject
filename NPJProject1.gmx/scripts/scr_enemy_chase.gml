@@ -56,7 +56,7 @@ if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
        }
    }
    
-if (meleeAttack == false)
+/*if (meleeAttack == false)
    {   
     if (dir == -1)
        {
@@ -77,7 +77,7 @@ else
        {
         image_xscale = 1;
        }
-   }
+   }*/
    
 if (jumping_type == true)
    {

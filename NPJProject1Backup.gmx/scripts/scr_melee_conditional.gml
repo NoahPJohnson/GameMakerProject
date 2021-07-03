@@ -39,10 +39,10 @@ if (longRange == false && (place_meeting(x,y+1,obj_boundary)))
             melee_hitbox.alarm[0] = 1;
            }
        }
-    else if (obj_player.state = states.knockback)
+    /*else if (obj_player.state = states.knockback)
        {
            alarm[7] = -1;
            alarm[8] = -1;
-       }
+       }*/
    }
  

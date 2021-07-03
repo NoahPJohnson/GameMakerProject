@@ -45,6 +45,7 @@ first_shot = true;
 firSpeed = 50;
 melee_dir = 0;
 meleeAttack = false;
+follow_up_attack = false;
 antiAir = false;
 melee_index = 0;
 melee_hitbox = noone;
@@ -77,6 +78,10 @@ cp = 3;
 cp_max = 3;
 
 animation_loop = true;
+
+melee_warning_time = 30;
+anti_air_warning_time = 6;
+follow_up_warning_time = 9;
 
 state = e_state.idle;
 </string>

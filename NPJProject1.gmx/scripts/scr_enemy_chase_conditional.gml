@@ -32,14 +32,14 @@ if (alarm[7] = -1 && alarm[8] = -1)
    }
    
 
-if (dir == -1)
+/*if (dir == -1)
    {
     image_xscale = -1;
    }
 else if (dir == 1)
    {
     image_xscale = 1;
-   }      
+   }*/      
    
           
 //Fire when in long range mode
