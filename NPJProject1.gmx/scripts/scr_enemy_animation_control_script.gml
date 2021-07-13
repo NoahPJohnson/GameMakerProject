@@ -20,14 +20,12 @@ if (state == e_state.chase)
                 sprite_index = move_sprite;
                 image_speed = 0.2;
                 animation_loop = true; 
-                show_debug_message("moving no ATTACK = LOOP");   
             }
             else
             {
                 sprite_index = idle_sprite;
                 image_speed = 0.2;
                 animation_loop = true;
-                show_debug_message("no Hspeed = loop");  
             }
         }
     }
@@ -147,7 +145,21 @@ else
     image_angle = 0;
 }
 
-if (dir != 0 && meleeAttack == false && animation_loop == true)
+if (meleeAttack == false && animation_loop == true)
 {
-    image_xscale = dir;
+    if (dir != 0)
+    {
+        image_xscale = dir;
+    }
+}
+else if (meleeAttack == true && animation_loop == false)
+{
+    if (melee_dir != 0)
+    {
+        image_xscale = melee_dir;
+    }
+}
+else if (firing == true && animation_loop == false)
+{
+    image_xscale = sign((obj_player.x) - x);
 }

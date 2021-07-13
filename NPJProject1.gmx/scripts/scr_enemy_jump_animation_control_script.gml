@@ -1,7 +1,7 @@
 ///Choose sprite and image speed based on state
 if (state == e_state.chase)
 {
-    if (meleeAttack == false && jumped == false)
+    if (meleeAttack == false && jumped == false && place_meeting(x,y+2,obj_boundary))
     {
         if (firing == true)
         {
@@ -25,26 +25,26 @@ if (state == e_state.chase)
             }
         }
     }
-    if (!place_meeting(x,y+2,obj_boundary))
+    else if (!place_meeting(x,y+2,obj_boundary))
     {
-        if (alarm[7] > -1 && jumped == false && animation_loop == true)
+        if (alarm[7] > -1 && animation_loop == true)
         {
             image_index = 0;
             sprite_index = attack_start_sprite;
-            image_speed = 0.2;
-            animation_loop = false;   
+            image_speed = 0.4;
+            animation_loop = false;
         }
-        else if (jumped == true)
+        else if (jumped == true && alarm[7] == -1)
         {
             sprite_index = attack_middle_sprite;
             image_speed = 0.4;
             animation_loop = true;
         }
-        else
+        else if (jumped == false && alarm[7] == -1 && meleeAttack == false)
         {
             sprite_index = air_sprite;
             image_speed = 0.2;
-            animation_loop = false;
+            animation_loop = true;
         }
     }
     else
@@ -106,7 +106,19 @@ else
     image_angle = 0;
 }
 
-if (dir != 0)
+if (meleeAttack == false)
 {
-    image_xscale = dir;
+    if (dir != 0)
+    {
+        image_xscale = dir;
+    }
 }
+else
+{
+    if (melee_dir != 0)
+    {
+        image_xscale = melee_dir;
+    }
+}
+
+

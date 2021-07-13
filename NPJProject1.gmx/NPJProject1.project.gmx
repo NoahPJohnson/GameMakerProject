@@ -125,6 +125,8 @@
         <sprite>sprites\spr_projectile_returned</sprite>
         <sprite>sprites\spr_projectile_old</sprite>
         <sprite>sprites\spr_shot_spark</sprite>
+        <sprite>sprites\spr_explosion_small</sprite>
+        <sprite>sprites\spr_explosion_medium</sprite>
         <sprite>sprites\spr_projectile_grenade</sprite>
         <sprite>sprites\spr_projectile_grenade2</sprite>
         <sprite>sprites\spr_projectile_grenade_returned</sprite>
@@ -134,6 +136,7 @@
         <sprite>sprites\spr_projectile_bomb</sprite>
         <sprite>sprites\spr_projectile_bomb_returned</sprite>
         <sprite>sprites\spr_projectile_canister</sprite>
+        <sprite>sprites\spr_explosion_large</sprite>
       </sprites>
       <sprites name="tall enemy">
         <sprite>sprites\spr_enemy_tall</sprite>
@@ -207,6 +210,7 @@
         <sprite>sprites\spr_enemy_stationary_bounce_firing</sprite>
         <sprite>sprites\spr_enemy_stationary_old</sprite>
       </sprites>
+      <sprite>sprites\spr_unused_enemy_sprites</sprite>
     </sprites>
     <sprites name="hitboxes">
       <sprite>sprites\spr_enemy_melee</sprite>
@@ -341,11 +345,13 @@
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
       <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_range_focus_animation_control_script.gml</script>
       <script>scripts\scr_enemy_jump_animation_control_script.gml</script>
       <script>scripts\scr_enemy_armor_control_script.gml</script>
       <script>scripts\scr_enemy_accessory.gml</script>
       <script>scripts\scr_enemy_animation_end.gml</script>
       <script>scripts\scr_enemy_tall_animation_end.gml</script>
+      <script>scripts\scr_enemy_range_focus_animation_end.gml</script>
       <script>scripts\scr_enemy_jump_animation_end.gml</script>
     </scripts>
     <scripts name="projectiles">
@@ -495,6 +501,7 @@
         <object>objects\obj_projectile_homing</object>
         <object>objects\obj_projectile_homing_boss</object>
         <object>objects\obj_shot_spark</object>
+        <object>objects\obj_explostion_small</object>
       </objects>
       <objects name="hitboxes">
         <object>objects\obj_enemy_melee</object>

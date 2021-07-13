@@ -112,7 +112,21 @@ else
     image_angle = 0;
 }
 
-if (dir != 0)
+if (meleeAttack == false && animation_loop == true)
 {
-    image_xscale = dir;
+    if (dir != 0)
+    {
+        image_xscale = dir;
+    }
+}
+else if (meleeAttack == true && animation_loop == false)
+{
+    if (melee_dir != 0)
+    {
+        image_xscale = melee_dir;
+    }
+}
+else if (firing == true && animation_loop == false)
+{
+    image_xscale = sign((obj_player.x) - x);
 }

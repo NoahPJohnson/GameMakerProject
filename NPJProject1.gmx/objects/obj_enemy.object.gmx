@@ -256,6 +256,8 @@ else
         vspd = 11;
         grv = 0.8;
         
+        show_debug_message("start the attack");
+        
         if (alarm[8] = -1)
            { 
             alarm[8] = room_speed * (20/60);

@@ -49,7 +49,7 @@ projectile_short_fuse_sprite = spr_projectile_bounce;
 projectile_returned_sprite = spr_projectile_bounce_returned;
 projectile_short_fuse_returned_sprite = spr_projectile_bounce_returned;
 
-update_angle = false;
+update_angle = true;
 </string>
           </argument>
         </arguments>
