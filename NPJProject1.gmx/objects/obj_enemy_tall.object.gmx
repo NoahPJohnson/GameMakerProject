@@ -86,6 +86,10 @@ cp = 2;
 cp_max = 2;
 rotation_angle = 0;
 fragmenting = true;
+fragment1 = noone;
+fragment1_sprite = spr_enemy_tall_crash_display1;
+fragment2 = noone;
+fragment2_sprite = spr_enemy_tall_crash_display2;
 
 spark_interval = 24;
 spark_offset_x = 0;
@@ -100,7 +104,8 @@ melee_sprites[1] = spr_enemy_tall_attacking2;
 melee_sprites[2] = spr_enemy_tall_attacking3;
 damage_sprite = spr_enemy_tall_hit;
 air_sprite = spr_enemy_tall;
-crash_sprite = spr_enemy_crash_hitbox;
+crash_sprite = spr_enemy_small_crash_hitbox;
+crash_display_sprite = spr_enemy_tall_crash_display3;
 
 animation_loop = true;
 looping_melee = false;
