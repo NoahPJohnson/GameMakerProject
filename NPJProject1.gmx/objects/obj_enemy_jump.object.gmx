@@ -73,9 +73,14 @@ slide_through = true;
 mxspd = 40;
 hp = 3;
 hp_max = 3;
-crash_sprite = spr_enemy_crash;
 cp = 3;
 cp_max = 3;
+rotation_angle = 0;
+fragmenting = false;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 idle_sprite = spr_enemy_jump_idle;
 move_sprite = spr_enemy_jump;
@@ -85,8 +90,11 @@ attack_start_sprite = spr_enemy_jump_attack_startup;
 attack_middle_sprite = spr_enemy_jump_attack;
 attack_end_sprite = spr_enemy_jump_attack_recovery;
 damage_sprite = spr_enemy_jump_hit;
+crash_sprite = spr_enemy_crash_hitbox;
+crash_display_sprite = spr_enemy_jump_crash_display;
 
 animation_loop = true;
+looping_melee = false;
 
 melee_warning_time = 9;
 anti_air_warning_time = 6;

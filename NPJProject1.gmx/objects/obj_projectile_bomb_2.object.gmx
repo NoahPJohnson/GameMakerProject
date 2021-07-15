@@ -34,7 +34,15 @@ bunted = false;
 state = proj_state.normal;
 show_debug_message("Bomb is here!");
 //alarm[2] = room_speed * (90/60);
-image_angle = point_direction(x,y,obj_player.x,obj_player.y);
+image_angle = point_direction(x,y,x,y+10);
+
+projectile_normal_sprite = spr_projectile_bomb;
+projectile_short_fuse_sprite = spr_projectile_bomb;
+projectile_returned_sprite = spr_projectile_bomb_returned;
+projectile_short_fuse_returned_sprite = spr_projectile_bomb_returned;
+
+update_angle = false;
+
 instance_create(x,y,obj_shot_spark);
 
 
@@ -136,6 +144,9 @@ switch (state)
               break;        
              }
        }
+       
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

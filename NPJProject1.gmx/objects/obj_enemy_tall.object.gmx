@@ -82,9 +82,14 @@ slide_through = true;
 mxspd = 40;
 hp = 4;
 hp_max = 4;
-crash_sprite = spr_enemy_tall_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
+fragmenting = true;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 //Sprites
 idle_sprite = spr_enemy_tall_idle;
@@ -95,8 +100,10 @@ melee_sprites[1] = spr_enemy_tall_attacking2;
 melee_sprites[2] = spr_enemy_tall_attacking3;
 damage_sprite = spr_enemy_tall_hit;
 air_sprite = spr_enemy_tall;
+crash_sprite = spr_enemy_crash_hitbox;
 
 animation_loop = true;
+looping_melee = false;
 
 melee_warning_time = 30;
 anti_air_warning_time = 6;

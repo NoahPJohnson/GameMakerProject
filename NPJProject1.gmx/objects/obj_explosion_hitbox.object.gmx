@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>enemy_parent = noone;
+instance_create(x,y,obj_explosion_large);
 alarm[0] = room_speed * (8/60);
 </string>
           </argument>

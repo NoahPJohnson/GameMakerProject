@@ -58,7 +58,7 @@ if (state == e_state.chase)
         }
     }
 }
-else if (state == e_state.hitstop)
+else if (state == e_state.hitstun)
 {
     if (damage_hitstop == true)
     {
@@ -69,6 +69,12 @@ else if (state == e_state.hitstop)
 else if (state == e_state.idle)
 {
     sprite_index = idle_sprite;
+    image_speed = 0.2;
+    animation_loop = true;
+}
+else if (state == e_state.crash)
+{
+    sprite_index = crash_sprite;
     image_speed = 0.2;
     animation_loop = true;
 }
@@ -88,22 +94,6 @@ else
     {
         image_speed = 0.2;
     }
-}
-
-if (state == e_state.crash)
-{
-    if (image_angle < 360)
-    {
-        image_angle += room_speed * ((2*hspeed)/60);
-    }
-    else
-    {
-        image_angle = 0;
-    }
-}
-else
-{
-    image_angle = 0;
 }
 
 if (meleeAttack == false)

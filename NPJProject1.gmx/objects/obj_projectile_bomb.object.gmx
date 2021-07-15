@@ -144,6 +144,9 @@ switch (state)
               break;        
              }
        }
+       
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

@@ -75,9 +75,14 @@ slide_through = true;
 mxspd = 40;
 hp = 5;
 hp_max = 5;
-crash_sprite = spr_enemy_large_crash;
 cp = 3;
 cp_max = 3;
+rotation_angle = 0;
+fragmenting = false;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 image_speed = 0.25;
 
@@ -90,6 +95,8 @@ anti_air_sprite = spr_enemy_large_attacking1;
 follow_up_sprite = spr_enemy_large_attacking1;
 damage_sprite = spr_enemy_large_hit;
 air_sprite = spr_enemy_large;
+crash_sprite = spr_enemy_large_crash_hitbox;
+crash_display_sprite = spr_enemy_large_crash_display;
 
 armor_on = true;
 armor_outline = obj_enemy_large_armor;
@@ -97,6 +104,7 @@ instance_create(x,y,armor_outline);
 armor_outline.enemy_parent = self;
 
 animation_loop = true;
+looping_melee = true;
 
 melee_warning_time = 30;
 anti_air_warning_time = 6;

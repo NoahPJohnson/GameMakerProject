@@ -72,6 +72,12 @@ hp_max = 1;
 crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
+fragmenting = false;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 animation_loop = true;
 

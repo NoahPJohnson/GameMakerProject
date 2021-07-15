@@ -72,6 +72,7 @@ hp_max = 1;
 crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
 
 animation_loop = true;
 
