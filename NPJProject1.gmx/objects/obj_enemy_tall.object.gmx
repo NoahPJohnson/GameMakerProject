@@ -294,7 +294,22 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-projectile = instance_create(x,y-32, obj_projectile_homing);
+if (shield.guard_position == 1)
+{
+    projectile = instance_create(x,y-32, obj_projectile_homing);
+    if (dir == -1)
+    {
+        projectile.direction = 180;
+    } 
+    else
+    {
+        projectile.direction = 0;
+    }
+}
+else
+{
+    projectile = instance_create(x,y-32, obj_projectile_homing);
+}
 firing = false;
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;

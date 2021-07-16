@@ -64,6 +64,7 @@ crash_sprite = spr_player_charged1;
 cp = 2;
 cp_max = 2;
 rotation_angle = 0;
+fragmenting = false;
 
 spark_interval = 24;
 spark_offset_x = 0;

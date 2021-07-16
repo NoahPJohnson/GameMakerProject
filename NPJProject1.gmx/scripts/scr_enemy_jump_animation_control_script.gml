@@ -92,7 +92,22 @@ else
     }
     if (state == e_state.chase)
     {
-        image_speed = 0.2;
+        if (antiAir)
+        {
+            image_speed = 0.4;
+        }
+        else if (follow_up_attack)
+        {
+            image_speed = 0.4;
+        }
+        else if (meleeAttack)
+        {
+            image_speed = 0.4;
+        }
+        else
+        {
+            image_speed = 0.2;
+        }
     }
 }
 

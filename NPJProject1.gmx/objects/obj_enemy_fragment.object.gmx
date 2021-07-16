@@ -58,8 +58,8 @@ slide_through = true;
 
 //Crash
 mxspd = 40;
-hp = 2;
-hp_max = 2;
+hp = 0;
+hp_max = 0;
 crash_sprite = spr_player_charged1;
 cp = 2;
 cp_max = 2;
@@ -79,6 +79,7 @@ air_sprite = spr_player_charged1;
 crash_display_sprite = spr_enemy_crash_display;
 
 animation_loop = false;
+fragmenting = false;
 
 state = e_state.crash;
 alarm[3] = room_speed * (160/60);
