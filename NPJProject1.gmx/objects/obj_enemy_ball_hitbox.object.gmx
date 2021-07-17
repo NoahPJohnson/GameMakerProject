@@ -107,6 +107,8 @@ struck = false;
 speed = 0;
 direction = 0;
 state = ball_n_chain_state.neutral;
+enemy_parent.animation_loop = true;
+enemy_parent.looping_melee = true;
 </string>
           </argument>
         </arguments>
@@ -186,6 +188,8 @@ speed = 0;
 direction = 0;
 radius = 80;
 stop = false;
+enemy_parent.animation_loop = true;
+enemy_parent.looping_melee = true;
 </string>
           </argument>
         </arguments>
@@ -211,6 +215,8 @@ stop = false;
             <string>///Set Stop to true
 //radius = 150;
 stop = true;
+enemy_parent.looping_melee = false;
+show_debug_message("stahp");
 </string>
           </argument>
         </arguments>

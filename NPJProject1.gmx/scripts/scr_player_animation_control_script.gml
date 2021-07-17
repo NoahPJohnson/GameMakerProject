@@ -32,6 +32,11 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
         sprite_index = spr_player_idle_up;
         image_speed = 0.2;
        }
+    if (mve != 0 && up == true && swinging == false && recovery == false && sprite_index != spr_player_running_up)
+       {
+        sprite_index = spr_player_running_up;
+        image_speed = 0.2;
+       }
     if ((swinging == true || recovery == true) && up == false && sprite_index != spr_player_swinging)
        {
         sprite_index = spr_player_swinging;
@@ -177,6 +182,10 @@ else
         image_speed = 0.2;
        }
     else if (sprite_index == spr_player_idle_up)
+       {
+        image_speed = 0.2;
+       }
+    else if (sprite_index == spr_player_running_up)
        {
         image_speed = 0.2;
        }

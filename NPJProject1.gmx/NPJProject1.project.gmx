@@ -43,6 +43,7 @@
       <sprite>sprites\spr_player_bunting</sprite>
       <sprite>sprites\spr_player_sliding</sprite>
       <sprite>sprites\spr_player_running</sprite>
+      <sprite>sprites\spr_player_running_up</sprite>
       <sprite>sprites\spr_player_charge_dash_Level_One</sprite>
       <sprite>sprites\spr_player_charge_dash_Level_Two</sprite>
       <sprite>sprites\spr_player_charge_dash</sprite>
@@ -363,12 +364,14 @@
       <script>scripts\scr_enemy_tall_melee.gml</script>
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_large_animation_control_script.gml</script>
       <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
       <script>scripts\scr_enemy_range_focus_animation_control_script.gml</script>
       <script>scripts\scr_enemy_jump_animation_control_script.gml</script>
       <script>scripts\scr_enemy_armor_control_script.gml</script>
       <script>scripts\scr_enemy_accessory.gml</script>
       <script>scripts\scr_enemy_animation_end.gml</script>
+      <script>scripts\scr_enemy_large_animation_end.gml</script>
       <script>scripts\scr_enemy_flying_animation_end.gml</script>
       <script>scripts\scr_enemy_tall_animation_end.gml</script>
       <script>scripts\scr_enemy_range_focus_animation_end.gml</script>

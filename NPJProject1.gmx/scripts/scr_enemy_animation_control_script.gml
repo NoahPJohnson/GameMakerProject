@@ -76,6 +76,7 @@ if (state == e_state.chase)
             {
                 sprite_index = melee_sprite;
                 image_speed = 0.4;
+                animation_loop = true;
             }
             if (alarm[7] == melee_warning_time)
             {

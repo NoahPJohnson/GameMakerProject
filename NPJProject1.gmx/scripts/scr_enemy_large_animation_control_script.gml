@@ -5,65 +5,73 @@ if (state == e_state.chase)
     {
         if (firing == true)
         {
-            sprite_index = fire_sprite;
-            image_speed = 0.2
-            if (image_index >= 7)
+            if (animation_loop == true)
             {
-                image_speed = 0;
+                image_index = 0;
+                sprite_index = fire_sprite;
+                image_speed = 0.2
+                animation_loop = false;
             }
         }
         else
         {   
-            if (hspd != 0)
-            {
-                sprite_index = move_sprite;
-                image_speed = 0.2;   
-            }
-            else
-            {
-                sprite_index = idle_sprite;
-                image_speed = 0.2;
-            }
+            sprite_index = move_sprite;
+            image_speed = 0.2;
+            animation_loop = true; 
         }
     }
     else
     {
-        if (antiAir)
+        if (looping_melee == false)
         {
-            if (alarm[7] == 6)
+            if (animation_loop == true)
             {
-                instance_create(x,y-16,obj_enemy_melee_flash);
+                sprite_index = melee_sprite;
+                image_index = 6;
+                image_speed = 0;
+                animation_loop = false;
+                show_debug_message("NO melee loop");
             }
-            sprite_index = melee2_sprite;
-            image_speed = 0.4;
         }
         else
         {
-            if (alarm[7] == 30)
-            {
-                instance_create(x,y-16,obj_enemy_melee_flash);
-            }
             sprite_index = melee_sprite;
-            image_speed = 0.4;
+            image_speed = 0.2;
+            animation_loop = true
+            show_debug_message("melee LOOP");
+        }
+        if (alarm[7] == melee_warning_time)
+        {
+            instance_create(x,y-16,obj_enemy_melee_flash);
         }
     }
-    if (!place_meeting(x,y+3,obj_boundary))
+    if (!place_meeting(x,y+3,obj_boundary) && follow_up_attack == false)
     {
         sprite_index = air_sprite;
         image_speed = 0.2;
+        animation_loop = true;
+        show_debug_message("air");
     }
 }
-else if (state == e_state.hitstop)
+else if (state == e_state.hitstun)
 {
     if (damage_hitstop == true)
     {
         sprite_index = damage_sprite;
+        animation_loop = false;
     }
 }
 else if (state == e_state.idle)
 {
     sprite_index = idle_sprite;
     image_speed = 0.2;
+    animation_loop = true;
+}
+else if (state == e_state.crash)
+{
+    sprite_index = crash_sprite;
+    image_speed = 0.2;
+    animation_loop = true;
 }
 
 
@@ -79,22 +87,44 @@ else
     }
     if (state == e_state.chase)
     {
-        image_speed = 0.2;
+        if (antiAir)
+        {
+            image_speed = 0.4;
+        }
+        else if (follow_up_attack)
+        {
+            image_speed = 0.4;
+        }
+        else if (meleeAttack && animation_loop == true)
+        {
+            image_speed = 0.2;
+        }
+        else if (meleeAttack && animation_loop == false)
+        {
+            image_speed = 0;
+        }
+        else
+        {
+            image_speed = 0.2;
+        }
     }
 }
 
-if (state == e_state.crash)
+if (meleeAttack == false)
 {
-    if (image_angle < 360)
+    if (dir != 0)
     {
-        image_angle += room_speed * ((2*hspeed)/60);
-    }
-    else
-    {
-        image_angle = 0;
+        image_xscale = dir;
     }
 }
 else
 {
-    image_angle = 0;
+    if (melee_dir != 0)
+    {
+        image_xscale = melee_dir;
+    }
+}
+if (firing == true && animation_loop == false)
+{
+    image_xscale = sign((obj_player.x) - x);
 }
