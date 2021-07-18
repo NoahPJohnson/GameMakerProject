@@ -223,9 +223,11 @@
         <sprite>sprites\spr_explosion_medium</sprite>
         <sprite>sprites\spr_explosion_large</sprite>
         <sprite>sprites\spr_shot_spark</sprite>
+        <sprite>sprites\spr_hit_spark</sprite>
         <sprite>sprites\spr_crash_sparks1</sprite>
         <sprite>sprites\spr_crash_sparks2</sprite>
         <sprite>sprites\spr_bat_hit_spark1</sprite>
+        <sprite>sprites\spr_fire_effect1</sprite>
       </sprites>
     </sprites>
     <sprites name="hitboxes">
@@ -300,6 +302,7 @@
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
     </sprites>
+    <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
     <sprite>sprites\spr_boundary_moving</sprite>
   </sprites>
