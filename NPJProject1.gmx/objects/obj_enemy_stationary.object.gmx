@@ -42,6 +42,7 @@ firing = false;
 first_shot = true;
 fir_speed = 36;
 follow_up_attack = false;
+meleeAttack = false;
 antiAir = false;
 melee_index = 0;
 melee_hitbox = noone;
@@ -79,7 +80,20 @@ spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
 
+//Sprites
+idle_sprite = spr_enemy_stationary;
+move_sprite = spr_enemy_stationary;
+fire_sprite = spr_enemy_stationary_firing;
+melee_sprite = spr_enemy_stationary;
+anti_air_sprite = spr_enemy_stationary;
+follow_up_sprite = spr_enemy_stationary;
+damage_sprite = spr_enemy_stationary;
+air_sprite = spr_enemy_stationary;
+crash_sprite = spr_enemy_small_crash_hitbox;
+crash_display_sprite = spr_enemy_stationary_crash_display;
+
 animation_loop = true;
+looping_melee = true;
 
 state = e_state.idle
 </string>
@@ -266,6 +280,8 @@ switch (state)
              }
        }
        
+//Animations
+scr_enemy_animation_control_script();
 </string>
           </argument>
         </arguments>

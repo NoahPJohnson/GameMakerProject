@@ -117,7 +117,6 @@
       </sprites>
       <sprites name="enemy equipment">
         <sprite>sprites\spr_enemy_melee_weapon</sprite>
-        <sprite>sprites\spr_enemy_melee_flash</sprite>
         <sprite>sprites\spr_enemy_arm</sprite>
         <sprite>sprites\spr_enemy_melee_weapon2</sprite>
       </sprites>
@@ -210,6 +209,9 @@
       </sprites>
       <sprites name="stationary enemies">
         <sprite>sprites\spr_enemy_stationary</sprite>
+        <sprite>sprites\spr_enemy_stationary_crash_display</sprite>
+        <sprite>sprites\spr_enemy_stationary_homing_crash_display</sprite>
+        <sprite>sprites\spr_enemy_stationary_bounce_crash_display</sprite>
         <sprite>sprites\spr_enemy_stationary_homing</sprite>
         <sprite>sprites\spr_enemy_stationary_bounce</sprite>
         <sprite>sprites\spr_enemy_stationary_firing</sprite>
@@ -224,10 +226,16 @@
         <sprite>sprites\spr_explosion_large</sprite>
         <sprite>sprites\spr_shot_spark</sprite>
         <sprite>sprites\spr_hit_spark</sprite>
+        <sprite>sprites\spr_shot_hit_spark1</sprite>
+        <sprite>sprites\spr_shot_hit_spark2</sprite>
+        <sprite>sprites\spr_shot_hit_spark3</sprite>
         <sprite>sprites\spr_crash_sparks1</sprite>
+        <sprite>sprites\spr_crash_sparks3</sprite>
         <sprite>sprites\spr_crash_sparks2</sprite>
         <sprite>sprites\spr_bat_hit_spark1</sprite>
         <sprite>sprites\spr_fire_effect1</sprite>
+        <sprite>sprites\spr_fire_effect2</sprite>
+        <sprite>sprites\spr_enemy_melee_flash</sprite>
       </sprites>
     </sprites>
     <sprites name="hitboxes">
@@ -282,8 +290,17 @@
     </sprites>
     <sprites name="boss">
       <sprite>sprites\spr_boss_weakpoint</sprite>
+      <sprite>sprites\spr_boss_weakpoint1</sprite>
+      <sprite>sprites\spr_boss_weakpoint_firing</sprite>
+      <sprite>sprites\spr_boss_weakpoint_protector</sprite>
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_main_body</sprite>
+      <sprite>sprites\spr_boss_main_body2</sprite>
+      <sprite>sprites\spr_boss_unused_sprites</sprite>
+      <sprite>sprites\spr_boss_main_body_legs</sprite>
+      <sprite>sprites\spr_boss_legs2</sprite>
+      <sprite>sprites\spr_boss_main_body_abdomen</sprite>
+      <sprite>sprites\spr_boss_main_body_chest</sprite>
       <sprite>sprites\spr_boss_claw</sprite>
       <sprite>sprites\spr_boss_claw_pulling</sprite>
       <sprite>sprites\spr_boss_claw_broken</sprite>
@@ -526,11 +543,6 @@
         <object>objects\obj_projectile_ricochet_spread_sub_2</object>
         <object>objects\obj_projectile_homing</object>
         <object>objects\obj_projectile_homing_boss</object>
-        <object>objects\obj_shot_spark</object>
-        <object>objects\obj_spark_effect1</object>
-        <object>objects\obj_explosion_small</object>
-        <object>objects\obj_explosion_medium</object>
-        <object>objects\obj_explosion_large</object>
       </objects>
       <objects name="hitboxes">
         <object>objects\obj_enemy_melee</object>
@@ -564,6 +576,18 @@
       </objects>
       <objects name="enemy equipment">
         <object>objects\obj_enemy_melee_flash</object>
+      </objects>
+      <objects name="effects">
+        <object>objects\obj_explosion_small</object>
+        <object>objects\obj_explosion_medium</object>
+        <object>objects\obj_explosion_large</object>
+        <object>objects\obj_spark_effect1</object>
+        <object>objects\obj_shot_spark</object>
+        <object>objects\obj_hit_spark_R</object>
+        <object>objects\obj_hit_spark_L</object>
+        <object>objects\obj_shot_hit_spark</object>
+        <object>objects\obj_shot_armor_hit_spark</object>
+        <object>objects\obj_shot_returned_hit_spark</object>
       </objects>
     </objects>
     <object>objects\obj_boundary</object>

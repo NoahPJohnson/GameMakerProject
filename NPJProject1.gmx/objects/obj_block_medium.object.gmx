@@ -72,7 +72,7 @@ fire_sprite = spr_block_medium;
 melee_sprite = spr_block_medium;
 damage_sprite = spr_block_medium;
 air_sprite = spr_block_medium;
-crash_display_sprite = spr_enemy_crash_display;
+crash_display_sprite = spr_block_medium;
 
 animation_loop = false;
 

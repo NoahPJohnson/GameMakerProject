@@ -4,13 +4,14 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
        {
         if (obj_player.right = true)
            {
-            hitdir = 1; 
+            hitdir = 1;
+            instance_create(x,y,obj_hit_spark_R); 
            }
         else
            {
             hitdir = -1;
+            instance_create(x,y,obj_hit_spark_L);
            }
-        
         hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
         if (hp < 1)
            {
@@ -47,11 +48,13 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
        {
         if (obj_player.right = true)
            {
-            hitdir = 1; 
+            hitdir = 1;
+            instance_create(x,y,obj_hit_spark_R);  
            }
         else
            {
             hitdir = -1;
+            instance_create(x,y,obj_hit_spark_L);
            }
         hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
         if (hp < 1)
@@ -89,11 +92,13 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
    {
     if (obj_player.right == true)
        {
-        hitdir = 1; 
+        hitdir = 1;
+        instance_create(x,y,obj_hit_spark_R);  
        }
     else
        {
         hitdir = -1;
+        instance_create(x,y,obj_hit_spark_L);
        }
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
@@ -175,11 +180,13 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
    {
     if (obj_player.right = true)
        {
-        hitdir = 1; 
+        hitdir = 1;
+        instance_create(x,y,obj_hit_spark_R);  
        }
     else
        {
         hitdir = -1;
+        instance_create(x,y,obj_hit_spark_L);
        }
     hp -= 1;
     if (hp < 1)

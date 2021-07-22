@@ -27,6 +27,7 @@ if (place_meeting(x, y, obj_bat))
 
        }
     //alarm[2] += 30;
+    spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -64,6 +65,7 @@ if (place_meeting(x, y, obj_bat_launcher))
         struck_direction = 110;
         state = proj_state.hitstop;
        }
+    spark_index = 2;
     //Player Hitstop
     //alarm[2] += 30;
     if (obj_player.state != states.hitstop)
@@ -102,18 +104,7 @@ if (place_meeting(x, y, obj_bat_spike))
         state = proj_state.hitstop;
 
        }
-    //alarm[2] += 30;
-    //Player Hitstop
-    /*obj_player.hitstop = false;
-    obj_player.damage_hitstop = false;
-    obj_player.alarm[11] = alarm[0];
-    if (obj_player.state != states.hitstop)
-       {
-        obj_player.old_state = obj_player.state;
-       }
-    obj_player.state = states.hitstop;*/
-    //show_debug_message("Projectile struck by spike. player state is: " + string(obj_player.state) + " for " + string(obj_player.alarm[11]) + " frames! ");  
-    //state = proj_state.struck;
+    spark_index = 2;
    }
    
 //Collision with Bunt   
@@ -145,6 +136,7 @@ if (place_meeting(x,y,obj_bunt_bat))
         //direction = 125;
         //speed = 4;
        }
+    spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {

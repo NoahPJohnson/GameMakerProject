@@ -48,6 +48,13 @@ projectile_short_fuse_sprite = spr_projectile_bounce;
 projectile_returned_sprite = spr_projectile_bounce_returned;
 projectile_short_fuse_returned_sprite = spr_projectile_bounce_returned;
 
+shot_hit_sparks[0] = obj_shot_hit_spark;
+shot_hit_sparks[1] = obj_shot_armor_hit_spark;
+shot_hit_sparks[2] = obj_shot_returned_hit_spark;
+
+selected_hit_spark = noone;
+spark_index = 0;
+
 update_angle = true;
 
 </string>
@@ -73,6 +80,8 @@ update_angle = true;
           <argument>
             <kind>1</kind>
             <string>///Destroy Projectile
+selected_hit_spark = instance_create(x,y,shot_hit_sparks[spark_index]);
+selected_hit_spark.image_angle = image_angle;
 instance_destroy();
 </string>
           </argument>

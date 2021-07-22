@@ -40,6 +40,13 @@ projectile_short_fuse_returned_sprite = spr_projectile_returned;
 
 update_angle = false;
 
+shot_hit_sparks[0] = obj_shot_hit_spark;
+shot_hit_sparks[1] = obj_shot_armor_hit_spark;
+shot_hit_sparks[2] = obj_shot_returned_hit_spark;
+
+selected_hit_spark = noone;
+spark_index = 0;
+
 move_towards_point(obj_player.x, obj_player.y, 5);
 image_angle = point_direction(x,y,obj_player.x,obj_player.y);
 
@@ -75,12 +82,12 @@ if (instance_exists(obj_test) &amp;&amp; bunted == false)
     target = instance_nearest(obj_player.x, obj_player.y, obj_test);
     enemy_targeted = instance_place(target.x,target.y, obj_enemy);         
     move_towards_point(enemy_targeted.x, enemy_targeted.y, struck_speed);
-    image_angle = point_direction(x,y,enemy_targeted.x,enemy_targeted.x);
+    image_angle = point_direction(x,y,enemy_targeted.x,enemy_targeted.y);
    }
 else
    {
     direction = struck_direction; 
-    speed = struck_speed;//15 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
+    speed = struck_speed;
    }
 state = proj_state.struck;
 </string>

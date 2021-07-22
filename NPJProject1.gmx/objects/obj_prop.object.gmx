@@ -77,7 +77,7 @@ fire_sprite = spr_player_charged1;
 melee_sprite = spr_player_charged1;
 damage_sprite = spr_player_charged1;
 air_sprite = spr_player_charged1;
-crash_display_sprite = spr_enemy_crash_display;
+crash_display_sprite = spr_block;
 
 animation_loop = false;
 
