@@ -290,17 +290,13 @@
     </sprites>
     <sprites name="boss">
       <sprite>sprites\spr_boss_weakpoint</sprite>
-      <sprite>sprites\spr_boss_weakpoint1</sprite>
+      <sprite>sprites\spr_boss_weakpoint_no_mask</sprite>
+      <sprite>sprites\spr_boss_weakpoint1_protected</sprite>
       <sprite>sprites\spr_boss_weakpoint_firing</sprite>
       <sprite>sprites\spr_boss_weakpoint_protector</sprite>
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
-      <sprite>sprites\spr_boss_main_body</sprite>
-      <sprite>sprites\spr_boss_main_body2</sprite>
-      <sprite>sprites\spr_boss_unused_sprites</sprite>
-      <sprite>sprites\spr_boss_main_body_legs</sprite>
-      <sprite>sprites\spr_boss_legs2</sprite>
+      <sprite>sprites\spr_boss_enemy1</sprite>
       <sprite>sprites\spr_boss_main_body_abdomen</sprite>
-      <sprite>sprites\spr_boss_main_body_chest</sprite>
       <sprite>sprites\spr_boss_claw</sprite>
       <sprite>sprites\spr_boss_claw_pulling</sprite>
       <sprite>sprites\spr_boss_claw_broken</sprite>
@@ -309,6 +305,12 @@
       <sprite>sprites\spr_boss_blocker</sprite>
       <sprite>sprites\spr_boss_claw_grab_hitbox</sprite>
       <sprite>sprites\spr_boss_health_bar</sprite>
+      <sprite>sprites\spr_boss_main_body</sprite>
+      <sprite>sprites\spr_boss_main_body_legs</sprite>
+      <sprite>sprites\spr_boss_legs2</sprite>
+      <sprite>sprites\spr_boss_main_body_chest</sprite>
+      <sprite>sprites\spr_boss_main_body2</sprite>
+      <sprite>sprites\spr_boss_unused_sprites</sprite>
       <sprite>sprites\spr_boss_health_bar_background</sprite>
     </sprites>
     <sprites name="menus/utility">

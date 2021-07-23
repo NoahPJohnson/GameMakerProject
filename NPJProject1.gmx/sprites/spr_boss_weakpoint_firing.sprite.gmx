@@ -17,8 +17,8 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>40</width>
-  <height>40</height>
+  <width>60</width>
+  <height>60</height>
   <frames>
     <frame index="0">images\spr_boss_weakpoint_firing_0.png</frame>
     <frame index="1">images\spr_boss_weakpoint_firing_1.png</frame>
@@ -30,5 +30,6 @@
     <frame index="7">images\spr_boss_weakpoint_firing_7.png</frame>
     <frame index="8">images\spr_boss_weakpoint_firing_8.png</frame>
     <frame index="9">images\spr_boss_weakpoint_firing_9.png</frame>
+    <frame index="10">images\spr_boss_weakpoint_firing_10.png</frame>
   </frames>
 </sprite>
