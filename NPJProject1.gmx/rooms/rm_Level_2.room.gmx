@@ -53,7 +53,7 @@
   <instances>
     <instance objName="obj_boundary_long" x="0" y="0" name="inst_26B1202A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_long" x="640" y="0" name="inst_57C0873C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_tall" x="0" y="64" name="inst_284F6274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_tall" x="0" y="32" name="inst_284F6274" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="416" y="704" name="inst_0FD93798" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="1312" y="0" name="inst_03CF99D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="1280" y="0" name="inst_76202299" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

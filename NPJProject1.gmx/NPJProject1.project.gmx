@@ -298,6 +298,14 @@
       <sprite>sprites\spr_boss_enemy1</sprite>
       <sprite>sprites\spr_boss_main_body_abdomen</sprite>
       <sprite>sprites\spr_boss_claw</sprite>
+      <sprite>sprites\spr_boss_enemy_claw</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_fractured</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_broken</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_grabbing</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_pulling</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_pulling_fractured</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_idle</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_idle_fractured</sprite>
       <sprite>sprites\spr_boss_claw_pulling</sprite>
       <sprite>sprites\spr_boss_claw_broken</sprite>
       <sprite>sprites\spr_boss_claw_attack</sprite>
