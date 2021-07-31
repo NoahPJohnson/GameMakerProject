@@ -39,6 +39,27 @@ slope_mod = 2;
 
 slide_through = false;
 
+
+//Sprites
+idle_sprite = spr_enemy_idle;
+move_sprite = spr_enemy;
+fire_sprite = spr_enemy_firing;
+melee_sprite = spr_enemy_melee_attacking;
+anti_air_sprite = spr_enemy_melee_attacking;
+follow_up_sprite = spr_enemy_melee_attacking;
+damage_sprite = spr_enemy_hit;
+air_sprite = spr_enemy_hit;
+crash_sprite = spr_enemy_crash_hitbox;
+crash_display_sprite = spr_enemy_crash_display;
+
+animation_loop = true;
+looping_melee = true;
+
+melee_warning_time = 30;
+anti_air_warning_time = 6;
+follow_up_warning_time = 9;
+
+
 //Boss Stuff
 vulnerable = false;
 fire = instance_create(x-64,y,obj_fire_hitbox_blocker);

@@ -73,10 +73,30 @@ slide_through = true;
 mxspd = 40;
 hp = 3;
 hp_max = 3;
-crash_sprite = spr_enemy_flying_crash;
 cp = 3;
 cp_max = 3;
+rotation_angle = 0;
+fragmenting = false;
 
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
+
+
+//Sprites
+idle_sprite = spr_enemy_flying;
+move_sprite = spr_enemy_flying;
+fire_sprites[0] = spr_enemy_flying_firing;
+fire_sprites[1] = spr_enemy_flying_firing2;
+melee_sprite = spr_enemy_flying;
+follow_up_sprite = spr_enemy_flying;
+anti_air_sprite = spr_enemy_flying;
+damage_sprite = spr_enemy_flying_hit;
+air_sprite = spr_enemy_flying;
+crash_sprite = spr_enemy_small_crash_hitbox;
+crash_display_sprite = spr_enemy_flying_crash_display;
+
+fire_index = 0;
 animation_loop = true;
 
 melee_warning_time = 30;
@@ -346,6 +366,7 @@ firing = true;
 //alarm[0] = 53;
 if (abs(obj_player.x - x) &lt; 80 &amp;&amp; !collision_line(x,y,x,y+190,obj_boundary,false,true) &amp;&amp; obj_player.y &gt; y+32)
    {
+    fire_index = 1;
     selected_projectile = obj_projectile_bomb_2;
     if (alarm[2] == -1)
        {
@@ -355,6 +376,7 @@ if (abs(obj_player.x - x) &lt; 80 &amp;&amp; !collision_line(x,y,x,y+190,obj_bou
    }
 else
    {
+    fire_index = 0;
     selected_projectile = obj_projectile;
     if (alarm[2] == -1)
        {
@@ -414,6 +436,9 @@ switch (state)
               break;
              }  
        }
+
+//animations
+scr_enemy_range_focus_animation_control_script();
 </string>
           </argument>
         </arguments>
@@ -436,7 +461,7 @@ switch (state)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_enemy_animation_end();
+            <string>scr_enemy_flying_animation_end();
 </string>
           </argument>
         </arguments>

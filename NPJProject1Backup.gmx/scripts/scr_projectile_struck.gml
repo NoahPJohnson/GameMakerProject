@@ -13,7 +13,6 @@ if (projectile_meeting != noone)
 
 if (bunted == true)
    {
-    //vspeed += 0.9;
     motion_add(270, 0.9);
    }
 

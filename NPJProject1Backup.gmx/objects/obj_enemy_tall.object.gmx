@@ -82,9 +82,18 @@ slide_through = true;
 mxspd = 40;
 hp = 4;
 hp_max = 4;
-crash_sprite = spr_enemy_tall_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
+fragmenting = true;
+fragment1 = noone;
+fragment1_sprite = spr_enemy_tall_crash_display1;
+fragment2 = noone;
+fragment2_sprite = spr_enemy_tall_crash_display2;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 //Sprites
 idle_sprite = spr_enemy_tall_idle;
@@ -95,8 +104,11 @@ melee_sprites[1] = spr_enemy_tall_attacking2;
 melee_sprites[2] = spr_enemy_tall_attacking3;
 damage_sprite = spr_enemy_tall_hit;
 air_sprite = spr_enemy_tall;
+crash_sprite = spr_enemy_small_crash_hitbox;
+crash_display_sprite = spr_enemy_tall_crash_display3;
 
 animation_loop = true;
+looping_melee = false;
 
 melee_warning_time = 30;
 anti_air_warning_time = 6;
@@ -282,7 +294,22 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-projectile = instance_create(x,y-32, obj_projectile_homing);
+if (shield.guard_position == 1)
+{
+    projectile = instance_create(x,y-32, obj_projectile_homing);
+    if (dir == -1)
+    {
+        projectile.direction = 180;
+    } 
+    else
+    {
+        projectile.direction = 0;
+    }
+}
+else
+{
+    projectile = instance_create(x,y-32, obj_projectile_homing);
+}
 firing = false;
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;

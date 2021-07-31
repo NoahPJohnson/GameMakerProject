@@ -43,6 +43,10 @@ fire_drop_range = 32;
 speed = 12;
 direction = 90;
 
+shot_hit_sparks[0] = obj_shot_hit_spark;
+shot_hit_sparks[1] = obj_shot_armor_hit_spark;
+shot_hit_sparks[2] = obj_shot_returned_hit_spark;
+
 </string>
           </argument>
         </arguments>

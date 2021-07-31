@@ -48,6 +48,7 @@ frc = 0.5;
 slope_mod = 2;
 
 //Attacks
+preparing = false;
 firing = false;
 first_shot = true;
 firSpeed = 36;
@@ -82,11 +83,33 @@ slide_through = true;
 mxspd = 40;
 hp = 4;
 hp_max = 4;
-crash_sprite = spr_enemy_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
+fragmenting = false;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
+
+//Sprites
+idle_sprite = spr_enemy_range_focus_idle;
+move_sprite = spr_enemy_range_focus;
+fire_sprites[0] = spr_enemy_range_focus_firing;
+fire_sprites[1] = spr_enemy_range_focus_firing2;
+fire_sprites[2] = spr_enemy_range_focus_firing3;
+melee_sprite = spr_enemy_range_focus;
+follow_up_sprite = spr_enemy_range_focus;
+anti_air_sprite = spr_enemy_range_focus;
+damage_sprite = spr_enemy_range_focus_hit;
+air_sprite = spr_enemy_range_focus_air;
+crash_sprite = spr_enemy_crash_hitbox;
+crash_display_sprite = spr_enemy_range_focus_crash_display;
+
+fire_index = 0;
 
 animation_loop = true;
+looping_melee = true;
 
 melee_warning_time = 30;
 anti_air_warning_time = 6;
@@ -325,42 +348,53 @@ state = e_state.idle*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop and Prepare to Fire
-if (longRange == true)
-   {
-    selected_projectile = obj_projectile;
-   }
-else
-   {
-    selected_projectile = obj_projectile_ricochet_spread;
-   }
-   
+            <string>///Stop and Prepare to Fire   
 if (firing == false)
    {
     firing = true;
-   }
-hspd = 0;
-
-if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
-   {
-    show_debug_message("Shoot! selected projectile is " + object_get_name(selected_projectile));
-    projectile = instance_create(x,y, selected_projectile);
-    //sprite_index = spr_player;
-    if (firing == true &amp;&amp; longRange == true)
+    hspd = 0;
+    if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
        {
-        alarm[0] = room_speed * (18/60);
+        if (longRange == true)
+           {
+            fire_index = 1;
+            selected_projectile = obj_projectile;
+           }
+        else
+           {
+            fire_index = 2;
+            selected_projectile = obj_projectile_ricochet_spread;
+           }
        }
-    if (alarm[2] == -1)
+    else
        {
-        alarm[2] = room_speed * (45/60);
+        fire_index = 0;
+        selected_projectile = obj_projectile_grenade; 
        }
+    alarm[0] = room_speed * (26/60);
    }
 else
    {
-    scr_create_grenade_projectile();
-    if (alarm[2] == -1)
+    if (selected_projectile != obj_projectile_grenade)
        {
-        alarm[2] = room_speed * (30/60);
+        show_debug_message("Shoot! selected projectile is " + object_get_name(selected_projectile));
+        projectile = instance_create(x,y, selected_projectile);
+        if (firing == true &amp;&amp; longRange == true)
+           {
+            alarm[0] = room_speed * (18/60);
+           }
+        if (alarm[2] == -1)
+           {
+            alarm[2] = room_speed * (45/60);
+           }
+       }
+    else
+       {
+        scr_create_grenade_projectile();
+        if (alarm[2] == -1)
+           {
+            alarm[2] = room_speed * (30/60);
+           }
        }
    }
 </string>
@@ -415,6 +449,8 @@ switch (state)
              }
        }
        
+//Animations
+scr_enemy_range_focus_animation_control_script();
 </string>
           </argument>
         </arguments>
@@ -437,7 +473,7 @@ switch (state)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_enemy_animation_end();
+            <string>scr_enemy_range_focus_animation_end();
 </string>
           </argument>
         </arguments>

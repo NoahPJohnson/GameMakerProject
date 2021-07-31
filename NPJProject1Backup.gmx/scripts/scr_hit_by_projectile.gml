@@ -2,11 +2,9 @@ projectile_meeting = instance_place(x,y, obj_projectile)
 if (projectile_meeting != noone)
    {
     if (projectile_meeting.struck == true)
-       {
-        //speed = 7;       
+       {     
         if (place_meeting(x,y+1,obj_boundary) && direction > 180 && direction < 360)
            {
-            //direction = -projectile_meeting.direction;
             hitstun_direction = -projectile_meeting.direction;
            }
         else
@@ -26,13 +24,6 @@ if (projectile_meeting != noone)
         
         projectile_meeting.state = proj_state.destroyed;
         state = e_state.hitstop;
-        /*if (state != e_state.crash)
-           {
-            alarm[1] = room_speed * (15/60);
-            hitstun = true;
-            scr_collision_bounce();
-            state = e_state.hitstun;
-           }*/
        }
    }
 
@@ -43,7 +34,6 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox))
        {
         if (place_meeting(x,y+1,obj_boundary) && direction > 180 && direction < 360)
            {
-            //direction = -projectile_meeting.direction;
             hitstun_direction = -ball_meeting.direction;
            }
         else

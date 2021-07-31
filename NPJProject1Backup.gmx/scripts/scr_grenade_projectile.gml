@@ -27,6 +27,7 @@ if (place_meeting(x, y, obj_bat))
 
        }
     alarm[2] += 25;
+    spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -66,6 +67,7 @@ if (place_meeting(x, y, obj_bat_launcher))
        }
     //Player Hitstop
     alarm[2] += 30;
+    spark_index = 2;
     if (obj_player.state != states.hitstop)
        {
         obj_player.hitstop = false;
@@ -103,6 +105,7 @@ if (place_meeting(x, y, obj_bat_spike))
 
        }
     alarm[2] += 30;
+    spark_index = 2;
     //Player Hitstop
     /*obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
@@ -145,6 +148,7 @@ if (place_meeting(x,y,obj_bunt_bat))
         //direction = 125;
         //speed = 4;
        }
+    spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -156,23 +160,6 @@ if (place_meeting(x,y,obj_bunt_bat))
        }  
     //state = proj_state.struck;
    } 
-        
-
-//Collsion with Wall and Prop
-/*if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
-   {
-    instance_destroy();
-   }
-
-//Collision with Crashed Enemy   
-if (place_meeting(x, y, obj_enemy))     
-   {
-    crashed_enemy_meeting = instance_place(x, y, obj_enemy);
-    if (crashed_enemy_meeting.state == e_state.crash)
-       {
-        instance_destroy();
-       }
-   }*/
 
 //Collision
 scr_collision_bounce();            

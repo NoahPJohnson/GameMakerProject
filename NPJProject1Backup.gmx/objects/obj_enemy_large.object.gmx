@@ -75,11 +75,14 @@ slide_through = true;
 mxspd = 40;
 hp = 5;
 hp_max = 5;
-crash_sprite = spr_enemy_large_crash;
 cp = 3;
 cp_max = 3;
+rotation_angle = 0;
+fragmenting = false;
 
-image_speed = 0.25;
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
 
 //Sprites
 idle_sprite = spr_enemy_large_idle;
@@ -90,6 +93,8 @@ anti_air_sprite = spr_enemy_large_attacking1;
 follow_up_sprite = spr_enemy_large_attacking1;
 damage_sprite = spr_enemy_large_hit;
 air_sprite = spr_enemy_large;
+crash_sprite = spr_enemy_large_crash_hitbox;
+crash_display_sprite = spr_enemy_large_crash_display;
 
 armor_on = true;
 armor_outline = obj_enemy_large_armor;
@@ -97,6 +102,7 @@ instance_create(x,y,armor_outline);
 armor_outline.enemy_parent = self;
 
 animation_loop = true;
+looping_melee = true;
 
 melee_warning_time = 30;
 anti_air_warning_time = 6;
@@ -180,15 +186,10 @@ else
           <argument>
             <kind>1</kind>
             <string>///Melee Lunge Ends
-//hspd = dir * chsSpeed;
-//vspd = (min(7, vspd + grv));
-//grv = 0.8;
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.state = ball_n_chain_state.neutral;
     meleeAttack = false;
-    //speed = 15;
-    //direction = 135;
    }
 </string>
           </argument>
@@ -215,6 +216,8 @@ if (instance_exists(melee_hitbox))
             <string>///Melee Lunge Begins
 if (instance_exists(melee_hitbox))
    {
+    animation_loop = true;
+    looping_melee = true;
     melee_dir = sign(obj_player.x - x);
     melee_hitbox.x = x;
     melee_hitbox.y = y-100;
@@ -304,10 +307,8 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-//projectile = instance_create(x,y, obj_projectile_bomb);
 firing = false;
-//sprite_index = spr_enemy;
-//hspd = dir * chsSpeed;
+
 </string>
           </argument>
         </arguments>
@@ -364,26 +365,20 @@ state = e_state.idle;
           <argument>
             <kind>1</kind>
             <string>///Stop and Prepare to Fire
-firing = true;
-hspd = 0;
-if (obj_player.x - x &gt; 0)
-   {
-    //projectile = scr_create_projectile(12,50,x,y-32,obj_projectile_fire_canister);
-   }
+if (firing == false)
+{
+    firing = true;
+    hspd = 0;
+    alarm[0] = room_speed * (40/60);
+}
 else
-   {
-    //projectile = scr_create_projectile(12,130,x,y-32,obj_projectile_fire_canister);
-   }
-instance_create(x,y-32, obj_projectile_bomb_medium);
-//projectile.speed = 13 * (obj_player.x-x);
-//projectile.direction = 50 * (obj_player.x-x);
-//sprite_index = spr_player;
-//alarm[0] = 53;
-if (alarm[2] == -1)
-   {  
-    alarm[2] = room_speed * (30/60);
-   }
-//show_debug_message("SHOOOOOOOOOT!!");
+{
+    projectile = instance_create(x,y-32, obj_projectile_bomb_medium);
+    if (alarm[2] == -1)
+    {  
+        alarm[2] = room_speed * (50/60);
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -441,8 +436,31 @@ switch (state)
        }
        
 //animations
-scr_enemy_animation_control_script();
+scr_enemy_large_animation_control_script();
 scr_enemy_armor_control_script();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_enemy_large_animation_end();
 </string>
           </argument>
         </arguments>

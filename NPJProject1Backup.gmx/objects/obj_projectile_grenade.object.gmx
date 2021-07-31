@@ -101,6 +101,13 @@ projectile_short_fuse_returned_sprite = spr_projectile_grenade2_returned;
 
 update_angle = false;
 
+shot_hit_sparks[0] = obj_shot_hit_spark;
+shot_hit_sparks[1] = obj_shot_armor_hit_spark;
+shot_hit_sparks[2] = obj_shot_returned_hit_spark;
+
+selected_hit_spark = noone;
+spark_index = 0;
+
 </string>
           </argument>
         </arguments>

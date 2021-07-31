@@ -42,6 +42,7 @@ firing = false;
 first_shot = true;
 fir_speed = 36;
 follow_up_attack = false;
+meleeAttack = false;
 antiAir = false;
 melee_index = 0;
 melee_hitbox = noone;
@@ -72,6 +73,7 @@ hp_max = 1;
 crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
+rotation_angle = 0;
 
 animation_loop = true;
 

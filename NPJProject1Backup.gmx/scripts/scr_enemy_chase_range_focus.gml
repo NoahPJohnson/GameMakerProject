@@ -61,12 +61,10 @@ if (longRange == true && meleeAttack == false)
                 if (abs((obj_player.x+400) - x) < abs((obj_player.x-400) - x))
                    {
                     dir = sign(sign(floor(obj_player.x+390) - x) + sign(floor(obj_player.x+400) - x));
-                    show_debug_message("direction = " + string(dir));
                    }
                 else
                    {
                     dir = sign(sign(floor(obj_player.x-390) - x) + sign(floor(obj_player.x-400) - x));
-                    show_debug_message("DIRECTION = " + string(dir));
                    }
                }
            } 
@@ -80,12 +78,10 @@ else if (longRange == false && meleeAttack == false)
         if (abs((obj_player.x+200) - x) < abs((obj_player.x-200) - x))
            {
             dir = sign(sign(floor(obj_player.x+180) - x) + sign(floor(obj_player.x+200) - x));
-            show_debug_message("d = " + string(dir));
            }
         else
            {
             dir = sign(sign(floor(obj_player.x-180) - x) + sign(floor(obj_player.x-200) - x));
-            show_debug_message("D = " + string(dir));
            }
        }
    }

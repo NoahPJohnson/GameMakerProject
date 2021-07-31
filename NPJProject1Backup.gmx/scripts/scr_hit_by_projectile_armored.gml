@@ -14,7 +14,7 @@ if (place_meeting(x,y,obj_projectile))
             alarm[7] = -1;
             alarm[9] = room_speed * (3/60);
             damage_hitstop = false;
-        
+            projectile_meeting.spark_index = 1;
             projectile_meeting.state = proj_state.destroyed;
             state = e_state.hitstop;
            }

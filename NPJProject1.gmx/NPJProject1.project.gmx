@@ -296,12 +296,15 @@
       <sprite>sprites\spr_boss_weakpoint_protector</sprite>
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_enemy1</sprite>
+      <sprite>sprites\spr_boss_enemy1_advancing</sprite>
+      <sprite>sprites\spr_boss_enemy1_retreating</sprite>
       <sprite>sprites\spr_boss_main_body_abdomen</sprite>
       <sprite>sprites\spr_boss_claw</sprite>
       <sprite>sprites\spr_boss_enemy_claw</sprite>
       <sprite>sprites\spr_boss_enemy_claw_fractured</sprite>
       <sprite>sprites\spr_boss_enemy_claw_broken</sprite>
       <sprite>sprites\spr_boss_enemy_claw_grabbing</sprite>
+      <sprite>sprites\spr_boss_enemy_claw_grabbing_fractured</sprite>
       <sprite>sprites\spr_boss_enemy_claw_pulling</sprite>
       <sprite>sprites\spr_boss_enemy_claw_pulling_fractured</sprite>
       <sprite>sprites\spr_boss_enemy_claw_idle</sprite>
@@ -320,6 +323,8 @@
       <sprite>sprites\spr_boss_main_body2</sprite>
       <sprite>sprites\spr_boss_unused_sprites</sprite>
       <sprite>sprites\spr_boss_health_bar_background</sprite>
+      <sprite>sprites\spr_boss_enemy_arm</sprite>
+      <sprite>sprites\spr_boss_neck_segment</sprite>
     </sprites>
     <sprites name="menus/utility">
       <sprite>sprites\spr_menu_button</sprite>
@@ -483,6 +488,10 @@
       <script>scripts\scr_boss_hitstun.gml</script>
       <script>scripts\scr_boss_hp_zero.gml</script>
       <script>scripts\scr_boss_damage.gml</script>
+      <script>scripts\scr_boss_animation_end.gml</script>
+      <script>scripts\scr_boss_animation_control_script.gml</script>
+      <script>scripts\scr_boss_head_animation_control_script.gml</script>
+      <script>scripts\scr_boss_claw_animation_control_script.gml</script>
     </scripts>
     <script>scripts\scr_create_projectile.gml</script>
     <script>scripts\scr_create_grenade_projectile.gml</script>
@@ -654,6 +663,8 @@
       <object>objects\obj_boss_claw</object>
       <object>objects\obj_boss_canister</object>
       <object>objects\obj_boss_blocker</object>
+      <object>objects\obj_boss_arm_segment</object>
+      <object>objects\obj_boss_neck_segment</object>
       <object>objects\obj_boss_trigger</object>
     </objects>
     <object>objects\obj_door_to_room</object>

@@ -67,13 +67,14 @@ else
     //Divekick Melee
     if (distance_to_object(obj_player) < 80 && (!collision_line(x,y,x,y+130,obj_boundary,false,true) || place_meeting(x,y-2,obj_boundary)) && obj_player.state != states.sliding && obj_player.state != states.knockback)
        {
+        meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)
            {
             //jumped = true;
             hspd = 0;
             vspd = 0;
             grv = 0;
-            alarm[7] = room_speed * (10/60);
+            alarm[7] = room_speed * (15/60);
            }    
        }
     else if (alarm[7] = -1 && alarm[8] = -1)
