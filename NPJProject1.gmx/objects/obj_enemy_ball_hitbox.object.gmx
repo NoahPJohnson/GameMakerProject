@@ -53,6 +53,7 @@ origin_offset_y = -16;
 
 moving_origin = false;
 bend = false;
+double_bend = false;
 
 link_max = 4;
 link_array[0] = instance_create(x,y,obj_ball_n_chain_link);

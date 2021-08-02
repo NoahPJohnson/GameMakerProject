@@ -41,6 +41,9 @@ else
     direction = 225;
     speed = 6;
    }
+   
+selected_hit_spark = noone;
+spark_index = 0;
 
 </string>
           </argument>

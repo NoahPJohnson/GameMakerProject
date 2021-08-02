@@ -78,7 +78,7 @@ follow_up_warning_time = 9;
 
 enemy_parent = noone;
 
-
+//Ball n Chain Properties
 chain_offset_x = 56;
 chain_offset_y = 16;
 origin_offset_x = -32;
@@ -86,6 +86,7 @@ origin_offset_y = -124;
 
 moving_origin = true;
 bend = true;
+double_bend = false;
 bend_radius = 72; 
 midpoint_y = 0;
 

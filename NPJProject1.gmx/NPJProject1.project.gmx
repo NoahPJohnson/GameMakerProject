@@ -122,6 +122,7 @@
       </sprites>
       <sprites name="enemy projectiles">
         <sprite>sprites\spr_projectile</sprite>
+        <sprite>sprites\spr_projectile_fire_canister</sprite>
         <sprite>sprites\spr_projectile_bounce</sprite>
         <sprite>sprites\spr_projectile_bounce_returned</sprite>
         <sprite>sprites\spr_projectile_returned</sprite>
@@ -257,6 +258,7 @@
       <sprite>sprites\spr_enemy_shield_R2</sprite>
       <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
+      <sprite>sprites\spr_explosion_extra_wide</sprite>
       <sprite>sprites\spr_spikes_floor</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_small_crash_hitbox</sprite>
@@ -264,6 +266,8 @@
     </sprites>
     <sprite>sprites\spr_spike_floor</sprite>
     <sprite>sprites\spr_spike_wall_L</sprite>
+    <sprite>sprites\spr_boss_spikes_blocker</sprite>
+    <sprite>sprites\spr_boss_spike_wall</sprite>
     <sprite>sprites\spr_spike_wall_R</sprite>
     <sprite>sprites\spr_spike_ceiling</sprite>
     <sprite>sprites\spr_enemy_spawner</sprite>
@@ -292,7 +296,10 @@
       <sprite>sprites\spr_boss_weakpoint</sprite>
       <sprite>sprites\spr_boss_weakpoint_no_mask</sprite>
       <sprite>sprites\spr_boss_weakpoint1_protected</sprite>
+      <sprite>sprites\spr_boss_weakpoint_unprotected</sprite>
       <sprite>sprites\spr_boss_weakpoint_firing</sprite>
+      <sprite>sprites\spr_boss_weakpoint_unmasking</sprite>
+      <sprite>sprites\spr_boss_weakpoint_remasking</sprite>
       <sprite>sprites\spr_boss_weakpoint_protector</sprite>
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_enemy1</sprite>
@@ -325,6 +332,7 @@
       <sprite>sprites\spr_boss_health_bar_background</sprite>
       <sprite>sprites\spr_boss_enemy_arm</sprite>
       <sprite>sprites\spr_boss_neck_segment</sprite>
+      <sprite>sprites\spr_boss_test_neck</sprite>
     </sprites>
     <sprites name="menus/utility">
       <sprite>sprites\spr_menu_button</sprite>
@@ -492,6 +500,7 @@
       <script>scripts\scr_boss_animation_control_script.gml</script>
       <script>scripts\scr_boss_head_animation_control_script.gml</script>
       <script>scripts\scr_boss_claw_animation_control_script.gml</script>
+      <script>scripts\scr_boss_weakpoint_animation_end.gml</script>
     </scripts>
     <script>scripts\scr_create_projectile.gml</script>
     <script>scripts\scr_create_grenade_projectile.gml</script>

@@ -88,6 +88,7 @@ follow_up_warning_time = 9;
 
 //Boss Stuff
 vulnerable = true;
+previously_vulnerable = vulnerable;
 shot_timer = 0;
 saved_shot_timer = 0;
 
@@ -102,12 +103,14 @@ enemy_parent = noone;
 
 chain_offset_x = 16;
 chain_offset_y = 16;
-origin_offset_x = -72;
-origin_offset_y = -144;
+origin_offset_x = -60;
+origin_offset_y = -132;
 
 moving_origin = true;
-bend = true;
-bend_radius = 72; 
+bend = false;
+double_bend = true;
+bend_radius = 72;
+midpoint_x = 0; 
 midpoint_y = 0;
 
 offset_array_length = 17;
@@ -223,6 +226,31 @@ scr_enemy_targeted();
 scr_ball_n_chain_links();
 
 scr_boss_collision();
+
+scr_boss_head_animation_control_script();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_boss_weakpoint_animation_end();
 </string>
           </argument>
         </arguments>

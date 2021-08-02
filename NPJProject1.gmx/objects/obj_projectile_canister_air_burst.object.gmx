@@ -35,7 +35,8 @@ state = proj_state.normal;
 direction = 148;
 speed = 7;
 
-
+selected_hit_spark = noone;
+spark_index = 0;
 </string>
           </argument>
         </arguments>

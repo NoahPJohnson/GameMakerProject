@@ -21,4 +21,14 @@ for (var index = 0; index < link_max; index += 1)
         link_array[index].x += sqrt(sqr(midpoint_y)-sqr(midpoint_y-(link_array[index].y-chain_origin_y)));
     }
     
+    //Double Bend
+    if (double_bend == true)
+    {
+        midpoint_x = chain_endpoint_x/2;
+        midpoint_y = chain_endpoint_y/2;
+        var bend_length_square_x = sqr(midpoint_x)-sqr(midpoint_x-(link_array[index].x-chain_origin_x));
+        var bend_direction_x = sign(bend_length_square_x); 
+        link_array[index].x -= sqrt(sqr(midpoint_y)-sqr(midpoint_y-(link_array[index].y-chain_origin_y)));
+        link_array[index].y -= bend_direction_x*sqrt(abs(bend_length_square_x));
+    }
 }
