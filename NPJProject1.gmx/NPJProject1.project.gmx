@@ -225,6 +225,7 @@
         <sprite>sprites\spr_explosion_small</sprite>
         <sprite>sprites\spr_explosion_medium</sprite>
         <sprite>sprites\spr_explosion_large</sprite>
+        <sprite>sprites\spr_explosion_extra_wide</sprite>
         <sprite>sprites\spr_shot_spark</sprite>
         <sprite>sprites\spr_hit_spark</sprite>
         <sprite>sprites\spr_shot_hit_spark1</sprite>
@@ -258,7 +259,6 @@
       <sprite>sprites\spr_enemy_shield_R2</sprite>
       <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
-      <sprite>sprites\spr_explosion_extra_wide</sprite>
       <sprite>sprites\spr_spikes_floor</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_small_crash_hitbox</sprite>
@@ -322,6 +322,7 @@
       <sprite>sprites\spr_boss_canister</sprite>
       <sprite>sprites\spr_boss_blocker</sprite>
       <sprite>sprites\spr_boss_claw_grab_hitbox</sprite>
+      <sprite>sprites\spr_boss_tractor_beam_debris</sprite>
       <sprite>sprites\spr_boss_health_bar</sprite>
       <sprite>sprites\spr_boss_main_body</sprite>
       <sprite>sprites\spr_boss_main_body_legs</sprite>
@@ -345,8 +346,18 @@
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
     <sprite>sprites\spr_boundary_moving</sprite>
+    <sprites name="backgrounds">
+      <sprite>sprites\spr_background_sky_tile1</sprite>
+    </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bkg_sky_tile1</background>
+    <background>background\bkg_sky_tile2</background>
+    <background>background\bkg_sky_tile2_backup</background>
+    <background>background\bkg_wall_tile1</background>
+    <background>background\bkg_mountains_tile1</background>
+    <background>background\bkg_forest_tile1</background>
+  </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
     <path>paths\pth_left_right</path>
@@ -506,6 +517,7 @@
     <script>scripts\scr_create_grenade_projectile.gml</script>
     <script>scripts\scr_boundary_move_collision.gml</script>
     <script>scripts\scr_boundary_movement.gml</script>
+    <script>scripts\scr_background_control.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -609,6 +621,7 @@
         <object>objects\obj_explosion_small</object>
         <object>objects\obj_explosion_medium</object>
         <object>objects\obj_explosion_large</object>
+        <object>objects\obj_explosion_extra_wide</object>
         <object>objects\obj_spark_effect1</object>
         <object>objects\obj_shot_spark</object>
         <object>objects\obj_hit_spark_R</object>
