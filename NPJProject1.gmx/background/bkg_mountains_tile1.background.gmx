@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>160</width>
-  <height>480</height>
+  <width>640</width>
+  <height>1600</height>
   <data>images\bkg_mountains_tile1.png</data>
 </background>

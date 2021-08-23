@@ -6,13 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_boundary</sprite>
-    <sprite>sprites\spr_boundary_long</sprite>
-    <sprite>sprites\spr_boundary_tall</sprite>
-    <sprite>sprites\spr_boundary_slope</sprite>
-    <sprite>sprites\spr_boundary_slope_L</sprite>
-    <sprite>sprites\spr_boundary_slope_U</sprite>
-    <sprite>sprites\spr_boundary_slope_UL</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprites name="player">
       <sprite>sprites\spr_player</sprite>
@@ -348,12 +341,36 @@
     <sprite>sprites\spr_boundary_moving</sprite>
     <sprites name="backgrounds">
       <sprite>sprites\spr_background_sky_tile1</sprite>
+      <sprite>sprites\spr_background_sun_sprite</sprite>
+      <sprite>sprites\spr_background_sun2_sprite</sprite>
+    </sprites>
+    <sprites name="boundaries">
+      <sprite>sprites\spr_boundary</sprite>
+      <sprite>sprites\spr_boundary_1</sprite>
+      <sprite>sprites\spr_boundary_2</sprite>
+      <sprite>sprites\spr_boundary_3</sprite>
+      <sprite>sprites\spr_boundary_4</sprite>
+      <sprite>sprites\spr_boundary_5</sprite>
+      <sprite>sprites\spr_boundary_6</sprite>
+      <sprite>sprites\spr_boundary_7</sprite>
+      <sprite>sprites\spr_boundary_8</sprite>
+      <sprite>sprites\spr_boundary_9</sprite>
+      <sprite>sprites\spr_boundary_long</sprite>
+      <sprite>sprites\spr_boundary_tall</sprite>
+      <sprite>sprites\spr_boundary_slope_U</sprite>
+      <sprite>sprites\spr_boundary_slope_UL</sprite>
+      <sprite>sprites\spr_boundary_slope</sprite>
+      <sprite>sprites\spr_boundary_slope_L</sprite>
+      <sprite>sprites\spr_boundary_slope_1</sprite>
+      <sprite>sprites\spr_boundary_slope_3</sprite>
+      <sprite>sprites\spr_boundary_slope_7</sprite>
+      <sprite>sprites\spr_boundary_slope_9</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_sky_tile1</background>
     <background>background\bkg_sky_tile2</background>
-    <background>background\bkg_sky_tile2_backup</background>
+    <background>background\bkg_sky_and_sun_tile1</background>
     <background>background\bkg_wall_tile1</background>
     <background>background\bkg_mountains_tile1</background>
     <background>background\bkg_forest_tile1</background>

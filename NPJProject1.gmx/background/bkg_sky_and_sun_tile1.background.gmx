@@ -13,7 +13,7 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>640</width>
-  <height>960</height>
-  <data>images\bkg_sky_tile2.png</data>
+  <width>1600</width>
+  <height>1600</height>
+  <data>images\bkg_sky_and_sun_tile1.png</data>
 </background>
