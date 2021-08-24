@@ -346,15 +346,7 @@
     </sprites>
     <sprites name="boundaries">
       <sprite>sprites\spr_boundary</sprite>
-      <sprite>sprites\spr_boundary_1</sprite>
-      <sprite>sprites\spr_boundary_2</sprite>
-      <sprite>sprites\spr_boundary_3</sprite>
-      <sprite>sprites\spr_boundary_4</sprite>
-      <sprite>sprites\spr_boundary_5</sprite>
-      <sprite>sprites\spr_boundary_6</sprite>
-      <sprite>sprites\spr_boundary_7</sprite>
-      <sprite>sprites\spr_boundary_8</sprite>
-      <sprite>sprites\spr_boundary_9</sprite>
+      <sprite>sprites\spr_boundary_collection</sprite>
       <sprite>sprites\spr_boundary_long</sprite>
       <sprite>sprites\spr_boundary_tall</sprite>
       <sprite>sprites\spr_boundary_slope_U</sprite>
@@ -535,6 +527,7 @@
     <script>scripts\scr_boundary_move_collision.gml</script>
     <script>scripts\scr_boundary_movement.gml</script>
     <script>scripts\scr_background_control.gml</script>
+    <script>scripts\scr_boundary_selection.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>

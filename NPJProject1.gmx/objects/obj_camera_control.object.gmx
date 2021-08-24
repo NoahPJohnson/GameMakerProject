@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>///Initialize Variables
 view_hview[0] = 900;
-view_wview[0] = 1150;
+view_wview[0] = 1200;
 
 camera_field_x_left = view_xview[0];
 camera_field_x_right = view_xview[0] + view_wview[0];
@@ -48,6 +48,27 @@ target_y = 0;
 //backgrounds
 bkg_index = 0;
 bkg_count = 2;
+
+bkg_offset_x_list[0] = 0;
+bkg_offset_x_list[1] = 0;
+bkg_offset_x_list[2] = 0;
+bkg_offset_x_list[3] = 0;
+
+bkg_offset_y_list[0] = -300;
+bkg_offset_y_list[1] = -120;
+bkg_offset_y_list[2] = 0;
+bkg_offset_y_list[3] = 0;
+
+bkg_relative_x_list[0] = true;
+bkg_relative_x_list[1] = false;
+bkg_relative_x_list[2] = true;
+bkg_relative_x_list[3] = true;
+
+bkg_relative_y_list[0] = true;
+bkg_relative_y_list[1] = true;
+bkg_relative_y_list[2] = true;
+bkg_relative_y_list[3] = true;
+
 
 state = camera_state.lock_on;
 </string>
