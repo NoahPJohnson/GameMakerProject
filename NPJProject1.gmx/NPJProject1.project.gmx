@@ -342,17 +342,23 @@
     <sprites name="backgrounds">
       <sprite>sprites\spr_background_sky_tile1</sprite>
       <sprite>sprites\spr_background_sun_sprite</sprite>
-      <sprite>sprites\spr_background_sun2_sprite</sprite>
     </sprites>
     <sprites name="boundaries">
       <sprite>sprites\spr_boundary</sprite>
-      <sprite>sprites\spr_boundary_collection</sprite>
-      <sprite>sprites\spr_boundary_long</sprite>
-      <sprite>sprites\spr_boundary_tall</sprite>
       <sprite>sprites\spr_boundary_slope_U</sprite>
       <sprite>sprites\spr_boundary_slope_UL</sprite>
       <sprite>sprites\spr_boundary_slope</sprite>
       <sprite>sprites\spr_boundary_slope_L</sprite>
+      <sprite>sprites\spr_boundary_collection2</sprite>
+      <sprite>sprites\spr_boundary_2_slope_3</sprite>
+      <sprite>sprites\spr_boundary_2_slope_1</sprite>
+      <sprite>sprites\spr_boundary_2_slope_7</sprite>
+      <sprite>sprites\spr_boundary_2_slope_9</sprite>
+      <sprite>sprites\spr_boundary_2_tall</sprite>
+      <sprite>sprites\spr_boundary_2_long</sprite>
+      <sprite>sprites\spr_boundary_collection</sprite>
+      <sprite>sprites\spr_boundary_long</sprite>
+      <sprite>sprites\spr_boundary_tall</sprite>
       <sprite>sprites\spr_boundary_slope_1</sprite>
       <sprite>sprites\spr_boundary_slope_3</sprite>
       <sprite>sprites\spr_boundary_slope_7</sprite>
@@ -366,6 +372,7 @@
     <background>background\bkg_wall_tile1</background>
     <background>background\bkg_mountains_tile1</background>
     <background>background\bkg_forest_tile1</background>
+    <background>background\bkg_dirt_tile</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -702,6 +709,7 @@
     <object>objects\obj_door_to_room</object>
     <object>objects\obj_door_from_room</object>
     <object>objects\obj_boundary_moving</object>
+    <object>objects\obj_boundary_and_background_painter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
