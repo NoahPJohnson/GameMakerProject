@@ -363,6 +363,7 @@
       <sprite>sprites\spr_boundary_slope_3</sprite>
       <sprite>sprites\spr_boundary_slope_7</sprite>
       <sprite>sprites\spr_boundary_slope_9</sprite>
+      <sprite>sprites\spr_boundary_3_collection</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -373,6 +374,7 @@
     <background>background\bkg_mountains_tile1</background>
     <background>background\bkg_forest_tile1</background>
     <background>background\bkg_dirt_tile</background>
+    <background>background\bkg_clouds_tile1</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -535,6 +537,10 @@
     <script>scripts\scr_boundary_movement.gml</script>
     <script>scripts\scr_background_control.gml</script>
     <script>scripts\scr_boundary_selection.gml</script>
+    <script>scripts\scr_boundary_slope_1_selection.gml</script>
+    <script>scripts\scr_boundary_slope_3_selection.gml</script>
+    <script>scripts\scr_boundary_slope_7_selection.gml</script>
+    <script>scripts\scr_boundary_slope_9_selection.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>

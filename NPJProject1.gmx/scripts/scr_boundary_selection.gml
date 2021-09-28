@@ -53,15 +53,16 @@ else
 {
     if (!place_meeting(x-1,y,obj_boundary))
     {
-        image_index = 6;
+        image_index = 11;
     }
     else if (!place_meeting(x+1,y,obj_boundary))
     {
-        image_index = 8;
+        image_index = 10;
     }
     else
     {
-        image_index = 7;
+        image_index = 9;
     }
 }
+
 

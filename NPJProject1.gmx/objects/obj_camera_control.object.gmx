@@ -56,12 +56,12 @@ bkg_offset_x_list[3] = 0;
 
 bkg_offset_y_list[0] = -300;
 bkg_offset_y_list[1] = -120;
-bkg_offset_y_list[2] = 0;
+bkg_offset_y_list[2] = -160;
 bkg_offset_y_list[3] = 0;
 
 bkg_relative_x_list[0] = true;
 bkg_relative_x_list[1] = false;
-bkg_relative_x_list[2] = true;
+bkg_relative_x_list[2] = false;
 bkg_relative_x_list[3] = true;
 
 bkg_relative_y_list[0] = true;

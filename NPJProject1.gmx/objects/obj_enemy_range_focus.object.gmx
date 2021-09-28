@@ -33,15 +33,17 @@ antiAir = false;
 //Movement
 hspd = 0;
 vspd = 0;
-jspeed = 13;
+jspeed = 16;
 switched = false;
 chsSpeed = 3;
 chsSpeed_LR = 3;
 chsSpeed_CR = 4;
+chsSpeed_J = 5;
 destination_distance_LR = 300;
 destination_distance_CR = 120;
-jumping_type = false;
+jumping_type = true;
 jumping = false;
+jumped = false;
 dir = 0;
 grv = 0.8;
 frc = 0.5;
@@ -202,17 +204,24 @@ alarm[8] = room_speed * (35/60);
           <argument>
             <kind>1</kind>
             <string>///Jump
-if (place_meeting(x, y+1, obj_boundary))
+if (place_meeting(x, y+1, obj_boundary) || place_meeting(x,y+1, obj_player) || place_meeting(x,y+1, obj_enemy))
    {
-    //hspd = (hspd/2);
-    //chsSpeed = 3.5;
+    jumping = true;
     vspd = -jspeed;
+    chsSpeed = chsSpeed_J;
+    if (abs((obj_player.x+200) - x) &lt; abs((obj_player.x-200) - x))
+       {
+        dir = sign(sign(floor(obj_player.x-390) - x) + sign(floor(obj_player.x-400) - x));
+       }
+    else
+       {
+        dir = sign(sign(floor(obj_player.x+390) - x) + sign(floor(obj_player.x+400) - x));
+       }
    }
 else
    {
-    alarm[5] = room_speed * (94/60); 
-   }           
-       
+    //alarm[5] = room_speed * (94/60); 
+   }   
 </string>
           </argument>
         </arguments>
