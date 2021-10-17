@@ -3,7 +3,7 @@
   <type>0</type>
   <xorig>8</xorig>
   <yorigin>8</yorigin>
-  <colkind>0</colkind>
+  <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>2</bboxmode>
@@ -21,5 +21,7 @@
   <height>48</height>
   <frames>
     <frame index="0">images\spr_boundary_slope_3_0.png</frame>
+    <frame index="1">images\spr_boundary_slope_3_1.png</frame>
+    <frame index="2">images\spr_boundary_slope_3_2.png</frame>
   </frames>
 </sprite>

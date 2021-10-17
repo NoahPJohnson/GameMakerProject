@@ -349,7 +349,7 @@
       <sprite>sprites\spr_boundary_slope_UL</sprite>
       <sprite>sprites\spr_boundary_slope</sprite>
       <sprite>sprites\spr_boundary_slope_L</sprite>
-      <sprite>sprites\spr_boundary_collection2</sprite>
+      <sprite>sprites\spr_boundary_2_collection</sprite>
       <sprite>sprites\spr_boundary_2_slope_3</sprite>
       <sprite>sprites\spr_boundary_2_slope_1</sprite>
       <sprite>sprites\spr_boundary_2_slope_7</sprite>
@@ -364,6 +364,12 @@
       <sprite>sprites\spr_boundary_slope_7</sprite>
       <sprite>sprites\spr_boundary_slope_9</sprite>
       <sprite>sprites\spr_boundary_3_collection</sprite>
+      <sprite>sprites\spr_boundary_3_slope_1</sprite>
+      <sprite>sprites\spr_boundary_3_slope_3</sprite>
+      <sprite>sprites\spr_boundary_3_slope_7</sprite>
+      <sprite>sprites\spr_boundary_3_slope_9</sprite>
+      <sprite>sprites\spr_boundary_3_long</sprite>
+      <sprite>sprites\spr_boundary_3_tall</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -537,6 +543,7 @@
     <script>scripts\scr_boundary_movement.gml</script>
     <script>scripts\scr_background_control.gml</script>
     <script>scripts\scr_boundary_selection.gml</script>
+    <script>scripts\scr_large_boundary_selection.gml</script>
     <script>scripts\scr_boundary_slope_1_selection.gml</script>
     <script>scripts\scr_boundary_slope_3_selection.gml</script>
     <script>scripts\scr_boundary_slope_7_selection.gml</script>
@@ -716,6 +723,8 @@
     <object>objects\obj_door_from_room</object>
     <object>objects\obj_boundary_moving</object>
     <object>objects\obj_boundary_and_background_painter</object>
+    <object>objects\obj_boundary_and_background_painter_1</object>
+    <object>objects\obj_boundary_and_background_painter_2</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>
