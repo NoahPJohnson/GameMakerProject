@@ -45,6 +45,16 @@ ANGLE_INCREMENT = 7;
 radius = point_distance(center_X, center_Y, x, y);
 phase = point_direction(center_X, center_Y, x, y);
 
+
+chain_offset_x = 0;
+chain_offset_y = 16;
+origin_offset_x = 0;
+origin_offset_y = -16;
+
+moving_origin = false;
+bend = false;
+double_bend = false;
+
 link_max = 4;
 link_array[0] = instance_create(x,y,obj_ball_n_chain_link);
 link_array[1] = instance_create(x,y,obj_ball_n_chain_link);

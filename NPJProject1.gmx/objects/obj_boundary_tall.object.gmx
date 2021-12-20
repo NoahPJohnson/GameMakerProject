@@ -28,9 +28,8 @@
             <string>image_speed = 0;
 long = false;
 boundary_index = 1;
-sprite_array[0] = spr_boundary_tall;
-sprite_array[1] = spr_boundary_2_tall;
-sprite_array[2] = spr_boundary_3_tall;
+slope_sprite = -1;
+
 scr_large_boundary_selection();
 </string>
           </argument>

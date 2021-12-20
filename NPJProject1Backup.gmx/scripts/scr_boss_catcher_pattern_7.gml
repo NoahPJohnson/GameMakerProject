@@ -249,7 +249,7 @@ if (destination_x_established == false && destination_y_established == false && 
         //PatternComplete
         if (appendage.sprite_index != spr_boss_claw_broken)
            {
-            appendage.sprite_index = spr_boss_claw;
+            //appendage.sprite_index = spr_boss_claw;
            }
         state = boss_state.neutral;
        }

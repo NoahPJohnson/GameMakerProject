@@ -257,7 +257,7 @@ if (destination_x_established == false && destination_y_established == false && 
         //PatternComplete
         if (appendage.sprite_index != spr_boss_claw_broken)
            {
-            appendage.sprite_index = spr_boss_claw;
+            //appendage.sprite_index = spr_boss_claw;
            }
         state = boss_state.neutral;
        }
@@ -272,8 +272,8 @@ if (destination_x_established == false && destination_y_established == false && 
         dir_y = sign(destination_y - appendage.y);
        }
     show_debug_message("dir_y = " + string(dir_y) + "  dir_x = " + string(dir_x) + " | step = " + string(step));
-        show_debug_message("Destination_Y_Established? " + string(destination_y_established) + "    destination_x_established? " + string(destination_x_established));
-        show_debug_message("Destination_Y = " + string(destination_y) + "  and  destination_x = " + string(destination_x));
+    show_debug_message("Destination_Y_Established? " + string(destination_y_established) + "    destination_x_established? " + string(destination_x_established));
+    show_debug_message("Destination_Y = " + string(destination_y) + "  and  destination_x = " + string(destination_x));
    }
    
      

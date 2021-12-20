@@ -25,6 +25,7 @@
              instance_create(active_enemies_location_x_array[i], active_enemies_location_y_array[i], active_enemies_type_array[i]);
             }
         }
+obj_scoring_manager.runs = saved_score;
     
 
 

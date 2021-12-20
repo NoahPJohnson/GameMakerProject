@@ -2,6 +2,7 @@
 grv = 0.8;  
 stopped = false;
 firing = false;
+meleeAttack = false;
 alarm[0] = -1;
 alarm[7] = -1;
 alarm[8] = -1;

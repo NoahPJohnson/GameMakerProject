@@ -26,11 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
+boundary_index = -1;
 contained_detonation = false;
 
 direction = 106;
 speed = 15;
 grv = 0.8;
+
+slope_sprite = -1;
+sprite_array = -1;
 
 hp = 1;
 

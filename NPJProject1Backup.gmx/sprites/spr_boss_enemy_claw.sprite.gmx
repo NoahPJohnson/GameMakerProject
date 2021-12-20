@@ -55,5 +55,6 @@
     <frame index="32">images\spr_boss_enemy_claw_32.png</frame>
     <frame index="33">images\spr_boss_enemy_claw_33.png</frame>
     <frame index="34">images\spr_boss_enemy_claw_34.png</frame>
+    <frame index="35">images\spr_boss_enemy_claw_35.png</frame>
   </frames>
 </sprite>

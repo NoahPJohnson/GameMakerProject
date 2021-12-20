@@ -30,6 +30,8 @@ enemy_parent = obj_boss_claw;
 hspd = 0;
 vspd = 0;
 
+link_max = 0;
+
 damage_hitstop = false;
 //old_state = ball_meeting.state;
 //state = ball_n_chain_state.hitstop;

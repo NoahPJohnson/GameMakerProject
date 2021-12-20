@@ -49,6 +49,7 @@ else
     if (shot_timer <= 0)
        {
         show_debug_message("Tractor Beam Finished");
+        appendage.pulling = false;
         firing = false;
         if (instance_exists(obj_boss_claw_grab_hitbox))
            {
@@ -61,7 +62,7 @@ else
                 appendage.special_HP -= 1;
                 if (appendage.special_HP < 1)
                    {
-                    appendage.sprite_index = spr_boss_claw_broken;
+                    //appendage.sprite_index = spr_boss_claw_broken;
                     //instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
                    }
                 weakpoint.hp -= 6;
@@ -69,12 +70,12 @@ else
                }
             else
                {
-                appendage.sprite_index = spr_boss_claw_attack; 
+                //appendage.sprite_index = spr_boss_claw_attack; 
                }
            }
         else
            {
-            appendage.sprite_index = spr_boss_claw_attack; 
+            //appendage.sprite_index = spr_boss_claw_attack; 
            }
         instance_create(appendage.x,appendage.y,obj_explosion_hitbox);       
        }
@@ -196,7 +197,8 @@ if (destination_established == false && firing == false)
     //Activate Tractor Beam
     else if (step == 1)
        {
-        appendage.sprite_index = spr_boss_claw_pulling;
+        //appendage.sprite_index = spr_boss_claw_pulling;
+        appendage.pulling = true;
         instance_create(appendage.x-32,appendage.y,obj_boss_claw_grab_hitbox);
         weakpoint.vulnerable = true;
         player_caught = false;
@@ -221,7 +223,7 @@ if (destination_established == false && firing == false)
         //PatternComplete
         if (appendage.sprite_index != spr_boss_claw_broken)
            {
-            appendage.sprite_index = spr_boss_claw;
+            //appendage.sprite_index = spr_boss_claw;
            }
         state = boss_state.neutral;
        }
