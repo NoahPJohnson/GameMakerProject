@@ -338,7 +338,6 @@
     </sprites>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
-    <sprite>sprites\spr_boundary_moving</sprite>
     <sprites name="backgrounds">
       <sprite>sprites\spr_background_sky_tile1</sprite>
       <sprite>sprites\spr_background_sun_sprite</sprite>
@@ -370,6 +369,10 @@
       <sprite>sprites\spr_boundary_3_slope_9</sprite>
       <sprite>sprites\spr_boundary_3_long</sprite>
       <sprite>sprites\spr_boundary_3_tall</sprite>
+      <sprites name="boundary_moving">
+        <sprite>sprites\spr_boundary_moving</sprite>
+        <sprite>sprites\spr_boundary_moving_5x1</sprite>
+      </sprites>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -548,6 +551,7 @@
     <script>scripts\scr_boundary_slope_3_selection.gml</script>
     <script>scripts\scr_boundary_slope_7_selection.gml</script>
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
+    <script>scripts\scr_boundary_and_tile_manager.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -661,13 +665,6 @@
         <object>objects\obj_shot_returned_hit_spark</object>
       </objects>
     </objects>
-    <object>objects\obj_boundary</object>
-    <object>objects\obj_boundary_long</object>
-    <object>objects\obj_boundary_tall</object>
-    <object>objects\obj_boundary_slope</object>
-    <object>objects\obj_boundary_slope_L</object>
-    <object>objects\obj_boundary_slope_U</object>
-    <object>objects\obj_boundary_slope_UL</object>
     <object>objects\obj_ball</object>
     <object>objects\obj_Game_Over_Quit</object>
     <object>objects\obj_camera_control</object>
@@ -721,10 +718,19 @@
     </objects>
     <object>objects\obj_door_to_room</object>
     <object>objects\obj_door_from_room</object>
-    <object>objects\obj_boundary_moving</object>
-    <object>objects\obj_boundary_and_background_painter</object>
-    <object>objects\obj_boundary_and_background_painter_1</object>
-    <object>objects\obj_boundary_and_background_painter_2</object>
+    <objects name="boundaries">
+      <object>objects\obj_boundary</object>
+      <object>objects\obj_boundary_long</object>
+      <object>objects\obj_boundary_tall</object>
+      <object>objects\obj_boundary_slope</object>
+      <object>objects\obj_boundary_slope_L</object>
+      <object>objects\obj_boundary_slope_U</object>
+      <object>objects\obj_boundary_slope_UL</object>
+      <object>objects\obj_boundary_moving</object>
+      <object>objects\obj_boundary_and_background_painter</object>
+      <object>objects\obj_boundary_and_background_painter_1</object>
+      <object>objects\obj_boundary_and_background_painter_2</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_main_menu</room>

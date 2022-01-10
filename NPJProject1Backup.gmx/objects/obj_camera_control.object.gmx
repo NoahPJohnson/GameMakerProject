@@ -47,7 +47,7 @@ target_y = 0;
 
 //backgrounds
 bkg_index = 0;
-bkg_count = 2;
+bkg_count = 3;
 
 bkg_offset_x_list[0] = 0;
 bkg_offset_x_list[1] = 0;
@@ -55,8 +55,8 @@ bkg_offset_x_list[2] = 0;
 bkg_offset_x_list[3] = 0;
 
 bkg_offset_y_list[0] = -300;
-bkg_offset_y_list[1] = -120;
-bkg_offset_y_list[2] = -160;
+bkg_offset_y_list[1] = -240;
+bkg_offset_y_list[2] = 0;
 bkg_offset_y_list[3] = 0;
 
 bkg_relative_x_list[0] = true;

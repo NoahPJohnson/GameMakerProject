@@ -279,7 +279,9 @@ switch (state)
               break;
              }
        }
-       
+
+//Animations
+scr_enemy_animation_control_script();       
 </string>
           </argument>
         </arguments>

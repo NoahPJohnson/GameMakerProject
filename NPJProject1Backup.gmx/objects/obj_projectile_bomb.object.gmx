@@ -52,6 +52,10 @@ shot_hit_sparks[2] = obj_shot_returned_hit_spark;
 selected_hit_spark = noone;
 spark_index = 0;
 
+
+boundary_index = -1;
+sprite_array = -1;
+
 instance_create(x,y,obj_shot_spark); 
 
 </string>

@@ -53,6 +53,9 @@ shield_right_sprite = spr_shield_right;
 shield_left_sprite = spr_shield_left;
 shield_up_sprite = spr_shield_up;
 
+slope_sprite = -1;
+sprite_array = -1;
+boundary_index = -1;
 
 //ANGLE_INCREMENT = 7;
 //radius = point_distance(center_X, center_Y, x, y);

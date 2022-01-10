@@ -52,6 +52,9 @@ pointsYArray[1] = 0;
 pointsYArray[2] = 0;
 
 slope_mod = 0;
+slope_sprite = -1;
+sprite_array = -1;
+boundary_index = -1;
 //path_start(pth_left_right, 1, path_action_reverse,false);
 </string>
           </argument>

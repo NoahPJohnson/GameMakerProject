@@ -2,9 +2,9 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,52 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Initialize Variables
-view_hview[0] = 900;
-view_wview[0] = 1200;
-
-camera_field_x_left = view_xview[0];
-camera_field_x_right = view_xview[0] + view_wview[0];
-camera_field_y_top = view_yview[0];
-camera_field_y_bottom = view_yview[0] + view_hview[0];
-camera_center_x = (camera_field_x_right + camera_field_x_left)/2;
-camera_center_y = (camera_field_y_top + camera_field_y_bottom)/2;
-
-on_screen_enemy_count = 0;
-enemy_x_array[0] = 0;
-enemy_y_array[0] = 0;
-average_enemy_x = 0;
-average_enemy_y = 0;
-
-target_x = 0;
-target_y = 0;
-
-//backgrounds
-bkg_index = 0;
-bkg_count = 3;
-
-bkg_offset_x_list[0] = 0;
-bkg_offset_x_list[1] = 0;
-bkg_offset_x_list[2] = 0;
-bkg_offset_x_list[3] = 0;
-
-bkg_offset_y_list[0] = -300;
-bkg_offset_y_list[1] = -240;
-bkg_offset_y_list[2] = 0;
-bkg_offset_y_list[3] = 0;
-
-bkg_relative_x_list[0] = true;
-bkg_relative_x_list[1] = false;
-bkg_relative_x_list[2] = false;
-bkg_relative_x_list[3] = true;
-
-bkg_relative_y_list[0] = true;
-bkg_relative_y_list[1] = true;
-bkg_relative_y_list[2] = true;
-bkg_relative_y_list[3] = true;
-
-
-state = camera_state.lock_on;
+            <string>///Initialize variables
+boundaries_selected = false;
 </string>
           </argument>
         </arguments>
@@ -93,22 +49,12 @@ state = camera_state.lock_on;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Switch States
-switch (state)
-       {
-        case camera_state.lock_on: 
-             {
-              scr_camera_lock_on();  
-              scr_background_control(); 
-              break;
-             }
-        case camera_state.neutral:
-             {
-              scr_camera_neutral();
-              scr_background_control();
-              break;
-             }
-       }
+            <string>///scr_boundary_and_tile_manager
+if (boundaries_selected == false) 
+{
+    scr_boundary_and_tile_manager();
+    boundaries_selected = true;
+}
 </string>
           </argument>
         </arguments>

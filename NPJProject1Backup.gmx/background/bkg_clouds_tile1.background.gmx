@@ -14,6 +14,6 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>640</width>
-  <height>640</height>
+  <height>1400</height>
   <data>images\bkg_clouds_tile1.png</data>
 </background>

@@ -35,6 +35,8 @@ player_y = y-32;
 active_enemy_type_array[0] = noone;
 active_enemy_x_array[0] = 0;
 active_enemy_y_array[0] = 0;
+
+saved_score = 0;
 </string>
           </argument>
         </arguments>

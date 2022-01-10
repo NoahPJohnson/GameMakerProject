@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>barrier_active = false;
+            <string>boundary_index = -1;
+sprite_array = -1;
+barrier_active = false;
 instance_deactivate_object(self);
 </string>
           </argument>

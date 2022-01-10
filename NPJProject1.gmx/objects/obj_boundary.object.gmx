@@ -29,7 +29,7 @@
 boundary_index = 1;
 slope_sprite = -1;
 
-scr_boundary_selection2();
+scr_boundary_selection();
 </string>
           </argument>
         </arguments>

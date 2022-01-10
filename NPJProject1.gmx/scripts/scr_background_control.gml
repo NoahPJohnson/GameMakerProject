@@ -11,7 +11,7 @@ for (bkg_index = 0; bkg_index < bkg_count; bkg_index++)
     
     if (bkg_relative_y_list[bkg_index])
     {
-        background_y[bkg_index] = (((view_yview[0])/(room_height-view_hview[0]))*(room_height-background_height[bkg_index]) + bkg_offset_y_list[bkg_index]);
+        background_y[bkg_index] = (((view_yview[0])/(room_height-view_hview[0]))*((room_height-background_height[bkg_index])) + bkg_offset_y_list[bkg_index]);
     }
     else
     {

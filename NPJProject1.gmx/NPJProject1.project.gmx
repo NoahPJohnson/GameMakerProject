@@ -546,13 +546,12 @@
     <script>scripts\scr_boundary_movement.gml</script>
     <script>scripts\scr_background_control.gml</script>
     <script>scripts\scr_boundary_selection.gml</script>
-    <script>scripts\scr_boundary_selection2.gml</script>
-    <script>scripts\scr_boundary_selection_part2.gml</script>
     <script>scripts\scr_large_boundary_selection.gml</script>
     <script>scripts\scr_boundary_slope_1_selection.gml</script>
     <script>scripts\scr_boundary_slope_3_selection.gml</script>
     <script>scripts\scr_boundary_slope_7_selection.gml</script>
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
+    <script>scripts\scr_boundary_and_tile_manager.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
