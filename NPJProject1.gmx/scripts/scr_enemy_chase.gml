@@ -1,4 +1,4 @@
- ///Enemy Chase
+///Enemy Chase
 speed = 0;
 direction = 0;
 if (obj_player.state == states.knockback)
@@ -7,44 +7,92 @@ if (obj_player.state == states.knockback)
     alarm[0] = -1; 
    }
    
-vspd = (min(7, vspd + grv));
+if (jumping_type == true)
+   {
+    if (alarm[7] > 0 && meleeAttack == true)
+       {
+        vspd = 0;   
+       }
+    else if (alarm[7] == -1 && meleeAttack == true)
+       {
+        vspd = (min(5, vspd));
+       }
+    else
+       {
+        vspd = (min(7, vspd + grv));
+       }
+   }
+else 
+   {
+    vspd = (min(7, vspd + grv));
+   }
 if (/*alarm[7] = -1 && */alarm[8] = -1)
    {
     if (obj_player.sliding == false && jumping_type == false)
        {
-        if (abs(obj_player.y - y) < 130)
+        if (abs(obj_player.y - y) < 108 && obj_player.jumping == false && !collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
            {
-            
             if (abs((obj_player.x+120) - x) < abs((obj_player.x-120) - x))
                {
-                dir = sign((obj_player.x+120) - x);
+                //dir = sign((obj_player.x+120) - x);
+                dir = sign(sign(floor(obj_player.x+108) - x) + sign(floor(obj_player.x+120) - x));
                 //show_debug_message("direction = " + string(dir));
                }
             else
                {
-                dir = sign((obj_player.x-120) - x);
+                //dir = sign((obj_player.x-120) - x);
+                dir = sign(sign(floor(obj_player.x-108) - x) + sign(floor(obj_player.x-120) - x));
                 //show_debug_message("DIRECTION = " + string(dir));
                }
            }
         else
            {
-            dir = sign((obj_player.x) - x);
+            if (abs((obj_player.x+200) - x) < abs((obj_player.x-200) - x))
+               {
+                //dir = sign((obj_player.x+120) - x);
+                dir = sign(sign(floor(obj_player.x+180) - x) + sign(floor(obj_player.x+200) - x));
+                //show_debug_message("direction = " + string(dir));
+               }
+            else
+               {
+                //dir = sign((obj_player.x-120) - x);
+                dir = sign(sign(floor(obj_player.x-180) - x) + sign(floor(obj_player.x-200) - x));
+                //show_debug_message("DIRECTION = " + string(dir));
+               }
+           }
+        if (firing == false)
+           {
+            hspd = dir * chsSpeed;
            } 
        }
     else if (obj_player.sliding == false && jumping_type == true)
        {
-        if (abs((obj_player.x+70) - x) < abs((obj_player.x-70) - x))
+        if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
            {
-            dir = sign((obj_player.x+70) - x)
+            if (abs((obj_player.x+78) - x) < abs((obj_player.x-78) - x))
+               {
+                dir = sign(sign(floor(obj_player.x+70) - x) + sign(floor(obj_player.x+78) - x));
+               }
+            else
+               {
+                dir = sign(sign(floor(obj_player.x-70) - x) + sign(floor(obj_player.x-78) - x));
+               }
            }
-        else
+        else 
            {
-            dir = sign((obj_player.x-70) - x)
-           } 
-       }
-    if (firing == false)
-       {
-        hspd = dir * chsSpeed;
+            if (abs((obj_player.x+160) - x) < abs((obj_player.x-160) - x))
+               {
+                dir = sign(sign(floor(obj_player.x+150) - x) + sign(floor(obj_player.x+160) - x));
+               }
+            else
+               {
+                dir = sign(sign(floor(obj_player.x-150) - x) + sign(floor(obj_player.x-160) - x));
+               }
+           }
+        if (firing == false && meleeAttack == false && jumped == false)
+           {
+            hspd = dir * chsSpeed;
+           }
        }
    } 
 if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
@@ -56,52 +104,44 @@ if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
        }
    }
    
-/*if (meleeAttack == false)
-   {   
-    if (dir == -1)
-       {
-        image_xscale = -1;
-       }
-    else if (dir == 1)
-       {
-        image_xscale = 1;
-       }
-   }
-else
-   {
-    if (melee_dir == -1)
-       {
-        image_xscale = -1;
-       }
-    else if (melee_dir == 1)
-       {
-        image_xscale = 1;
-       }
-   }*/
-   
 if (jumping_type == true)
    {
     if ((place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && alarm[5] > 0)
        {
+        chsSpeed = 1.5;
         jumping = false;
        }
-    if ((place_meeting(x,y+1, obj_boundary)) && jumped == true)
+    if (jumped == true)
        {
-        hspd = 0;
-        chsSpeed = 0;
-        //sprite_index = spr_player_charging;
-        if (alarm[6] = -1)
+        if ((place_meeting(x,y+1, obj_boundary) || place_meeting(x,y+1,obj_player)))
            {
-            alarm[6] = room_speed * (90/60);
+            hspd = 0;
+            if (instance_exists(melee_hitbox))
+               {   
+                melee_hitbox.alarm[0] = room_speed * (1/60);
+               }
+            meleeAttack = false;
+            
+            if (!place_meeting(x,y+1,obj_player) && alarm[6] == -1)
+               {
+                alarm[6] = room_speed * (90/60);
+               }
+            else if (alarm[6] == -1)
+               {
+                jumped = false;
+               }
            }
        }
-    else if (place_meeting(x,y+1, obj_player))
+    else
        {
-        alarm[5] = 1;
-       }   
-    else if ((place_meeting(x,y+1, obj_boundary) || place_meeting(x,y+1, obj_player)) && alarm[5] == -1 && jumped == false)
-       {
-        alarm[5] = room_speed * (94/60);
+        if (place_meeting(x,y+1, obj_player) && alarm[5] == -1)
+           {
+            alarm[5] = room_speed * (22/60);
+           }   
+        else if (place_meeting(x,y+1, obj_boundary) && alarm[5] == -1)
+           {
+            alarm[5] = room_speed * (94/60);
+           }
        }
    }     
 
@@ -122,18 +162,11 @@ if (distance_to_object(obj_player) < 128)
     firing = false;
     if (jumping_type = true)
        {
-        if (place_meeting(x, y+1, obj_boundary) && jumped = false)
+        if (place_meeting(x, y+1, obj_boundary) && jumped = false && abs(obj_player.y - y) < 108)
            {
             alarm[5] = 1;
            }
        }
-    else
-       {
-        /*if (meleeAttack == false)
-           {
-            hspd = dir * chsSpeed;
-           }*/ 
-       } 
    }
    
 //Melee Attack

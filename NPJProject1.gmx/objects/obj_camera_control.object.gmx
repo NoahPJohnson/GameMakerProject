@@ -54,7 +54,7 @@ bkg_offset_x_list[1] = 0;
 bkg_offset_x_list[2] = 0;
 bkg_offset_x_list[3] = 0;
 
-bkg_offset_y_list[0] = -300;
+bkg_offset_y_list[0] = -160;
 bkg_offset_y_list[1] = -240;
 bkg_offset_y_list[2] = 0;
 bkg_offset_y_list[3] = 0;

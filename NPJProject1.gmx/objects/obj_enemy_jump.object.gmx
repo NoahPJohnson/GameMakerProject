@@ -3,7 +3,7 @@
   <spriteName>spr_enemy_jump</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -151,17 +151,13 @@ jumped = false;
           <argument>
             <kind>1</kind>
             <string>///Jump
-if (place_meeting(x, y+1, obj_boundary) || place_meeting(x,y+1, obj_player) || place_meeting(x,y+1, obj_enemy))
+if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x,y+1, obj_player) || place_meeting(x,y+1, obj_enemy)) &amp;&amp; jumped == false)
    {
     //hspd = (hspd/2);
     chsSpeed = 3;
     jumping = true;
     vspd = -jspeed;
-   }
-else
-   {
-    //alarm[5] = room_speed * (94/60); 
-   }           
+   }         
        
 </string>
           </argument>

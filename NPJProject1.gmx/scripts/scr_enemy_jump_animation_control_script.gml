@@ -1,7 +1,7 @@
 ///Choose sprite and image speed based on state
 if (state == e_state.chase)
 {
-    if (meleeAttack == false && jumped == false && place_meeting(x,y+2,obj_boundary))
+    if (meleeAttack == false && jumping == false)
     {
         if (firing == true)
         {
@@ -27,7 +27,7 @@ if (state == e_state.chase)
     }
     else if (!place_meeting(x,y+2,obj_boundary))
     {
-        if (alarm[7] > -1 && animation_loop == true)
+        if (alarm[7] > 0 && animation_loop == true)
         {
             image_index = 0;
             sprite_index = attack_start_sprite;
@@ -49,6 +49,11 @@ if (state == e_state.chase)
     }
     else
     {
+        if (jumped == true && alarm[7] == -1 && sprite_index == attack_start_sprite && animation_loop == false )
+        {
+            show_debug_message("!FAIL SAFE!");
+            animation_loop = true;           
+        }
         if (jumped == true && animation_loop == true)
         {
             image_index = 0;
@@ -111,7 +116,7 @@ else
     }
 }
 
-if (meleeAttack == false)
+if (meleeAttack == false && jumped == false)
 {
     if (dir != 0)
     {
