@@ -198,117 +198,66 @@ if (hp &lt; 2)
             <string>///Melee Decision is made, attack begins
 if (longRange == false &amp;&amp; follow_up_attack == true)
    {
-    if (!place_meeting(x,y+1,obj_boundary))
+    if (!instance_exists(melee_hitbox))
        {
-        if (!instance_exists(melee_hitbox))
+        melee_dir = sign(obj_player.x - x);
+        if (melee_dir &lt; 0)
            {
-            if (obj_player.x &lt; x)
-               {
-                melee_hitbox = instance_create(x-48, y, obj_melee_hitbox_leap);
-                
-               }
-            else
-               {
-                melee_hitbox = instance_create(x+48, y, obj_melee_hitbox_leap);
-               }
-            show_debug_message("Follow Up!");
-            melee_hitbox.enemy_parent = self;
+            melee_hitbox = instance_create(x-48, y, obj_melee_hitbox_leap);
+            
            }
+        else
+           {
+            melee_hitbox = instance_create(x+48, y, obj_melee_hitbox_leap);
+           }
+        show_debug_message("Follow Up!");
+        melee_hitbox.enemy_parent = self;
        }
    }
 if (longRange == false &amp;&amp; follow_up_attack == false)
    {
-    if (place_meeting(x, y+1, obj_boundary))
+    if (!instance_exists(melee_hitbox))
        {
-        if (!instance_exists(melee_hitbox))
+        if (antiAir == false)
            {
-            /*if (obj_player.state != states.sliding)
+            if (melee_dir &lt; 0)
                {
-                melee_dir = sign(obj_player.x - x);
-               }*/
-            if (antiAir == false)
-               {
-                if (melee_dir &lt; 0)
-                   {
-                    melee_hitbox = instance_create(x-64, y, obj_melee_hitbox_long);
-                   }
-                else
-                   {
-                    melee_hitbox = instance_create(x+64, y, obj_melee_hitbox_long);
-                   }
-                show_debug_message("hitbox LONG");             
-               }    
+                melee_hitbox = instance_create(x-64, y, obj_melee_hitbox_long);
+               }
             else
                {
-                if (melee_dir &lt; 0)
-                   {
-                    melee_hitbox = instance_create(x-48, y-32, obj_melee_hitbox_anti_air_2);
-                   }
-                else
-                   {
-                    melee_hitbox = instance_create(x+48, y-32, obj_melee_hitbox_anti_air_2);
-                   }
-                show_debug_message("anti AIR hitbox");
+                melee_hitbox = instance_create(x+64, y, obj_melee_hitbox_long);
                }
-            melee_hitbox.enemy_parent = self;            
+            show_debug_message("hitbox LONG");             
+           }    
+        else
+           {
+            if (melee_dir &lt; 0)
+               {
+                melee_hitbox = instance_create(x-48, y-32, obj_melee_hitbox_anti_air_2);
+               }
+            else
+               {
+                melee_hitbox = instance_create(x+48, y-32, obj_melee_hitbox_anti_air_2);
+               }
+            show_debug_message("anti AIR hitbox");
            }
-       }    
-    if (antiAir == false)
-       {
-        //hspd = melee_dir * chsSpeed * 2;
+        melee_hitbox.enemy_parent = self;            
+       }
+   }
+
+if (alarm[8] = -1)
+   {
+    if (follow_up_attack == false)
+       { 
+        alarm[8] = room_speed * (15/60);
        }
     else
        {
-        if (place_meeting(x, y+1, obj_boundary))
-           {
-            //vspd = -(jspeed+4);
-            //hspd = melee_dir * chsSpeed * .8;
-           }
-       }
-
+        alarm[8] = room_speed * (45/60);
+       } 
    }
-/*if (distance_to_object(obj_player) &lt; 170 &amp;&amp; follow_up_attack == false)
-   {
-    if (place_meeting(x, y+1, obj_boundary))
-       {
-        follow_up_attack = true;
-        show_debug_message("Set follow up to true");
-        show_debug_message("Conditions for follow up are met.");
-        alarm[7] = room_speed * (20/60);
-        vspd = -(jspeed);
-           
-       }
-   }
-else
-   {*/
-    //follow_up_attack = false;
-    if (alarm[8] = -1)
-       {
-        if (follow_up_attack == false)
-           { 
-            alarm[8] = room_speed * (15/60);
-           }
-        else
-           {
-            alarm[8] = room_speed * (45/60);
-           } 
-       }
     
-//   }
-/*else
-   {
-    if (!place_meeting(x, y+1, obj_boundary))
-       {
-        hspd = dir * chsSpeed * 3;
-        vspd = 13;
-        //grv = 0.8;
-        
-        if (alarm[8] = -1)
-           { 
-            alarm[8] = 20;
-           }
-       }    
-   }*/    
 </string>
           </argument>
         </arguments>

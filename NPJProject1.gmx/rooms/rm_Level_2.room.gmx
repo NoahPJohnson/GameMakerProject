@@ -2769,7 +2769,6 @@
     <instance objName="obj_boundary_slope_L" x="992" y="256" name="inst_931A0E41" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="608" y="256" name="inst_B659A2F0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="544" y="256" name="inst_5E52B9DF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_jump" x="896" y="384" name="inst_DC77D816" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope" x="832" y="416" name="inst_8801D16C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="992" y="416" name="inst_696ED9F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="800" y="544" name="inst_D2401CF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2780,6 +2779,7 @@
     <instance objName="obj_boundary" x="480" y="416" name="inst_BF045CBB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope" x="448" y="416" name="inst_69294A34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="608" y="416" name="inst_91571F7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_enemy_melee_focus" x="896" y="384" name="inst_B517FC7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_dirt_tile" x="448" y="1216" w="32" h="32" xo="0" yo="0" id="10000327" name="inst_743C9FBB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

@@ -9,7 +9,7 @@ if (state == e_state.chase)
             {
                 image_index = 0;
                 sprite_index = fire_sprite;
-                image_speed = 0.2
+                image_speed = 0.4;
                 animation_loop = false;
             }
         }
@@ -33,6 +33,10 @@ if (state == e_state.chase)
     {
         if (antiAir)
         {
+            if (sprite_index != anti_air_sprite && animation_loop == false)
+            {
+                animation_loop = true;   
+            }
             if (animation_loop == true)
             {
                 image_index = 0;
@@ -47,6 +51,10 @@ if (state == e_state.chase)
         }
         else if (follow_up_attack)
         {
+            if (sprite_index != follow_up_sprite && animation_loop == false && alarm[8] == -1)
+            {
+                animation_loop = true;   
+            }
             if (animation_loop == true)
             {
                 image_index = 0;
@@ -84,7 +92,7 @@ if (state == e_state.chase)
             }
         }
     }
-    if (!place_meeting(x,y+3,obj_boundary) && follow_up_attack == false)
+    if (!place_meeting(x,y+3,obj_boundary) && follow_up_attack == false && antiAir == false)
     {
         sprite_index = air_sprite;
         image_speed = 0.2;
@@ -134,6 +142,10 @@ else
             image_speed = 0.4;
         }
         else if (meleeAttack)
+        {
+            image_speed = 0.4;
+        }
+        else if (firing)
         {
             image_speed = 0.4;
         }

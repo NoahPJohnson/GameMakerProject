@@ -12,16 +12,6 @@ if (alarm[7] = -1 && alarm[8] = -1)
        }
    }
    
-
-/*if (dir == -1)
-   {
-    image_xscale = -1;
-   }
-else if (dir == 1)
-   {
-    image_xscale = 1;
-   }*/      
-   
           
 //Fire when in long range mode
 if (longRange == true)
@@ -78,7 +68,7 @@ else
             //show_debug_message("DIRECTION = " + string(dir));
            }
        }
-    if (collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) || collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
+    if (meleeAttack == false && (collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) || collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true)))
        {
         longRange = true;
        }

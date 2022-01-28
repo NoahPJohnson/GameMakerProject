@@ -51,7 +51,8 @@ if (state == e_state.chase)
     {
         if (jumped == true && alarm[7] == -1 && sprite_index == attack_start_sprite && animation_loop == false )
         {
-            show_debug_message("!FAIL SAFE!");
+            //Fail safe for animation loop
+            //show_debug_message("!FAIL SAFE!");
             animation_loop = true;           
         }
         if (jumped == true && animation_loop == true)

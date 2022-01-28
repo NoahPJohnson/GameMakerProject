@@ -389,7 +389,7 @@ hspd = 0;
 //alarm[0] = 53;
 if (alarm[2] == -1)
    {  
-    alarm[2] = room_speed * (20/60);
+    alarm[2] = room_speed * (22/60);
    }
 </string>
           </argument>
