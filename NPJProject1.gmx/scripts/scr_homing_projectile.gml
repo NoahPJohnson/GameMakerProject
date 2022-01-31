@@ -135,9 +135,12 @@ if (place_meeting(x,y,obj_bunt_bat))
 //Collsion with Wall and Prop
 if (place_meeting(x, y, obj_boundary) || place_meeting(x, y, obj_prop))
    {
-    selected_hit_spark = instance_create(x,y,shot_hit_sparks[spark_index]);
-    selected_hit_spark.image_angle = image_angle;
-    instance_destroy();
+    if (!place_meeting(x, y, obj_enemy_shield))
+       {
+        selected_hit_spark = instance_create(x,y,shot_hit_sparks[spark_index]);
+        selected_hit_spark.image_angle = image_angle;
+        instance_destroy();
+       }
    }
 
 //Collision with Crashed Enemy   

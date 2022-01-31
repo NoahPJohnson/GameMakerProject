@@ -131,7 +131,7 @@ else
         image_xscale = melee_dir;
     }
 }
-if (firing == true && animation_loop == false)
+/*if (firing == true && animation_loop == false)
 {
     image_xscale = sign((obj_player.x) - x);
-}
+}*/

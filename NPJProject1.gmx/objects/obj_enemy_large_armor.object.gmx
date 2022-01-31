@@ -49,7 +49,7 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (enemy_parent != noone &amp;&amp; instance_exists(enemy_parent))
+            <string>if (enemy_parent != noone)
 {
     x = enemy_parent.x;
     y = enemy_parent.y;

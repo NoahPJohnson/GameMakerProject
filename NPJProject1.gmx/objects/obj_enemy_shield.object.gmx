@@ -2,8 +2,8 @@
 <object>
   <spriteName>spr_shield_right</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
-  <depth>0</depth>
+  <visible>0</visible>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>obj_boundary</parentName>
   <maskName>&lt;undefined&gt;</maskName>

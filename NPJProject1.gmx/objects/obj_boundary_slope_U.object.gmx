@@ -31,6 +31,7 @@ slope_sprite = spr_boundary_2_slope_1;
 boundary_index = 1;
 
 scr_boundary_slope_1_selection();
+
 </string>
           </argument>
         </arguments>
@@ -53,7 +54,7 @@ scr_boundary_slope_1_selection();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///draw slope sprite
 draw_sprite(slope_sprite,slope_image_index,x,y);
 </string>
           </argument>

@@ -145,6 +145,9 @@
         <sprite>sprites\spr_shield_right</sprite>
         <sprite>sprites\spr_shield_left</sprite>
         <sprite>sprites\spr_shield_up</sprite>
+        <sprite>sprites\spr_enemy_tall_arm</sprite>
+        <sprite>sprites\spr_enemy_tall_arm_back</sprite>
+        <sprite>sprites\spr_enemy_tall_arm_firing</sprite>
       </sprites>
       <sprites name="large enemy">
         <sprite>sprites\spr_enemy_large_attacking1</sprite>
@@ -475,6 +478,7 @@
     <script>scripts\scr_wall_bounce.gml</script>
     <script>scripts\scr_wall_bounce_L.gml</script>
     <script>scripts\scr_target.gml</script>
+    <script>scripts\scr_camera_culling.gml</script>
     <script>scripts\scr_camera_lock_on.gml</script>
     <script>scripts\scr_camera_neutral.gml</script>
     <script>scripts\scr_enemy_spawner_active.gml</script>
@@ -505,6 +509,8 @@
       <script>scripts\scr_ball_n_chain_hitstop.gml</script>
       <script>scripts\scr_ball_collision_bounce.gml</script>
       <script>scripts\scr_ball_n_chain_links.gml</script>
+      <script>scripts\scr_enemy_tall_arm.gml</script>
+      <script>scripts\scr_enemy_tall_arm_animation_end.gml</script>
     </scripts>
     <script>scripts\scr_checkpoint_create.gml</script>
     <script>scripts\scr_checkpoint_load.gml</script>
@@ -650,6 +656,7 @@
       </objects>
       <objects name="enemy equipment">
         <object>objects\obj_enemy_melee_flash</object>
+        <object>objects\obj_enemy_tall_arm</object>
       </objects>
       <objects name="effects">
         <object>objects\obj_explosion_small</object>

@@ -97,11 +97,9 @@ crash_sprite = spr_enemy_large_crash_hitbox;
 crash_display_sprite = spr_enemy_large_crash_display;
 
 armor_on = true;
-armor_outline = obj_enemy_large_armor;
-with(instance_create(x,y,armor_outline))
-    {
-     enemy_parent = other;
-    }
+armor_outline = instance_create(x,y,obj_enemy_large_armor);
+armor_outline.enemy_parent = self;
+    
 
 animation_loop = true;
 looping_melee = true;

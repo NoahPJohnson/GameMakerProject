@@ -11,7 +11,7 @@ if (projectile_meeting != noone)
            {
             hitstun_direction = projectile_meeting.direction;
            }
-        hp -= .5;
+        hp -= .6;
         scr_score_tracker_script_ball();
         scr_enemy_hp_zero();
         old_speed = 7;

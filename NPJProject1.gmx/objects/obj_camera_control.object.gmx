@@ -69,6 +69,14 @@ bkg_relative_y_list[1] = true;
 bkg_relative_y_list[2] = true;
 bkg_relative_y_list[3] = true;
 
+//Non-culled objects
+no_cull_list[0] = obj_scoring_manager;
+no_cull_list[1] = obj_checkpoint_manager;
+no_cull_list[2] = obj_powerup_manager;
+no_cull_list[3] = obj_enemy_spawner;
+no_cull_list[4] = obj_enemy_spawner_point_A;
+no_cull_list[5] = obj_enemy_spawner_point_B;
+no_cull_list[6] = obj_enemy_spawner_point_C;
 
 state = camera_state.lock_on;
 </string>
@@ -76,7 +84,7 @@ state = camera_state.lock_on;
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="1">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -99,12 +107,14 @@ switch (state)
         case camera_state.lock_on: 
              {
               scr_camera_lock_on();  
+              scr_camera_culling();
               scr_background_control(); 
               break;
              }
         case camera_state.neutral:
              {
               scr_camera_neutral();
+              scr_camera_culling();
               scr_background_control();
               break;
              }

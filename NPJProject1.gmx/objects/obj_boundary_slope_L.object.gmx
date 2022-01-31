@@ -53,7 +53,7 @@ scr_boundary_slope_9_selection();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///draw slope sprite
 draw_sprite(slope_sprite,slope_image_index,x,y);
 </string>
           </argument>

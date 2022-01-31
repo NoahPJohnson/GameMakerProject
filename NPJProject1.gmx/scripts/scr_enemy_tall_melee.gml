@@ -5,6 +5,11 @@ if (!instance_exists(shield))
     shield = instance_create(x, y, obj_enemy_shield);
     shield.enemy_parent = self;
    }
+if (!instance_exists(arm))
+   {
+    arm = instance_create(x,y,obj_enemy_tall_arm);
+    arm.enemy_parent = self;
+   }
 if (instance_exists(melee_hitbox))
    {   
     melee_hitbox.x += hspd;  

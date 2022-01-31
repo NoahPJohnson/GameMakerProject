@@ -76,19 +76,43 @@ with (obj_boundary)
         }
         else if (object_index == obj_boundary_slope)
         {
+            //slope_image = obj_boundary_slope_image;
+            //slope_image_index = 0;
             slope_sprite = other.sprite_slope_array[boundary_index];
+            //scr_boundary_slope_7_selection();
+            //instance_create(x,y,slope_image);
+            //slope_image.image_index = slope_image_index;
+            //slope_image.sprite_index = other.sprite_slope_array[boundary_index];
         }
         else if (object_index == obj_boundary_slope_L)
         {
+            //slope_image = obj_boundary_slope_L_image;
+            //slope_image_index = 0;
             slope_sprite = other.sprite_slope_L_array[boundary_index];
+            //scr_boundary_slope_9_selection();
+            //instance_create(x,y,slope_image);
+            //slope_image.image_index = slope_image_index;
+            //slope_image.sprite_index = other.sprite_slope_L_array[boundary_index];
         }
         else if (object_index == obj_boundary_slope_U)
         {
+            //slope_image = obj_boundary_slope_U_image;
+            //slope_image_index = 0;
             slope_sprite = other.sprite_slope_U_array[boundary_index];
+            //scr_boundary_slope_1_selection();
+            //instance_create(x,y,slope_image);
+            //slope_image.image_index = slope_image_index;
+            //slope_image.sprite_index = other.sprite_slope_U_array[boundary_index];
         }
         else if (object_index == obj_boundary_slope_UL)
         {
+            //slope_image = obj_boundary_slope_UL_image;
+            //slope_image_index = 0;
             slope_sprite = other.sprite_slope_UL_array[boundary_index];
+            //scr_boundary_slope_3_selection();
+            //instance_create(x,y,slope_image);
+            //slope_image.image_index = slope_image_index;
+            //slope_image.sprite_index = other.sprite_slope_UL_array[boundary_index];
         }
     }
 }
