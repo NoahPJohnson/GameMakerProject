@@ -35,7 +35,6 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
     //Going Up Slope
     else 
        {
-        show_debug_message("GOING UP!!");
         y -= y_adj;
        }
     if (place_meeting(x+hspd,y,obj_enemy))

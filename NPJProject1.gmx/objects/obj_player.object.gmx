@@ -797,7 +797,18 @@ scr_player_animation_control_script();
           <argument>
             <kind>1</kind>
             <string>///Display Health Bar
-draw_self();
+if (iframes == true)
+   {
+    if (alarm[7] % 3 != 0)
+       {
+        draw_self();
+       }
+   }
+else
+   {
+    draw_self();
+   }
+
 draw_sprite_ext(spr_health_bar,1,view_xview[0]+15, view_yview[0]+15, obj_player.hp/100, 1, 0, c_white,1);
 draw_sprite(spr_health_bar_background,1,view_xview[0]+15, view_yview[0]+15);
 draw_sprite_ext(spr_stamina_bar,1,view_xview[0]+15, view_yview[0]+45, obj_player.sp/100, 1, 0, c_white,1);

@@ -7,22 +7,6 @@ if (!instance_exists(melee_hitbox))
     melee_hitbox.center_Y = y;
     spin = 0;
    }
-if (instance_exists(melee_hitbox))
-   {   
-    //spin += room_speed * (0.1/60);
-    //melee_hitbox.x += (sin(spin));
-    /*if (meleeAttack == false)
-       {
-        melee_hitbox.x = x + (48*sin(spin));
-        melee_hitbox.y = y-100; 
-       }
-    else
-       {
-        //melee_hitbox.x = x - (dir * 48);
-       }*/
-    
-      
-   }
 //Swing Ball n Chain Melee
 if (distance_to_object(obj_player) < 190 && (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_player)) && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.knockback && meleeAttack == false)
    {

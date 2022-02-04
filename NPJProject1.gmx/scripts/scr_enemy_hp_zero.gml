@@ -15,14 +15,15 @@ if (hp < 1)
     
     if (fragmenting == true)
     {
-        fragment1 = instance_create(x,y-76,obj_enemy_fragment);
+        fragment1 = instance_create(x,y-4,obj_enemy_fragment);
+        fragment2 = instance_create(x,y+4,obj_enemy_fragment);
         fragment1.crash_display_sprite = fragment1_sprite;
-        fragment1.speed = (abs(old_speed) * hitdir) + (impetus * hitdir) * 0.7;
-        fragment1.direction = hitstun_direction;
-        fragment2 = instance_create(x,y-38,obj_enemy_fragment);
         fragment2.crash_display_sprite = fragment2_sprite;
+        fragment1.speed = (abs(old_speed) * hitdir) + (impetus * hitdir) * 0.7;
         fragment2.speed = (abs(old_speed) * hitdir) + (impetus * hitdir) * 0.7;
-        fragment2.direction = hitstun_direction;
+        fragment1.direction = hitstun_direction-30;
+        fragment2.direction = hitstun_direction+30 ;
+           
         fragmenting = false;
     }
    }

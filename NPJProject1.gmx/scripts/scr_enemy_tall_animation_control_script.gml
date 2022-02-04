@@ -3,26 +3,17 @@ if (state == e_state.chase)
 {
     if (meleeAttack == false)
     {
-        if (firing == true)
+        if (hspd != 0)
         {
-            sprite_index = fire_sprite;
-            image_speed = 0.2
-            animation_loop = false;
+            sprite_index = move_sprite;
+            image_speed = 0.2;
+            animation_loop = true;
         }
         else
-        {   
-            if (hspd != 0)
-            {
-                sprite_index = move_sprite;
-                image_speed = 0.2;
-                animation_loop = true;
-            }
-            else
-            {
-                sprite_index = idle_sprite;
-                image_speed = 0.2;
-                animation_loop = true;
-            }
+        {
+            sprite_index = idle_sprite;
+            image_speed = 0.2;
+            animation_loop = true;
         }
     }
     else

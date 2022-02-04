@@ -52,8 +52,6 @@ if (crouching == true)
    {
     if (key_J && right == true && sliding == false && sp > 45)
        {
-        /*if (!place_meeting(x+160,y,obj_enemy) && !place_meeting(x+200,y,obj_enemy))
-           {*/ 
             sliding = true;
             sp -= 45;
             hspd = (jspd * 2.2);
@@ -64,26 +62,10 @@ if (crouching == true)
                 frc = 1;
                }
             state = states.sliding;
-        /*   }
-        else
-           {
-            sliding = true;
-            sp -= 45;
-            hspd = (jspd);
-            siframes = true;  
-            if (alarm[9] = -1)
-               { 
-                alarm[9] = room_speed * (5/60);
-                frc = 1;
-               }
-            state = states.sliding;
-           }*/
        }
     
     if (key_J && right == false && sliding == false && sp > 45)
        {
-        /*if (!place_meeting(x-160,y,obj_enemy) && !place_meeting(x-200,y,obj_enemy))
-           {*/ 
             sliding = true;
             sp -= 45;
             hspd = (-jspd * 2.2);
@@ -94,20 +76,6 @@ if (crouching == true)
                 frc = 1;
                }
             state = states.sliding
-        /*   }
-        else
-           {
-            sliding = true;
-            sp -= 45;
-            hspd = (-jspd);
-            siframes = true;  
-            if (alarm[9] = -1)
-               { 
-                alarm[9] = room_speed * (5/60);
-                frc = 1;
-               }
-            state = states.sliding
-           }*/
        }
    }
    
@@ -152,7 +120,7 @@ scr_bunt();
 ///Input Swing
 if (crouching == false && swinging == false && recovery == false && state != states.hitstop && (place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)))
    { 
-    if (/*keyboard_check_pressed(vk_numpad2)*/key_Swing_Held)
+    if (key_Swing_Held)
        {
         show_debug_message("Switch to swing state."); 
         if (up == true)
