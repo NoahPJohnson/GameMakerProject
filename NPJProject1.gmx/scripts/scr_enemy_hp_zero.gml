@@ -15,8 +15,8 @@ if (hp < 1)
     
     if (fragmenting == true)
     {
-        fragment1 = instance_create(x,y-4,obj_enemy_fragment);
-        fragment2 = instance_create(x,y+4,obj_enemy_fragment);
+        fragment1 = instance_create(x,y-12,obj_enemy_fragment);
+        fragment2 = instance_create(x,y+12,obj_enemy_fragment);
         fragment1.crash_display_sprite = fragment1_sprite;
         fragment2.crash_display_sprite = fragment2_sprite;
         fragment1.speed = (abs(old_speed) * hitdir) + (impetus * hitdir) * 0.7;

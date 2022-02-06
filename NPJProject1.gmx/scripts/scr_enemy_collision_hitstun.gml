@@ -49,7 +49,7 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 //show_debug_message("Hey. H " + string(id));
                 colliding_object = instance_place(x+hspeed,y,obj_enemy);
                 //show_debug_message("colliding H object is: " + object_get_name(colliding_object.object_index) + " I am " + object_get_name(object_index));
-                if (colliding_object.state != e_state.crash)
+                if (colliding_object.state != e_state.crash && enemy_struck.state != e_state.hitstop)
                    {
                     //show_debug_message("colliding object isn't crash H");
                     incidence = direction;
@@ -76,7 +76,7 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 //show_debug_message("Hey. V " + string(id));
                 colliding_object = instance_place(x,y+vspeed,obj_enemy);
                 //show_debug_message("colliding V object is: " + object_get_name(colliding_object.object_index) + " my name is " + object_get_name(object_index));
-                if (colliding_object.state != e_state.crash)
+                if (colliding_object.state != e_state.crash && enemy_struck.state != e_state.hitstop)
                    {
                     //show_debug_message("colliding object isn't crash V");
                     incidence = direction;

@@ -256,6 +256,7 @@
       <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
       <sprite>sprites\spr_spikes_floor</sprite>
+      <sprite>sprites\spr_spikes_ceiling</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_small_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_large_crash_hitbox</sprite>

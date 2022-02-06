@@ -234,11 +234,11 @@ if (longRange == false &amp;&amp; follow_up_attack == false)
            {
             if (melee_dir &lt; 0)
                {
-                melee_hitbox = instance_create(x-48, y-32, obj_melee_hitbox_anti_air_2);
+                melee_hitbox = instance_create(x-50, y-40, obj_melee_hitbox_anti_air_2);
                }
             else
                {
-                melee_hitbox = instance_create(x+48, y-32, obj_melee_hitbox_anti_air_2);
+                melee_hitbox = instance_create(x+50, y-40, obj_melee_hitbox_anti_air_2);
                }
             show_debug_message("anti AIR hitbox");
            }
