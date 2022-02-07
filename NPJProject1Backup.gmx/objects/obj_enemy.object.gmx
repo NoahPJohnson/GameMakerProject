@@ -3,7 +3,7 @@
   <spriteName>spr_enemy</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -214,19 +214,13 @@ if (jumping_type = false)
    {
     if (!instance_exists(melee_hitbox))
        {
-        /*if (obj_player.state != states.sliding)
-           {
-            dir = sign(obj_player.x - x);
-           }*/
         if (melee_dir &lt; 0)
            {
             melee_hitbox = instance_create(x-30, y, obj_enemy_melee);
-            //xoffset = -24;
            }
         else
            {
             melee_hitbox = instance_create(x+30, y, obj_enemy_melee);
-            //xoffset = 24;
            }
         melee_hitbox.enemy_parent = self;
        }
@@ -243,33 +237,19 @@ else
        {
         if (!instance_exists(melee_hitbox))
            {
-            if (obj_player.state != states.sliding)
-               {
-                melee_dir = sign(obj_player.x - x);
-               }
             if (melee_dir &lt; 0)
                {
-                melee_hitbox = instance_create(x-24, y+32, obj_enemy_divekick_hitbox);
-                //xoffset = -24;
+                melee_hitbox = instance_create(x-20, y, obj_enemy_divekick_hitbox);
                }
             else
                {
-                melee_hitbox = instance_create(x+24, y+32, obj_enemy_divekick_hitbox);
-                //xoffset = 24;
+                melee_hitbox = instance_create(x+20, y, obj_enemy_divekick_hitbox);
                }
             melee_hitbox.enemy_parent = self;
            }
         jumped = true;   
-        hspd = melee_dir * 4;
-        vspd = 11;
-        grv = 0.8;
-        
-        show_debug_message("start the attack");
-        
-        if (alarm[8] = -1)
-           { 
-            alarm[8] = room_speed * (20/60);
-           }
+        hspd = melee_dir * 5.5;
+        vspd = 5;
        }    
    }    
 </string>
@@ -409,7 +389,7 @@ hspd = 0;
 //alarm[0] = 53;
 if (alarm[2] == -1)
    {  
-    alarm[2] = room_speed * (20/60);
+    alarm[2] = room_speed * (22/60);
    }
 </string>
           </argument>
@@ -510,8 +490,7 @@ scr_enemy_animation_control_script();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-if (state == e_state.crash)
+            <string>if (state == e_state.crash || old_state == e_state.hitstop)
 {
     if (rotation_angle &lt; 360)
     {
@@ -522,6 +501,10 @@ if (state == e_state.crash)
         rotation_angle = 0;
     }
     draw_sprite_ext(crash_display_sprite,0,x,y,1,1,rotation_angle,c_white,1);
+}
+else
+{
+    draw_self();
 }
 </string>
           </argument>

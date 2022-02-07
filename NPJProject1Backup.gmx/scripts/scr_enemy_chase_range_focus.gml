@@ -79,7 +79,8 @@ else if (longRange == false && meleeAttack == false && jumping == false)
 
 if (alarm[0] == -1 && firing == false && meleeAttack == false)
    {
-    alarm[0] = room_speed * ((firSpeed/60) * (1+first_shot)); 
+    alarm[0] = room_speed * ((firSpeed/60) / (1+first_shot));
+    first_shot = false; 
    }
 
 //Don't walk off tall ledges   

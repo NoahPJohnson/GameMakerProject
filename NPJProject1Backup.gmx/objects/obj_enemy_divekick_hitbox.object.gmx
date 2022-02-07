@@ -2,7 +2,7 @@
 <object>
   <spriteName>spr_enemy_divekick_hitbox</spriteName>
   <solid>0</solid>
-  <visible>-1</visible>
+  <visible>0</visible>
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>obj_enemy_melee</parentName>
@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>enemy_parent = noone;
-alarm[0] = room_speed * (45/60);
+alarm[0] = room_speed * (130/60);
 </string>
           </argument>
         </arguments>

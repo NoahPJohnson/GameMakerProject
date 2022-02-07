@@ -7,10 +7,10 @@ alarm[7] = -1;
 //Sparks
 if (alarm[3] mod spark_interval >= 0 && alarm[3] mod spark_interval < 5)
 {
-    instance_create(x+spark_offset_x,y+spark_offset_y,obj_spark_effect1);
     spark_interval = random_range(40,65);
-    spark_offset_x = random_range(-9,9);
-    spark_offset_y = random_range(-9,9);
+    spark_offset_x = random_range(-19,19);
+    spark_offset_y = random_range(-19,19);
+    instance_create(x+spark_offset_x,y+spark_offset_y,obj_spark_effect1);
 }
 
 if (!place_meeting(x,y+abs(vspeed),obj_boundary) && !place_meeting(x,y+abs(vspeed),obj_player))   

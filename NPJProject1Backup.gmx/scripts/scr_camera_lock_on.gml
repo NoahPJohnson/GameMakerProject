@@ -44,32 +44,30 @@ for (i = 0; i < on_screen_enemy_count; i +=1)
     }
 if (on_screen_enemy_count > 0)
    {
-    view_object[0] = noone;
-    average_enemy_x = average_enemy_x/on_screen_enemy_count;
-    average_enemy_y = average_enemy_y/on_screen_enemy_count;
-    target_x = (obj_player.x + average_enemy_x)/2;
-    target_y = (obj_player.y + average_enemy_y)/2;
-
-    if (camera_center_x < (target_x-10))
-       {
-        view_xview[0] += ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
+        view_object[0] = noone;
+        average_enemy_x = average_enemy_x/on_screen_enemy_count;
+        average_enemy_y = average_enemy_y/on_screen_enemy_count;
+        target_x = (obj_player.x + average_enemy_x)/2;
+        target_y = (obj_player.y + average_enemy_y)/2;
+        if ((target_x-(view_wview[0]/2)-10) > 0 && (target_x+(view_wview[0]/2)+10) < room_width && (target_y-(view_hview[0]/2)-10) > 0 && (target_y+(view_hview[0]/2)+10) < room_height)
+        {
+            if (camera_center_x < (target_x-10))
+               {
+                view_xview[0] += ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
+               }
+            if (camera_center_x > (target_x+10))
+               {
+                view_xview[0] -= ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
+               }
+            if (camera_center_y < (target_y-10))
+               {
+                view_yview[0] += ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
+               }
+            if (camera_center_y > (target_y+10))
+               {
+                view_yview[0] -= ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
+               }
        }
-    if (camera_center_x > (target_x+10))
-       {
-        view_xview[0] -= ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
-       }
-    if (camera_center_y < (target_y-10))
-       {
-        view_yview[0] += ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
-       }
-    if (camera_center_y > (target_y+10))
-       {
-        view_yview[0] -= ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
-       }
-    //if (abs(camera_center_y - target_y) > 10)
-    //   {
-        //view_yview[0] += sign(target_y - camera_center_y) * 7 * ((60/1000000) * delta_time)
-    //   }
    }
 else
    {

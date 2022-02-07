@@ -402,15 +402,4 @@ if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false 
       
             state = states.hitstop;         
            }
-   }
-/*else if (place_meeting(x, y, obj_enemy_melee) && (iframes == true || siframes == true))
-   {
-    //A little bit of hitstop for sliding by melee  
-    melee_meeting = instance_place(x,y, obj_enemy_melee);
-    melee_meeting.alarm[0] = 1;
-    hitstop = false;
-    damage_hitstop = false;
-    alarm[11] = room_speed * (3/60);
-    old_state = state;
-    state = states.hitstop;
-   }*/              
+   }              

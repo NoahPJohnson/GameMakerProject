@@ -132,12 +132,6 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
            {
             obj_player.alarm[8] = room_speed * (18/60);
            }
-        if (obj_player.alarm[7] == -1)
-           {
-            obj_player.alarm[7] = room_speed * (20/60);
-           }
-        
-        obj_player.iframes = true;
         obj_player.hitdir = -hitdir;
         obj_player.knock_force = 12;
         //show_debug_message("Change the player's state to knockback. Current is: " + string(obj_player.state));
@@ -163,12 +157,6 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
            {
             obj_player.alarm[8] = room_speed * (18/60);
            }
-        if (obj_player.alarm[7] == -1)
-           {
-            obj_player.alarm[7] = room_speed * (20/60);
-           }
-    
-        obj_player.iframes = true;
         obj_player.hitdir = -hitdir;
         obj_player.knock_force = 12;
         //show_debug_message("Change the player's state to knockback. Current is: " + string(obj_player.state));

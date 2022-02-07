@@ -120,7 +120,7 @@ if (damage_hitstop == false)
     show_debug_message("Player damage Hitstop is false");
     for (i = 0; i &lt; 11; i++)
         {
-         show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
+         //show_debug_message("player alarm_array: " + string(i) + " = " + string(alarm_array[i]));
          alarm[i] = alarm_array[i];
         }
     show_debug_message("player's Old State is " + string(old_state));
@@ -134,7 +134,7 @@ else
        {
         iframes = true; 
         alarm[7] = room_speed * (invincibility_time/60);
-        show_debug_message("Start Invincibility: player swing recovery = " + string(recovery) + "alarm[7] = " + string(invincibility_time));
+        //show_debug_message("Start Invincibility: player swing recovery = " + string(recovery) + "alarm[7] = " + string(invincibility_time));
        }
     if (alarm[8] = -1)
        {
@@ -142,7 +142,7 @@ else
         jumping = false;
         //sprite_index = spr_player_iframes;
         alarm[8] = room_speed * (knockback_time/60);
-        show_debug_message("Start Invincibility: player swing recovery = " + string(recovery) + "alarm[8] = " + string(knockback_time));
+        //show_debug_message("Start Invincibility: player swing recovery = " + string(recovery) + "alarm[8] = " + string(knockback_time));
         //knock_force = 4;
         state = states.knockback;
        }
@@ -797,7 +797,18 @@ scr_player_animation_control_script();
           <argument>
             <kind>1</kind>
             <string>///Display Health Bar
-draw_self();
+if (iframes == true)
+   {
+    if (alarm[7] % 3 != 0)
+       {
+        draw_self();
+       }
+   }
+else
+   {
+    draw_self();
+   }
+
 draw_sprite_ext(spr_health_bar,1,view_xview[0]+15, view_yview[0]+15, obj_player.hp/100, 1, 0, c_white,1);
 draw_sprite(spr_health_bar_background,1,view_xview[0]+15, view_yview[0]+15);
 draw_sprite_ext(spr_stamina_bar,1,view_xview[0]+15, view_yview[0]+45, obj_player.sp/100, 1, 0, c_white,1);

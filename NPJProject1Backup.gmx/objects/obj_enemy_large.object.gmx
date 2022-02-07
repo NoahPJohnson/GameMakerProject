@@ -3,7 +3,7 @@
   <spriteName>spr_enemy_large</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-4</depth>
   <persistent>0</persistent>
   <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -98,10 +98,9 @@ crash_display_sprite = spr_enemy_large_crash_display;
 
 armor_on = true;
 armor_outline = obj_enemy_large_armor;
-with(instance_create(x,y,armor_outline))
-    {
-     enemy_parent = other;
-    }
+instance_create(x,y,armor_outline);
+armor_outline.enemy_parent = self;
+    
 
 animation_loop = true;
 looping_melee = true;

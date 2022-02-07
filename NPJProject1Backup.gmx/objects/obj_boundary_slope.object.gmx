@@ -3,7 +3,7 @@
   <spriteName>spr_boundary_slope</spriteName>
   <solid>-1</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>10</depth>
   <persistent>0</persistent>
   <parentName>obj_boundary</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -26,11 +26,12 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0;
+slope_sprite = spr_boundary_2_slope_7
 slope_image_index = 0;
-slope_sprite = spr_boundary_2_slope_7;
 boundary_index = 1;
 
 scr_boundary_slope_7_selection();
+
 </string>
           </argument>
         </arguments>
@@ -53,7 +54,7 @@ scr_boundary_slope_7_selection();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>///draw slope sprite
 draw_sprite(slope_sprite,slope_image_index,x,y);
 </string>
           </argument>

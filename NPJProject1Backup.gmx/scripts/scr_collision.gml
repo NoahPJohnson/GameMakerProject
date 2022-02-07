@@ -23,33 +23,14 @@ if (place_meeting(x+hspd,y,obj_boundary) || place_meeting(x+hspd,y,obj_enemy) ||
     if (place_meeting(x+hspd,y-y_adj,obj_boundary))
        {
         y_adj = 0;
-        /*while (!place_meeting(x+sign(hspd),y-1,obj_boundary))
-              {
-               x += sign(hspd);
-               y -= 1;
-              } 
-        hspd = 0;*/
        }
     else if (place_meeting(x+hspd,y-y_adj,obj_enemy))
        {
         y_adj = 0;
-        /*enemy_collision = instance_place(x+hspd,y-y_adj, obj_enemy);
-        while (!place_meeting(x+sign(hspd),y-y_adj,enemy_collision))
-              {
-               x += sign(hspd);
-               y -= 1;
-              }*/ 
-        //hspd = 0;
        }
     else if (place_meeting(x+hspd,y-y_adj,obj_player))
        {
         y_adj = 0;
-        /*while (!place_meeting(x+sign(hspd),y-y_adj,obj_player))
-              {
-               x += sign(hspd);
-               y -= 1;
-              }*/ 
-        //hspd = 0;
        }
     //Going Up Slope
     else 
@@ -97,17 +78,6 @@ x += hspd;
 
 
 
-/*if (place_meeting(x-sign(hspd)*(sprite_width/2),y+2,obj_boundary_slope))
-//if (!place_meeting(x+sign(hspd),y+1,obj_boundary) && place_meeting(x+sign(hspd),y+2,obj_boundary))
-   {
-    //sprite_index = spr_player_charging;
-    //move_contact_solid(270,16)
-    if (!place_meeting(x+hspd,y+1,obj_boundary))
-       {
-        y += abs(hspd);
-       }
-   }
-*/
 /*if (place_meeting(x,y,obj_player) && object_index == obj_enemy && distance_to_object(obj_player) < 600)
    {
     show_debug_message("*Normal Collision Clipping before VERTICAL");
@@ -129,7 +99,6 @@ if (place_meeting(x,y+vspd,obj_enemy))
             while (!place_meeting(x,y+sign(vspd),obj_enemy))
                   {
                    y += sign(vspd);
-                   //sprite_index = spr_enemy_jump;
                   }
             vspd = 0;
     
@@ -172,7 +141,6 @@ if ((!place_meeting(x,y+1,obj_boundary) && jumping = false))
           }
     if (place_meeting(x,y+y_adj,obj_boundary) && jumping = false && !place_meeting(x+hspd,y, obj_boundary) && !place_meeting(x+hspd,y, obj_enemy) && !place_meeting(x+hspd,y, obj_player))
        {
-        //show_debug_message("Going down slope.");
         y+=(y_adj-1)
        }
    }

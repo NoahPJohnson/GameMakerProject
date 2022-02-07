@@ -18,7 +18,7 @@ if (longRange == false)
             if (obj_player.jumping = true || obj_player.y < y-60)
                {
                 antiAir = true;
-                alarm[7] = room_speed * (18/60);
+                alarm[7] = room_speed * (14/60);
                 show_debug_message("Anti Air Slice in 18");
                }
             else
@@ -59,10 +59,5 @@ if (longRange == false)
             melee_hitbox.alarm[0] = 1;
            }
        }
-    /*else if (obj_player.state = states.knockback)
-       {
-           alarm[7] = -1;
-           alarm[8] = -1;
-       }*/
    }
  

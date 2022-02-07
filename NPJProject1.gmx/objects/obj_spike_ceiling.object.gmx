@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_angle = 180;
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

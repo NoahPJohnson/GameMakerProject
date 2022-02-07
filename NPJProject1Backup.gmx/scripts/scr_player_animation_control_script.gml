@@ -102,15 +102,6 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
         sprite_index = spr_player_idle_v2;
         image_speed = 0.2;
        }
-    if (iframes == true && sprite_index != spr_player_iframes)
-       {
-        sprite_index = spr_player_iframes;
-        image_speed = 1;
-       }
-    if (state == states.knockback && sprite_index != spr_player)
-       {
-        sprite_index = spr_player;
-       }
     if (state == states.powerslide && sprite_index != spr_player_crouching)
        {
         sprite_index = spr_player_crouching;
@@ -196,10 +187,6 @@ else
     else if (sprite_index == spr_player_sliding)
        {
         image_speed = 0.2;
-       }
-    else if (sprite_index == spr_player_iframes)
-       {
-        image_speed = 1;
        }
    }
    

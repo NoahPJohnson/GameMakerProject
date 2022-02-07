@@ -3,7 +3,7 @@
   <spriteName>spr_enemy_tall</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-2</depth>
   <persistent>0</persistent>
   <parentName>obj_enemy</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -59,6 +59,7 @@ melee_index = 0;
 melee_hitbox = noone;
 selected_projectile = noone;
 shield = noone;
+arm = instance_create(x,y-48,obj_enemy_tall_arm);
 
 //Damage and Hit Reaction
 hit = false;
@@ -89,7 +90,7 @@ fragmenting = true;
 fragment1 = noone;
 fragment1_sprite = spr_enemy_tall_crash_display1;
 fragment2 = noone;
-fragment2_sprite = spr_enemy_tall_crash_display2;
+fragment2_sprite = spr_enemy_tall_crash_display3;
 
 spark_interval = 24;
 spark_offset_x = 0;
@@ -98,14 +99,14 @@ spark_offset_y = 0;
 //Sprites
 idle_sprite = spr_enemy_tall_idle;
 move_sprite = spr_enemy_tall;
-fire_sprite = spr_enemy_tall_firing;
+fire_sprite = spr_enemy_tall;
 melee_sprites[0] = spr_enemy_tall_attacking1;
 melee_sprites[1] = spr_enemy_tall_attacking2;
 melee_sprites[2] = spr_enemy_tall_attacking3;
 damage_sprite = spr_enemy_tall_hit;
 air_sprite = spr_enemy_tall;
 crash_sprite = spr_enemy_small_crash_hitbox;
-crash_display_sprite = spr_enemy_tall_crash_display3;
+crash_display_sprite = spr_enemy_tall_crash_display2;
 
 animation_loop = true;
 looping_melee = false;
@@ -296,23 +297,19 @@ instance_destroy();
             <string>///Fire Projectile
 if (shield.guard_position == 1)
 {
-    projectile = instance_create(x,y-32, obj_projectile_homing);
-    if (dir == -1)
-    {
-        projectile.direction = 180;
-    } 
-    else
-    {
-        projectile.direction = 0;
-    }
+    projectile = instance_create(shield.x,shield.y-32, obj_projectile_homing);
 }
-else
+else if (shield.guard_position == 0)
 {
-    projectile = instance_create(x,y-32, obj_projectile_homing);
+    projectile = instance_create(shield.x,shield.y, obj_projectile_homing);
+    projectile.direction = 180;
+}
+else if (shield.guard_position == 2)
+{
+    projectile = instance_create(shield.x,shield.y, obj_projectile_homing);
+    projectile.direction = 0;
 }
 firing = false;
-//sprite_index = spr_enemy;
-//hspd = dir * chsSpeed;
 </string>
           </argument>
         </arguments>

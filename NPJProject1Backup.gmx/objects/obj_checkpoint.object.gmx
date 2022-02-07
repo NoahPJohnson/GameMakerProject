@@ -37,6 +37,8 @@ active_enemy_x_array[0] = 0;
 active_enemy_y_array[0] = 0;
 
 saved_score = 0;
+
+image_speed = 0.2;
 </string>
           </argument>
         </arguments>

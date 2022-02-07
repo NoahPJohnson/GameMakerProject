@@ -490,8 +490,7 @@ scr_enemy_animation_control_script();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
-if (state == e_state.crash)
+            <string>if (state == e_state.crash || old_state == e_state.hitstop)
 {
     if (rotation_angle &lt; 360)
     {
@@ -502,6 +501,10 @@ if (state == e_state.crash)
         rotation_angle = 0;
     }
     draw_sprite_ext(crash_display_sprite,0,x,y,1,1,rotation_angle,c_white,1);
+}
+else
+{
+    draw_self();
 }
 </string>
           </argument>

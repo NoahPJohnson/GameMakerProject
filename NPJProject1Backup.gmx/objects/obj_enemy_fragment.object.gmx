@@ -130,11 +130,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Stop and Prepare to Fire
-firing = true;
-hspd = 0;
-//sprite_index = spr_player;
-//alarm[0] = 53;
-alarm[2] = room_speed * (15/60);
+
 </string>
           </argument>
         </arguments>
@@ -160,26 +156,6 @@ alarm[2] = room_speed * (15/60);
             <string>///Switch State
 switch (state)
        {
-        case e_state.idle: 
-             {   
-              scr_enemy(); 
-              break;
-             }
-        case e_state.chase: 
-             {
-              scr_enemy_chase(); 
-              break;        
-             }
-        case e_state.hitstun:
-             {
-              scr_hit_stun();
-              break;
-             }
-        case e_state.hitstop:
-             {
-              scr_hitstop();
-              break;
-             }
         case e_state.crash:
              {
               scr_crash();

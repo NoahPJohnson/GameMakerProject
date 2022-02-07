@@ -51,14 +51,10 @@ if (longRange == true)
     if (distance_to_object(obj_player) > 380 && longRange == true)
        {
         //Begin approach
-        //longRange = false;
-        //alarm[0] = -1;
-        //alarm[2] = -1;
-        //firing = false;
         dir = sign(obj_player.x - x);
        }
      //If player gets too close, switch modes.
-    else if (distance_to_object(obj_player) < 100 && longRange == true && switched == false)
+    else if (distance_to_object(obj_player) < 148 && longRange == true && switched == false)
        {
         //show_debug_message("Too close: stop shooting and switch to close range");
         longRange = false;
@@ -79,12 +75,13 @@ if (longRange == true)
                {
                 if (abs((obj_player.x+360) - x) < abs((obj_player.x-360) - x))
                    {
-                    dir = sign((obj_player.x+360) - x);
+                    //dir = sign((obj_player.x+360) - x);
+                    dir = sign(sign(floor(obj_player.x+348) - x) + sign(floor(obj_player.x+360) - x));
                     //show_debug_message("direction = " + string(dir));
                    }
                 else
                    {
-                    dir = sign((obj_player.x-360) - x);
+                    dir = sign(sign(floor(obj_player.x-348) - x) + sign(floor(obj_player.x-360) - x));
                     //show_debug_message("DIRECTION = " + string(dir));
                    }
                }
@@ -96,7 +93,8 @@ if (longRange == true)
        {
         if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
            {
-            alarm[0] = room_speed * ((firSpeed/60) * (1+first_shot)); 
+            alarm[0] = room_speed * ((firSpeed/60) / (1+first_shot));
+            first_shot = false;  
            }
        }
    }    
@@ -130,15 +128,7 @@ if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x
 if (obj_player.y < y-60 && obj_player.jumping == false && longRange == false)
    {
     longRange = true;
-   }
-//Can jump up large obsticals
-/*if (place_meeting(x,y+1, obj_boundary) && place_meeting(x+(dir * 64),y+32, obj_boundary) && !place_meeting(x+(dir), (y-100), obj_boundary))
-   {
-    if (alarm[5] = -1)
-       {
-        alarm[5] = 30;
-       }
-   }*/        
+   }       
 
 if (distance_to_object(obj_player) > 550)
    {
