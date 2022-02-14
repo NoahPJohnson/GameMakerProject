@@ -256,6 +256,8 @@
       <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
       <sprite>sprites\spr_spikes_floor</sprite>
+      <sprite>sprites\spr_spikes_wall_L</sprite>
+      <sprite>sprites\spr_spikes_wall_R</sprite>
       <sprite>sprites\spr_spikes_ceiling</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox_test</sprite>
@@ -355,20 +357,27 @@
       <sprite>sprites\spr_boundary_slope_UL</sprite>
       <sprite>sprites\spr_boundary_slope</sprite>
       <sprite>sprites\spr_boundary_slope_L</sprite>
-      <sprite>sprites\spr_boundary_2_collection</sprite>
-      <sprite>sprites\spr_boundary_2_slope_3</sprite>
-      <sprite>sprites\spr_boundary_2_slope_1</sprite>
-      <sprite>sprites\spr_boundary_2_slope_7</sprite>
-      <sprite>sprites\spr_boundary_2_slope_9</sprite>
-      <sprite>sprites\spr_boundary_2_tall</sprite>
-      <sprite>sprites\spr_boundary_2_long</sprite>
       <sprite>sprites\spr_boundary_collection</sprite>
-      <sprite>sprites\spr_boundary_long</sprite>
-      <sprite>sprites\spr_boundary_tall</sprite>
       <sprite>sprites\spr_boundary_slope_1</sprite>
       <sprite>sprites\spr_boundary_slope_3</sprite>
       <sprite>sprites\spr_boundary_slope_7</sprite>
       <sprite>sprites\spr_boundary_slope_9</sprite>
+      <sprite>sprites\spr_boundary_long</sprite>
+      <sprite>sprites\spr_boundary_tall</sprite>
+      <sprite>sprites\spr_boundary_1_collection</sprite>
+      <sprite>sprites\spr_boundary_1_slope_1</sprite>
+      <sprite>sprites\spr_boundary_1_slope_3</sprite>
+      <sprite>sprites\spr_boundary_1_slope_7</sprite>
+      <sprite>sprites\spr_boundary_1_slope_9</sprite>
+      <sprite>sprites\spr_boundary_1_long</sprite>
+      <sprite>sprites\spr_boundary_1_tall</sprite>
+      <sprite>sprites\spr_boundary_2_collection</sprite>
+      <sprite>sprites\spr_boundary_2_slope_1</sprite>
+      <sprite>sprites\spr_boundary_2_slope_3</sprite>
+      <sprite>sprites\spr_boundary_2_slope_7</sprite>
+      <sprite>sprites\spr_boundary_2_slope_9</sprite>
+      <sprite>sprites\spr_boundary_2_long</sprite>
+      <sprite>sprites\spr_boundary_2_tall</sprite>
       <sprite>sprites\spr_boundary_3_collection</sprite>
       <sprite>sprites\spr_boundary_3_slope_1</sprite>
       <sprite>sprites\spr_boundary_3_slope_3</sprite>
@@ -741,11 +750,12 @@
       <object>objects\obj_boundary_and_background_painter</object>
       <object>objects\obj_boundary_and_background_painter_1</object>
       <object>objects\obj_boundary_and_background_painter_2</object>
+      <object>objects\obj_boundary_and_background_painter_3</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_Level_2</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>
