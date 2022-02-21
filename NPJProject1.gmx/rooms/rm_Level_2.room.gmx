@@ -393,7 +393,6 @@
     <instance objName="obj_boundary" x="4800" y="3168" name="inst_E53E24EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4832" y="3168" name="inst_D760501D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4864" y="3168" name="inst_45F009E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="352" y="640" name="inst_D93635DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_powerup_manager" x="160" y="704" name="inst_954184CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_scoring_manager" x="224" y="704" name="inst_737AE3D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_camera_control" x="32" y="704" name="inst_6BB88982" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2461,6 +2460,7 @@
     <instance objName="obj_boundary_tall" x="4480" y="3200" name="inst_22A9C610" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4512" y="3200" name="inst_C905D47B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_and_background_painter_3" x="1632" y="736" name="inst_6EE56E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_from_room" x="288" y="640" name="inst_44DD1851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_dirt_tile" x="448" y="1216" w="32" h="32" xo="0" yo="0" id="10000327" name="inst_743C9FBB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

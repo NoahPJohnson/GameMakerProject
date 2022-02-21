@@ -3,9 +3,9 @@
 //Width = 1000 :: 1024
 //following player - h = 600, v = 256
 
-key_lock_on_press = keyboard_check_pressed(ord("L"));
-key_lock_on_release = keyboard_check_released(ord("L"));
-key_lock_on_hold = keyboard_check(ord("L"));
+key_lock_on_press = keyboard_check_pressed(ord("L")) || keyboard_check_pressed(ord("F"));
+key_lock_on_release = keyboard_check_released(ord("L")) || keyboard_check_released(ord("F"));
+key_lock_on_hold = keyboard_check(ord("L")) || keyboard_check(ord("F"));
 
 //Disable lock on
 if (key_lock_on_release)
@@ -49,32 +49,34 @@ if (on_screen_enemy_count > 0)
         average_enemy_y = average_enemy_y/on_screen_enemy_count;
         target_x = (obj_player.x + average_enemy_x)/2;
         target_y = (obj_player.y + average_enemy_y)/2;
-        if (target_x-(view_wview[0]/2)-10 >= 0)
+        camera_delta_x = (3+(abs(camera_center_x-target_x)/20));
+        camera_delta_y = (3+(abs(camera_center_y-target_y)/20));
+        if (camera_center_y-(view_wview[0]/2)-10-camera_delta_x >= 0)
         {
-            if (camera_center_x < (target_x-10))
+            if (camera_center_x > (target_x-10))
                {
-                view_xview[0] += ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
+                view_xview[0] -= camera_delta_x * ((60/1000000) * delta_time);
                }
         }
-        if (target_x+(view_wview[0]/2)+10 <= room_width )
+        if (camera_center_x+(view_wview[0]/2)+10+camera_delta_x <= room_width )
         {
-            if (camera_center_x > (target_x+10))
+            if (camera_center_x < (target_x+10))
                {
-                view_xview[0] -= ((3+(abs(camera_center_x-target_x)/20)) * ((60/1000000) * delta_time));
+                view_xview[0] += camera_delta_x * ((60/1000000) * delta_time);
                }
        }
-       if (target_y-(view_hview[0]/2)-10 >= 0)
+       if (camera_center_y-(view_hview[0]/2)-10-camera_delta_y >= 0)
        {
-            if (camera_center_y < (target_y-10))
+            if (camera_center_y > (target_y-10))
                {
-                view_yview[0] += ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
+                view_yview[0] -= camera_delta_y * ((60/1000000) * delta_time);
                }
        }
-       if (target_y+(view_hview[0]/2)+10 <= room_height)
+       if (camera_center_y+(view_hview[0]/2)+10+(camera_delta_y) <= room_height)
        {
-            if (camera_center_y > (target_y+10))
+            if (camera_center_y < (target_y+10))
                {
-                view_yview[0] -= ((3+(abs(camera_center_y-target_y)/20)) * ((60/1000000) * delta_time));
+                view_yview[0] += camera_delta_y * ((60/1000000) * delta_time);
                }
        }
    }

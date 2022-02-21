@@ -390,6 +390,7 @@
         <sprite>sprites\spr_boundary_moving_5x1</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\test_letter_sprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_sky_tile1</background>
@@ -400,6 +401,9 @@
     <background>background\bkg_forest_tile1</background>
     <background>background\bkg_dirt_tile</background>
     <background>background\bkg_clouds_tile1</background>
+    <background>background\bkg_clouds_tile2</background>
+    <background>background\bkg_boss_room1</background>
+    <background>background\bkg_boss_room1_backup</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -749,13 +753,14 @@
       <object>objects\obj_boundary_moving</object>
       <object>objects\obj_boundary_and_background_painter</object>
       <object>objects\obj_boundary_and_background_painter_1</object>
+      <object>objects\obj_boundary_and_background_painter_1_part2</object>
       <object>objects\obj_boundary_and_background_painter_2</object>
       <object>objects\obj_boundary_and_background_painter_3</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test2</room>
     <room>rooms\rm_main_menu</room>
+    <room>rooms\rm_test2</room>
     <room>rooms\rm_Level_2</room>
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>

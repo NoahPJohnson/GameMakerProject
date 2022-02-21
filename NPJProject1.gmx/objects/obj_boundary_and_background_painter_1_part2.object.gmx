@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>painter_index = 1;
-range_x = 1608;
-range_y = 1300;
+range_x = 3008;
+range_y = 1680;
 
 sprite_array[0] = spr_boundary_collection;
 sprite_array[1] = spr_boundary_1_collection;

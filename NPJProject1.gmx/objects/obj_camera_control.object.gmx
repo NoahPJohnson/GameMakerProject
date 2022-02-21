@@ -62,7 +62,7 @@ bkg_offset_y_list[3] = 0;
 bkg_relative_x_list[0] = true;
 bkg_relative_x_list[1] = false;
 bkg_relative_x_list[2] = false;
-bkg_relative_x_list[3] = true;
+bkg_relative_x_list[3] = false;
 
 bkg_relative_y_list[0] = true;
 bkg_relative_y_list[1] = true;
@@ -107,14 +107,12 @@ switch (state)
         case camera_state.lock_on: 
              {
               scr_camera_lock_on();  
-              scr_camera_culling();
               scr_background_control(); 
               break;
              }
         case camera_state.neutral:
              {
               scr_camera_neutral();
-              scr_camera_culling();
               scr_background_control();
               break;
              }
