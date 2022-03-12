@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -35,6 +35,7 @@ player_y = y-32;
 active_enemy_type_array[0] = noone;
 active_enemy_x_array[0] = 0;
 active_enemy_y_array[0] = 0;
+active_enemy_angle_array[0] = 0;
 
 saved_score = 0;
 

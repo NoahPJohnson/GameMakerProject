@@ -9,6 +9,7 @@ with (obj_enemy)
           other.active_enemy_type_array[other.enemy_index] = object_index;
           other.active_enemy_x_array[other.enemy_index] = x;
           other.active_enemy_y_array[other.enemy_index] = y;
+          other.active_enemy_angle_array[other.enemy_index] = image_angle;
           other.enemy_index += 1;
           //show_debug_message("I am: " + object_get_name(self) + " index = " + obj_checkpoint.enemy_index)
          }

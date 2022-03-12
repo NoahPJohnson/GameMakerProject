@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>painter_index = 3;
 range_x = 6400;
-range_y = 3200;
+range_y = 3720;
 
 sprite_array[0] = spr_boundary_collection;
 sprite_array[1] = spr_boundary_1_collection;

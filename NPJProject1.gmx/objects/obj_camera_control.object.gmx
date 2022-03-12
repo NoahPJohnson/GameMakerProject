@@ -67,7 +67,7 @@ bkg_relative_x_list[3] = false;
 bkg_relative_y_list[0] = true;
 bkg_relative_y_list[1] = true;
 bkg_relative_y_list[2] = true;
-bkg_relative_y_list[3] = true;
+bkg_relative_y_list[3] = false;
 
 //Non-culled objects
 no_cull_list[0] = obj_scoring_manager;

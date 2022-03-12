@@ -22,7 +22,9 @@
         {
          if (active_enemies_type_array[i] != noone)
             {
-             instance_create(active_enemies_location_x_array[i], active_enemies_location_y_array[i], active_enemies_type_array[i]);
+             spawned_enemy = noone;
+             spawned_enemy = instance_create(active_enemies_location_x_array[i], active_enemies_location_y_array[i], active_enemies_type_array[i]);
+             spawned_enemy.image_angle = active_enemies_angle_array[i];
             }
         }
 obj_scoring_manager.runs = saved_score;

@@ -719,6 +719,7 @@
       <object>objects\obj_menu_button_start</object>
       <object>objects\obj_menu_button_level_1</object>
       <object>objects\obj_menu_button_level_2</object>
+      <object>objects\obj_menu_button_boss_1</object>
       <object>objects\obj_menu_button_restart</object>
       <object>objects\obj_menu_button_checkpoint</object>
       <object>objects\obj_menu_button_quit</object>
@@ -731,6 +732,7 @@
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
     <objects name="bosses">
+      <object>objects\obj_boss_health_bar</object>
       <object>objects\obj_boss_main_body</object>
       <object>objects\obj_boss_weakpoint</object>
       <object>objects\obj_boss_claw</object>

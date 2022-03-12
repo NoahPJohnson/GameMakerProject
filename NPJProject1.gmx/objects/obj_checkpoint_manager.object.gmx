@@ -35,6 +35,7 @@ player_checkpoint_y = 0;
 active_enemies_type_array[0] = noone;
 active_enemies_location_x_array[0] = 0;
 active_enemies_location_y_array[0] = 0;
+active_enemies_angle_array[0] = 0;
 
 saved_score = 0;
 </string>
