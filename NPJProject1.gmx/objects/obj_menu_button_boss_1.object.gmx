@@ -32,7 +32,7 @@ button_selected = false;
 button_sprite = spr_menu_button;
 button_selected_sprite = spr_menu_button_selected;
 
-button_script = scr_menu_button_level_2_script;
+button_script = scr_menu_button_boss_1_script;
 </string>
           </argument>
         </arguments>

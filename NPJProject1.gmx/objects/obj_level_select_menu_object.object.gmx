@@ -29,6 +29,9 @@
 pause_menu = false;
 paused = false;
 
+stick_moved_up = false;
+stick_moved_down = false;
+
 button_array[0] = obj_menu_button_level_1;
 button_array[1] = obj_menu_button_level_2;
 button_array[2] = obj_menu_button_boss_1;

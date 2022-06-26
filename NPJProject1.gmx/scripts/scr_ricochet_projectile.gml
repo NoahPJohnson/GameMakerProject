@@ -34,6 +34,7 @@ if (place_meeting(x, y, obj_bat))
         state = proj_state.hitstop;
        }
     alarm[2] += 200;
+    hp += obj_player.chargeOne + obj_player.chargeTwo;
     spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
@@ -84,9 +85,11 @@ if (place_meeting(x, y, obj_bat_launcher))
            }
         state = proj_state.hitstop;
        }
+    alarm[2] += 200;
+    hp += obj_player.chargeOne + obj_player.chargeTwo;
     spark_index = 2;
     //Player Hitstop
-    alarm[2] += 200;
+   
     if (obj_player.state != states.hitstop)
        {
         obj_player.hitstop = false;

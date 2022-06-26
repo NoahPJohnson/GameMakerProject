@@ -78,7 +78,7 @@ no_cull_list[4] = obj_enemy_spawner_point_A;
 no_cull_list[5] = obj_enemy_spawner_point_B;
 no_cull_list[6] = obj_enemy_spawner_point_C;
 
-state = camera_state.lock_on;
+state = camera_state.neutral;
 </string>
           </argument>
         </arguments>

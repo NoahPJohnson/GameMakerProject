@@ -508,6 +508,7 @@
       <script>scripts\scr_menu_button_start_script.gml</script>
       <script>scripts\scr_menu_button_level_1_script.gml</script>
       <script>scripts\scr_menu_button_level_2_script.gml</script>
+      <script>scripts\scr_menu_button_boss_1_script.gml</script>
       <script>scripts\scr_menu_button_quit_script.gml</script>
       <script>scripts\scr_menu_button_leave_script.gml</script>
       <script>scripts\scr_menu_button_options_script.gml</script>
@@ -767,6 +768,7 @@
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>
     <room>rooms\rm_Level_Select</room>
+    <room>rooms\rm_Controls</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

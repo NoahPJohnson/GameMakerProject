@@ -1,11 +1,25 @@
 ///Dashing
-//key_D = keyboard_check(vk_numpad1)
-//key_D_pressed = keyboard_check_pressed(vk_numpad1)
-//key_D_released = keyboard_check_released(vk_numpad1)
-key_R_pressed = keyboard_check_pressed(ord("D"));
-key_L_pressed = keyboard_check_pressed(ord("A"));
-key_R_released = keyboard_check_released(ord("D"));
-key_L_released = keyboard_check_released(ord("A"));
+if (gamepad_axis_value(0, gp_axislh) > 0.2) 
+{
+    stick_moved_right = true;
+} 
+else 
+{
+    stick_moved_right = false;
+}
+if (gamepad_axis_value(0, gp_axislh) < -0.2)
+{
+    stick_moved_left = true;
+}
+else 
+{
+    stick_moved_left = false;
+}
+
+key_R_pressed = keyboard_check_pressed(ord("D")) || gamepad_button_check_pressed(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) > 0.2 && stick_moved_right == false);
+key_L_pressed = keyboard_check_pressed(ord("A")) || gamepad_button_check_pressed(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) < -0.2 && stick_moved_left == false);
+key_R_released = keyboard_check_released(ord("D")) || gamepad_button_check_released(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) <= 0.2 && stick_moved_right == true);
+key_L_released = keyboard_check_released(ord("A")) || gamepad_button_check_released(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) >= -0.2 && stick_moved_left == true);
 
 //Initiate with Double Tap
 if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && crouching == false)

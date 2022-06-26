@@ -1,10 +1,10 @@
 ///Swing the Bat
 //Input for direction
-key_R = keyboard_check(ord("D"));
-key_L = -keyboard_check(ord("A"));
-key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift)  || keyboard_check(vk_enter);
-key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift) || keyboard_check_pressed(vk_enter);
-key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift) || keyboard_check_released(vk_enter);
+key_R = keyboard_check(ord("D")) || gamepad_button_check(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) > 0.2);
+key_L = -(keyboard_check(ord("A")) || gamepad_button_check(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) < -0.2));
+key_Swing_Held = keyboard_check(vk_numpad2) || keyboard_check(vk_shift) || keyboard_check(vk_enter) || gamepad_button_check(0, gp_face3) || gamepad_button_check(0, gp_face4);
+key_Swing_Pressed = keyboard_check_pressed(vk_numpad2) || keyboard_check_pressed(vk_shift) || keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face3) gamepad_button_check_pressed(0, gp_face4);
+key_Swing_Released = keyboard_check_released(vk_numpad2) || keyboard_check_released(vk_shift) || keyboard_check_released(vk_enter) || gamepad_button_check_released(0, gp_face3) || gamepad_button_check_released(0, gp_face4);
 
 //key_J = keyboard_check_pressed(vk_space);
 //key_J_held = keyboard_check(vk_space);
@@ -91,6 +91,10 @@ if (charging == true)
            { 
             charging = false;     
             swinging = true;
+            if (up == true)
+            {
+                up_stored = true;
+            }
             if (alarm[0] == -1)
                {
                 //mspd = 0;
