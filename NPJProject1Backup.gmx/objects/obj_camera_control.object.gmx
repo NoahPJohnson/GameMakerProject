@@ -62,12 +62,12 @@ bkg_offset_y_list[3] = 0;
 bkg_relative_x_list[0] = true;
 bkg_relative_x_list[1] = false;
 bkg_relative_x_list[2] = false;
-bkg_relative_x_list[3] = true;
+bkg_relative_x_list[3] = false;
 
 bkg_relative_y_list[0] = true;
 bkg_relative_y_list[1] = true;
 bkg_relative_y_list[2] = true;
-bkg_relative_y_list[3] = true;
+bkg_relative_y_list[3] = false;
 
 //Non-culled objects
 no_cull_list[0] = obj_scoring_manager;
@@ -78,7 +78,7 @@ no_cull_list[4] = obj_enemy_spawner_point_A;
 no_cull_list[5] = obj_enemy_spawner_point_B;
 no_cull_list[6] = obj_enemy_spawner_point_C;
 
-state = camera_state.lock_on;
+state = camera_state.neutral;
 </string>
           </argument>
         </arguments>
@@ -107,14 +107,12 @@ switch (state)
         case camera_state.lock_on: 
              {
               scr_camera_lock_on();  
-              scr_camera_culling();
               scr_background_control(); 
               break;
              }
         case camera_state.neutral:
              {
               scr_camera_neutral();
-              scr_camera_culling();
               scr_background_control();
               break;
              }

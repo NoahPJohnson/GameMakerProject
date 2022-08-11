@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>crashed_enemy_meeting = noone;
-hp = 2;
+hp = 1;
 target_object = obj_player;
 reverse_target_object = obj_boss_weakpoint;
 target_direction = point_direction(x,y,target_object.x,target_object.y);

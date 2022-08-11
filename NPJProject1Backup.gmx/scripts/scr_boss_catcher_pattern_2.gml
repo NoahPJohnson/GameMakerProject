@@ -24,6 +24,10 @@ if (firing == false)
    }
 else
    {
+    if (shot_timer < 35)
+    {
+        appendage.slide_through = true;
+    }
     appendage.hspd = 0;
     dir = 0;
     if (shot_timer <= 0)
@@ -225,6 +229,7 @@ if (destination_established == false && firing == false)
     else if (step == 3)
        {
         //PatternComplete
+        appendage.slide_through = false;
         if (appendage.sprite_index != spr_boss_claw_broken)
            {
             appendage.sprite_index = spr_boss_claw;

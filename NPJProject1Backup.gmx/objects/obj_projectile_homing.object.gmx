@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>crashed_enemy_meeting = noone;
-hp = 2;
+hp = 1;
 target_object = obj_player;
 target_direction = point_direction(x,y,target_object.x,target_object.y);
 alarm[1] = room_speed * (12/60);

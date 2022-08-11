@@ -292,7 +292,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fire Projectile
+            <string>///Finish Firing Projectile
 alarm[0] = -1;
 //projectile = instance_create(x,y-32, obj_projectile_grenade);
 firing = false;
@@ -357,7 +357,7 @@ state = e_state.idle*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop and Prepare to Fire   
+            <string>///Stop and Fire   
 if (firing == false)
    {
     firing = true;
@@ -388,6 +388,13 @@ else
        {
         show_debug_message("Shoot! selected projectile is " + object_get_name(selected_projectile));
         projectile = instance_create(x,y, selected_projectile);
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+            }
+        }
         if (firing == true &amp;&amp; longRange == true)
            {
             alarm[0] = room_speed * (18/60);
@@ -400,6 +407,13 @@ else
     else
        {
         scr_create_grenade_projectile();
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_grenade_pin_pull_SFX,other,false);    
+            }
+        }
         if (alarm[2] == -1)
            {
             alarm[2] = room_speed * (30/60);

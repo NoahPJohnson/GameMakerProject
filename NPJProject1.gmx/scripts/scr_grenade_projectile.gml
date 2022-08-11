@@ -28,6 +28,14 @@ if (place_meeting(x, y, obj_bat))
        }
     alarm[2] += 25;
     spark_index = 2;
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {

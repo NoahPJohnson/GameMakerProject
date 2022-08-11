@@ -43,6 +43,11 @@ mspd = mspd_normal;
 slope_mod = 1;
 wallBounce = false;
 
+stick_moved_up = false;
+stick_moved_down = false;
+stick_moved_left = false;
+stick_moved_right = false;
+
 //Crouching
 crouching = false;
 sliding = false;
@@ -53,6 +58,7 @@ siframes = false;
 charging = false;
 chargeOne = false;
 chargeTwo = false;
+up_stored = false;
 swinging = false;
 recovery = false;
 
@@ -591,10 +597,10 @@ show_debug_message("Player Recovery is over.");
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Recovery Begins
+            <string>///Swing Bat and Recovery Begins
 if (right = true)
    {
-    if (up = true &amp;&amp; right = true or key_U_held &amp;&amp; right = true)
+    if ((up = true || up_stored = true))
        {
         if (big_bat_active == false)
            {
@@ -611,21 +617,6 @@ if (right = true)
         jspd = jump;
         state = states.normal
        }
-    else if (right = false) 
-       {
-        if (big_bat_active == false)
-           {
-            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
-            instance_create(x,y,obj_bat_launcher_L);
-           }
-        else
-           {
-            instance_create(x-16,y-32, obj_hit_cone_launcher_L);
-            instance_create(x,y,obj_bat_launcher_L_big);
-           }
-        jspd = jump;
-        state = states.normal
-       }
     else
        {
         if (big_bat_active == false)
@@ -646,11 +637,11 @@ if (right = true)
         alarm[1] = room_speed * (15/60);
         //sprite_index = spr_player_recovery;
        }
+    up_stored = false;
    }
-
 else
    {
-    if (up = true &amp;&amp; right = false or key_U_held &amp;&amp; right = false)
+    if ((up = true || up_stored = true))
        {
         if (big_bat_active == false)
            {
@@ -666,23 +657,6 @@ else
         jspd = jump;
         state = states.normal;
        }
-    else if (right = true) 
-       {
-        if (big_bat_active == false)
-           {
-            show_debug_message("launcher 2");
-            instance_create(x+16,y-32, obj_hit_cone_launcher);
-            instance_create(x,y,obj_bat_launcher);
-           }
-        else
-           {
-            show_debug_message("big launcher 2");
-            instance_create(x+16,y-32, obj_hit_cone_launcher);
-            instance_create(x,y,obj_bat_launcher_big);
-           }
-        jspd = jump;
-        state = states.normal
-       }
     else
        {
         if (big_bat_active == false)
@@ -703,6 +677,7 @@ else
         alarm[1] = room_speed * (15/60);
         //sprite_index = spr_player_recovery;
        }
+    up_stored = false;
    }
 if (chargeOne == true)
    {

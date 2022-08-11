@@ -26,36 +26,43 @@
           <argument>
             <kind>1</kind>
             <string>painter_index = 0;
-range_x = 2000;
-range_y = 2000;
+range_x = 7560;
+range_y = 1600;
 
 sprite_array[0] = spr_boundary_collection;
-sprite_array[1] = spr_boundary_2_collection;
-sprite_array[2] = spr_boundary_3_collection;
+sprite_array[1] = spr_boundary_1_collection;
+sprite_array[2] = spr_boundary_2_collection;
+sprite_array[3] = spr_boundary_3_collection;
 
 sprite_long_array[0] = spr_boundary_long;
-sprite_long_array[1] = spr_boundary_2_long;
-sprite_long_array[2] = spr_boundary_3_long;
+sprite_long_array[1] = spr_boundary_1_long;
+sprite_long_array[2] = spr_boundary_2_long;
+sprite_long_array[3] = spr_boundary_3_long;
 
 sprite_tall_array[0] = spr_boundary_tall;
-sprite_tall_array[1] = spr_boundary_2_tall;
-sprite_tall_array[2] = spr_boundary_3_tall;
+sprite_tall_array[1] = spr_boundary_1_tall;
+sprite_tall_array[2] = spr_boundary_2_tall;
+sprite_tall_array[3] = spr_boundary_3_tall;
 
 sprite_slope_array[0] = spr_boundary_slope_7;
-sprite_slope_array[1] = spr_boundary_2_slope_7;
-sprite_slope_array[2] = spr_boundary_3_slope_7;
+sprite_slope_array[1] = spr_boundary_1_slope_7;
+sprite_slope_array[2] = spr_boundary_2_slope_7;
+sprite_slope_array[3] = spr_boundary_3_slope_7;
 
 sprite_slope_L_array[0] = spr_boundary_slope_9;
-sprite_slope_L_array[1] = spr_boundary_2_slope_9;
-sprite_slope_L_array[2] = spr_boundary_3_slope_9;
+sprite_slope_L_array[1] = spr_boundary_1_slope_9;
+sprite_slope_L_array[2] = spr_boundary_2_slope_9;
+sprite_slope_L_array[3] = spr_boundary_3_slope_9;
 
 sprite_slope_U_array[0] = spr_boundary_slope_1;
-sprite_slope_U_array[1] = spr_boundary_2_slope_1;
-sprite_slope_U_array[2] = spr_boundary_3_slope_1;
+sprite_slope_U_array[1] = spr_boundary_1_slope_1;
+sprite_slope_U_array[2] = spr_boundary_2_slope_1;
+sprite_slope_U_array[3] = spr_boundary_3_slope_1;
 
 sprite_slope_UL_array[0] = spr_boundary_slope_3;
-sprite_slope_UL_array[1] = spr_boundary_2_slope_3;
-sprite_slope_UL_array[2] = spr_boundary_3_slope_3;
+sprite_slope_UL_array[1] = spr_boundary_1_slope_3;
+sprite_slope_UL_array[2] = spr_boundary_2_slope_3;
+sprite_slope_UL_array[3] = spr_boundary_3_slope_3;
 
 with (obj_boundary)
 {

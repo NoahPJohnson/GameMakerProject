@@ -374,8 +374,15 @@ if (right = true)
           //show_debug_message("Call the script please.");
           scr_wall_bounce();
          }*/
+    //Play Swoosh
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_miss_SFX,other,false);    
+        }
+    }
    }
-
 else
    {
     if (big_bat_active == false)
@@ -400,6 +407,14 @@ else
           //show_debug_message("Call the OTHER script please.");
           scr_wall_bounce_L();
          }*/
+    //Play Swoosh
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_miss_SFX,other,false);    
+        }
+    }
    }
 
 
@@ -670,6 +685,15 @@ else
             instance_create(x,y,obj_bat_big);
            }
        }
+    //Play SWOOSH
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_miss_SFX,other,false);    
+        }
+    }
+       
     swinging = false;
     recovery = true;
     if (alarm[1] = -1)

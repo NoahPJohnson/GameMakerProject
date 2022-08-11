@@ -77,10 +77,19 @@ if (place_meeting(x, y, obj_projectile) && iframes = false && siframes = false &
                 state = states.hitstop;
                }
                
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            }   
             
            }
         projectile_meeting.state = proj_state.destroyed;
-       }    
+       }
+           
    }
 else if (place_meeting(x, y, obj_projectile) && (iframes == true || siframes == true || invincibility_active == true))
    {
@@ -156,7 +165,16 @@ if (place_meeting(x, y, obj_enemy_melee) && iframes = false && siframes = false 
             //state = states.knockback;
             melee_meeting.alarm[0] = 1;
             //scr_movement();         
-            state = states.hitstop;         
+            state = states.hitstop;
+            
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            }           
            }
         //knock_force = 6;
         //state = states.knockback;
@@ -213,6 +231,15 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox) && iframes == false && siframes == 
             
             
                 state = states.hitstop;
+                
+                //Play hurt sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                    }
+                } 
                }
            }
        }    
@@ -260,7 +287,16 @@ if (place_meeting(x,y,obj_explosion_hitbox) && iframes = false && siframes = fal
 
             //explosion_meeting.alarm[0] = 1;
       
-            state = states.hitstop;         
+            state = states.hitstop;    
+            
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            }      
            }
 
         //melee_meeting.alarm[0] = 1;
@@ -298,7 +334,16 @@ if (place_meeting(x,y,obj_spike_floor) && iframes = false && siframes = false &&
 
             //explosion_meeting.alarm[0] = 1;
       
-            state = states.hitstop;         
+            state = states.hitstop;
+            
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            }          
            }
    }
 if (place_meeting(x,y,obj_spike_wall_L) && iframes = false && siframes = false && invincibility_active == false)
@@ -366,7 +411,16 @@ if (place_meeting(x,y,obj_spike_wall_R) && iframes = false && siframes = false &
 
             //explosion_meeting.alarm[0] = 1;
       
-            state = states.hitstop;         
+            state = states.hitstop;
+            
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            }          
            }
    }
 if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false && invincibility_active == false)
@@ -401,5 +455,14 @@ if (place_meeting(x,y,obj_spike_ceiling) && iframes = false && siframes = false 
             //explosion_meeting.alarm[0] = 1;
       
             state = states.hitstop;         
+            
+            //Play hurt sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_damage_taken_SFX,other,false);    
+                }
+            } 
            }
    }              

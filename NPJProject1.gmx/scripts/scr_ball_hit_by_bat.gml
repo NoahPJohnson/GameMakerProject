@@ -15,6 +15,33 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
         old_state = state;
         damage_hitstop = true;
         alarm[3] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
+        
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            if (obj_player.chargeOne == true)
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_charge_lv1_SFX,other,false);    
+                }
+            }
+            else if (obj_player.chargeTwo == true)
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_charge_lv2_SFX,other,false);    
+                }
+            }
+            else
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_SFX,other,false);    
+                }
+            }
+        }
+        
         //Player Hitstop
         if (obj_player.state != states.hitstop)
            {
@@ -52,6 +79,32 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
         hitstun_direction = (80-(obj_player.chargeOne*5)-(obj_player.chargeTwo*10)) * hitdir;
         //old_state = state;
         alarm[3] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
+        
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            if (obj_player.chargeOne == true)
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_charge_lv1_SFX,other,false);    
+                }
+            }
+            else if (obj_player.chargeTwo == true)
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_charge_lv2_SFX,other,false);    
+                }
+            }
+            else
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_player_hit_enemy_SFX,other,false);    
+                }
+            }
+        }
         
         //Player Hitstop
         if (obj_player.state != states.hitstop)
@@ -100,6 +153,15 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
            }
         //old_state = state;
         alarm[3] = room_speed * (3/60);
+        
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_enemy_SFX,other,false);    
+            }
+        }
     
         //Player Wall Bounce
         if (obj_player.alarm[8] == -1)
@@ -147,6 +209,15 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
            {
             obj_player.alarm[7] = room_speed * (20/60);
            }
+           
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
+            }
+        }
     
         obj_player.iframes = true;
         obj_player.hitdir = -hitdir;
@@ -169,6 +240,16 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false)
     impetus = 5;
     hitstun_direction = 20 * hitdir;
     alarm[3] = room_speed * (3/60);
+    
+    //Hit Sound Effect
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_enemy_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {

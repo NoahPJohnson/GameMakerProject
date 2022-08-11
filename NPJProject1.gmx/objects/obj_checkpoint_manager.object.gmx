@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Variables
-
 checkpoint_active = false;
 
 player_checkpoint_x = 0;
@@ -38,6 +37,7 @@ active_enemies_location_y_array[0] = 0;
 active_enemies_angle_array[0] = 0;
 
 saved_score = 0;
+
 </string>
           </argument>
         </arguments>

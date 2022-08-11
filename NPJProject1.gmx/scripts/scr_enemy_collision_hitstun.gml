@@ -39,6 +39,15 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 enemy_struck.alarm[7] = -1;
                 enemy_struck.alarm[9] = room_speed * (3/60);
                 enemy_struck.damage_hitstop = true;
+                
+                //Play hit sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_enemy_hit_by_broken_enemy_SFX,other,false);    
+                    }
+                }
 
                 enemy_struck.state = e_state.hitstop;
                 //show_debug_message("Hit enemy, do damage.");

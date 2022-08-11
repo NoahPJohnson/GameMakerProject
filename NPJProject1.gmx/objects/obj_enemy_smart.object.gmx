@@ -341,6 +341,13 @@ instance_destroy();
             <string>///Fire Projectile
 projectile = instance_create(x,y, obj_projectile);
 firing = false;
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+    }
+}
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;
 </string>

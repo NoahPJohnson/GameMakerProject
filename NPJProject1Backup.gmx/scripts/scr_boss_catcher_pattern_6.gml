@@ -24,6 +24,10 @@ if (firing == false)
    }
 else
    {
+    if (shot_timer < 35)
+    {
+        appendage.slide_through = true;
+    }
     appendage.hspd = 0;
     dir = 0;
     if (shot_timer % 100 == 0 && shot_timer > 0)
@@ -77,7 +81,8 @@ else
            {
             //appendage.sprite_index = spr_boss_claw_attack; 
            }
-        instance_create(appendage.x,appendage.y,obj_explosion_hitbox);       
+        instance_create(appendage.x,appendage.y,obj_explosion_hitbox);
+        show_debug_message("Explosion from the CLAW");       
        }
     else 
        {
@@ -220,6 +225,7 @@ if (destination_established == false && firing == false)
     else if (step == 3)
        {
         show_debug_message("Pattern 6 complete.");
+        appendage.slide_through = false;
         //PatternComplete
         if (appendage.sprite_index != spr_boss_claw_broken)
            {

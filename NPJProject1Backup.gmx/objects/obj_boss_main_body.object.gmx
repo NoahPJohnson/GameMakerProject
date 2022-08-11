@@ -164,6 +164,9 @@ tractor_beam_power = 6.5;
 //blocker = obj_boss_blocker;
 blocker = instance_create(x+32,y-128,obj_boss_blocker);
 
+health_bar = obj_boss_health_bar;
+health_bar.boss_object = self;
+
 //show_debug_message("blocker: " + string(x - blocker.x) + " , " + string(y-blocker.y));
 
 
@@ -366,8 +369,6 @@ scr_boss_animation_control_script();
             <kind>1</kind>
             <string>///Display Boss's Health Bar
 draw_self();
-draw_sprite_ext(spr_boss_health_bar,1,view_xview[0]+700+(384), view_yview[0]+800, -(obj_boss_main_body.hp/obj_boss_main_body.max_hp), 1, 0, c_white,1);
-draw_sprite(spr_boss_health_bar_background,1,view_xview[0]+700, view_yview[0]+800);
 </string>
           </argument>
         </arguments>

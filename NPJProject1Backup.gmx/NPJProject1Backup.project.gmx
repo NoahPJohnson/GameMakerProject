@@ -256,6 +256,8 @@
       <sprite>sprites\spr_enemy_shield_Up2</sprite>
       <sprite>sprites\spr_explosion_hitbox_boss</sprite>
       <sprite>sprites\spr_spikes_floor</sprite>
+      <sprite>sprites\spr_spikes_wall_L</sprite>
+      <sprite>sprites\spr_spikes_wall_R</sprite>
       <sprite>sprites\spr_spikes_ceiling</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox</sprite>
       <sprite>sprites\spr_enemy_crash_hitbox_test</sprite>
@@ -355,20 +357,27 @@
       <sprite>sprites\spr_boundary_slope_UL</sprite>
       <sprite>sprites\spr_boundary_slope</sprite>
       <sprite>sprites\spr_boundary_slope_L</sprite>
-      <sprite>sprites\spr_boundary_2_collection</sprite>
-      <sprite>sprites\spr_boundary_2_slope_3</sprite>
-      <sprite>sprites\spr_boundary_2_slope_1</sprite>
-      <sprite>sprites\spr_boundary_2_slope_7</sprite>
-      <sprite>sprites\spr_boundary_2_slope_9</sprite>
-      <sprite>sprites\spr_boundary_2_tall</sprite>
-      <sprite>sprites\spr_boundary_2_long</sprite>
       <sprite>sprites\spr_boundary_collection</sprite>
-      <sprite>sprites\spr_boundary_long</sprite>
-      <sprite>sprites\spr_boundary_tall</sprite>
       <sprite>sprites\spr_boundary_slope_1</sprite>
       <sprite>sprites\spr_boundary_slope_3</sprite>
       <sprite>sprites\spr_boundary_slope_7</sprite>
       <sprite>sprites\spr_boundary_slope_9</sprite>
+      <sprite>sprites\spr_boundary_long</sprite>
+      <sprite>sprites\spr_boundary_tall</sprite>
+      <sprite>sprites\spr_boundary_1_collection</sprite>
+      <sprite>sprites\spr_boundary_1_slope_1</sprite>
+      <sprite>sprites\spr_boundary_1_slope_3</sprite>
+      <sprite>sprites\spr_boundary_1_slope_7</sprite>
+      <sprite>sprites\spr_boundary_1_slope_9</sprite>
+      <sprite>sprites\spr_boundary_1_long</sprite>
+      <sprite>sprites\spr_boundary_1_tall</sprite>
+      <sprite>sprites\spr_boundary_2_collection</sprite>
+      <sprite>sprites\spr_boundary_2_slope_1</sprite>
+      <sprite>sprites\spr_boundary_2_slope_3</sprite>
+      <sprite>sprites\spr_boundary_2_slope_7</sprite>
+      <sprite>sprites\spr_boundary_2_slope_9</sprite>
+      <sprite>sprites\spr_boundary_2_long</sprite>
+      <sprite>sprites\spr_boundary_2_tall</sprite>
       <sprite>sprites\spr_boundary_3_collection</sprite>
       <sprite>sprites\spr_boundary_3_slope_1</sprite>
       <sprite>sprites\spr_boundary_3_slope_3</sprite>
@@ -381,6 +390,7 @@
         <sprite>sprites\spr_boundary_moving_5x1</sprite>
       </sprites>
     </sprites>
+    <sprite>sprites\test_letter_sprite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_sky_tile1</background>
@@ -391,6 +401,9 @@
     <background>background\bkg_forest_tile1</background>
     <background>background\bkg_dirt_tile</background>
     <background>background\bkg_clouds_tile1</background>
+    <background>background\bkg_clouds_tile2</background>
+    <background>background\bkg_boss_room1</background>
+    <background>background\bkg_boss_room1_backup</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -495,6 +508,7 @@
       <script>scripts\scr_menu_button_start_script.gml</script>
       <script>scripts\scr_menu_button_level_1_script.gml</script>
       <script>scripts\scr_menu_button_level_2_script.gml</script>
+      <script>scripts\scr_menu_button_boss_1_script.gml</script>
       <script>scripts\scr_menu_button_quit_script.gml</script>
       <script>scripts\scr_menu_button_leave_script.gml</script>
       <script>scripts\scr_menu_button_options_script.gml</script>
@@ -706,6 +720,7 @@
       <object>objects\obj_menu_button_start</object>
       <object>objects\obj_menu_button_level_1</object>
       <object>objects\obj_menu_button_level_2</object>
+      <object>objects\obj_menu_button_boss_1</object>
       <object>objects\obj_menu_button_restart</object>
       <object>objects\obj_menu_button_checkpoint</object>
       <object>objects\obj_menu_button_quit</object>
@@ -718,6 +733,7 @@
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
     <objects name="bosses">
+      <object>objects\obj_boss_health_bar</object>
       <object>objects\obj_boss_main_body</object>
       <object>objects\obj_boss_weakpoint</object>
       <object>objects\obj_boss_claw</object>
@@ -740,7 +756,9 @@
       <object>objects\obj_boundary_moving</object>
       <object>objects\obj_boundary_and_background_painter</object>
       <object>objects\obj_boundary_and_background_painter_1</object>
+      <object>objects\obj_boundary_and_background_painter_1_part2</object>
       <object>objects\obj_boundary_and_background_painter_2</object>
+      <object>objects\obj_boundary_and_background_painter_3</object>
     </objects>
   </objects>
   <rooms name="rooms">
@@ -750,6 +768,7 @@
     <room>rooms\rm_test</room>
     <room>rooms\rm_Game_Over</room>
     <room>rooms\rm_Level_Select</room>
+    <room>rooms\rm_Controls</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

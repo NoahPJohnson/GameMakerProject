@@ -136,6 +136,13 @@ spark_index = 0;
             <kind>1</kind>
             <string>///Detonate
 instance_create(x,y,obj_explosion_hitbox);
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_explosion_medium_SFX,other,false);    
+    }
+}
 instance_destroy();
 </string>
           </argument>

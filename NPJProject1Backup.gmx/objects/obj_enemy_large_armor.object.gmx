@@ -49,19 +49,21 @@ image_speed = 0.2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (enemy_parent != noone)
+            <string>if (enemy_parent != noone &amp;&amp; instance_exists(enemy_parent))
 {
     x = enemy_parent.x;
     y = enemy_parent.y;
 }
 else
 {
+    enemy_parent = noone;
     instance_destroy(self);
 }
 if (sprite_index == spr_enemy_large_armor_broken)
 {
     if (image_index &gt; 3)
     {
+        enemy_parent = noone;
         instance_destroy(self);
     }
 }

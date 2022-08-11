@@ -289,10 +289,24 @@ instance_destroy();
 if (selected_projectile == obj_projectile_bomb_2)
    {
     projectile = instance_create(x,y, selected_projectile);
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_boss_launch_canister_SFX,other,false);    
+        }
+    }
    }
 else
    {
     projectile = instance_create(x,y, selected_projectile);
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+        }
+    }
    }
 //firing = false;
 if (alarm[7] == -1)

@@ -223,6 +223,13 @@ state = e_state.idle*/
 firing = true;
 hspd = 0;
 projectile = instance_create(x,y, obj_projectile_homing);
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+    }
+}
 //alarm[0] = room_speed * (fir_speed/60);
 if (alarm[2] == -1)
    {

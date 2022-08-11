@@ -8,7 +8,19 @@ if (enemy_parent != noone)
    {
     spin += room_speed * (0.1/60);
     x = enemy_parent.x + (48*sin(spin));
-    y = enemy_parent.y-100; 
+    y = enemy_parent.y-100;
+    
+    if (abs(x - enemy_parent.x) < 3) 
+    {
+        //Play swing sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);    
+            }
+        }
+    } 
    }
 
 //Blocked by Bunt
@@ -16,6 +28,14 @@ if (place_meeting(x,y,obj_bunt_bat))
    {
     obj_player.sp -= 30;
     
+    //Play bunt sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_bunt_block_SFX,other,false);    
+        }
+    }
     //Player Hitstop
     /*obj_player.hitstop = false;
     obj_player.damage_hitstop = false;

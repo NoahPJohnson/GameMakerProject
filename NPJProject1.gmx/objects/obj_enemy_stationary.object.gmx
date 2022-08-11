@@ -228,6 +228,17 @@ if (alarm[2] == -1)
    {
     alarm[2] = room_speed * (30/60);
    }
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+    }
+}
+else
+{
+    show_debug_message("It's not here.");
+}
 </string>
           </argument>
         </arguments>

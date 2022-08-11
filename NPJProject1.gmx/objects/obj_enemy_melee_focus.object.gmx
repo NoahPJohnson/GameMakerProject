@@ -212,6 +212,14 @@ if (longRange == false &amp;&amp; follow_up_attack == true)
            }
         show_debug_message("Follow Up!");
         melee_hitbox.enemy_parent = self;
+        //Play attack sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_melee_attack_SFX,other,false);    
+            }
+        }
        }
    }
 if (longRange == false &amp;&amp; follow_up_attack == false)
@@ -228,7 +236,15 @@ if (longRange == false &amp;&amp; follow_up_attack == false)
                {
                 melee_hitbox = instance_create(x+64, y, obj_melee_hitbox_long);
                }
-            show_debug_message("hitbox LONG");             
+            show_debug_message("hitbox LONG");
+            //Play attack sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_melee_attack_SFX,other,false);    
+                }
+            }             
            }    
         else
            {
@@ -241,6 +257,14 @@ if (longRange == false &amp;&amp; follow_up_attack == false)
                 melee_hitbox = instance_create(x+50, y-40, obj_melee_hitbox_anti_air_2);
                }
             show_debug_message("anti AIR hitbox");
+            //Play attack sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_melee_attack_SFX,other,false);    
+                }
+            }
            }
         melee_hitbox.enemy_parent = self;            
        }

@@ -49,6 +49,8 @@ if (key_pause)
        {
         paused = true;
         instance_deactivate_all(true);
+        instance_activate_object(obj_checkpoint_manager);
+        instance_activate_object(obj_music_sfx_manager);
         for (i = 0; i < array_length_1d(button_array); i ++)
             {
              instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(128-(i*128))), button_array[i]);
@@ -82,6 +84,15 @@ if (paused == true || pause_menu == false)
              button_array[i].button_selected = false;
             }
         button_array[selected_button_index].button_selected = true;
+        
+        //Play select sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_menu_select_SFX,other,false);    
+            }
+        } 
        }
     //Select down
     if (key_select_down)
@@ -97,10 +108,28 @@ if (paused == true || pause_menu == false)
              button_array[i].button_selected = false;
             }
         button_array[selected_button_index].button_selected = true;
+        
+        //Play select sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_menu_select_SFX,other,false);    
+            }
+        } 
        }
     //Hit enter on selected button   
     if (key_select_enter)
        {
+        //Play confirm sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_menu_confirm_SFX,other,false);    
+            }
+        } 
+       
         //show_debug_message("Enter!");
         script_execute(button_array[selected_button_index].button_script);
        }

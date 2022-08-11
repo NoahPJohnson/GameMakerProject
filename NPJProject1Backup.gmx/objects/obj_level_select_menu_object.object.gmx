@@ -29,9 +29,13 @@
 pause_menu = false;
 paused = false;
 
+stick_moved_up = false;
+stick_moved_down = false;
+
 button_array[0] = obj_menu_button_level_1;
 button_array[1] = obj_menu_button_level_2;
-button_array[2] = obj_menu_button_back_to_main;
+button_array[2] = obj_menu_button_boss_1;
+button_array[3] = obj_menu_button_back_to_main;
 
 selected_button_index = 0;
 starting_selected_button_index = selected_button_index;

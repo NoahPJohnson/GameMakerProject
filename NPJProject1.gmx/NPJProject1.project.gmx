@@ -4,7 +4,52 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="music">
+      <sound>sound\snd_level1_BGM</sound>
+      <sound>sound\snd_level2_BGM</sound>
+      <sound>sound\snd_boss1_BGM</sound>
+      <sound>sound\snd_main_theme_BGM</sound>
+    </sounds>
+    <sounds name="player_sfx">
+      <sound>sound\snd_player_slide_SFX</sound>
+      <sound>sound\snd_player_dashing_SFX</sound>
+      <sound>sound\snd_powerup_pickup_SFX</sound>
+      <sound>sound\snd_bunt_block_SFX</sound>
+      <sound>sound\snd_player_miss_SFX</sound>
+      <sound>sound\snd_player_hit_wall_or_armor_SFX</sound>
+      <sound>sound\snd_player_hit_projectile_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_charge_lv1_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_charge_lv2_SFX</sound>
+      <sound>sound\snd_player_damage_taken_SFX</sound>
+      <sound>sound\snd_charging_level1_SFX</sound>
+      <sound>sound\snd_charge_level1_reached_SFX</sound>
+      <sound>sound\snd_charging_level2_SFX</sound>
+      <sound>sound\snd_charge_level2_reached_SFX</sound>
+    </sounds>
+    <sounds name="enemy_sfx">
+      <sound>sound\snd_enemy_broken_SFX</sound>
+      <sound>sound\snd_enemy_hit_by_broken_enemy_SFX</sound>
+      <sound>sound\snd_enemy_fire_shot_SFX</sound>
+      <sound>sound\snd_enemy_grenade_pin_pull_SFX</sound>
+      <sound>sound\snd_enemy_melee_drill_SFX</sound>
+      <sound>sound\snd_enemy_melee_attack_SFX</sound>
+      <sound>sound\snd_enemy_melee_thrust_SFX</sound>
+      <sound>sound\snd_ball_n_chain_swing_SFX</sound>
+      <sound>sound\snd_ball_n_chain_contact_SFX</sound>
+      <sound>sound\snd_boss_launch_canister_SFX</sound>
+      <sound>sound\snd_boss_magnet_pull_SFX</sound>
+      <sound>sound\snd_explosion_small_SFX</sound>
+      <sound>sound\snd_explosion_medium_SFX</sound>
+      <sound>sound\snd_explosion_large_SFX</sound>
+    </sounds>
+    <sounds name="menu_sfx">
+      <sound>sound\snd_level_transition_SFX</sound>
+      <sound>sound\snd_menu_select_SFX</sound>
+      <sound>sound\snd_menu_confirm_SFX</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_ball</sprite>
     <sprites name="player">
@@ -576,6 +621,7 @@
     <script>scripts\scr_boundary_slope_7_selection.gml</script>
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
     <script>scripts\scr_boundary_and_tile_manager.gml</script>
+    <script>scripts\scr_prompt_sound.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -732,6 +778,7 @@
     </objects>
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
+    <object>objects\obj_music_sfx_manager</object>
     <objects name="bosses">
       <object>objects\obj_boss_health_bar</object>
       <object>objects\obj_boss_main_body</object>
@@ -762,6 +809,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_initialize</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm_Level_2</room>

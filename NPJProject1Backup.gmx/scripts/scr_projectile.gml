@@ -19,6 +19,7 @@ if (place_meeting(x, y, obj_bat))
         struck_direction = 180;
         state = proj_state.hitstop;
        }
+    hp += obj_player.chargeOne + obj_player.chargeTwo;
     spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)
@@ -57,6 +58,7 @@ if (place_meeting(x, y, obj_bat_launcher))
         struck_direction = 110;
         state = proj_state.hitstop;
        }
+    hp += obj_player.chargeOne + obj_player.chargeTwo;
     spark_index = 2;
     //Player Hitstop
     if (obj_player.state != states.hitstop)

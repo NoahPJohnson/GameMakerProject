@@ -89,7 +89,7 @@ anti_air_sprite = spr_enemy_stationary_bounce;
 follow_up_sprite = spr_enemy_stationary_bounce;
 damage_sprite = spr_enemy_stationary_bounce;
 air_sprite = spr_enemy_stationary_bounce;
-crash_sprite = spr_enemy_small_crash_hitbox;
+crash_sprite = spr_enemy_crash_hitbox;
 crash_display_sprite = spr_enemy_stationary_bounce_crash_display;
 
 animation_loop = true;
