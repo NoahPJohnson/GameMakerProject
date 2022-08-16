@@ -40,6 +40,22 @@ if (enemy_parent.meleeAttack == true)
                 scr_ball_collision_bounce();
                }
            }
+    spin_difference = sign(x-enemy_parent.x);
+    if (spin_difference != old_spin_difference)
+    {
+        if (spin_difference > 0) 
+        {
+            //Play swing sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);    
+                }
+            }
+        }
+        old_spin_difference = spin_difference;
+    }  
    }
 
 

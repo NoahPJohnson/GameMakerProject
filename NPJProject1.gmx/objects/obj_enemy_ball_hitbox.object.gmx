@@ -45,6 +45,8 @@ ANGLE_INCREMENT = 7;
 radius = point_distance(center_X, center_Y, x, y);
 phase = point_direction(center_X, center_Y, x, y);
 
+spin_difference = 0;
+old_spin_difference = 0;
 
 chain_offset_x = 0;
 chain_offset_y = 16;

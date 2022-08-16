@@ -323,7 +323,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-projectile = instance_create(x,y, obj_projectile);
+projectile = instance_create(x+(dir*20),y, obj_projectile);
 firing = false;
 if (instance_exists(obj_music_sfx_manager))
 {

@@ -45,7 +45,6 @@ else if (dir == 1)
 //Fire when in long range mode
 if (longRange == true)
    {
-    //sprite_index = spr_enemy_smart;
     chsSpeed = chsSpeed_LR;
     //If player gets too far
     if (distance_to_object(obj_player) > 380 && longRange == true)
@@ -75,7 +74,6 @@ if (longRange == true)
                {
                 if (abs((obj_player.x+360) - x) < abs((obj_player.x-360) - x))
                    {
-                    //dir = sign((obj_player.x+360) - x);
                     dir = sign(sign(floor(obj_player.x+348) - x) + sign(floor(obj_player.x+360) - x));
                     //show_debug_message("direction = " + string(dir));
                    }
@@ -87,6 +85,18 @@ if (longRange == true)
                }
            } 
        }
+    //Override prior direction if recovering from anti air attack
+    if (antiAir == true && meleeAttack == false) 
+    {
+        if (!place_meeting(x, y+1, obj_boundary))
+        {
+            dir = 0;
+        }
+        else
+        {
+            antiAir = false;
+        }
+    }
    
     
     if (alarm[0] = -1 && firing = false && longRange = true)
@@ -115,14 +125,6 @@ else
            }
        }
     chsSpeed = chsSpeed_CR;
-   }
-
-//Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
-   {
-    longRange = true;
-    //show_debug_message("Don't walk off ledge.");
-    hspd *= 0;
    } 
 
 if (obj_player.y < y-60 && obj_player.jumping == false && longRange == false)
@@ -147,6 +149,14 @@ if (distance_to_object(obj_player) < 100)
        {
         hspd = dir * chsSpeed;
        } 
+   }
+   
+//Don't walk off tall ledges   
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
+   {
+    longRange = true;
+    //show_debug_message("Don't walk off ledge.");
+    hspd *= 0;
    }
    
 //Melee Attack

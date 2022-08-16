@@ -60,4 +60,11 @@
     if (angle_found == true)
        {
         projectile = scr_create_projectile(firing_velocity,firing_angle,x,y-32,obj_projectile_grenade);//instance_create(x,y-32, obj_projectile_grenade);
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_grenade_pin_pull_SFX,other,false);    
+            }
+        }
        }

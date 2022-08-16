@@ -53,6 +53,16 @@ hp_restore_amount = 50;
    {
     obj_player.infinite_stamina_active = true;
     obj_powerup_manager.alarm[2] = room_speed * (1230/60);
+    
+    //Play collection sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_powerup_pickup_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     obj_player.hitstop = false;
     obj_player.damage_hitstop = false;

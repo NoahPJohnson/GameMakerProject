@@ -38,6 +38,16 @@ else
            {
             scr_create_projectile(6,230,weakpoint.x,weakpoint.y,obj_projectile);
            }
+        
+        //Play shoot sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+            }
+        }
+           
         //instance_create(weakpoint.x, weakpoint.y, obj_projectile_canister);
         shots_fired += 1;
         shot_timer = room_speed * (30/60);  

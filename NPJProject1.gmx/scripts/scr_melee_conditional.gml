@@ -15,7 +15,7 @@ if (longRange == false && (place_meeting(x,y+1,obj_boundary)))
            {
             hspd = 0;
             melee_dir = sign(obj_player.x - x);
-            if (obj_player.jumping = true)
+            if (obj_player.y < y-16 && obj_player.jumping == true)
                {
                 antiAir = true;
                 alarm[7] = room_speed * (6/60);

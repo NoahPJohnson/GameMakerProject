@@ -30,18 +30,45 @@ else
         if (step == 1)
            {
             scr_create_projectile(7,260-(10*shots_fired),weakpoint.x,weakpoint.y,obj_projectile);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
             shots_fired += 1;
             shot_timer = room_speed * (10/60);
            }
         else if (step == 3)
            {
             scr_create_projectile(7,190+(10*shots_fired),weakpoint.x,weakpoint.y,obj_projectile);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
             shots_fired += 1;
             shot_timer = room_speed * (10/60);
            }
         else
            {
             scr_create_projectile(4,170,weakpoint.x,weakpoint.y,obj_projectile_homing_boss);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
             shots_fired += 1;
            }
        }

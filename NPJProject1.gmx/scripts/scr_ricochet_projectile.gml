@@ -36,6 +36,8 @@ if (place_meeting(x, y, obj_bat))
     alarm[2] += 200;
     hp += obj_player.chargeOne + (obj_player.chargeTwo*2);
     spark_index = 2;
+    
+    //Play hit sound
     if (instance_exists(obj_music_sfx_manager))
     {
         with (obj_music_sfx_manager) 

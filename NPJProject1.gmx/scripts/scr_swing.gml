@@ -39,39 +39,13 @@ if (!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_enemy))
     chargeOne = false;
     chargeTwo = false;
     state = states.normal;
-   }   
-
-   
-//Jumping
-/*if (crouching == false)
-   {
-    if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && !place_meeting(x, y, obj_enemy))
-       {
-        vspd = key_J * -jspd;
-        jumping = true;
-       }     
-
-    if (vspd < 0 && !key_J_held)
-       {
-        vspd = max(vspd,-jspd/4);
-       }   
-   }
-if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && key_J = false)
-   {
-    jumping = false;
-   }*/   
-   
-//Dash?
-//scr_dash();
+   }     
    
 //Looking Up
 scr_looking_up();
 
 //Hit by Enemy
 scr_player_damage();
-
-//HP = 0
-//scr_zero_health();
 
 //Crouching
 scr_crouching();
@@ -97,20 +71,8 @@ if (charging == true)
             }
             if (alarm[0] == -1)
                {
-                //mspd = 0;
-                //hspd = 0;
-                //jspd = 0;
                 alarm[0] = room_speed * (8/60);
                }                     
            }
        }
    }
-
-/*if (alarm[2] > 0)
-   {
-    show_debug_message("Alarm 2 = " + string(alarm[2]));
-   }
-if (alarm[0] > 0)
-   {
-    show_debug_message("Alarm 0 = " + string(alarm[0]));
-   }  */

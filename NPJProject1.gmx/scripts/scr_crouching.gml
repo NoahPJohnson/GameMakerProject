@@ -22,6 +22,17 @@ if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) &&
         charging = false;
         chargeOne = false;
         chargeTwo = false;
+        
+        //Stop Charging Sound
+        if (audio_is_playing(snd_charging_level1_SFX))
+        {
+            audio_stop_sound(snd_charging_level1_SFX);
+        }
+        if (audio_is_playing(snd_charging_level2_SFX))
+        {
+            audio_stop_sound(snd_charging_level2_SFX);
+        }
+        
         //sprite_index = spr_player_crouching;  
         if (state != states.normal && state != states.hitstop && state != states.knockback)
            {

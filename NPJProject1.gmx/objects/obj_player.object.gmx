@@ -453,6 +453,19 @@ if (charging == true)
        }
     chargeOne = false;
     chargeTwo = true;
+    
+    if (audio_is_playing(snd_charging_level2_SFX))
+    {
+        audio_stop_sound(snd_charging_level2_SFX);
+    }
+    //Play Charged Sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager)
+        {
+            scr_prompt_sound(snd_charge_level2_reached_SFX, other, false);
+        }
+    }
    }
 </string>
           </argument>
@@ -478,18 +491,39 @@ if (charging == true)
             <kind>1</kind>
             <string>///First Charge
 if (charging == true)
-   {
+{
     if (up = true)
-       {
+    {
         //sprite_index = spr_player_up_charged1;
-       }
+    }
     else
-       {   
+    {   
         //sprite_index = spr_player_charged1;
-       }
+    }
     chargeOne = true;
     alarm[4] = room_speed * (20/60);
-   }
+    
+    if (audio_is_playing(snd_charging_level1_SFX))
+    {
+        audio_stop_sound(snd_charging_level1_SFX);
+    }
+    //Play Charged Sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager)
+        {
+            scr_prompt_sound(snd_charge_level1_reached_SFX, other, false);
+        }
+    }
+    //Play Charging Sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager)
+        {
+            scr_prompt_sound(snd_charging_level2_SFX, other, true);
+        }
+    }
+}
    
 </string>
           </argument>
@@ -515,41 +549,58 @@ if (charging == true)
             <kind>1</kind>
             <string>///Charged Swing
 if (/*keyboard_check(vk_numpad2)*/key_Swing_Held)
-   {
+{
     if (up == true)
-       {
+    {
         //sprite_index = spr_player_up_charging;
-       }
+    }
     else
-       {   
+    {   
         //sprite_index = spr_player_charging;
-       }
+    }
     
     mspd = 0;
     hspd = 0;
     jspd = 0;
     if (charging == false)
-       {
+    {
         charging = true;
         alarm[3] = room_speed * (16/60);
-       }
-   }
+        //Play Charging Sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager)
+            {
+                scr_prompt_sound(snd_charging_level1_SFX, other, true);
+            }
+        }
+    }
+}
 else
-   {
+{
     if (swinging == false &amp;&amp; recovery == false &amp;&amp; charging == false)   
-       { 
+    { 
+        //Stop Charging Sound
+        if (audio_is_playing(snd_charging_level1_SFX))
+        {
+            audio_stop_sound(snd_charging_level1_SFX);
+        }
+        if (audio_is_playing(snd_charging_level2_SFX))
+        {
+            audio_stop_sound(snd_charging_level2_SFX);
+        }
         charging = false;     
         swinging = true;
         if (alarm[0] = -1)
-           {
+        {
             mspd = 0;
             hspd = 0;
             jspd = 0;
             alarm[0] = room_speed * (9/60);
-           }     
+        }     
                 
-       }
-   }
+    }
+}
    
 </string>
           </argument>
@@ -645,6 +696,14 @@ if (right = true)
             instance_create(x,y,obj_bat_big);
            }
        }
+    //Play SWOOSH
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_miss_SFX,other,false);    
+        }
+    }
     swinging = false;
     recovery = true;
     if (alarm[1] = -1)
@@ -711,6 +770,16 @@ if (chargeTwo == true)
    {
     show_debug_message("Charge TWO is true.");
    }
+   
+//Stop Charging Sound
+if (audio_is_playing(snd_charging_level1_SFX))
+{
+    audio_stop_sound(snd_charging_level1_SFX);
+}
+if (audio_is_playing(snd_charging_level2_SFX))
+{
+    audio_stop_sound(snd_charging_level2_SFX);
+}
 
 </string>
           </argument>

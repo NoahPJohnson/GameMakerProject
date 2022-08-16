@@ -44,29 +44,49 @@ else if (gamepad_axis_value(0, gp_axislv) <= 0.45 && stick_moved_down == true)
 //back_button = keyboard_check_pressed(vk_backspace) || gamepad_button_check_pressed(0, gp_face2) || gamepad_button_check_pressed(0, gp_face4);
 
 if (key_pause)
-   {
+{
     if (paused == false)
-       {
+    {
         paused = true;
         instance_deactivate_all(true);
         instance_activate_object(obj_checkpoint_manager);
         instance_activate_object(obj_music_sfx_manager);
         for (i = 0; i < array_length_1d(button_array); i ++)
-            {
+        {
              instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(128-(i*128))), button_array[i]);
-            }
+        }
         button_array[starting_selected_button_index].button_selected = true;
-       }
+        
+        //Pause Looping Sounds
+        if (audio_is_playing(snd_charging_level1_SFX))
+        {
+            audio_pause_sound(snd_charging_level1_SFX);
+        }
+        if (audio_is_playing(snd_charging_level2_SFX))
+        {
+            audio_pause_sound(snd_charging_level2_SFX);
+        } 
+    }
     else
-       {
+    {
         paused = false;
         for (i = 0; i < array_length_1d(button_array); i ++)
-            {
+        {
              instance_destroy(button_array[i]);
-            }
+        }
         instance_activate_all();
-       }
-   }
+        
+        //Resume Looping Sounds
+        if (audio_is_paused(snd_charging_level1_SFX))
+        {
+            audio_resume_sound(snd_charging_level1_SFX);
+        }
+        if (audio_is_paused(snd_charging_level2_SFX))
+        {
+            audio_resume_sound(snd_charging_level2_SFX);
+        } 
+    }
+}
    
 if (paused == true || pause_menu == false)
    {

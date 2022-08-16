@@ -172,6 +172,15 @@ if (destination_x_established == false && destination_y_established == false && 
         destination_y = y+70;
         destination_y_established = true;
         step = 5;
+        
+        //Play woosh sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);    
+            }
+        }
         show_debug_message("Begin Pound! Shots fired = " + string(shots_fired));
        }
     //Pause before lift
@@ -181,6 +190,16 @@ if (destination_x_established == false && destination_y_established == false && 
         shot_timer = room_speed * (15/60);
         step = 6;
         show_debug_message("Wait a moment!");
+        
+        //Play contact sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+            }
+        }
+        
         if (instance_exists(melee_hitbox))
            {
             instance_destroy(melee_hitbox);
@@ -203,6 +222,15 @@ if (destination_x_established == false && destination_y_established == false && 
            {
             instance_create(weakpoint.x,weakpoint.y,obj_projectile);
             step = 2;
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
             show_debug_message("Go back to step 2");
            }
         else
@@ -270,8 +298,8 @@ if (destination_x_established == false && destination_y_established == false && 
         dir_y = sign(destination_y - appendage.y);
        }
     show_debug_message("dir_y = " + string(dir_y) + "  dir_x = " + string(dir_x) + " | step = " + string(step));
-        show_debug_message("Destination_Y_Established? " + string(destination_y_established) + "    destination_x_established? " + string(destination_x_established));
-        show_debug_message("Destination_Y = " + string(destination_y) + "  and  destination_x = " + string(destination_x));
+    show_debug_message("Destination_Y_Established? " + string(destination_y_established) + "    destination_x_established? " + string(destination_x_established));
+    show_debug_message("Destination_Y = " + string(destination_y) + "  and  destination_x = " + string(destination_x));
    }
    
      

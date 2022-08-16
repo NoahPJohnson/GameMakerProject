@@ -211,7 +211,7 @@ if (longRange == false)
        {
         if (place_meeting(x, y+1, obj_boundary))
            {
-            vspd = -(jspeed+4);
+            vspd = -(jspeed+3);
             hspd = melee_dir * chsSpeed * .8;
            }
        }
@@ -339,7 +339,7 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-projectile = instance_create(x,y, obj_projectile);
+projectile = instance_create(x+(sign((obj_player.x) - x)*20),y, obj_projectile);
 firing = false;
 if (instance_exists(obj_music_sfx_manager))
 {

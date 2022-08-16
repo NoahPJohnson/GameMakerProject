@@ -57,14 +57,14 @@ else
    {
     if (obj_player.sliding == false)
        {
-        if (abs((obj_player.x+90) - x) < abs((obj_player.x-90) - x))
+        if (abs((obj_player.x+80) - x) < abs((obj_player.x-80) - x))
            {
-            dir = sign(sign(floor(obj_player.x+86) - x) + sign(floor(obj_player.x+92) - x));
+            dir = sign(sign(floor(obj_player.x+76) - x) + sign(floor(obj_player.x+84) - x));
             //show_debug_message("direction = " + string(dir));
            }
         else
            {
-            dir = sign(sign(floor(obj_player.x-86) - x) + sign(floor(obj_player.x-92) - x));
+            dir = sign(sign(floor(obj_player.x-76) - x) + sign(floor(obj_player.x-84) - x));
             //show_debug_message("DIRECTION = " + string(dir));
            }
        }
@@ -96,14 +96,7 @@ else
        {
         alarm[2] = -1;
        }
-   }
-
-//Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
-   {
-    hspd *= 0;
-   } 
-    
+   }    
 
 if (distance_to_object(obj_player) > 550)
    {
@@ -123,6 +116,12 @@ if (distance_to_object(obj_player) < 100)
         hspd = dir * chsSpeed;
        } 
    }
+   
+//Don't walk off tall ledges   
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
+   {
+    hspd *= 0;
+   } 
    
 //Melee Attack
 scr_melee_focus();

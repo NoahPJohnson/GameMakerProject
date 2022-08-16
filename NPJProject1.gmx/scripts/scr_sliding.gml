@@ -1,18 +1,6 @@
 key_C = keyboard_check_pressed(ord("S"))
 key_C_held = keyboard_check(ord("S"))
 key_C_released = keyboard_check_released(ord("S"))
-
-if (abs(hspd) > 0 && !key_J_held && sliding = true)
-   {
-    if (right = true)
-       {
-        //hspd = min(hspd,jspd/5);
-       }
-    else
-       {
-        //hspd = max(hspd,-jspd/5);
-       }
-   }
           
 if (hspd > 0)
    {        
@@ -47,9 +35,6 @@ if (abs(hspd) < 1)
 
 //Hit by Enemy
 scr_player_damage();
-
-//HP = 0
-//scr_zero_health();
       
 //Stamina
 scr_stamina();

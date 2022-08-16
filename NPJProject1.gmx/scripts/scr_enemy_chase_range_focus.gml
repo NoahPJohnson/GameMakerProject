@@ -83,12 +83,6 @@ if (alarm[0] == -1 && firing == false && meleeAttack == false)
     first_shot = false; 
    }
 
-//Don't walk off tall ledges   
-if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false && jumping == false)
-   {
-    hspd *= 0;
-   } 
-
 if (obj_player.y < y-60 && obj_player.jumping == false && longRange == false)
    {
     longRange = true;
@@ -156,7 +150,11 @@ if (distance_to_object(obj_player) < 120 && meleeAttack == false && jumping = fa
        } 
    }
    
-//Melee Attack
+//Don't walk off tall ledges   
+if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false && jumping == false)
+   {
+    hspd *= 0;
+   } 
 
   
 //Valid Target
