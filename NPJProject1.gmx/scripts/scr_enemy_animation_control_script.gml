@@ -19,7 +19,7 @@ if (state == e_state.chase)
             {
                 sprite_index = move_sprite;
                 image_speed = 0.2;
-                animation_loop = true; 
+                animation_loop = true;
             }
             else
             {

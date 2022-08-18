@@ -72,6 +72,8 @@ slide_through = false;
 max_hp = 42;
 hp = max_hp;
 
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_idle;

@@ -68,7 +68,6 @@ valid = false;
 
 slide_through = true;
 
-
 //Crash State
 mxspd = 40;
 hp = 3;
@@ -82,6 +81,10 @@ spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
 
+//Sounds
+melee_sound = noone;
+
+//Sprites
 idle_sprite = spr_enemy_jump_idle;
 move_sprite = spr_enemy_jump;
 air_sprite = spr_enemy_jump_air;

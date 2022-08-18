@@ -81,6 +81,9 @@ spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
 
+//Sounds
+melee_sound = noone;
+
 //Sprites
 idle_sprite = spr_enemy_idle;
 move_sprite = spr_enemy;
@@ -225,6 +228,15 @@ if (jumping_type = false)
         melee_hitbox.enemy_parent = self;
        }
     hspd = melee_dir * chsSpeed * 4;
+    
+    //Play Drill Sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            other.melee_hitbox.melee_sound = scr_prompt_sound(snd_enemy_melee_drill_SFX,other,false);    
+        }
+    }
 
     if (alarm[8] = -1)
        { 
@@ -250,6 +262,15 @@ else
         jumped = true;   
         hspd = melee_dir * 5.5;
         vspd = 5;
+        
+        //Play Drill Sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                other.melee_hitbox.melee_sound = scr_prompt_sound(snd_enemy_melee_drill_SFX,other,false);    
+            }
+        }
        }    
    }    
 </string>
@@ -325,6 +346,7 @@ instance_destroy();
             <string>///Fire Projectile
 projectile = instance_create(x+(dir*20),y, obj_projectile);
 firing = false;
+//Play Shoot Sound
 if (instance_exists(obj_music_sfx_manager))
 {
     with (obj_music_sfx_manager) 

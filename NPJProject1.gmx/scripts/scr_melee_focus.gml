@@ -8,7 +8,7 @@ if (longRange == false)
    {
     //Lunge Melee
     //meleeAttack = true;
-    if (distance_to_object(obj_player) < 104 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && place_meeting(x,y+1,obj_boundary))
+    if (distance_to_object(obj_player) < 88 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && place_meeting(x,y+1,obj_boundary))
        {
         meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)
@@ -29,7 +29,7 @@ if (longRange == false)
                }
            }
        }
-    else if (distance_to_object(obj_player) < 104 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && !place_meeting(x,y+1,obj_boundary) && !collision_line(x,y,x,y+64,obj_boundary,false,true))
+    else if (distance_to_object(obj_player) < 112 && !collision_line(x, y, obj_player.x, obj_player.y, obj_enemy, false, true) && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true) && obj_player.state != states.sliding && obj_player.state != states.knockback && meleeAttack == false && !place_meeting(x,y+1,obj_boundary) && !collision_line(x,y,x,y+64,obj_boundary,false,true))
        {
         meleeAttack = true;
         if (alarm[7] = -1 && alarm[8] = -1)

@@ -96,6 +96,9 @@ spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
 
+//Sounds
+melee_sound = noone;
+
 //Sprites
 idle_sprite = spr_enemy_tall_idle;
 move_sprite = spr_enemy_tall;
@@ -182,7 +185,15 @@ if (place_meeting(x, y+1, obj_boundary))
            {
             melee_hitbox = instance_create(x+80, y+thrust_height, obj_melee_hitbox_long_2);
            }
-        melee_hitbox.enemy_parent = self;            
+        melee_hitbox.enemy_parent = self;
+        //Play Thrust Sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_melee_thrust_SFX,other,false);    
+            }
+        }            
        }
    }    
 if (alarm[8] = -1)

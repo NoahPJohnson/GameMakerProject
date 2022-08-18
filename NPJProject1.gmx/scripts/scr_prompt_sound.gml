@@ -9,10 +9,12 @@ camera_field_x_right = view_xview[0] + view_wview[0]+camera_field_buffer;
 camera_field_y_top = view_yview[0]-camera_field_buffer;
 camera_field_y_bottom = view_yview[0] + view_hview[0]+camera_field_buffer;
 
+sound_to_return = noone;
+
 if (sound_source.x > camera_field_x_left && sound_source.x < camera_field_x_right &&
     sound_source.y > camera_field_y_top && sound_source.y < camera_field_y_bottom) 
 {
-    audio_play_sound(sound_to_play, sfx_priority, loop);
+    sound_to_return = audio_play_sound(sound_to_play, sfx_priority, loop);
     if (sfx_priority > 1)
     {
         sfx_priority -= 1;
@@ -22,3 +24,5 @@ if (sound_source.x > camera_field_x_left && sound_source.x < camera_field_x_righ
         sfx_priority = sfx_priority_limit;
     } 
 }
+
+return sound_to_return;

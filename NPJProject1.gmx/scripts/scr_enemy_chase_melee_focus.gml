@@ -24,6 +24,10 @@ if (longRange == true)
         //Begin approach
         dir = sign(obj_player.x - x);
        }
+    else if (distance_to_object(obj_player) < 248 && longRange == true)
+       {
+        longRange = false;
+       }
     //Otherwise, when in long range maintain a distance from the player
     else if (distance_to_object(obj_player) < 320 && longRange == true)
        {
@@ -47,10 +51,6 @@ if (longRange == true)
                    }
                }
            } 
-       }
-    else if (distance_to_object(obj_player) < 290 && longRange == true)
-       {
-        longRange = false;
        }
    }    
 else

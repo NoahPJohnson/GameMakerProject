@@ -45,6 +45,7 @@ else if (dir == 1)
 //Fire when in long range mode
 if (longRange == true)
    {
+    //meleeAttack = false;
     chsSpeed = chsSpeed_LR;
     //If player gets too far
     if (distance_to_object(obj_player) > 380 && longRange == true)
@@ -53,7 +54,7 @@ if (longRange == true)
         dir = sign(obj_player.x - x);
        }
      //If player gets too close, switch modes.
-    else if (distance_to_object(obj_player) < 148 && longRange == true && switched == false)
+    else if (distance_to_object(obj_player) < 148 && abs(obj_player.y -y) < 28 && longRange == true && switched == false)
        {
         //show_debug_message("Too close: stop shooting and switch to close range");
         longRange = false;
@@ -85,20 +86,6 @@ if (longRange == true)
                }
            } 
        }
-    //Override prior direction if recovering from anti air attack
-    if (antiAir == true && meleeAttack == false) 
-    {
-        if (!place_meeting(x, y+1, obj_boundary))
-        {
-            dir = 0;
-        }
-        else
-        {
-            antiAir = false;
-        }
-    }
-   
-    
     if (alarm[0] = -1 && firing = false && longRange = true)
        {
         if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
@@ -126,6 +113,20 @@ else
        }
     chsSpeed = chsSpeed_CR;
    } 
+   
+//Override prior direction if recovering from anti air attack
+if (antiAir == true && meleeAttack == false) 
+{
+    if (!place_meeting(x, y+1, obj_boundary))
+    {
+        dir = 0;
+        show_debug_message("Stop and fall after anti air");
+    }
+    else
+    {
+        antiAir = false;
+    }
+}
 
 if (obj_player.y < y-60 && obj_player.jumping == false && longRange == false)
    {
@@ -154,7 +155,11 @@ if (distance_to_object(obj_player) < 100)
 //Don't walk off tall ledges   
 if (!place_meeting(x+(28 * sign(dir)), (y+30), obj_boundary) && !place_meeting(x, (y+1), obj_player) && antiAir == false)
    {
-    longRange = true;
+    if (sign(dir) == sign(obj_player.x - x))
+    {
+        longRange = true;
+    }
+    
     //show_debug_message("Don't walk off ledge.");
     hspd *= 0;
    }

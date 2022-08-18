@@ -91,6 +91,8 @@ spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
 
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_melee_focus_idle;
