@@ -33,7 +33,7 @@ struck_direction = 0;
 bunted = false;
 state = proj_state.normal;
 alarm[2] = room_speed * (75/60);
-speed = 14;
+/*speed = 14;
 if (distance_to_object(obj_player) &lt; 180)
    {
     if (obj_player.x &lt; x)
@@ -92,7 +92,7 @@ else //if (distance_to_object(obj_player) &lt; 400)
             direction = 45;
            }
        } 
-   }
+   }*/
    
 projectile_normal_sprite = spr_projectile_grenade;
 projectile_short_fuse_sprite = spr_projectile_grenade2;

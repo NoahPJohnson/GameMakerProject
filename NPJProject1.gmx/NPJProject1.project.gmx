@@ -510,6 +510,7 @@
       <script>scripts\scr_enemy_tall_melee.gml</script>
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_stationary_animation_control_script.gml</script>
       <script>scripts\scr_enemy_large_animation_control_script.gml</script>
       <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
       <script>scripts\scr_enemy_range_focus_animation_control_script.gml</script>

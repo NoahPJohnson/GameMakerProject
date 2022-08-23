@@ -92,12 +92,6 @@ if (state == e_state.chase)
             }
         }
     }
-    if (!place_meeting(x,y+3,obj_boundary) && follow_up_attack == false && antiAir == false && meleeAttack == false)
-    {
-        sprite_index = air_sprite;
-        image_speed = 0.2;
-        animation_loop = true;
-    }
 }
 else if (state == e_state.hitstun)
 {

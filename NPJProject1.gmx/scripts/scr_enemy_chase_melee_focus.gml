@@ -24,7 +24,7 @@ if (longRange == true)
         //Begin approach
         dir = sign(obj_player.x - x);
        }
-    else if (distance_to_object(obj_player) < 248 && longRange == true)
+    else if (distance_to_object(obj_player) < 248 && longRange == true && !collision_line(x, y, obj_player.x, obj_player.y, obj_boundary, false, true))
        {
         longRange = false;
        }

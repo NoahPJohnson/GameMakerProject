@@ -128,7 +128,7 @@ else
    {
     instance_change(obj_bat_launcher_L,true)
    }
-if (place_meeting(x,y,obj_enemy))
+if (place_meeting(x,y,obj_enemy) || place_meeting(x,y,obj_enemy_ball_hitbox))
    {
     if (alarm[1] = -1)
        {

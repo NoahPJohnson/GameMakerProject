@@ -289,34 +289,39 @@ if (place_meeting(x,y,obj_bunt_bat) && obj_bunt_bat.hit == false && hitstun == f
 
 //Hit by explosion
 if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
-   {
-    if (x < obj_explosion_hitbox)
-       {
-        hitdir = -1;
-       }
-    else
-       {
-        hitdir = 1;
-       }
-    hp -= 1;
-    if (hp < 1)
-       {
-        scr_score_tracker_script_run(1, true, (state == e_state.crash));
-       }
-    else
-       {
-        scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
-       }
-    scr_enemy_hp_zero();
-    old_speed = 0;
-    impetus = 19 * weight_factor;
-    hitstun_direction = 75 * hitdir;
-    old_state = state;
-    alarm[7] = -1;
-    alarm[9] = room_speed * (5/60);
-    damage_hitstop = true;
-    state = e_state.hitstop;
-   }
+{
+    var explosion_meeting = instance_place(x,y,obj_explosion_hitbox);
+    if (!collision_line(x,y,explosion_meeting.x,explosion_meeting.y,obj_boundary,false,true))
+    {
+        if (x < obj_explosion_hitbox)
+        {
+            hitdir = -1;
+        }
+        else
+        {
+            hitdir = 1;
+        }
+        hp -= 1;
+        if (hp < 1)
+        {
+            scr_score_tracker_script_run(1, true, (state == e_state.crash));
+        }
+        else
+        {
+            scr_score_tracker_script_run(1, false, (state == e_state.crash)); 
+        }
+        scr_enemy_hp_zero();
+        old_speed = 0;
+        impetus = 19 * weight_factor;
+        hitstun_direction = 75 * hitdir;
+        old_state = state;
+        alarm[7] = -1;
+        alarm[9] = room_speed * (5/60);
+        damage_hitstop = true;
+        state = e_state.hitstop;
+    }
+}
+   
 //Environment Damage  
 if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
    {

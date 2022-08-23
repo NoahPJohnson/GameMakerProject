@@ -28,11 +28,6 @@ if (jumping_type = false)
             melee_hitbox.alarm[0] = 1;
            }
        }
-    else if ((!place_meeting(x,y+1,obj_boundary) && !place_meeting(x,y+1,obj_player)))
-       {
-           alarm[7] = -1;
-           alarm[8] = -1;
-       }
    }
 else
    {
