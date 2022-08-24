@@ -113,8 +113,8 @@ if (target_direction < 0)
 var max_height = (power(firing_velocity,2) * power(sin(firing_angle_radians),2))/(2*p_grv)
 //Check a line ending at halfway from x to player x at the apex of the arc for collision
 //show_debug_message("max height = " + string(max_height));
-instance_create(x+((target_direction*target_x)*0.5),y-max_height-56, obj_explosion_small);
-instance_create(x+(target_direction*target_x),obj_player.y, obj_explosion_small);
+//instance_create(x+((target_direction*target_x)*0.5),y-max_height-56, obj_explosion_small);
+//instance_create(x+(target_direction*target_x),obj_player.y, obj_explosion_small);
 if (collision_line(x,y,x+((target_direction*target_x)*0.5),y-max_height-56,obj_boundary,false,false) || collision_line(x+((target_direction*target_x)*0.5),y-max_height-56,x+(target_direction*target_x),obj_player.y,obj_boundary,false,false))
 {
     //If there is a collision, try the other angle

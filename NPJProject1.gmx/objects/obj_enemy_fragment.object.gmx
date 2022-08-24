@@ -45,6 +45,7 @@ meleeAttack = false;
 melee_hitbox = noone;
 
 //Damage and Hitstun
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 impetus = 1;

@@ -93,6 +93,12 @@ if (instance_exists(obj_projectile_grenade) && jumping == false && meleeAttack =
 {
     if (distance_to_object(obj_projectile_grenade) < 200)
     {
+        if (firing == true)
+        {
+            alarm[0] = -1;
+            alarm[2] = -1;
+            firing = false;
+        } 
         //show_debug_message("Run!!");
         dir = -sign(obj_projectile_grenade.x - x);
     }

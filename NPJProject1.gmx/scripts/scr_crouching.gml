@@ -1,9 +1,17 @@
 ///Crouching
 
 key_C = keyboard_check_pressed(ord("S")) || gamepad_button_check_pressed(0, gp_padd) || (gamepad_axis_value(0, gp_axislv) > 0.60 && stick_moved_down == false);
-stick_moved_down = key_C;
 key_C_held = keyboard_check(ord("S")) || gamepad_button_check(0, gp_padd) || (gamepad_axis_value(0, gp_axislv) > 0.60);
 key_C_released = keyboard_check_released(ord("S")) || gamepad_button_check_released(0, gp_padd) || (gamepad_axis_value(0, gp_axislv) <= 0.60 && stick_moved_down == true);
+
+if (gamepad_axis_value(0, gp_axislv) > 0.60 && stick_moved_down == false)
+{
+    stick_moved_down = true;
+}
+else if (gamepad_axis_value(0, gp_axislv) <= 0.60 && stick_moved_down == true)
+{
+    stick_moved_down = false;
+} 
 
 if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && recovery = false && drive = false)
    {

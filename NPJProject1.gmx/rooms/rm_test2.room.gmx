@@ -1410,7 +1410,6 @@ enum camera_state
     <instance objName="obj_boundary_and_background_painter_1" x="3712" y="0" name="inst_A657E9A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_and_background_painter_1_part2" x="7456" y="0" name="inst_D0C3BACC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_prop" x="416" y="928" name="inst_B800470E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_enemy_large" x="640" y="1056" name="inst_0A8E0469" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_dirt_tile" x="864" y="32" w="32" h="32" xo="0" yo="0" id="10022032" name="inst_AB5B2276" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

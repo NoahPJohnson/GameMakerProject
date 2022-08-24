@@ -62,6 +62,7 @@ shield = noone;
 arm = instance_create(x,y-48,obj_enemy_tall_arm);
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;

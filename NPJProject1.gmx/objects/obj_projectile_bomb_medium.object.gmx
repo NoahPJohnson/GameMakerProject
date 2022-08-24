@@ -44,13 +44,13 @@ update_angle = true;
 
 speed = 11;
 if (obj_player.x &lt; x)
-       {
-        direction = 130;
-       }
-    else 
-       {
-        direction = 50;
-       }
+{
+    direction = 130;
+}
+else 
+{
+    direction = 50;
+}
 image_angle = point_direction(x,y,obj_player.x,obj_player.y);
 
 shot_hit_sparks[0] = obj_shot_hit_spark;

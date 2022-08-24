@@ -31,6 +31,7 @@ spin = 0;
 struck = false;
 impetus = 0;
 hitstun_direction = 0;
+bat_instance = noone;
 
 damage_hitstop = false;
 hitstop = false;
@@ -38,6 +39,9 @@ old_state = ball_n_chain_state.neutral;
 alarm_array[0] = -1;
 
 stop = false;
+thrown = false;
+throw_speed = 10;
+throw_angle = 5;
 center_X = 0;
 center_Y = 0;
 

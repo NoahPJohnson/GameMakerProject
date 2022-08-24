@@ -53,6 +53,7 @@ selected_projectile = noone;
 //spin = 0;
 
 //Damage and Hit Reaction
+bat_instance = noone;
 armored = true;
 hit = false;
 hitdir = 0;

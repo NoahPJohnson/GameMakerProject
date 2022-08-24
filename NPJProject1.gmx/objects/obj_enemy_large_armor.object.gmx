@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemy_parent = noone;
+            <string>bat_instance = noone;
+enemy_parent = noone;
 image_speed = 0.2;
 </string>
           </argument>

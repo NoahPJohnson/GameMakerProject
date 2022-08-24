@@ -52,6 +52,7 @@ melee_hitbox = noone;
 selected_projectile = noone;
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;
