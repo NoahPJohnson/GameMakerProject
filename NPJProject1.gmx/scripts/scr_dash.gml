@@ -183,6 +183,15 @@ if (drive == true && place_meeting(x, y+1, obj_boundary))
             audio_stop_sound(snd_charging_level2_SFX);
         }
         
+        //Play slide sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_slide_SFX,other,false);    
+            }
+        }
+        
         state = states.powerslide;
     }
 }

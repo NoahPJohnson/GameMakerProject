@@ -6,6 +6,8 @@ alarm[2] = -1;
 stop = false;
 if (enemy_parent != noone)
 {
+    origin_offset_x = 0;
+    origin_offset_y = -16;
     spin += room_speed * (0.1/60);
     x = enemy_parent.x + (48*sin(spin));
     y = enemy_parent.y-100;

@@ -30,7 +30,7 @@ if (state == e_state.chase)
                 image_index = 6;
                 image_speed = 0;
                 animation_loop = false;
-                show_debug_message("NO melee loop");
+                //show_debug_message("NO melee loop");
             }
         }
         else
@@ -38,7 +38,7 @@ if (state == e_state.chase)
             sprite_index = melee_sprite;
             image_speed = 0.2;
             animation_loop = true
-            show_debug_message("melee LOOP");
+            //show_debug_message("melee LOOP");
         }
         if (alarm[7] == melee_warning_time)
         {

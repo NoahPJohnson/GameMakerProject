@@ -140,6 +140,7 @@ if (damage_hitstop == false)
         }
     //show_debug_message("Old State is " + string(old_state));
     hitstop = false;
+    show_debug_message("Old state = " + string(old_state));
     state = old_state;
    }
 else

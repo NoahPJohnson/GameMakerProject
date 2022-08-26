@@ -230,27 +230,27 @@ if (place_meeting(x, y, obj_bat_spike))
             damage_hitstop = true;
             state = e_state.hitstop;
         }
-        else
+    }
+    else
+    {
+        //Wall Spike Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
         {
-            //Wall Spike Hit Sound Effect
-            if (instance_exists(obj_music_sfx_manager))
+            with (obj_music_sfx_manager) 
             {
-                with (obj_music_sfx_manager) 
-                {
-                    scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
-                }
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
             }
-           
-            //Player Wall Bounce
-            if (obj_player.alarm[8] == -1)
-            {
-                obj_player.alarm[8] = room_speed * (18/60);
-            }
-            obj_player.hitdir = -hitdir;
-            obj_player.knock_force = 12;
-            //show_debug_message("Change the player's state to knockback. Current is: " + string(obj_player.state));
-            obj_player.state = states.knockback;
         }
+       
+        //Player Wall Bounce
+        if (obj_player.alarm[8] == -1)
+        {
+            obj_player.alarm[8] = room_speed * (18/60);
+        }
+        obj_player.hitdir = -hitdir;
+        obj_player.knock_force = 12;
+        //show_debug_message("Change the player's state to knockback. Current is: " + string(obj_player.state));
+        obj_player.state = states.knockback;
     }
 }
 

@@ -192,10 +192,13 @@ else
             <kind>1</kind>
             <string>///Melee Lunge Ends
 if (instance_exists(melee_hitbox))
-   {   
+{
+    melee_hitbox.origin_offset_x = 0;
+    melee_hitbox.origin_offset_y = -16;
+      
     melee_hitbox.state = ball_n_chain_state.neutral;
     meleeAttack = false;
-   }
+}
 </string>
           </argument>
         </arguments>
@@ -220,7 +223,7 @@ if (instance_exists(melee_hitbox))
             <kind>1</kind>
             <string>///Melee Lunge Begins
 if (instance_exists(melee_hitbox))
-   {
+{
     animation_loop = true;
     looping_melee = true;
     melee_dir = sign(obj_player.x - x);
@@ -228,18 +231,27 @@ if (instance_exists(melee_hitbox))
     melee_hitbox.y = y-100;
     melee_hitbox.center_X = x + (melee_dir * 48);
     melee_hitbox.center_Y = y - 32;
+    
+    melee_hitbox.origin_offset_x = (melee_dir * 24);
+    melee_hitbox.origin_offset_y = -16;
+    melee_hitbox.phase = 0;
+    
     melee_hitbox.radius = 80;//point_distance(melee_hitbox.center_X, melee_hitbox.center_Y, melee_hitbox.x, melee_hitbox.y);
-    melee_hitbox.phase = point_direction(melee_hitbox.center_X, melee_hitbox.center_Y, melee_hitbox.x, melee_hitbox.y);
+    //melee_hitbox.phase = point_direction(melee_hitbox.center_X, melee_hitbox.center_Y, melee_hitbox.x, melee_hitbox.y);
     melee_hitbox.state = ball_n_chain_state.attacking;
-    melee_hitbox.alarm[1] = room_speed * (100/60);
+    melee_hitbox.alarm[1] = room_speed * (116/60);
     //melee_hitbox.speed = 15;
     //melee_hitbox.direction = 135;
-   }
+    //show_debug_message("START!!");
+    //show_debug_message("starting X: " + string(melee_hitbox.x - melee_hitbox.center_X));
+    //show_debug_message("starting Y: " + string(melee_hitbox.y - melee_hitbox.center_Y));
+    //show_debug_message("=====================");
+}
 hspd = 0;
 if (alarm[8] = -1)
-   { 
-    alarm[8] = room_speed * (202/60);
-   }
+{ 
+    alarm[8] = room_speed * (206/60);
+}
    
 </string>
           </argument>
@@ -372,9 +384,12 @@ state = e_state.idle;
             <string>///Stop and Prepare to Fire
 if (firing == false)
 {
-    firing = true;
-    hspd = 0;
-    alarm[0] = room_speed * (40/60);
+    if (!collision_line(x,y-64,x+(dir*60),y-32-48,obj_boundary,false,false) &amp;&amp; !collision_line(x,y-64,x+(dir*60),y-32-48,obj_enemy,false,true))
+    {
+        firing = true;
+        hspd = 0;
+        alarm[0] = room_speed * (40/60);
+    }
 }
 else
 {
