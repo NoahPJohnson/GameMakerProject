@@ -432,7 +432,20 @@
       <sprite>sprites\spr_boundary_3_tall</sprite>
       <sprites name="boundary_moving">
         <sprite>sprites\spr_boundary_moving</sprite>
+        <sprite>sprites\spr_boundary_moving_4x1</sprite>
         <sprite>sprites\spr_boundary_moving_5x1</sprite>
+        <sprite>sprites\spr_boundary_moving_6x1</sprite>
+        <sprite>sprites\spr_boundary_moving_12x11</sprite>
+        <sprite>sprites\spr_boundary_moving_12x11_background</sprite>
+        <sprite>sprites\spr_boundary_moving_5x34</sprite>
+        <sprite>sprites\spr_boundary_moving_5x34_inverse</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18_inverse</sprite>
+        <sprite>sprites\spr_boundary_moving_5x23_foreground</sprite>
+        <sprite>sprites\spr_boundary_moving_5x23_fg_inv</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18_foreground</sprite>
+        <sprite>sprites\spr_boundary_moving_3x13</sprite>
+        <sprite>sprites\spr_boundary_moving_1x10</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\test_letter_sprite</sprite>
@@ -807,6 +820,9 @@
       <object>objects\obj_boundary_and_background_painter_1_part2</object>
       <object>objects\obj_boundary_and_background_painter_2</object>
       <object>objects\obj_boundary_and_background_painter_3</object>
+      <object>objects\obj_boundary_moving_12x11_background</object>
+      <object>objects\obj_boundary_moving_5x23_foreground</object>
+      <object>objects\obj_boundary_moving_5x18_foreground</object>
     </objects>
   </objects>
   <rooms name="rooms">

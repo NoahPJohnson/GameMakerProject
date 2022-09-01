@@ -168,10 +168,6 @@
     <instance objName="obj_boundary_long" x="4224" y="2176" name="inst_BE75803F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_long" x="3968" y="1728" name="inst_C86AFA16" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="4896" y="1408" name="inst_05AB20D7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="992" name="inst_7B120925" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="960" name="inst_07C90E56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="864" name="inst_E3B07036" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="832" name="inst_852BFB84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="4256" y="736" name="inst_F02BECD6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4928" y="1088" name="inst_B6A3258A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6144" y="736" name="inst_101C5B66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -361,10 +357,6 @@
     <instance objName="obj_boundary" x="5440" y="4640" name="inst_9B663F37" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5504" y="4640" name="inst_32A9D234" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5472" y="4640" name="inst_7B455E83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6304" y="4736" name="inst_492B7531" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6336" y="4736" name="inst_34CA2778" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6272" y="4736" name="inst_A20BB542" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6240" y="4736" name="inst_E09310A0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6912" y="4576" name="inst_F434EBE2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6976" y="4576" name="inst_6DC7B7CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6816" y="4576" name="inst_6E749CF9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -444,7 +436,7 @@
     <instance objName="obj_boundary" x="800" y="1600" name="inst_571973CE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="736" y="1600" name="inst_D859ADBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="1088" y="1440" name="inst_A5D077E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="2240" y="3552" name="inst_9B0D3463" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -600;&#xA;pointsYArray[2] = -1200;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="2240" y="3552" name="inst_9B0D3463" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -600;&#xA;pointsYArray[2] = -1200;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_6x1;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="2080" y="2528" name="inst_CB56B5E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="2112" y="2528" name="inst_F4091D93" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="2144" y="2528" name="inst_36E017D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -613,10 +605,10 @@
     <instance objName="obj_boundary_slope_UL" x="544" y="864" name="inst_8FCC3668" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="576" y="832" name="inst_23D9656C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="1216" y="2048" name="inst_891056F3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="896" y="2144" name="inst_D5BC7616" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -500;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="928" y="1856" name="inst_1A36E56F" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -220;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="3200" y="2304" name="inst_7792E1A5" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 600;&#xA;pointsYArray[2] = 1200;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="6" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="4576" y="1728" name="inst_E54E922F" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -150;&#xA;pointsYArray[2] = -300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;moveSpeed = 2;&#xA;" scaleX="1" scaleY="10" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="896" y="2144" name="inst_D5BC7616" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -500;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x1;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="928" y="1856" name="inst_1A36E56F" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -220;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x1;&#xA;sprite_index = display_sprite;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="3200" y="2304" name="inst_7792E1A5" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 600;&#xA;pointsYArray[2] = 1200;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_6x1;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="4576" y="1728" name="inst_E54E922F" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -150;&#xA;pointsYArray[2] = -300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;moveSpeed = 2;&#xA;&#xA;display_sprite = spr_boundary_moving_1x10;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="3680" y="2272" name="inst_9AAC1B6A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="2592" name="inst_87918F10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="2560" name="inst_7AC1EB1A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -633,8 +625,8 @@
     <instance objName="obj_boundary" x="5088" y="2944" name="inst_3E19A3F1" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="2976" name="inst_27DDE55F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="3008" name="inst_FDD2EA03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="5888" y="2720" name="inst_2B48050D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -150;&#xA;pointsYArray[2] = -300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);" scaleX="5" scaleY="35" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="6528" y="2976" name="inst_FC884A8B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="5" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="5888" y="2720" name="inst_2B48050D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -150;&#xA;pointsYArray[2] = -300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x34_inverse;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="6528" y="2976" name="inst_FC884A8B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x18;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6080" y="3968" name="inst_3C78C6ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6080" y="3936" name="inst_E5B24E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5824" y="3968" name="inst_D9F0CE98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -655,7 +647,6 @@
     <instance objName="obj_boundary" x="5760" y="2816" name="inst_36337922" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6400" y="3936" name="inst_AFD14F15" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6432" y="3936" name="inst_F14E53C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6368" y="4736" name="inst_6AF4945A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_tall" x="6400" y="3968" name="inst_CF4837E2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6400" y="2688" name="inst_EDB4B806" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6432" y="2688" name="inst_5595E379" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -672,38 +663,25 @@
     <instance objName="obj_boundary" x="6496" y="2144" name="inst_CE4E1CBD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6496" y="2112" name="inst_BA854AB4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6496" y="2080" name="inst_8225EC2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="5472" y="3424" name="inst_CD544D1B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 170;&#xA;pointsYArray[2] = 340;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="5" scaleY="25" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="5472" y="3424" name="inst_CD544D1B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 170;&#xA;pointsYArray[2] = 340;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x18;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5536" y="4640" name="inst_BD652337" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5568" y="4640" name="inst_22F1225C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5600" y="4640" name="inst_2FD6650A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6208" y="4736" name="inst_6858D1EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6400" y="4736" name="inst_AD1D36D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6400" y="4704" name="inst_185FA581" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6400" y="4672" name="inst_76C1F46E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6400" y="4640" name="inst_C140A809" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="6400" y="4608" name="inst_B1FAAF44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="6240" y="3360" name="inst_4424049D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 150;&#xA;pointsYArray[2] = 300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="5" scaleY="29" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="6240" y="3360" name="inst_4424049D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 150;&#xA;pointsYArray[2] = 300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x34;&#xA;sprite_index = display_sprite;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="2944" y="2720" name="inst_9A07DC30" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="3136" y="2624" name="inst_8D01DE1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope" x="2912" y="2624" name="inst_96C2D5BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_U" x="2912" y="2720" name="inst_24E9BC7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="3136" y="2720" name="inst_9D9D9CCE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="1088" name="inst_68BB5D31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="1024" name="inst_4487D88B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4800" y="1088" name="inst_9DCF3580" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4832" y="1088" name="inst_09C89E98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4864" y="1088" name="inst_B510941D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4800" y="704" name="inst_312F3A3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="1056" name="inst_DC8A033C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5216" y="1088" name="inst_12295105" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5184" y="1088" name="inst_200D1DEC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5152" y="1088" name="inst_182D68D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5120" y="1088" name="inst_6273B361" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="1088" name="inst_EC7F0C36" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="800" name="inst_479B4E17" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5248" y="1088" name="inst_875CCBF5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="4736" y="736" name="inst_C2ECF97D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -150;&#xA;pointsXArray[2] = -300;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;pointsYArray[2] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;moveSpeed = 5;" scaleX="12" scaleY="11" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="4288" y="1376" name="inst_0AD27FC8" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -160;&#xA;pointsYArray[2] = -320;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="4736" y="736" name="inst_C2ECF97D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = -150;&#xA;pointsXArray[2] = -300;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 0;&#xA;pointsYArray[2] = 0;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;moveSpeed = 5;&#xA;&#xA;display_sprite = spr_boundary_moving_12x11;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="4288" y="1376" name="inst_0AD27FC8" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -160;&#xA;pointsYArray[2] = -320;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_4x1;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5280" y="2848" name="inst_03377585" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5280" y="2880" name="inst_AB2F26D4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5280" y="2912" name="inst_2963BBD5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -844,10 +822,6 @@
     <instance objName="obj_boundary" x="4896" y="1376" name="inst_ED444F5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope" x="4768" y="704" name="inst_4A34B3C9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_U" x="4768" y="1088" name="inst_7B553D2C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="928" name="inst_BB607E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="896" name="inst_45FD3C65" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="768" name="inst_46B31E84" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary" x="5280" y="736" name="inst_628D4616" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5056" y="1088" name="inst_60C1403B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5024" y="1088" name="inst_D1BEB848" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="4960" y="1088" name="inst_141F8509" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1063,10 +1037,10 @@
     <instance objName="obj_spike_ceiling" x="6336" y="2752" name="inst_EF7D1DED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_U" x="6496" y="2720" name="inst_23722B44" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="6688" y="2720" name="inst_D33D3516" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="4448" y="1568" name="inst_A52D08D3" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -120;&#xA;pointsYArray[2] = -240;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="4" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="4448" y="1568" name="inst_A52D08D3" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -120;&#xA;pointsYArray[2] = -240;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_4x1;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="7008" y="4576" name="inst_5681CABD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6848" y="4576" name="inst_69DF86EB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="6848" y="2912" name="inst_99A55E99" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 180;&#xA;pointsYArray[2] = 360;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);" scaleX="5" scaleY="33" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="6848" y="2912" name="inst_99A55E99" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = 180;&#xA;pointsYArray[2] = 360;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x34;&#xA;sprite_index = display_sprite;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6816" y="2624" name="inst_6B864429" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="7008" y="2624" name="inst_25103B5E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6784" y="2656" name="inst_F688D2E3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1125,7 +1099,7 @@
     <instance objName="obj_boundary" x="6496" y="3104" name="inst_7C3FB700" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="7296" y="2784" name="inst_5C060C3F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="7328" y="2784" name="inst_2BE5BC21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="5120" y="3008" name="inst_0241FC5D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="5" scaleY="18" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="5120" y="3008" name="inst_0241FC5D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x18_inverse;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5344" y="3168" name="inst_DB1507AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5376" y="3168" name="inst_A85049C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5408" y="3168" name="inst_C5F974C5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1678,7 +1652,7 @@
     <instance objName="obj_boundary_slope_UL" x="4480" y="3552" name="inst_B96CC1AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="4512" y="3520" name="inst_2F6B86BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_enemy_stationary_R" x="6144" y="2144" name="inst_017351EB" locked="0" code="image_angle = 180;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="7552" y="2560" name="inst_51E27178" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -220;&#xA;pointsYArray[2] = -440;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;" scaleX="3" scaleY="13" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="7552" y="2560" name="inst_51E27178" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -220;&#xA;pointsYArray[2] = -440;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_3x13;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_UL" x="7520" y="2592" name="inst_EDBFBBF7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_slope_L" x="7520" y="2752" name="inst_71C1D9FF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="7936" y="2880" name="inst_D370353D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2461,6 +2435,29 @@
     <instance objName="obj_boundary_and_background_painter_3" x="1632" y="736" name="inst_6EE56E47" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_door_from_room" x="288" y="640" name="inst_44DD1851" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5280" y="480" name="inst_7BBEE9D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_12x11_background" x="4768" y="736" name="inst_AE2B4C1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="4992" y="704" name="inst_91997B2D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5024" y="704" name="inst_1966BFC7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5056" y="704" name="inst_8CB1EB7D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5088" y="704" name="inst_42A5B231" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5120" y="704" name="inst_E1654C27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="704" name="inst_1FF5E6D5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="736" name="inst_40754104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="768" name="inst_1E3E13DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="800" name="inst_ED523178" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="832" name="inst_72CC0FBA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="864" name="inst_1CDA37A2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="896" name="inst_56E18655" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="928" name="inst_A5E334AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="960" name="inst_88000D82" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="992" name="inst_38DBB050" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="1024" name="inst_A921F4FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary" x="5152" y="1056" name="inst_C625CE96" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x23_foreground" x="6240" y="3904" name="inst_683D068F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x23_foreground" x="6848" y="3680" name="inst_92E5A335" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x23_foreground" x="5472" y="3904" name="inst_85C757A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x23_foreground" x="5888" y="2176" name="inst_4817D362" locked="0" code="sprite_index = spr_boundary_moving_5x23_fg_inv;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x18_foreground" x="5120" y="2528" name="inst_5420E0FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_dirt_tile" x="448" y="1216" w="32" h="32" xo="0" yo="0" id="10000327" name="inst_743C9FBB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -16202,13 +16199,6 @@
     <tile bgName="bkg_dirt_tile" x="3936" y="0" w="32" h="32" xo="32" yo="0" id="10023573" name="inst_F2FA2F63" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="3968" y="0" w="32" h="32" xo="32" yo="0" id="10023574" name="inst_FC54B9C3" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="4416" y="0" w="32" h="32" xo="32" yo="0" id="10023575" name="inst_4F8FA89F" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="4992" y="704" w="32" h="32" xo="32" yo="0" id="10023576" name="inst_CB63C68A" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5024" y="704" w="32" h="32" xo="32" yo="0" id="10023577" name="inst_AB042857" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5056" y="704" w="32" h="32" xo="32" yo="0" id="10023578" name="inst_0B3CE9E4" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5088" y="704" w="32" h="32" xo="32" yo="0" id="10023579" name="inst_FFAF7879" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5120" y="704" w="32" h="32" xo="32" yo="0" id="10023580" name="inst_C2CA06D8" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5152" y="704" w="32" h="32" xo="32" yo="0" id="10023581" name="inst_912C987A" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
-    <tile bgName="bkg_dirt_tile" x="5184" y="704" w="32" h="32" xo="32" yo="0" id="10023582" name="inst_2DD590D2" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="5216" y="704" w="32" h="32" xo="32" yo="0" id="10023583" name="inst_E92EC52C" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="5248" y="704" w="32" h="32" xo="32" yo="0" id="10023584" name="inst_7C9DBFF8" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="6528" y="2048" w="32" h="32" xo="32" yo="32" id="10023585" name="inst_29349624" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -16514,6 +16504,55 @@
     <tile bgName="bkg_dirt_tile" x="1920" y="3296" w="32" h="32" xo="32" yo="32" id="10023887" name="inst_397FD2DB" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="1952" y="3264" w="32" h="32" xo="32" yo="32" id="10023888" name="inst_22CF7B19" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bkg_dirt_tile" x="1984" y="3232" w="32" h="32" xo="32" yo="32" id="10023889" name="inst_91348555" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="736" w="32" h="32" xo="32" yo="32" id="10026755" name="inst_B33853E0" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="736" w="32" h="32" xo="32" yo="32" id="10026756" name="inst_911585FA" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="736" w="32" h="32" xo="32" yo="32" id="10026757" name="inst_FDBBD02D" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="736" w="32" h="32" xo="32" yo="32" id="10026758" name="inst_5FD0E710" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="768" w="32" h="32" xo="32" yo="32" id="10026759" name="inst_1A5BB42D" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="768" w="32" h="32" xo="32" yo="32" id="10026760" name="inst_07BE859F" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="768" w="32" h="32" xo="32" yo="32" id="10026761" name="inst_B05A4E21" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="768" w="32" h="32" xo="32" yo="32" id="10026762" name="inst_42D7F987" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="800" w="32" h="32" xo="32" yo="32" id="10026763" name="inst_EA0FE4FB" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="800" w="32" h="32" xo="32" yo="32" id="10026764" name="inst_A8109E2F" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="800" w="32" h="32" xo="32" yo="32" id="10026765" name="inst_1C0C3CD4" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="800" w="32" h="32" xo="32" yo="32" id="10026766" name="inst_5DDCEF4E" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="832" w="32" h="32" xo="32" yo="32" id="10026767" name="inst_545065FA" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="832" w="32" h="32" xo="32" yo="32" id="10026768" name="inst_DF90AA31" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="832" w="32" h="32" xo="32" yo="32" id="10026769" name="inst_C1AFF5D0" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="832" w="32" h="32" xo="32" yo="32" id="10026770" name="inst_2D67A6A3" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="864" w="32" h="32" xo="32" yo="32" id="10026771" name="inst_045D4DCB" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="864" w="32" h="32" xo="32" yo="32" id="10026772" name="inst_2F0A911B" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="864" w="32" h="32" xo="32" yo="32" id="10026773" name="inst_7C3D0771" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="864" w="32" h="32" xo="32" yo="32" id="10026774" name="inst_0CC756C5" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="896" w="32" h="32" xo="32" yo="32" id="10026775" name="inst_025CF94F" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="896" w="32" h="32" xo="32" yo="32" id="10026776" name="inst_7D2C4171" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="896" w="32" h="32" xo="32" yo="32" id="10026777" name="inst_6CF892BF" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="896" w="32" h="32" xo="32" yo="32" id="10026778" name="inst_45579A0E" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="928" w="32" h="32" xo="32" yo="32" id="10026779" name="inst_94AD4982" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="960" w="32" h="32" xo="32" yo="32" id="10026780" name="inst_88E46E9C" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="992" w="32" h="32" xo="32" yo="32" id="10026781" name="inst_C2C99140" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="1024" w="32" h="32" xo="32" yo="32" id="10026782" name="inst_A0C382D8" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="1056" w="32" h="32" xo="32" yo="32" id="10026783" name="inst_CCEF4028" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="1088" w="32" h="32" xo="32" yo="32" id="10026784" name="inst_42785FF4" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="1088" w="32" h="32" xo="32" yo="32" id="10026785" name="inst_2C352107" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="1088" w="32" h="32" xo="32" yo="32" id="10026786" name="inst_4B04CA6D" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="1088" w="32" h="32" xo="32" yo="32" id="10026787" name="inst_875312A7" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="1056" w="32" h="32" xo="32" yo="32" id="10026788" name="inst_B2704948" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="1056" w="32" h="32" xo="32" yo="32" id="10026789" name="inst_B5C9EC7D" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="1056" w="32" h="32" xo="32" yo="32" id="10026790" name="inst_D26083A4" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="1024" w="32" h="32" xo="32" yo="32" id="10026791" name="inst_84B0A2F2" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="1024" w="32" h="32" xo="32" yo="32" id="10026792" name="inst_B4E52370" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="1024" w="32" h="32" xo="32" yo="32" id="10026793" name="inst_2E61AC82" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="992" w="32" h="32" xo="32" yo="32" id="10026794" name="inst_96987C74" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="992" w="32" h="32" xo="32" yo="32" id="10026795" name="inst_94263A65" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="992" w="32" h="32" xo="32" yo="32" id="10026796" name="inst_D974016F" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="960" w="32" h="32" xo="32" yo="32" id="10026797" name="inst_D4735D2C" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="960" w="32" h="32" xo="32" yo="32" id="10026798" name="inst_541CC06B" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="960" w="32" h="32" xo="32" yo="32" id="10026799" name="inst_4627336A" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5216" y="928" w="32" h="32" xo="32" yo="32" id="10026800" name="inst_62F06DC7" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5248" y="928" w="32" h="32" xo="32" yo="32" id="10026801" name="inst_4B8725B4" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5280" y="928" w="32" h="32" xo="32" yo="32" id="10026802" name="inst_58F7BBF5" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bkg_dirt_tile" x="5184" y="704" w="32" h="32" xo="32" yo="0" id="10026803" name="inst_B4FAB3B5" depth="8" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
   </tiles>
   <PhysicsWorld>0</PhysicsWorld>
   <PhysicsWorldTop>0</PhysicsWorldTop>
