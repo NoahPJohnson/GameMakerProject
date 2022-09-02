@@ -626,7 +626,7 @@
     <instance objName="obj_boundary" x="5088" y="2976" name="inst_27DDE55F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5088" y="3008" name="inst_FDD2EA03" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_moving" x="5888" y="2720" name="inst_2B48050D" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -150;&#xA;pointsYArray[2] = -300;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x34_inverse;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_boundary_moving" x="6528" y="2976" name="inst_FC884A8B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x18;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving" x="6528" y="2976" name="inst_FC884A8B" locked="0" code="pointsXArray[0] = 0;&#xA;pointsXArray[1] = 0;&#xA;pointsXArray[2] = 0;&#xA;&#xA;pointsYArray[0] = 0;&#xA;pointsYArray[1] = -200;&#xA;pointsYArray[2] = -400;&#xA;&#xA;dirX = sign((startingX+pointsXArray[pointsIndex]) - x);&#xA;dirY = sign((startingY+pointsYArray[pointsIndex]) - y);&#xA;&#xA;display_sprite = spr_boundary_moving_5x18_inverse;&#xA;sprite_index = display_sprite;&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6080" y="3968" name="inst_3C78C6ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="6080" y="3936" name="inst_E5B24E95" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary" x="5824" y="3968" name="inst_D9F0CE98" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -2458,6 +2458,7 @@
     <instance objName="obj_boundary_moving_5x23_foreground" x="5472" y="3904" name="inst_85C757A6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_moving_5x23_foreground" x="5888" y="2176" name="inst_4817D362" locked="0" code="sprite_index = spr_boundary_moving_5x23_fg_inv;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_boundary_moving_5x18_foreground" x="5120" y="2528" name="inst_5420E0FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_boundary_moving_5x13_background" x="6528" y="2336" name="inst_958C4ADA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bkg_dirt_tile" x="448" y="1216" w="32" h="32" xo="0" yo="0" id="10000327" name="inst_743C9FBB" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

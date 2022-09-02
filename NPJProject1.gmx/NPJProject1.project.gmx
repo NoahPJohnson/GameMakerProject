@@ -386,9 +386,11 @@
       <sprite>sprites\spr_menu_button</sprite>
       <sprite>sprites\spr_menu_button_selected</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_checkpoint_triggered</sprite>
       <sprite>sprites\spr_level_transition_curtain</sprite>
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
+      <sprite>sprites\spr_title</sprite>
     </sprites>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
@@ -444,6 +446,7 @@
         <sprite>sprites\spr_boundary_moving_5x23_foreground</sprite>
         <sprite>sprites\spr_boundary_moving_5x23_fg_inv</sprite>
         <sprite>sprites\spr_boundary_moving_5x18_foreground</sprite>
+        <sprite>sprites\spr_boundary_moving_5x13_background</sprite>
         <sprite>sprites\spr_boundary_moving_3x13</sprite>
         <sprite>sprites\spr_boundary_moving_1x10</sprite>
       </sprites>
@@ -462,6 +465,7 @@
     <background>background\bkg_clouds_tile2</background>
     <background>background\bkg_boss_room1</background>
     <background>background\bkg_boss_room1_backup</background>
+    <background>background\bkg_menu</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -789,6 +793,7 @@
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>
       <object>objects\obj_menu_button_level_select</object>
+      <object>objects\obj_title</object>
     </objects>
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
@@ -821,6 +826,7 @@
       <object>objects\obj_boundary_and_background_painter_2</object>
       <object>objects\obj_boundary_and_background_painter_3</object>
       <object>objects\obj_boundary_moving_12x11_background</object>
+      <object>objects\obj_boundary_moving_5x13_background</object>
       <object>objects\obj_boundary_moving_5x23_foreground</object>
       <object>objects\obj_boundary_moving_5x18_foreground</object>
     </objects>
