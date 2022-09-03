@@ -107,6 +107,7 @@ enum boss_state
   </views>
   <instances>
     <instance objName="obj_main_menu_object" x="64" y="704" name="inst_41E61A56" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_title" x="96" y="-32" name="inst_B944536E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

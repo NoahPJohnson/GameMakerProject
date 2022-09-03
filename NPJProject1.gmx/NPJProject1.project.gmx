@@ -452,6 +452,9 @@
       </sprites>
     </sprites>
     <sprite>sprites\test_letter_sprite</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye_open_1</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye_open_2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_sky_tile1</background>

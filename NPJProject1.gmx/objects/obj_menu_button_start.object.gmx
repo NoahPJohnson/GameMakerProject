@@ -58,7 +58,7 @@ button_script = scr_menu_button_start_script;
             <string>///Draw button text
 draw_self();
 draw_set_font(fnt_button_font);
-draw_text_colour(x-150,y-38,button_text,c_black,c_black,c_black,c_black,1);
+draw_text_colour(x-74,y-18,button_text,c_black,c_black,c_black,c_black,1);
 </string>
           </argument>
         </arguments>
