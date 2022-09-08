@@ -32,33 +32,18 @@ button_selected = false;
 button_sprite = spr_menu_button;
 button_selected_sprite = spr_menu_button_selected;
 
+button_font_color = c_navy;
+button_selected_font_color = c_blue;
+
+current_font_color = button_font_color;
+
+starting_x_position = x;
+selected_x_position = x + 26;
+
+starting_y_position = y;
+selected_y_position = y + 6;
+
 button_script = scr_menu_button_checkpoint_script;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Draw button text
-draw_self();
-draw_set_font(fnt_button_font);
-draw_text_colour(x-74,y-18,button_text,c_black,c_black,c_black,c_black,1);
 </string>
           </argument>
         </arguments>

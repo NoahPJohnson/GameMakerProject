@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize Button's Variables
-button_text = "Level 1";
+button_text = "Controls";
 button_selected = false;
 
 button_sprite = spr_menu_button;
@@ -43,7 +43,7 @@ selected_x_position = x + 26;
 starting_y_position = y;
 selected_y_position = y + 6;
 
-button_script = scr_menu_button_level_1_script;
+button_script = scr_menu_button_controls_script;
 </string>
           </argument>
         </arguments>

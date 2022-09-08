@@ -582,6 +582,7 @@
       <script>scripts\scr_menu_button_checkpoint_script.gml</script>
       <script>scripts\scr_menu_button_level_select_script.gml</script>
       <script>scripts\scr_menu_button_back_script.gml</script>
+      <script>scripts\scr_menu_button_controls_script.gml</script>
     </scripts>
     <scripts name="enemy equipment">
       <script>scripts\scr_shield.gml</script>
@@ -795,8 +796,27 @@
       <object>objects\obj_menu_button_back_to_main</object>
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>
+      <object>objects\obj_menu_button_controls</object>
       <object>objects\obj_menu_button_level_select</object>
       <object>objects\obj_title</object>
+      <objects name="tutorial_items">
+        <object>objects\obj_tutorial_swing</object>
+        <object>objects\obj_tutorial_jump</object>
+        <object>objects\obj_tutorial_slide</object>
+        <object>objects\obj_tutorial_dash</object>
+        <object>objects\obj_tutorial_wall_bounce</object>
+        <object>objects\obj_tutorial_bunt</object>
+        <object>objects\obj_tutorial_launch</object>
+        <object>objects\obj_tutorial_charge</object>
+        <object>objects\obj_tutorial_swing_text</object>
+        <object>objects\obj_tutorial_jump_text</object>
+        <object>objects\obj_tutorial_slide_text</object>
+        <object>objects\obj_tutorial_dash_text</object>
+        <object>objects\obj_tutorial_wall_bounce_text</object>
+        <object>objects\obj_tutorial_bunt_text</object>
+        <object>objects\obj_tutorial_launch_text</object>
+        <object>objects\obj_tutorial_charge_text</object>
+      </objects>
     </objects>
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>

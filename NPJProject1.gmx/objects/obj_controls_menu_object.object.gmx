@@ -41,7 +41,7 @@ starting_selected_button_index = selected_button_index;
 
 for (i = 0; i &lt; array_length_1d(button_array); i ++)
     {
-     instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(128-(i*128))), button_array[i]);
+     instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(16-(i*64))), button_array[i]);
     }
     
 
