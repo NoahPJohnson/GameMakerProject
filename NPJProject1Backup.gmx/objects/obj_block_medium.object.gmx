@@ -45,6 +45,7 @@ meleeAttack = false;
 melee_hitbox = noone;
 
 //Damage and Hitstun
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 impetus = 1;
@@ -69,6 +70,9 @@ fragmenting = false;
 spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
+
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_block_medium;

@@ -3,7 +3,7 @@
   <spriteName>spr_boundary_moving</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>6</depth>
   <persistent>0</persistent>
   <parentName>obj_boundary</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -55,6 +55,9 @@ slope_mod = 0;
 slope_sprite = -1;
 sprite_array = -1;
 boundary_index = -1;
+
+image_speed = 0.25;
+display_sprite = spr_boundary_moving_5x1;
 //path_start(pth_left_right, 1, path_action_reverse,false);
 </string>
           </argument>

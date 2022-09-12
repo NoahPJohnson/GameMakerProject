@@ -11,6 +11,18 @@ if (hp < 1)
        }
     hitstun = false;
     alarm[1] = -1;
+    if (state != e_state.crash)
+    {
+        //Play broken sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_broken_SFX,other,false);    
+            }
+        }
+    }
+    
     state = e_state.crash
     
     if (fragmenting == true)

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>enemy_parent = noone;
 alarm[0] = room_speed * (130/60);
+melee_sound = noone;
 </string>
           </argument>
         </arguments>
@@ -50,6 +51,10 @@ alarm[0] = room_speed * (130/60);
           <argument>
             <kind>1</kind>
             <string>///Destroy
+if (audio_is_playing(melee_sound)) 
+{
+    audio_stop_sound(melee_sound);
+}
 instance_destroy();
 </string>
           </argument>
@@ -94,6 +99,11 @@ if (place_meeting(x,y,obj_bunt_bat))
     enemy_parent.alarm[9] = room_speed * (3/60);
     enemy_parent.old_state = enemy_parent.state;
     enemy_parent.state = e_state.hitstop;
+    
+    if (audio_is_playing(melee_sound)) 
+    {
+        audio_stop_sound(melee_sound);
+    }
     instance_destroy();
    }
 </string>

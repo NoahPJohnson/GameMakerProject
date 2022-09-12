@@ -38,6 +38,16 @@ else
             max_shots = 4;
             //instance_create(weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
             scr_create_projectile(6.5,227,weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
+            
             shots_fired += 1;
             shot_timer = room_speed * (28/60);
             //firing = false;
@@ -55,12 +65,32 @@ else
                 show_debug_message("Shoot Canister");
                 //instance_create(x-80,y-260,obj_boss_canister);
                 scr_create_projectile(14,115,x-24,y-225,obj_boss_canister);
+                
+                //Play canister sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_boss_launch_canister_SFX,other,false);    
+                    }
+                }
+                
                 //shot_timer += room_speed * (9/60);
                 //shots_fired += 1;
                }
             if (shots_fired < max_shots)
                {
                 scr_create_projectile(6.5,230,weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+                
+                //Play shoot sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                    }
+                }
+                
                 shots_fired += 1;
                 shot_timer = room_speed * (28/60);
                }

@@ -350,6 +350,7 @@
       <sprite>sprites\spr_boss_weakpoint_protector</sprite>
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_enemy1</sprite>
+      <sprite>sprites\spr_boss_enemy1_intro</sprite>
       <sprite>sprites\spr_boss_enemy1_advancing</sprite>
       <sprite>sprites\spr_boss_enemy1_retreating</sprite>
       <sprite>sprites\spr_boss_main_body_abdomen</sprite>
@@ -386,11 +387,16 @@
       <sprite>sprites\spr_menu_button</sprite>
       <sprite>sprites\spr_menu_button_selected</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_checkpoint_used</sprite>
       <sprite>sprites\spr_checkpoint_triggered</sprite>
+      <sprite>sprites\spr_level_transition_part_1</sprite>
+      <sprite>sprites\spr_level_transition_part_2</sprite>
       <sprite>sprites\spr_level_transition_curtain</sprite>
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
       <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_text_background</sprite>
+      <sprite>sprites\spr_boss_intro</sprite>
     </sprites>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
@@ -649,6 +655,7 @@
     <font>fonts\fnt_score_font</font>
     <font>fonts\fnt_button_font</font>
     <font>fonts\fnt_controls_font</font>
+    <font>fonts\fnt_title_font</font>
   </fonts>
   <objects name="objects">
     <objects name="player">
@@ -783,6 +790,7 @@
       <object>objects\obj_game_over_menu_object</object>
       <object>objects\obj_level_complete_menu_object</object>
       <object>objects\obj_controls_menu_object</object>
+      <object>objects\obj_controls_pause_menu_object</object>
       <object>objects\obj_menu_button</object>
       <object>objects\obj_menu_button_resume</object>
       <object>objects\obj_menu_button_start</object>
@@ -832,6 +840,7 @@
       <object>objects\obj_boss_neck_segment</object>
       <object>objects\obj_boss_trigger</object>
     </objects>
+    <object>objects\obj_level_transition</object>
     <object>objects\obj_door_to_room</object>
     <object>objects\obj_door_from_room</object>
     <objects name="boundaries">

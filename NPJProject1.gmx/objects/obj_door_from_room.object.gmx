@@ -26,8 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>draw_curtain = false;
-room_transition_wait = 50;
+room_transition_wait = 120;
 room_transition_timer = 0;
+instance_create(view_xview[0], view_yview[0]+12, obj_level_transition);
 //room_to_enter = rm_test;
 </string>
           </argument>
@@ -53,16 +54,16 @@ room_transition_timer = 0;
             <kind>1</kind>
             <string>///Handle Timer
 if (draw_curtain == true)
-   {
+{
     if (room_transition_timer &gt; 0)
-       {
+    {
         room_transition_timer -= room_speed * (1/60);
-       }
+    }
     else
-       {
+    {
         draw_curtain = false;
-       }
-   }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -112,10 +113,10 @@ scr_level_transition_receiver();
             <string>///Draw the curtain
 draw_self();
 if (draw_curtain == true)
-   {
-    draw_sprite_ext(spr_level_transition_curtain,1,view_xview[0]-50,view_yview[0],(room_transition_timer*(view_wview[0]/room_transition_wait))/18, view_hview[0],0,c_white,1);
+{
+    //draw_sprite_ext(spr_level_transition_part_1,0,view_xview[0],view_yview[0],1,1,0,c_white,1);
     //show_debug_message("timer = " + string(room_transition_timer) + " -(Wview/timer) = " + string(-(view_wview[0] - (room_transition_timer*(view_wview[0]/130)))));
-   }
+}
 </string>
           </argument>
         </arguments>

@@ -4,7 +4,52 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sounds name="music">
+      <sound>sound\snd_level1_BGM</sound>
+      <sound>sound\snd_level2_BGM</sound>
+      <sound>sound\snd_boss1_BGM</sound>
+      <sound>sound\snd_main_theme_BGM</sound>
+    </sounds>
+    <sounds name="player_sfx">
+      <sound>sound\snd_player_slide_SFX</sound>
+      <sound>sound\snd_player_dashing_SFX</sound>
+      <sound>sound\snd_powerup_pickup_SFX</sound>
+      <sound>sound\snd_bunt_block_SFX</sound>
+      <sound>sound\snd_player_miss_SFX</sound>
+      <sound>sound\snd_player_hit_wall_or_armor_SFX</sound>
+      <sound>sound\snd_player_hit_projectile_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_charge_lv1_SFX</sound>
+      <sound>sound\snd_player_hit_enemy_charge_lv2_SFX</sound>
+      <sound>sound\snd_player_damage_taken_SFX</sound>
+      <sound>sound\snd_charging_level1_SFX</sound>
+      <sound>sound\snd_charge_level1_reached_SFX</sound>
+      <sound>sound\snd_charging_level2_SFX</sound>
+      <sound>sound\snd_charge_level2_reached_SFX</sound>
+    </sounds>
+    <sounds name="enemy_sfx">
+      <sound>sound\snd_enemy_broken_SFX</sound>
+      <sound>sound\snd_enemy_hit_by_broken_enemy_SFX</sound>
+      <sound>sound\snd_enemy_fire_shot_SFX</sound>
+      <sound>sound\snd_enemy_grenade_pin_pull_SFX</sound>
+      <sound>sound\snd_enemy_melee_drill_SFX</sound>
+      <sound>sound\snd_enemy_melee_attack_SFX</sound>
+      <sound>sound\snd_enemy_melee_thrust_SFX</sound>
+      <sound>sound\snd_ball_n_chain_swing_SFX</sound>
+      <sound>sound\snd_ball_n_chain_contact_SFX</sound>
+      <sound>sound\snd_boss_launch_canister_SFX</sound>
+      <sound>sound\snd_boss_magnet_pull_SFX</sound>
+      <sound>sound\snd_explosion_small_SFX</sound>
+      <sound>sound\snd_explosion_medium_SFX</sound>
+      <sound>sound\snd_explosion_large_SFX</sound>
+    </sounds>
+    <sounds name="menu_sfx">
+      <sound>sound\snd_level_transition_SFX</sound>
+      <sound>sound\snd_menu_select_SFX</sound>
+      <sound>sound\snd_menu_confirm_SFX</sound>
+    </sounds>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_ball</sprite>
     <sprites name="player">
@@ -341,9 +386,11 @@
       <sprite>sprites\spr_menu_button</sprite>
       <sprite>sprites\spr_menu_button_selected</sprite>
       <sprite>sprites\spr_checkpoint</sprite>
+      <sprite>sprites\spr_checkpoint_triggered</sprite>
       <sprite>sprites\spr_level_transition_curtain</sprite>
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
+      <sprite>sprites\spr_title</sprite>
     </sprites>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
@@ -387,10 +434,27 @@
       <sprite>sprites\spr_boundary_3_tall</sprite>
       <sprites name="boundary_moving">
         <sprite>sprites\spr_boundary_moving</sprite>
+        <sprite>sprites\spr_boundary_moving_4x1</sprite>
         <sprite>sprites\spr_boundary_moving_5x1</sprite>
+        <sprite>sprites\spr_boundary_moving_6x1</sprite>
+        <sprite>sprites\spr_boundary_moving_12x11</sprite>
+        <sprite>sprites\spr_boundary_moving_12x11_background</sprite>
+        <sprite>sprites\spr_boundary_moving_5x34</sprite>
+        <sprite>sprites\spr_boundary_moving_5x34_inverse</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18_inverse</sprite>
+        <sprite>sprites\spr_boundary_moving_5x23_foreground</sprite>
+        <sprite>sprites\spr_boundary_moving_5x23_fg_inv</sprite>
+        <sprite>sprites\spr_boundary_moving_5x18_foreground</sprite>
+        <sprite>sprites\spr_boundary_moving_5x13_background</sprite>
+        <sprite>sprites\spr_boundary_moving_3x13</sprite>
+        <sprite>sprites\spr_boundary_moving_1x10</sprite>
       </sprites>
     </sprites>
     <sprite>sprites\test_letter_sprite</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye_open_1</sprite>
+    <sprite>sprites\spr_enemy_spawner_eye_open_2</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bkg_sky_tile1</background>
@@ -404,6 +468,7 @@
     <background>background\bkg_clouds_tile2</background>
     <background>background\bkg_boss_room1</background>
     <background>background\bkg_boss_room1_backup</background>
+    <background>background\bkg_menu</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pth_up_down</path>
@@ -465,6 +530,7 @@
       <script>scripts\scr_enemy_tall_melee.gml</script>
       <script>scripts\scr_hitstop.gml</script>
       <script>scripts\scr_enemy_animation_control_script.gml</script>
+      <script>scripts\scr_enemy_stationary_animation_control_script.gml</script>
       <script>scripts\scr_enemy_large_animation_control_script.gml</script>
       <script>scripts\scr_enemy_tall_animation_control_script.gml</script>
       <script>scripts\scr_enemy_range_focus_animation_control_script.gml</script>
@@ -516,6 +582,7 @@
       <script>scripts\scr_menu_button_checkpoint_script.gml</script>
       <script>scripts\scr_menu_button_level_select_script.gml</script>
       <script>scripts\scr_menu_button_back_script.gml</script>
+      <script>scripts\scr_menu_button_controls_script.gml</script>
     </scripts>
     <scripts name="enemy equipment">
       <script>scripts\scr_shield.gml</script>
@@ -576,6 +643,7 @@
     <script>scripts\scr_boundary_slope_7_selection.gml</script>
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
     <script>scripts\scr_boundary_and_tile_manager.gml</script>
+    <script>scripts\scr_prompt_sound.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -728,10 +796,31 @@
       <object>objects\obj_menu_button_back_to_main</object>
       <object>objects\obj_menu_button_leave_game</object>
       <object>objects\obj_menu_button_options</object>
+      <object>objects\obj_menu_button_controls</object>
       <object>objects\obj_menu_button_level_select</object>
+      <object>objects\obj_title</object>
+      <objects name="tutorial_items">
+        <object>objects\obj_tutorial_swing</object>
+        <object>objects\obj_tutorial_jump</object>
+        <object>objects\obj_tutorial_slide</object>
+        <object>objects\obj_tutorial_dash</object>
+        <object>objects\obj_tutorial_wall_bounce</object>
+        <object>objects\obj_tutorial_bunt</object>
+        <object>objects\obj_tutorial_launch</object>
+        <object>objects\obj_tutorial_charge</object>
+        <object>objects\obj_tutorial_swing_text</object>
+        <object>objects\obj_tutorial_jump_text</object>
+        <object>objects\obj_tutorial_slide_text</object>
+        <object>objects\obj_tutorial_dash_text</object>
+        <object>objects\obj_tutorial_wall_bounce_text</object>
+        <object>objects\obj_tutorial_bunt_text</object>
+        <object>objects\obj_tutorial_launch_text</object>
+        <object>objects\obj_tutorial_charge_text</object>
+      </objects>
     </objects>
     <object>objects\obj_checkpoint</object>
     <object>objects\obj_checkpoint_manager</object>
+    <object>objects\obj_music_sfx_manager</object>
     <objects name="bosses">
       <object>objects\obj_boss_health_bar</object>
       <object>objects\obj_boss_main_body</object>
@@ -759,9 +848,14 @@
       <object>objects\obj_boundary_and_background_painter_1_part2</object>
       <object>objects\obj_boundary_and_background_painter_2</object>
       <object>objects\obj_boundary_and_background_painter_3</object>
+      <object>objects\obj_boundary_moving_12x11_background</object>
+      <object>objects\obj_boundary_moving_5x13_background</object>
+      <object>objects\obj_boundary_moving_5x23_foreground</object>
+      <object>objects\obj_boundary_moving_5x18_foreground</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_initialize</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_test2</room>
     <room>rooms\rm_Level_2</room>

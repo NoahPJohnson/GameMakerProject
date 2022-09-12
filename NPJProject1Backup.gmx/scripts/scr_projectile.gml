@@ -19,8 +19,18 @@ if (place_meeting(x, y, obj_bat))
         struck_direction = 180;
         state = proj_state.hitstop;
        }
-    hp += obj_player.chargeOne + obj_player.chargeTwo;
+    hp += obj_player.chargeOne + (obj_player.chargeTwo*2);
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -58,8 +68,18 @@ if (place_meeting(x, y, obj_bat_launcher))
         struck_direction = 110;
         state = proj_state.hitstop;
        }
-    hp += obj_player.chargeOne + obj_player.chargeTwo;
+    hp += obj_player.chargeOne + (obj_player.chargeTwo*2);
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -125,6 +145,16 @@ if (place_meeting(x,y,obj_bunt_bat))
         state = proj_state.hitstop;
        }
     spark_index = 2;
+    
+    //Play bunt sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_bunt_block_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {

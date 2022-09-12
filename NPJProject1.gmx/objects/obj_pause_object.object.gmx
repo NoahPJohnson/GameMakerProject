@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -35,6 +35,8 @@ stick_moved_down = false;
 button_array[0] = obj_menu_button_resume;
 button_array[1] = obj_menu_button_options;
 button_array[2] = obj_menu_button_quit;
+
+//pause_background
 
 selected_button_index = 0;
 starting_selected_button_index = selected_button_index;
@@ -89,9 +91,10 @@ scr_pause_screen();
           <argument>
             <kind>1</kind>
             <string>///Draw Menu Text
-draw_set_font(fnt_button_font);
+draw_background_tiled_ext(bkg_menu,view_xview[0],view_yview[0],1,1,c_white,paused);
+draw_set_font(fnt_title_font);
 draw_set_halign(fa_center);
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,paused);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_navy,c_navy,c_navy,c_navy,paused);
 draw_set_halign(fa_left);
 
 </string>

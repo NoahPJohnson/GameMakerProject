@@ -39,6 +39,8 @@ slope_mod = 2;
 
 slide_through = false;
 
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_idle;

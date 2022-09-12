@@ -2,6 +2,15 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
    {
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
+            }
+        }
+       
         //Player Hitstop
         if (obj_player.state != states.hitstop)
            {
@@ -20,6 +29,16 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
    {
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
+        
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
+            }
+        }
+        
         //Player Hitstop
         if (obj_player.state != states.hitstop)
            {
@@ -61,6 +80,14 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
        }
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
        {
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
+            }
+        }
     
         //Player Wall Bounce
         if (obj_player.alarm[8] == -1)
@@ -92,6 +119,15 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
        }
     else
        {
+        //Hit Sound Effect
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_hit_wall_or_armor_SFX,other,false);    
+            }
+        }
+       
         //Player Wall Bounce
         if (obj_player.alarm[8] == -1)
            {

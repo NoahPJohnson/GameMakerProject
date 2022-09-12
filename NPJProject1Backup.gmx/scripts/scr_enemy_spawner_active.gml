@@ -54,8 +54,63 @@ if (i < waves)
    }
 else
    {
-    instance_destroy();
     //instance_destroy(obj_enemy_spawner_barrier);
     barrier.alarm[0] = room_speed * (60/60);
    }
 //if (enemies_active.length == 0 && waves == 0) -> destroy?
+
+//Animation control
+if (waves > 1)
+{
+    if (i < waves) 
+    {
+        if (i < waves/2)
+        {
+            if (sprite_index != spr_enemy_spawner_eye_open_1)
+            {
+                sprite_index = spr_enemy_spawner_eye_open_1;
+            }
+        }
+        else
+        {
+            if (sprite_index != spr_enemy_spawner_eye_open_2)
+            {
+                sprite_index = spr_enemy_spawner_eye_open_2;
+            }
+        }
+    }
+    else
+    {
+        if (sprite_index != spr_explosion_small)
+        {
+            sprite_index = spr_explosion_small;
+        }
+    }
+}
+else
+{
+    if (enemies_active_count == 0 && i >= waves)
+    {
+        if (sprite_index != spr_explosion_small)
+        {
+            sprite_index = spr_explosion_small;
+        }
+    }
+    else
+    {
+        if (enemies_active_count > wave_sizes_array[i]/2)
+        {
+            if (sprite_index != spr_enemy_spawner_eye_open_1)
+            {
+                sprite_index = spr_enemy_spawner_eye_open_1;
+            }
+        }
+        else
+        {
+            if (sprite_index != spr_enemy_spawner_eye_open_2)
+            {
+                sprite_index = spr_enemy_spawner_eye_open_2;
+            }
+        }
+    }
+}

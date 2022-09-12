@@ -50,49 +50,49 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
         image_speed = 0.5;
         //show_debug_message("Play Launcher Animation!");
        }
-    if (charging == true && chargeOne == false && chargeTwo == false && drive == true && sprite_index != spr_player_charge_dash)
+    if (charging == true && chargeOne == false && chargeTwo == false && drive == true && dashing == true && sprite_index != spr_player_charge_dash)
        {
         sprite_index = spr_player_charge_dash;
         image_speed = 0.3;
        }
-    if (charging == true && chargeOne == true && drive == true && sprite_index != spr_player_charge_dash_Level_One)
+    if (charging == true && chargeOne == true && drive == true && dashing == true && sprite_index != spr_player_charge_dash_Level_One)
        {
         sprite_index = spr_player_charge_dash_Level_One;
         image_speed = 0.3;
        }
-    if (charging == true && chargeTwo == true && drive == true && sprite_index != spr_player_charge_dash_Level_One)
+    if (charging == true && chargeTwo == true && drive == true && dashing == true && sprite_index != spr_player_charge_dash_Level_Two)
        {
         sprite_index = spr_player_charge_dash_Level_Two;
         image_speed = 0.3;
        }
-    if (charging == true && chargeOne == false && chargeTwo == false && drive == false && up == true && sprite_index != spr_player_up_charging)
+    if (charging == true && chargeOne == false && chargeTwo == false && dashing == false && up == true && sprite_index != spr_player_up_charging)
        {
         sprite_index = spr_player_charge_up;
         image_speed = 0.2;
        }
-    if (charging == true && chargeOne == true && drive == false && up == true && sprite_index != spr_player_up_charged1)
+    if (charging == true && chargeOne == true && dashing == false && up == true && sprite_index != spr_player_up_charged1)
        {
         sprite_index = spr_player_charge_up_Level_One;
         image_speed = 0.2;
         //show_debug_message("ANIMATE charge One Up");
        }
-    if (charging == true && chargeTwo == true && drive == false && up == true && sprite_index != spr_player_up_charged2)
+    if (charging == true && chargeTwo == true && dashing == false && up == true && sprite_index != spr_player_up_charged2)
        {
         sprite_index = spr_player_charge_up_Level_Two;
         image_speed = 0.2;
         //show_debug_message("Animate charge TWO Up");
        }
-    if (charging == true && chargeOne == false && chargeTwo == false && drive == false && up == false && sprite_index != spr_player_charging)
+    if (charging == true && chargeOne == false && chargeTwo == false && dashing == false && up == false && sprite_index != spr_player_charging)
        {
         sprite_index = spr_player_charge;
         image_speed = 0.2;
        }
-    if (charging == true && chargeOne == true && drive == false && up == false && sprite_index != spr_player_charged1)
+    if (charging == true && chargeOne == true && dashing == false && up == false && sprite_index != spr_player_charged1)
        {
         sprite_index = spr_player_charge_Level_One;
         image_speed = 0.2;
        }
-    if (charging == true && chargeTwo == true && drive == false && up == false && sprite_index != spr_player_charged2)
+    if (charging == true && chargeTwo == true && dashing == false && up == false && sprite_index != spr_player_charged2)
        {
         sprite_index = spr_player_charge_Level_Two;
         image_speed = 0.2;
@@ -102,9 +102,9 @@ if (place_meeting(x,y+1,obj_boundary) || place_meeting(x,y+1,obj_enemy))
         sprite_index = spr_player_idle_v2;
         image_speed = 0.2;
        }
-    if (state == states.powerslide && sprite_index != spr_player_crouching)
+    if (state == states.powerslide && sprite_index != spr_player_sliding)
        {
-        sprite_index = spr_player_crouching;
+        sprite_index = spr_player_sliding;
        }
    }
 else

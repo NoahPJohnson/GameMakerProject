@@ -62,24 +62,33 @@ hp = 1;
             <kind>1</kind>
             <string>///Run Collision and trajectory stuff
 if (place_meeting(x,y,obj_bat) || place_meeting(x,y,obj_bat_launcher) || place_meeting(x,y,obj_bat_spike) || place_meeting(x,y,obj_bunt_bat) || place_meeting(x,y,obj_projectile) || place_meeting(x,y,obj_explosion_hitbox) || place_meeting(x,y,obj_enemy_ball_hitbox))
-   {
-    instance_destroy();
+{
     if (contained_detonation == false)
-       {
+    {
         //instance_create(x,y,obj_projectile_fire_canister);
         scr_create_projectile(12,90,x,y,obj_projectile_fire_canister);
         scr_create_projectile(10,120,x,y,obj_projectile_fire_canister);
         if (y &lt; obj_boss_weakpoint.y)
-           {
+        {
             scr_create_projectile(10,105,x,y,obj_projectile_fire_canister);
-           }
+        }
         else
-           {
+        {
             scr_create_projectile(10,60,x,y,obj_projectile_fire_canister);
-           }
+        }
         instance_create(x,y,obj_explosion_hitbox_boss);
-       }
-   }
+        
+        //Play shoot sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_explosion_large_SFX,other,false);    
+            }
+        }
+    }
+    instance_destroy();
+}
 
 //Gravity
 if (!place_meeting(x,y+4,obj_boundary) &amp;&amp; contained_detonation == false)

@@ -57,6 +57,9 @@ valid = false;
 
 slide_through = false;
 
+//Sounds
+melee_sound = noone;
+
 //Sprites
 idle_sprite = spr_boss_enemy_claw_idle;
 move_sprite = spr_boss_enemy_claw_idle;

@@ -3,8 +3,6 @@
 //Head and Appendage
 weakpoint.hspd = hspd;
 weakpoint.vspd = vspd;
-//appendage.hspd = hspd;
-//appendage.vspd = vspd;
 blocker.hspd   = hspd;
 blocker.vspd   = vspd;
 
@@ -34,10 +32,18 @@ else
        {
         if (shots_fired < max_shots)
            {
-            //show_debug_message("Time to shoot at: " + string(shot_timer));
-            //show_debug_message("Bang. shots fired = " + string(shots_fired));
             //create projectile
             instance_create(weakpoint.x, weakpoint.y, obj_projectile);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
+            
             shots_fired += 1;
             shot_timer += (room_speed * (25/60));  
            }
@@ -46,8 +52,6 @@ else
             //show_debug_message("Stop shooting.");
             shots_fired = 0;
             max_shots = 3;
-            //firing = false;
-            //step += 1;
            }
        } 
     if (shot_timer <= 0)
@@ -64,24 +68,40 @@ else
             if (obj_boss_canister.contained_detonation == true)
                {
                 appendage.special_HP -= 1;
-                if (appendage.special_HP < 1)
-                   {
-                    //appendage.sprite_index = spr_boss_claw_broken;
-                    //instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
-                   }
                 weakpoint.hp -= 6;
                 hp -= 6;
-               }
-            else
-               {
-                //appendage.sprite_index = spr_boss_claw_attack; 
+                
+                if (appendage.special_HP < 1)
+                {
+                    //Play broken sound
+                    if (instance_exists(obj_music_sfx_manager))
+                    {
+                        with (obj_music_sfx_manager) 
+                        {
+                            scr_prompt_sound(snd_enemy_broken_SFX,other,false); 
+                        }
+                    }
+                }
                }
            }
-        else
-           {
-            //appendage.sprite_index = spr_boss_claw_attack; 
-           }
+           
+        //stop sucking sound
+        if (audio_is_playing(snd_boss_magnet_pull_SFX))
+        {
+            audio_stop_sound(snd_boss_magnet_pull_SFX);
+        }
+           
         instance_create(appendage.x,appendage.y,obj_explosion_hitbox);
+        
+        //Play explosion sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_explosion_medium_SFX,other,false);    
+            }
+        }
+        
         show_debug_message("Explosion from the CLAW");       
        }
     else 
@@ -128,6 +148,12 @@ else
                    {
                     player_caught = true;
                     shot_timer = 35;
+                    
+                    //stop sucking sound
+                    if (audio_is_playing(snd_boss_magnet_pull_SFX))
+                    {
+                        audio_stop_sound(snd_boss_magnet_pull_SFX);
+                    }
                    }
                }
            }
@@ -171,6 +197,12 @@ else
                         player_caught = true;
                         obj_boss_canister.contained_detonation = true;
                         shot_timer = 35;
+                        
+                        //stop sucking sound
+                        if (audio_is_playing(snd_boss_magnet_pull_SFX))
+                        {
+                            audio_stop_sound(snd_boss_magnet_pull_SFX);
+                        }
                        }
                    }
                }
@@ -205,6 +237,19 @@ if (destination_established == false && firing == false)
         //appendage.sprite_index = spr_boss_claw_pulling;
         appendage.pulling = true;
         instance_create(appendage.x-32,appendage.y,obj_boss_claw_grab_hitbox);
+        
+        if (!audio_is_playing(snd_boss_magnet_pull_SFX))
+        {
+            //Play sucking sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_boss_magnet_pull_SFX,other,false);    
+                }
+            }
+        }
+        
         weakpoint.vulnerable = true;
         player_caught = false;
         destination = appendage.x;

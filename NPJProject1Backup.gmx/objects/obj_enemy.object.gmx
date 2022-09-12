@@ -51,6 +51,7 @@ melee_hitbox = noone;
 selected_projectile = noone;
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;
@@ -80,6 +81,9 @@ fragmenting = false;
 spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
+
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_idle;
@@ -136,6 +140,7 @@ if (damage_hitstop == false)
         }
     //show_debug_message("Old State is " + string(old_state));
     hitstop = false;
+    show_debug_message("Old state = " + string(old_state));
     state = old_state;
    }
 else
@@ -225,6 +230,15 @@ if (jumping_type = false)
         melee_hitbox.enemy_parent = self;
        }
     hspd = melee_dir * chsSpeed * 4;
+    
+    //Play Drill Sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            other.melee_hitbox.melee_sound = scr_prompt_sound(snd_enemy_melee_drill_SFX,other,false);    
+        }
+    }
 
     if (alarm[8] = -1)
        { 
@@ -250,6 +264,15 @@ else
         jumped = true;   
         hspd = melee_dir * 5.5;
         vspd = 5;
+        
+        //Play Drill Sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                other.melee_hitbox.melee_sound = scr_prompt_sound(snd_enemy_melee_drill_SFX,other,false);    
+            }
+        }
        }    
    }    
 </string>
@@ -323,8 +346,16 @@ instance_destroy();
           <argument>
             <kind>1</kind>
             <string>///Fire Projectile
-projectile = instance_create(x,y, obj_projectile);
+projectile = instance_create(x+(dir*20),y, obj_projectile);
 firing = false;
+//Play Shoot Sound
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+    }
+}
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;
 </string>
@@ -490,7 +521,7 @@ scr_enemy_animation_control_script();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state == e_state.crash || old_state == e_state.hitstop)
+            <string>if (state == e_state.crash || old_state == e_state.crash)
 {
     if (rotation_angle &lt; 360)
     {

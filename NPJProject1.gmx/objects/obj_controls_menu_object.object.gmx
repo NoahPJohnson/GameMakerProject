@@ -32,7 +32,7 @@ paused = false;
 stick_moved_up = false;
 stick_moved_down = false;
 
-button_array[0] = obj_menu_button_back;
+button_array[0] = obj_menu_button_back_to_main;
 
 
 selected_button_index = 0;
@@ -40,9 +40,9 @@ starting_selected_button_index = selected_button_index;
 
 
 for (i = 0; i &lt; array_length_1d(button_array); i ++)
-    {
-     instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(16-(i*64))), button_array[i]);
-    }
+{
+     instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)+(408+(i*64))), button_array[i]);
+}
     
 
 button_array[starting_selected_button_index].button_selected = true;
@@ -134,17 +134,17 @@ scr_pause_screen();
           <argument>
             <kind>1</kind>
             <string>///Draw Menu Text
-draw_set_font(fnt_button_font);
+draw_set_font(fnt_title_font);
 draw_set_halign(fa_center);
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,1);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-420)),menu_text,c_navy,c_navy,c_navy,c_navy,1);
 draw_set_halign(fa_left);
 draw_set_font(fnt_controls_font);
-draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))),"WASD = Move; Space = Jump; Enter/Num_Pad_2 = Attack;",c_black,c_black,c_black,c_black,1);
+/*draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))),"WASD = Move; Space = Jump; Enter/Num_Pad_2 = Attack;",c_black,c_black,c_black,c_black,1);
 draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+64),"Up(W) + Attack = Pop Up; Down(S) + Attack = Bunt;",c_black,c_black,c_black,c_black,1);
 draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+128),"Hold Attack Button = Charge Up Attack; Release = Attack;",c_black,c_black,c_black,c_black,1);
 draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+192),"Jump -&gt; Attack = Spike (Bounces Player Back);",c_black,c_black,c_black,c_black,1);
 draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+256),"Double Tap Left or Right(A/D) = Dash; Esc. = Pause;",c_black,c_black,c_black,c_black,1);
-draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+320),"Down(S) + Jump = Slide (Goes Through Enemies);",c_black,c_black,c_black,c_black,1);
+draw_text_colour((view_xview[0]+80),(view_yview[0]+((view_hview[0]/2))+320),"Down(S) + Jump = Slide (Goes Through Enemies);",c_black,c_black,c_black,c_black,1);*/
 draw_set_halign(fa_left);
 draw_set_font(fnt_button_font);
 </string>

@@ -32,6 +32,16 @@ else
         //show_debug_message("Bang. shots fired = " + string(shots_fired));
         //create projectile
         instance_create(weakpoint.x, weakpoint.y, obj_projectile);
+        
+        //Play sucking sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+            }
+        }
+        
         shots_fired += 1;
         shot_timer = room_speed * (25/60);  
        }

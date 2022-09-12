@@ -123,7 +123,7 @@ alarm[0] = room_speed * (4/60);
     x = obj_player.x + (16)
     y = obj_player.y
 //   }
-if (place_meeting(x,y,obj_enemy))
+if (place_meeting(x,y,obj_enemy) || place_meeting(x,y,obj_enemy_ball_hitbox))
    {
     if (alarm[1] = -1)
        {

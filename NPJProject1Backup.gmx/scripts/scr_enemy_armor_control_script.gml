@@ -8,6 +8,9 @@ if (state == e_state.chase && armor_on == false)
 if ((state == e_state.hitstun || state == e_state.crash) && armor_on == true)
 {
     armor_on = false;
-    armor_outline.sprite_index = spr_enemy_large_armor_broken;
+    if (instance_exists(armor_outline) && armor_outline != noone)
+    {
+        armor_outline.sprite_index = spr_enemy_large_armor_broken;
+    }
 }
 

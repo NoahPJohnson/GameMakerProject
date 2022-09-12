@@ -73,6 +73,9 @@ crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
 
+//Sounds
+melee_sound = noone;
+
 animation_loop = true;
 
 state = e_state.idle

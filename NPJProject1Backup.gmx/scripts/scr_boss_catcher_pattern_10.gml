@@ -86,6 +86,24 @@ else
     else 
        {
         appendage.vspd = sin(shot_timer)*2;
+        
+        shake_difference = sign(appendage.y-y);
+        if (shake_difference != old_shake_difference)
+        {
+            if (shake_difference > 0) 
+            {
+                //Play swing sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);    
+                    }
+                }
+            }
+            old_shake_difference = shake_difference;
+        }
+        
         show_debug_message("shake: " + string(shot_timer));
        }
    }
@@ -179,6 +197,16 @@ if (destination_x_established == false && destination_y_established == false && 
         destination_x = x-310;
         destination_x_established = true;
         step = 3;
+        
+        //Play woosh sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);    
+            }
+        }
+        
         show_debug_message("Punch!");
        }
     //Return arm to neutral H
@@ -193,6 +221,15 @@ if (destination_x_established == false && destination_y_established == false && 
         firing = true;
         shot_timer = room_speed * (40/60);
         step = 4;
+        
+        //Play contact sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+            }
+        }
         show_debug_message("Return arm to neutral.");  
        }
     //Raise arm for next punch V

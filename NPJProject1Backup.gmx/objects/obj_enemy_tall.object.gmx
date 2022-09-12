@@ -62,6 +62,7 @@ shield = noone;
 arm = instance_create(x,y-48,obj_enemy_tall_arm);
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;
@@ -95,6 +96,9 @@ fragment2_sprite = spr_enemy_tall_crash_display3;
 spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
+
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_tall_idle;
@@ -182,7 +186,15 @@ if (place_meeting(x, y+1, obj_boundary))
            {
             melee_hitbox = instance_create(x+80, y+thrust_height, obj_melee_hitbox_long_2);
            }
-        melee_hitbox.enemy_parent = self;            
+        melee_hitbox.enemy_parent = self;
+        //Play Thrust Sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_melee_thrust_SFX,other,false);    
+            }
+        }            
        }
    }    
 if (alarm[8] = -1)
@@ -310,6 +322,13 @@ else if (shield.guard_position == 2)
     projectile.direction = 0;
 }
 firing = false;
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+    }
+}
 </string>
           </argument>
         </arguments>

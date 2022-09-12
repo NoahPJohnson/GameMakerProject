@@ -44,13 +44,13 @@ if (/*alarm[7] = -1 && */alarm[8] = -1)
        } 
    } 
 if (alarm[0] = -1 && firing == false && alarm[7] == -1 && alarm[8] == -1)
-   {
+{
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) && !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
-       {
+    {
         alarm[0] = room_speed * ((firSpeed/60) / (1+first_shot));
-        first_shot = false; 
-       }
-   }
+        first_shot = false;
+    }
+}
     
 
 if (distance_to_object(obj_player) > 590)

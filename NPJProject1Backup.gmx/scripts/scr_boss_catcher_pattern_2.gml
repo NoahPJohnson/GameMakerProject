@@ -44,25 +44,42 @@ else
             if (obj_boss_canister.contained_detonation == true)
                {
                 appendage.special_HP -= 1;
-                if (appendage.special_HP < 1)
-                   {
-                    //appendage.sprite_index = spr_boss_claw_broken;
-                    //instance_create(appendage.x,appendage.y+20,obj_claw_hitbox_boss);
-                   }
                 weakpoint.hp -= 6;
-                hp -= 6;
+                hp -= 6; 
                 
-               }
-            else
-               {
-                appendage.sprite_index = spr_boss_claw_attack; 
+                if (appendage.special_HP < 1)
+                {
+                    //Play broken sound
+                    if (instance_exists(obj_music_sfx_manager))
+                    {
+                        with (obj_music_sfx_manager) 
+                        {
+                            scr_prompt_sound(snd_enemy_broken_SFX,other,false);    
+                        }
+                    }
+                }   
                }
            }
         else
            {
             appendage.sprite_index = spr_boss_claw_attack; 
            }
+        //Stop sucking Sound
+        if (audio_is_playing(snd_boss_magnet_pull_SFX))
+        {
+            audio_stop_sound(snd_boss_magnet_pull_SFX);
+        }
+        
         instance_create(appendage.x,appendage.y,obj_explosion_hitbox);       
+        
+        //Play explosion sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_explosion_medium_SFX,other,false);    
+            }
+        }
        }
     else 
        {
@@ -109,20 +126,16 @@ else
                    {
                     player_caught = true;
                     shot_timer = 35;
+                    
+                    //Stop sucking Sound
+                    if (audio_is_playing(snd_boss_magnet_pull_SFX))
+                    {
+                        audio_stop_sound(snd_boss_magnet_pull_SFX);
+                    }
                    }
                }
            }
-        /*if (abs(appendage.x-obj_player.x) < 48 && abs(appendage.y-obj_player.y) < 16)
-           {
-            show_debug_message("Caught Player!");
-            if (player_caught == false)
-               {
-                player_caught = true;
-                shot_timer = 35;
-               }
-            //instance_create(appendage.x,appendage.y,obj_explosion_hitbox);
-            //appendage.sprite_index = spr_boss_claw_attack;
-           }*/
+           
         //Canister Affected
         if (instance_exists(obj_boss_canister))
            {
@@ -163,6 +176,12 @@ else
                         player_caught = true;
                         obj_boss_canister.contained_detonation = true;
                         shot_timer = 35;
+                        
+                        //Stop sucking Sound
+                        if (audio_is_playing(snd_boss_magnet_pull_SFX))
+                        {
+                            audio_stop_sound(snd_boss_magnet_pull_SFX);
+                        }
                        }
                    }
                 //instance_create(appendage.x,appendage.y,obj_explosion_hitbox);
@@ -209,6 +228,19 @@ if (destination_established == false && firing == false)
         //appendage.sprite_index = spr_boss_claw_pulling;
         appendage.pulling = true;
         instance_create(appendage.x-32,appendage.y,obj_boss_claw_grab_hitbox);
+        
+        if (!audio_is_playing(snd_boss_magnet_pull_SFX))
+        {
+            //Play sucking sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_boss_magnet_pull_SFX,other,false);    
+                }
+            }
+        }
+        
         weakpoint.vulnerable = true;
         player_caught = false;
         destination = appendage.x;

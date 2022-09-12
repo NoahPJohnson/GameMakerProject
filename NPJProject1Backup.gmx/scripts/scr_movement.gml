@@ -49,35 +49,53 @@ if (mve = -1)
 
 //Sliding
 if (crouching == true)
-   {
+{
     if (key_J && right == true && sliding == false && sp > 45)
-       {
-            sliding = true;
-            sp -= 45;
-            hspd = (jspd * 2.2);
-            siframes = true;  
-            if (alarm[9] = -1)
-               { 
-                alarm[9] = room_speed * (5/60);
-                frc = 1;
-               }
-            state = states.sliding;
-       }
+    {
+        sliding = true;
+        sp -= 45;
+        hspd = (jspd * 2.2);
+        siframes = true;  
+        if (alarm[9] = -1)
+        { 
+            alarm[9] = room_speed * (5/60);
+            frc = 1;
+        }
+        state = states.sliding;
+        
+        //Play slide sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_slide_SFX,other,false);    
+            }
+        }
+    }
     
     if (key_J && right == false && sliding == false && sp > 45)
-       {
-            sliding = true;
-            sp -= 45;
-            hspd = (-jspd * 2.2);
-            siframes = true;  
-            if (alarm[9] = -1)
-               { 
-                alarm[9] = room_speed * (5/60);
-                frc = 1;
-               }
-            state = states.sliding
-       }
-   }
+    {
+        sliding = true;
+        sp -= 45;
+        hspd = (-jspd * 2.2);
+        siframes = true;  
+        if (alarm[9] = -1)
+        { 
+            alarm[9] = room_speed * (5/60);
+            frc = 1;
+        }
+        state = states.sliding
+        
+        //Play slide sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_player_slide_SFX,other,false);    
+            }
+        }
+    }
+}
    
 //Jumping
 if (crouching = false)

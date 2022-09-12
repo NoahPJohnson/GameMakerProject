@@ -49,6 +49,7 @@ melee_hitbox = noone;
 selected_projectile = noone;
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;
@@ -74,6 +75,26 @@ crash_sprite = spr_enemy_stationary_crash;
 cp = 2;
 cp_max = 2;
 rotation_angle = 0;
+fragmenting = false;
+
+spark_interval = 24;
+spark_offset_x = 0;
+spark_offset_y = 0;
+
+//Sounds
+melee_sound = noone;
+
+//Sprites
+idle_sprite = spr_enemy_stationary_bounce;
+move_sprite = spr_enemy_stationary_bounce;
+fire_sprite = spr_enemy_stationary_bounce_firing;
+melee_sprite = spr_enemy_stationary_bounce;
+anti_air_sprite = spr_enemy_stationary_bounce;
+follow_up_sprite = spr_enemy_stationary_bounce;
+damage_sprite = spr_enemy_stationary_bounce;
+air_sprite = spr_enemy_stationary_bounce;
+crash_sprite = spr_enemy_crash_hitbox;
+crash_display_sprite = spr_enemy_stationary_bounce_crash_display;
 
 animation_loop = true;
 
@@ -263,7 +284,7 @@ switch (state)
        }
        
 //Animations
-scr_enemy_animation_control_script();
+scr_enemy_stationary_animation_control_script();
 </string>
           </argument>
         </arguments>

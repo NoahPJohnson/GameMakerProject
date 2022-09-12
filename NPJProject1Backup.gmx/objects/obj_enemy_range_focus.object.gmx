@@ -64,6 +64,7 @@ projectile = noone;
 selected_projectile = noone;
 
 //Damage and Hit Reaction
+bat_instance = noone;
 hit = false;
 hitdir = 0;
 old_speed = 0;
@@ -93,6 +94,9 @@ fragmenting = false;
 spark_interval = 24;
 spark_offset_x = 0;
 spark_offset_y = 0;
+
+//Sounds
+melee_sound = noone;
 
 //Sprites
 idle_sprite = spr_enemy_range_focus_idle;
@@ -176,11 +180,11 @@ else
             <string>///Panic Run 
 show_debug_message("PANIC!!");
 meleeAttack = true;
-projectile = instance_create(x,y-32,obj_projectile_grenade);
-//scr_create_grenade_projectile();
+//projectile = instance_create(x,y-32,obj_projectile_grenade);
+scr_create_grenade_projectile();
 dir = -sign(obj_player.x - x);
 //hspd = dir * 8;
-alarm[8] = room_speed * (35/60);
+alarm[8] = room_speed * (22/60);
 </string>
           </argument>
         </arguments>
@@ -292,18 +296,18 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Fire Projectile
+            <string>///Finish Firing Projectile
 alarm[0] = -1;
 //projectile = instance_create(x,y-32, obj_projectile_grenade);
 firing = false;
 if (longRange == true)
-   {
+{
     longRange = false;
-   }
+}
 else
-   {
+{
     longRange = true;
-   }
+}
 //sprite_index = spr_enemy;
 //hspd = dir * chsSpeed;
 </string>
@@ -357,55 +361,64 @@ state = e_state.idle*/
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stop and Prepare to Fire   
+            <string>///Stop and Fire   
 if (firing == false)
-   {
+{
     firing = true;
     hspd = 0;
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,false) &amp;&amp; !collision_line(x,y,obj_player.x,obj_player.y,obj_enemy,false,true))
-       {
+    {
         if (longRange == true)
-           {
+        {
             fire_index = 1;
             selected_projectile = obj_projectile;
-           }
+        }
         else
-           {
+        {
             fire_index = 2;
             selected_projectile = obj_projectile_ricochet_spread;
-           }
-       }
+        }
+    }
     else
-       {
+    {
         fire_index = 0;
-        selected_projectile = obj_projectile_grenade; 
-       }
+        selected_projectile = obj_projectile_grenade;
+    }
     alarm[0] = room_speed * (26/60);
-   }
+}
 else
-   {
+{
     if (selected_projectile != obj_projectile_grenade)
-       {
+    {
         show_debug_message("Shoot! selected projectile is " + object_get_name(selected_projectile));
-        projectile = instance_create(x,y, selected_projectile);
-        if (firing == true &amp;&amp; longRange == true)
-           {
+        projectile = instance_create(x+(sign((obj_player.x) - x)*20),y, selected_projectile);
+        
+        //Play the shoot sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+            }
+        }
+        if (firing == true &amp;&amp; longRange == true &amp;&amp; selected_projectile == obj_projectile)
+        {
             alarm[0] = room_speed * (18/60);
-           }
+        }
         if (alarm[2] == -1)
-           {
+        {
             alarm[2] = room_speed * (45/60);
-           }
-       }
+        }
+    }
     else
-       {
+    {
         scr_create_grenade_projectile();
         if (alarm[2] == -1)
-           {
+        {
             alarm[2] = room_speed * (30/60);
-           }
-       }
-   }
+        }
+    }
+}
 </string>
           </argument>
         </arguments>

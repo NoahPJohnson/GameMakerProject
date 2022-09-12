@@ -32,6 +32,16 @@ else
            {
             //show_debug_message("Shoot Canister");
             instance_create(x-16,y-192,obj_boss_canister);
+            
+            //Play canister sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_boss_launch_canister_SFX,other,false);    
+                }
+            }
+            
             shot_timer = room_speed * (130/60);
             //firing = false;
             step = 3;

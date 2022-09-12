@@ -44,13 +44,13 @@ update_angle = true;
 
 speed = 11;
 if (obj_player.x &lt; x)
-       {
-        direction = 130;
-       }
-    else 
-       {
-        direction = 50;
-       }
+{
+    direction = 130;
+}
+else 
+{
+    direction = 50;
+}
 image_angle = point_direction(x,y,obj_player.x,obj_player.y);
 
 shot_hit_sparks[0] = obj_shot_hit_spark;
@@ -89,6 +89,13 @@ instance_create(x,y,obj_shot_spark);
             <kind>1</kind>
             <string>///Detonate
 instance_create(x,y,obj_explosion_med_hitbox);
+if (instance_exists(obj_music_sfx_manager))
+{
+    with (obj_music_sfx_manager) 
+    {
+        scr_prompt_sound(snd_explosion_small_SFX,other,false);    
+    }
+}
 instance_destroy();
 </string>
           </argument>

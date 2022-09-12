@@ -1,6 +1,7 @@
 ///Reversed state
 struck = true;
 stop = false;
+thrown = false;
 if (!place_meeting(x,y+vspeed,obj_boundary))
    {
     //vspeed += 0.9;

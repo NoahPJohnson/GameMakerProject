@@ -37,6 +37,15 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
             //show_debug_message("Hit slope on wrong side. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
         //heading toward sloped part of the slope
@@ -50,6 +59,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
             //show_debug_message("Hit slope. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));   
            }
        }
@@ -66,6 +83,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
             //show_debug_message("Hit slope L on wrong side. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));
            }
         //Heading toward the sloped part of Slope L
@@ -78,6 +103,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
             //show_debug_message("Hit slope L. Horizontal  " + string(direction) + " | " + string(speed) + " | " + string(vspeed) + " specifically: " + string(colliding_object));   
            }
        }
@@ -94,6 +127,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
            }
         //Slope
         else
@@ -105,6 +146,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
            }
        }
     else if (colliding_object.object_index == obj_boundary_slope_UL)
@@ -120,6 +169,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
            }
         //Slope
         else
@@ -131,6 +188,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
                }
             direction = new_dir;
             speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }
            }
        }
     //Regular Boundary
@@ -144,6 +209,14 @@ if (place_meeting(x+hspeed,y,obj_boundary))
            }
         direction = new_dir;
         speed *= .7;
+        //Play collision sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+            }
+        }
         //show_debug_message("Hit regular boundary. H  " + string(direction) + " | " + string(speed) + " | " + string(vspeed)); 
        }
    }
@@ -165,7 +238,15 @@ if (place_meeting(x,y+vspeed,obj_player) && object_index != obj_enemy_fragment)
     direction = new_dir;
     if (speed > 2)
        {
-        speed *= .7; 
+        speed *= .7;
+        //Play collision sound
+        if (instance_exists(obj_music_sfx_manager))
+        {
+            with (obj_music_sfx_manager) 
+            {
+                scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+            }
+        } 
        }
     else
        {
@@ -192,7 +273,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                } 
                }
             else
                {
@@ -211,7 +300,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                } 
                }
             else
                {
@@ -234,7 +331,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                } 
                }
             else
                {
@@ -253,7 +358,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {
@@ -276,7 +389,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {
@@ -294,7 +415,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {
@@ -316,7 +445,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {
@@ -334,7 +471,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {
@@ -353,7 +498,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
         direction = new_dir;
         if (speed > 2)
            {
-            speed *= .7; 
+            speed *= .7;
+            //Play collision sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                }
+            }  
            }
         else
            {
@@ -371,7 +524,15 @@ if (place_meeting(x,y+vspeed,obj_boundary))
             direction = new_dir;
             if (speed > 2)
                {
-                speed *= .7; 
+                speed *= .7;
+                //Play collision sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_ball_n_chain_contact_SFX,other,false);    
+                    }
+                }  
                }
             else
                {

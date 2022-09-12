@@ -13,7 +13,7 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
         if (enemy_struck.stopped = true && stopped = false)
            {
             show_debug_message(enemy_struck.state); 
-            if (enemy_struck.state != e_state.crash && enemy_struck.state != e_state.hitstop)
+            if (enemy_struck.state != e_state.crash && enemy_struck.state != e_state.hitstop && enemy_struck.state != e_state.hitstun)
                {
                 hp -= 1;
                 scr_enemy_hp_zero();
@@ -39,12 +39,21 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                 enemy_struck.alarm[7] = -1;
                 enemy_struck.alarm[9] = room_speed * (3/60);
                 enemy_struck.damage_hitstop = true;
+                
+                //Play hit sound
+                if (instance_exists(obj_music_sfx_manager))
+                {
+                    with (obj_music_sfx_manager) 
+                    {
+                        scr_prompt_sound(snd_enemy_hit_by_broken_enemy_SFX,other,false);    
+                    }
+                }
 
                 enemy_struck.state = e_state.hitstop;
                 //show_debug_message("Hit enemy, do damage.");
                }
            
-            if (place_meeting(x+hspeed,y,obj_enemy))
+            /*if (place_meeting(x+hspeed,y,obj_enemy))
                {
                 //show_debug_message("Hey. H " + string(id));
                 colliding_object = instance_place(x+hspeed,y,obj_enemy);
@@ -104,7 +113,7 @@ if (place_meeting(x+hspeed,y+vspeed,obj_enemy))
                     state = e_state.hitstop; 
                     //show_debug_message("V this object's state is " + string(state) + " damage hitstop = " + string(damage_hitstop));
                    }
-               }   
+               }  */ 
            }
         //show_debug_message("Final this object's state is " + string(state) + " damage hitstop = " + string(damage_hitstop));
        }

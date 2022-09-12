@@ -32,6 +32,16 @@ else
            {
             //show_debug_message("Shoot Canister");
             instance_create(x-60,y-260,obj_boss_canister);
+            
+            //Play canister sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_boss_launch_canister_SFX,other,false);    
+                }
+            }
+            
             shot_timer = room_speed * (14/60);
             shots_fired = 0;
             max_shots = 3;
@@ -41,6 +51,16 @@ else
         else if (step == 3 && shots_fired < max_shots)
            {
             instance_create(weakpoint.x,weakpoint.y,obj_projectile_canister_air_burst);
+            
+            //Play shoot sound
+            if (instance_exists(obj_music_sfx_manager))
+            {
+                with (obj_music_sfx_manager) 
+                {
+                    scr_prompt_sound(snd_enemy_fire_shot_SFX,other,false);    
+                }
+            }
+            
             shots_fired += 1;
             shot_timer = room_speed * (65/60);
             //show_debug_message("Done shooting.");

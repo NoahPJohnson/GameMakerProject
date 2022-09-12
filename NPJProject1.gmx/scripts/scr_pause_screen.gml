@@ -53,7 +53,7 @@ if (key_pause)
         instance_activate_object(obj_music_sfx_manager);
         for (i = 0; i < array_length_1d(button_array); i ++)
         {
-             instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(128-(i*128))), button_array[i]);
+             instance_create(view_xview[0]+(view_wview[0]/2), view_yview[0]+((view_hview[0]/2)-(16-(i*64))), button_array[i]);
         }
         button_array[starting_selected_button_index].button_selected = true;
         

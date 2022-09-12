@@ -17,10 +17,6 @@ if (place_meeting(x, y, obj_bat))
        }
     else
        {
-        /*if (alarm[0] == -1)
-           {
-            alarm[0] = room_speed * ((3 + (obj_player.chargeTwo*2))/60);
-           }*/
         struck_speed = 16 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10);
         struck_direction = 180;
         state = proj_state.hitstop;
@@ -28,6 +24,16 @@ if (place_meeting(x, y, obj_bat))
        }
     //alarm[2] += 30;
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
@@ -66,8 +72,17 @@ if (place_meeting(x, y, obj_bat_launcher))
         state = proj_state.hitstop;
        }
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
-    //alarm[2] += 30;
     if (obj_player.state != states.hitstop)
        {
         obj_player.hitstop = false;
@@ -105,6 +120,15 @@ if (place_meeting(x, y, obj_bat_spike))
 
        }
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
    }
    
 //Collision with Bunt   
@@ -137,6 +161,16 @@ if (place_meeting(x,y,obj_bunt_bat))
         //speed = 4;
        }
     spark_index = 2;
+    
+    //Play bunt sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_bunt_block_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {
