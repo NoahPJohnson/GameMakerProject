@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>192</width>
-  <height>150</height>
+  <height>180</height>
   <frames>
     <frame index="0">images\spr_boss_enemy1_intro_0.png</frame>
     <frame index="1">images\spr_boss_enemy1_intro_1.png</frame>
@@ -51,18 +51,5 @@
     <frame index="28">images\spr_boss_enemy1_intro_28.png</frame>
     <frame index="29">images\spr_boss_enemy1_intro_29.png</frame>
     <frame index="30">images\spr_boss_enemy1_intro_30.png</frame>
-    <frame index="31">images\spr_boss_enemy1_intro_31.png</frame>
-    <frame index="32">images\spr_boss_enemy1_intro_32.png</frame>
-    <frame index="33">images\spr_boss_enemy1_intro_33.png</frame>
-    <frame index="34">images\spr_boss_enemy1_intro_34.png</frame>
-    <frame index="35">images\spr_boss_enemy1_intro_35.png</frame>
-    <frame index="36">images\spr_boss_enemy1_intro_36.png</frame>
-    <frame index="37">images\spr_boss_enemy1_intro_37.png</frame>
-    <frame index="38">images\spr_boss_enemy1_intro_38.png</frame>
-    <frame index="39">images\spr_boss_enemy1_intro_39.png</frame>
-    <frame index="40">images\spr_boss_enemy1_intro_40.png</frame>
-    <frame index="41">images\spr_boss_enemy1_intro_41.png</frame>
-    <frame index="42">images\spr_boss_enemy1_intro_42.png</frame>
-    <frame index="43">images\spr_boss_enemy1_intro_43.png</frame>
   </frames>
 </sprite>

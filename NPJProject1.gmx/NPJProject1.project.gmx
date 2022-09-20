@@ -351,6 +351,7 @@
       <sprite>sprites\spr_boss_weakpoint_mask</sprite>
       <sprite>sprites\spr_boss_enemy1</sprite>
       <sprite>sprites\spr_boss_enemy1_intro</sprite>
+      <sprite>sprites\spr_boss_enemy_intro_backups</sprite>
       <sprite>sprites\spr_boss_enemy1_advancing</sprite>
       <sprite>sprites\spr_boss_enemy1_retreating</sprite>
       <sprite>sprites\spr_boss_main_body_abdomen</sprite>
@@ -382,6 +383,8 @@
       <sprite>sprites\spr_boss_enemy_arm</sprite>
       <sprite>sprites\spr_boss_neck_segment</sprite>
       <sprite>sprites\spr_boss_test_neck</sprite>
+      <sprite>sprites\spr_boss_enemy1_right_arm</sprite>
+      <sprite>sprites\spr_boss_enemy1_right_arm_throw</sprite>
     </sprites>
     <sprites name="menus/utility">
       <sprite>sprites\spr_menu_button</sprite>
