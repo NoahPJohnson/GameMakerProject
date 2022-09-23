@@ -29,6 +29,13 @@
 spawn_point_x = 736;
 spawn_point_y = 736;
 boss_to_trigger = obj_boss_main_body;
+boss_intro_display = obj_boss_intro_display;
+boss_intro_text = obj_boss_intro_text;
+
+intro_animation_speed = 0.18;
+boss_transition_wait = 150;
+
+activated = false;
 
 </string>
           </argument>
@@ -52,11 +59,13 @@ boss_to_trigger = obj_boss_main_body;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (place_meeting(x,y,obj_player))
-   {
-    instance_create(spawn_point_x,spawn_point_y,boss_to_trigger);
+            <string>if (place_meeting(x,y,obj_player) &amp;&amp; activated == false)
+{
+    activated = true;
+    //instance_create(spawn_point_x,spawn_point_y,boss_to_trigger);
+    scr_boss_transition();
     instance_destroy();
-   }
+}
 </string>
           </argument>
         </arguments>

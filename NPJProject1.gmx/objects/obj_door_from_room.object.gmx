@@ -28,7 +28,7 @@
             <string>draw_curtain = false;
 room_transition_wait = 120;
 room_transition_timer = 0;
-instance_create(view_xview[0], view_yview[0]+12, obj_level_transition);
+instance_create(view_xview[0], view_yview[0], obj_level_transition);
 //room_to_enter = rm_test;
 </string>
           </argument>

@@ -74,6 +74,7 @@ spikes[5] = instance_create(x-128,y+176,obj_spike_hitbox_blocker);
 spikes[6] = instance_create(x-128,y+208,obj_spike_hitbox_blocker);
 //show_debug_message("Fire is at: " + string(x - fire.x) + " and " + string(y - fire.y)); 
 state = noone;
+old_state = noone;
 </string>
           </argument>
         </arguments>

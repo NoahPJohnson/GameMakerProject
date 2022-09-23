@@ -162,6 +162,13 @@ appendage = instance_create(x-96,y+64,obj_boss_claw);
 appendage_position_x = appendage.x - x;
 appendage_position_y = appendage.y - y;
 appendage.enemy_parent = self;
+
+//appendage2 = obj_boss_right_arm
+appendage2 = instance_create(x-26,y-120, obj_boss_right_arm);
+appendage2_position_x = appendage2.x - x;
+appendage2_position_y = appendage2.y - y;
+appendage2.enemy_parent = self;
+
 //show_debug_message("Appendage is at " + string(appendage_position_x) + " and " + string(appendage_position_y));
 tractor_beam_range = 600;
 tractor_beam_power = 6.5;

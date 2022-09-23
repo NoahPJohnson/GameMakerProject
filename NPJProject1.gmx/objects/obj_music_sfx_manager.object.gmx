@@ -86,7 +86,7 @@ else if (room == rm_test)
     {
         audio_stop_sound(current_music_track);
         current_music_track = snd_boss1_BGM;
-        audio_play_sound(current_music_track,10,true);
+        //audio_play_sound(current_music_track,10,true);
     } 
 }  
 </string>

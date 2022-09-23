@@ -120,6 +120,7 @@ if (destination_established == false && firing == false)
     //Shoot canister
     else if (step == 1)
        {
+        appendage2.throwing = true;
         weakpoint.vulnerable = true;
         shot_timer = room_speed * (80/60);
         step = 2;

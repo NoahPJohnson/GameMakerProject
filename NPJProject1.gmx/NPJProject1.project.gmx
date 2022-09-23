@@ -10,6 +10,7 @@
       <sound>sound\snd_level2_BGM</sound>
       <sound>sound\snd_boss1_BGM</sound>
       <sound>sound\snd_main_theme_BGM</sound>
+      <sound>sound\snd_boss_intro_BGM</sound>
     </sounds>
     <sounds name="player_sfx">
       <sound>sound\snd_player_slide_SFX</sound>
@@ -384,6 +385,7 @@
       <sprite>sprites\spr_boss_neck_segment</sprite>
       <sprite>sprites\spr_boss_test_neck</sprite>
       <sprite>sprites\spr_boss_enemy1_right_arm</sprite>
+      <sprite>sprites\spr_boss_enemy1_right_arm_hit</sprite>
       <sprite>sprites\spr_boss_enemy1_right_arm_throw</sprite>
     </sprites>
     <sprites name="menus/utility">
@@ -399,7 +401,7 @@
       <sprite>sprites\spr_door_from_room</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_text_background</sprite>
-      <sprite>sprites\spr_boss_intro</sprite>
+      <sprite>sprites\spr_boss_intro_text</sprite>
     </sprites>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_block_medium</sprite>
@@ -639,6 +641,7 @@
       <script>scripts\scr_boss_head_animation_control_script.gml</script>
       <script>scripts\scr_boss_claw_animation_control_script.gml</script>
       <script>scripts\scr_boss_weakpoint_animation_end.gml</script>
+      <script>scripts\scr_boss_right_arm_animation_control_script.gml</script>
     </scripts>
     <script>scripts\scr_create_projectile.gml</script>
     <script>scripts\scr_create_grenade_projectile.gml</script>
@@ -653,6 +656,7 @@
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
     <script>scripts\scr_boundary_and_tile_manager.gml</script>
     <script>scripts\scr_prompt_sound.gml</script>
+    <script>scripts\scr_boss_transition.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score_font</font>
@@ -842,6 +846,9 @@
       <object>objects\obj_boss_arm_segment</object>
       <object>objects\obj_boss_neck_segment</object>
       <object>objects\obj_boss_trigger</object>
+      <object>objects\obj_boss_right_arm</object>
+      <object>objects\obj_boss_intro_text</object>
+      <object>objects\obj_boss_intro_display</object>
     </objects>
     <object>objects\obj_level_transition</object>
     <object>objects\obj_door_to_room</object>

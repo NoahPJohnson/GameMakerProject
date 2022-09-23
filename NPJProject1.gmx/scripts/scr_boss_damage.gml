@@ -2,18 +2,15 @@
 //Hit by projectile
 scr_boss_hit_by_projectile();
 
-if (state != boss_state.hitstop)
-   {
-    with (weakpoint)
-         {
-          scr_boss_hit_by_projectile();
-         }
+with (weakpoint)
+{
+    scr_boss_hit_by_projectile();
+}
 
-    with (appendage)
-         {
-          scr_boss_hit_by_projectile();
-         }
-   } 
+with (appendage)
+{
+    scr_boss_hit_by_projectile();
+}
 
    
 //Hit by bat

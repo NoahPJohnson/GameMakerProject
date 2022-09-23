@@ -38,7 +38,7 @@ else
             {
                 with (obj_music_sfx_manager) 
                 {
-                    scr_prompt_sound(snd_boss_launch_canister_SFX,other,false);    
+                    scr_prompt_sound(snd_ball_n_chain_swing_SFX,other,false);   
                 }
             }
             
@@ -94,6 +94,7 @@ if (destination_established == false && firing == false)
     //Shoot canister
     else if (step == 1)
        {
+        appendage2.throwing = true;
         weakpoint.vulnerable = true;
         shot_timer = room_speed * (80/60);
         step = 2;
