@@ -6,3 +6,6 @@ for (i = 0; i < array_length_1d(obj_pause_object.button_array); i ++)
      instance_destroy(obj_pause_object.button_array[i]);
     }
 instance_activate_all();
+
+//Resume Sounds
+audio_resume_all(); 

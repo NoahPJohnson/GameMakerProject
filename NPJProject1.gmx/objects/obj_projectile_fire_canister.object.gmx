@@ -38,6 +38,11 @@ fire_drop_range = 32;
 speed = 12;
 direction = 90;
 
+projectile_normal_sprite = spr_projectile_fire_canister;
+projectile_short_fuse_sprite = spr_projectile_fire_canister;
+projectile_returned_sprite = spr_projectile_fire_canister;
+projectile_short_fuse_returned_sprite = spr_projectile_fire_canister;
+
 update_angle = true;
 
 shot_hit_sparks[0] = obj_shot_hit_spark;
@@ -150,6 +155,8 @@ switch (state)
               break;        
              }
        }
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

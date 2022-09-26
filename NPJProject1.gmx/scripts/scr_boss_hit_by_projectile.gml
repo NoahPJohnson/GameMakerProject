@@ -25,7 +25,7 @@ if (place_meeting(x,y,obj_projectile))
                 saved_shot_timer = shot_timer;
                 old_state = state;
                 //alarm[7] = -1;
-                alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+                alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
                 damage_hitstop = false;
                 show_debug_message("Weakpoint Hit by Projectile.");
             }
@@ -68,7 +68,7 @@ if (place_meeting(x,y,obj_enemy_ball_hitbox))
                 hitdir = 1; 
                 old_state = state;
                 //alarm[7] = -1;
-                alarm[0] = room_speed * ((((hp < 1)*50) + 3)/60);
+                alarm[0] = room_speed * ((((hp < 1)*55) + 3)/60);
                 damage_hitstop = true;
             }
             else

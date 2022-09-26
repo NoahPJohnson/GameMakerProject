@@ -76,6 +76,16 @@ if (place_meeting(x, y, obj_bat_launcher))
     //Player Hitstop
     alarm[2] += 30;
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     if (obj_player.state != states.hitstop)
        {
         obj_player.hitstop = false;
@@ -114,6 +124,16 @@ if (place_meeting(x, y, obj_bat_spike))
        }
     alarm[2] += 30;
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     /*obj_player.hitstop = false;
     obj_player.damage_hitstop = false;
@@ -157,6 +177,16 @@ if (place_meeting(x,y,obj_bunt_bat))
         //speed = 4;
        }
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_bunt_block_SFX,other,false);    
+        }
+    }
+    
     //Player Hitstop
     if (obj_player.state != states.hitstop)
        {

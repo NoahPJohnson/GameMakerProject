@@ -20,7 +20,7 @@ key_select_enter = keyboard_check_pressed(vk_enter) || keyboard_check_pressed(vk
 
 if (key_select_down)
 {
-    show_debug_message("D O W N: axis = " + string(gamepad_axis_value(0, gp_axislv)) + " and already down = " + string(stick_moved_down) + " D-PAD = " + string(gamepad_button_check_pressed(0, gp_padd)));
+    //show_debug_message("D O W N: axis = " + string(gamepad_axis_value(0, gp_axislv)) + " and already down = " + string(stick_moved_down) + " D-PAD = " + string(gamepad_button_check_pressed(0, gp_padd)));
 }
 
 if (gamepad_axis_value(0, gp_axislv) < -0.45 && stick_moved_up == false)
@@ -57,15 +57,8 @@ if (key_pause)
         }
         button_array[starting_selected_button_index].button_selected = true;
         
-        //Pause Looping Sounds
-        if (audio_is_playing(snd_charging_level1_SFX))
-        {
-            audio_pause_sound(snd_charging_level1_SFX);
-        }
-        if (audio_is_playing(snd_charging_level2_SFX))
-        {
-            audio_pause_sound(snd_charging_level2_SFX);
-        } 
+        //PauseSounds
+        audio_pause_all(); 
     }
     else
     {
@@ -76,15 +69,8 @@ if (key_pause)
         }
         instance_activate_all();
         
-        //Resume Looping Sounds
-        if (audio_is_paused(snd_charging_level1_SFX))
-        {
-            audio_resume_sound(snd_charging_level1_SFX);
-        }
-        if (audio_is_paused(snd_charging_level2_SFX))
-        {
-            audio_resume_sound(snd_charging_level2_SFX);
-        } 
+        //Resume Sounds
+        audio_resume_all();  
     }
 }
    
@@ -93,7 +79,7 @@ if (paused == true || pause_menu == false)
     //Select up
     if (key_select_up)
        {
-        show_debug_message("Select UP.");
+        //show_debug_message("Select UP.");
         selected_button_index -= 1;
         if (selected_button_index < 0)
            {
@@ -110,7 +96,7 @@ if (paused == true || pause_menu == false)
         {
             with (obj_music_sfx_manager) 
             {
-                scr_prompt_sound(snd_menu_select_SFX,other,false);    
+                scr_prompt_sound(snd_menu_select_SFX,other.button_array[other.selected_button_index],false);    
             }
         } 
        }
@@ -134,7 +120,7 @@ if (paused == true || pause_menu == false)
         {
             with (obj_music_sfx_manager) 
             {
-                scr_prompt_sound(snd_menu_select_SFX,other,false);    
+                scr_prompt_sound(snd_menu_select_SFX,other.button_array[other.selected_button_index],false);    
             }
         } 
        }
@@ -146,7 +132,7 @@ if (paused == true || pause_menu == false)
         {
             with (obj_music_sfx_manager) 
             {
-                scr_prompt_sound(snd_menu_confirm_SFX,other,false);    
+                scr_prompt_sound(snd_menu_confirm_SFX,other.button_array[other.selected_button_index],false);    
             }
         } 
        

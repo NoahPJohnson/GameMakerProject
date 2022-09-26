@@ -21,9 +21,20 @@ if (hitstop == true)
 }
 else
 {
-    if (obj_player != noone)
+    if (obj_player != noone && state != boss_state.hitstun && state != boss_state.hitstop && state != boss_state.crash)
     {
-        image_angle = point_direction(x,y,obj_player.x,obj_player.y) + 180;
+        draw_image_angle = point_direction(x,y,obj_player.x,obj_player.y) + 180;
+    }
+    else if (state == boss_state.crash)
+    {
+        if (draw_image_angle < 360)
+        {
+            draw_image_angle += room_speed * ((2*hspeed)/60);
+        }
+        else
+        {
+            draw_image_angle = 0;
+        }
     }
     image_speed = 0.2;
 }

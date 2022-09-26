@@ -17,32 +17,40 @@ with (appendage)
 scr_boss_hit_by_bat();
 
 if (state != boss_state.hitstop)
-   {
+{
     with (weakpoint)
-         {
-          scr_boss_hit_by_bat();
-         }
+    {
+        scr_boss_hit_by_bat();
+    }
 
     with (appendage)
-         {
-          scr_boss_hit_by_bat();
-         }
-   }
+    {
+        scr_boss_hit_by_bat();
+    }
+}
 
 if (weakpoint.state == boss_state.hitstop && state != boss_state.hitstop)
-   {
+{
     saved_shot_timer = shot_timer;
     old_state = state;
     alarm[0] = weakpoint.alarm[0];
+    if (weakpoint.hp < 1)
+    {
+        weakpoint.alarm[0] = room_speed * (3/60);
+    }
     damage_hitstop = weakpoint.damage_hitstop;
     state = boss_state.hitstop;
-   }
+}
 
 if (appendage.state == boss_state.hitstop && state != boss_state.hitstop)
-   {
+{
     saved_shot_timer = shot_timer;
     old_state = state;
     alarm[0] = appendage.alarm[0];
+    if (weakpoint.hp < 1)
+    {
+        weakpoint.alarm[0] = room_speed * (3/60);
+    }
     damage_hitstop = appendage.damage_hitstop;
     state = boss_state.hitstop;
-   }
+}

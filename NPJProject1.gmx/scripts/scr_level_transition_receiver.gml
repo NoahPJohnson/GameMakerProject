@@ -8,6 +8,7 @@ with (obj_door_to_room)
 }
 if (obj_checkpoint_manager.checkpoint_active == false)
 {
+    instance_create(view_xview[0], view_yview[0], obj_level_transition);
     if (!instance_exists(obj_player))
     {
         instance_create(x,y,obj_player);

@@ -30,6 +30,7 @@ runs = 0; //Times the player has scored
 balls = 0; //Times the player has hit a projectile
 strikes = 0; //Times the player has gotten hit
 //?outs = 0; //Every 3 strikes?
+display_runs = "00";
 
 //Base array ranges from 0,1,2,3,4 and 6,7,8,9
 //Scoring happens on 4 and 9, then the number reverts to zero
@@ -138,8 +139,15 @@ if (bases_array[0] != 0 &amp;&amp; bases_array[0] &lt; 5 || bases_array[1] != 0 
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Scoring Runs 
-
+            <string>///Convert Runs
+if (runs &lt; 10)
+{
+    display_runs = "0" + string(runs);
+}
+else
+{
+    display_runs = runs;
+}
 </string>
           </argument>
         </arguments>
@@ -208,7 +216,7 @@ draw_sprite(spr_score_tracker_home_base,1,view_xview[0]+1000, view_yview[0]+200)
 
 //Draw the score
 draw_set_font(fnt_score_font);
-draw_text_transformed_colour(view_xview[0]+972, view_yview[0]+190, obj_scoring_manager.runs, 1, 1, 0,c_gray,c_black,c_black,c_black,1);
+draw_text_transformed_colour(view_xview[0]+972, view_yview[0]+190, display_runs, 1, 1, 0,c_gray,c_black,c_black,c_black,1);
 //draw_sprite_ext(spr_stamina_bar,1,view_xview[0]+15, view_yview[0]+45, obj_player.sp/100, 1, 0, c_white,1);
 //draw_sprite(spr_stamina_bar_background,1,view_xview[0]+15, view_yview[0]+45);
 </string>

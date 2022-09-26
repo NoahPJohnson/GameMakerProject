@@ -6,7 +6,7 @@ if (obj_player.state == states.knockback)
 }
   
    
-vspd = (min(7, vspd + grv));
+vspd = (min(12, vspd + grv));
 if (firing == false && meleeAttack == false)
 {
     //show_debug_message("DIRECTION = " + string(dir));

@@ -61,6 +61,10 @@ player_checkpoint_y = 0;
 active_enemies_type_array[0] = noone;
 active_enemies_location_x_array[0] = 0;
 active_enemies_location_y_array[0] = 0;
+
+//STOP SOUNDS
+audio_stop_all();
+obj_music_sfx_manager.current_music_track = noone;
 </string>
           </argument>
         </arguments>
@@ -135,9 +139,10 @@ scr_pause_screen();
           <argument>
             <kind>1</kind>
             <string>///Draw Menu Text
-draw_set_font(fnt_button_font);
+draw_background_tiled_ext(bkg_menu,view_xview[0],view_yview[0],1,1,c_white,1);
+draw_set_font(fnt_title_font);
 draw_set_halign(fa_center);
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,1);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_navy,c_navy,c_navy,c_navy,1);
 draw_set_halign(fa_left);
 </string>
           </argument>

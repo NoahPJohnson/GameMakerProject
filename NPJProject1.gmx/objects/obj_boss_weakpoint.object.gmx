@@ -80,6 +80,11 @@ air_sprite = spr_enemy_hit;
 crash_sprite = spr_enemy_crash_hitbox;
 crash_display_sprite = spr_enemy_crash_display;
 
+draw_image_angle = 180;
+spark_interval = 5;
+spark_offset_x = 0;
+spark_offset_y = 0;
+
 animation_loop = true;
 looping_melee = true;
 
@@ -97,6 +102,12 @@ saved_shot_timer = 0;
 mxspd = 40;
 max_hp = 42;
 hp = max_hp;
+bat_instance = noone;
+melee_hitbox = noone;
+cp = 1;
+cp_max = 1;
+rotation_angle = 0;
+fragmenting = false;
 
 state = boss_state.neutral;
 
@@ -187,6 +198,12 @@ link_array[7] = instance_create(x,y,obj_boss_neck_segment);
           <argument>
             <kind>1</kind>
             <string>///End Hitstop
+if (hp &lt; 1)
+{
+    speed = (abs(old_speed) * hitdir) + (impetus * hitdir);
+    direction = hitstun_direction;
+    state = boss_state.crash;
+}
 </string>
           </argument>
         </arguments>
@@ -222,13 +239,18 @@ else
    {
     sprite_index = spr_boss_weakpoint;
    }*/
-
-scr_enemy_targeted();
-
-scr_ball_n_chain_links();
-
-scr_boss_collision();
-
+if (state == boss_state.crash)
+{
+    scr_boss_crash();
+}
+else
+{
+    scr_enemy_targeted();
+    
+    scr_ball_n_chain_links();
+    
+    scr_boss_collision();
+}
 scr_boss_head_animation_control_script();
 </string>
           </argument>
@@ -276,7 +298,7 @@ scr_boss_head_animation_control_script();
           <argument>
             <kind>1</kind>
             <string>///Draw Self
-draw_self();
+draw_sprite_ext(sprite_index, image_index, x, y, 1, 1, draw_image_angle, c_white, 1);
 </string>
           </argument>
         </arguments>

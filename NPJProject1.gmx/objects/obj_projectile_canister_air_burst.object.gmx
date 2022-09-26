@@ -34,6 +34,12 @@ bunted = false;
 state = proj_state.normal;
 direction = 148;
 speed = 7;
+image_angle = direction;
+
+projectile_normal_sprite = spr_projectile;
+projectile_short_fuse_sprite = spr_projectile;
+projectile_returned_sprite = spr_projectile_returned;
+projectile_short_fuse_returned_sprite = spr_projectile_returned;
 
 update_angle = false;
 
@@ -124,6 +130,8 @@ switch (state)
               break;        
              }
        }
+//Animations
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

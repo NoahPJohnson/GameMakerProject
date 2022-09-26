@@ -1,8 +1,8 @@
 ///Camera Neutral
 
-key_lock_on_press = keyboard_check_pressed(ord("L")) || keyboard_check_pressed(ord("F"));
-key_lock_on_release = keyboard_check_released(ord("L")) || keyboard_check_released(ord("F"));
-key_lock_on_hold = keyboard_check(ord("L")) || keyboard_check(ord("F"));
+key_lock_on_press = keyboard_check_pressed(ord("L")) || keyboard_check_pressed(ord("F")) || gamepad_button_check_pressed(0, gp_shoulderl);
+key_lock_on_release = keyboard_check_released(ord("L")) || keyboard_check_released(ord("F")) || gamepad_button_check_released(0, gp_shoulderl);;
+key_lock_on_hold = keyboard_check(ord("L")) || keyboard_check(ord("F")) || gamepad_button_check(0, gp_shoulderl);;
 
 camera_field_x_left = view_xview[0];
 camera_field_x_right = view_xview[0] + view_wview[0];

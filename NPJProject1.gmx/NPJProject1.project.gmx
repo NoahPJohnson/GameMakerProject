@@ -94,6 +94,8 @@
         <sprite>sprites\spr_stamina_bar_background</sprite>
         <sprite>sprites\spr_stamina_bar</sprite>
         <sprite>sprites\spr_health_bar</sprite>
+        <sprite>sprites\spr_lock_on_indicator_off</sprite>
+        <sprite>sprites\spr_lock_on_indicator_on</sprite>
       </sprites>
       <sprites name="player bat">
         <sprite>sprites\spr_bat</sprite>
@@ -397,6 +399,7 @@
       <sprite>sprites\spr_level_transition_part_1</sprite>
       <sprite>sprites\spr_level_transition_part_2</sprite>
       <sprite>sprites\spr_level_transition_curtain</sprite>
+      <sprite>sprites\spr_level_transition_curtain_2</sprite>
       <sprite>sprites\spr_door_to_room</sprite>
       <sprite>sprites\spr_door_from_room</sprite>
       <sprite>sprites\spr_title</sprite>
@@ -635,6 +638,7 @@
       <script>scripts\scr_boss_hitstop.gml</script>
       <script>scripts\scr_boss_hitstun.gml</script>
       <script>scripts\scr_boss_hp_zero.gml</script>
+      <script>scripts\scr_boss_crash.gml</script>
       <script>scripts\scr_boss_damage.gml</script>
       <script>scripts\scr_boss_animation_end.gml</script>
       <script>scripts\scr_boss_animation_control_script.gml</script>
@@ -656,6 +660,7 @@
     <script>scripts\scr_boundary_slope_9_selection.gml</script>
     <script>scripts\scr_boundary_and_tile_manager.gml</script>
     <script>scripts\scr_prompt_sound.gml</script>
+    <script>scripts\scr_stop_sound.gml</script>
     <script>scripts\scr_boss_transition.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -764,6 +769,9 @@
         <object>objects\obj_explosion_large</object>
         <object>objects\obj_explosion_extra_wide</object>
         <object>objects\obj_spark_effect1</object>
+        <object>objects\obj_spark_effect2</object>
+        <object>objects\obj_spark_effect3</object>
+        <object>objects\obj_spark_effect4</object>
         <object>objects\obj_shot_spark</object>
         <object>objects\obj_hit_spark_R</object>
         <object>objects\obj_hit_spark_L</object>
@@ -851,6 +859,7 @@
       <object>objects\obj_boss_intro_display</object>
     </objects>
     <object>objects\obj_level_transition</object>
+    <object>objects\obj_level_transition_to</object>
     <object>objects\obj_door_to_room</object>
     <object>objects\obj_door_from_room</object>
     <objects name="boundaries">

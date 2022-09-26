@@ -1,31 +1,32 @@
 ///Dashing
-if (gamepad_axis_value(0, gp_axislh) > 0.2) 
-{
-    stick_moved_right = true;
-} 
-else 
-{
-    stick_moved_right = false;
-}
-if (gamepad_axis_value(0, gp_axislh) < -0.2)
-{
-    stick_moved_left = true;
-}
-else 
-{
-    stick_moved_left = false;
-}
-
 key_R_pressed = keyboard_check_pressed(ord("D")) || gamepad_button_check_pressed(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) > 0.2 && stick_moved_right == false);
 key_L_pressed = keyboard_check_pressed(ord("A")) || gamepad_button_check_pressed(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) < -0.2 && stick_moved_left == false);
 key_R_released = keyboard_check_released(ord("D")) || gamepad_button_check_released(0, gp_padr) || (gamepad_axis_value(0, gp_axislh) <= 0.2 && stick_moved_right == true);
 key_L_released = keyboard_check_released(ord("A")) || gamepad_button_check_released(0, gp_padl) || (gamepad_axis_value(0, gp_axislh) >= -0.2 && stick_moved_left == true);
 
+if (gamepad_axis_value(0, gp_axislh) > 0.2 && stick_moved_right == false) 
+{
+    stick_moved_right = true;
+} 
+else if (gamepad_axis_value(0, gp_axislh) <= 0.2 && stick_moved_right == true)
+{
+    stick_moved_right = false;
+}
+if (gamepad_axis_value(0, gp_axislh) < -0.2 && stick_moved_left == false)
+{
+    stick_moved_left = true;
+}
+else if (gamepad_axis_value(0, gp_axislh) >= -0.2 && stick_moved_left == true)
+{
+    stick_moved_left = false;
+}
+
+
 //Initiate with Double Tap
 if ((place_meeting(x, y+1, obj_boundary) || place_meeting(x, y+1, obj_enemy)) && crouching == false)
 {
     //Key pressed while double tap window is open and it is in the same direction
-    if ((key_R_pressed || key_L_pressed) && alarm[10] > 0 && directionMemory = right)
+    if ((key_R_pressed || key_L_pressed) && alarm[10] > 0 && directionMemory == right)
     {
         //initiate dash
         doubleTapWindow = false;

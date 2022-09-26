@@ -41,6 +41,11 @@ else
     direction = 225;
     speed = 6;
    }
+   
+projectile_normal_sprite = spr_projectile;
+projectile_short_fuse_sprite = spr_projectile;
+projectile_returned_sprite = spr_projectile_returned;
+projectile_short_fuse_returned_sprite = spr_projectile_returned;
 
 update_angle = false;
 
@@ -132,6 +137,7 @@ switch (state)
               break;        
              }
        }
+scr_projectile_animation_controller();
 </string>
           </argument>
         </arguments>

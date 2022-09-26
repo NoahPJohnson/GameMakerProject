@@ -1,26 +1,26 @@
 if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
-   {
+{
     if (!collision_line(x,y,obj_player.x,obj_player.y,obj_boundary,false,true))
-       {
+    {
         if (obj_player.right = true)
-           {
+        {
             hitdir = 1; 
-           }
+        }
         else
-           {
+        {
             hitdir = -1;
-           }
+        }
         if (vulnerable == true)
-           {
+        {
             hp -= (1 + obj_player.chargeOne + (obj_player.chargeTwo*2));
             if (hp < 1)
-               {
+            {
                 scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), true, (state == e_state.crash));
-               }
+            }
             else
-               {
+            {
                 scr_score_tracker_script_run(1 + obj_player.chargeOne + (obj_player.chargeTwo*2), false, (state == e_state.crash)); 
-               }
+            }
             //scr_enemy_hp_zero();
             old_speed = speed;
             impetus = (13 + (obj_player.chargeOne * 5) + (obj_player.chargeTwo * 10)) * weight_factor;
@@ -54,11 +54,11 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
             }  
             
             //alarm[7] = -1;
-            alarm[0] = room_speed * ((((hp < 1)*50) + (5 + (obj_player.chargeTwo*2)))/60);
+            alarm[0] = room_speed * ((((hp < 1)*55) + (5 + (obj_player.chargeTwo*2)))/60);
             damage_hitstop = true;
-           }
+        }
         else
-           {
+        {
             old_state = state;
             
             //Hit protector sound effect
@@ -72,20 +72,20 @@ if (place_meeting(x, y, obj_bat) && obj_bat.hit = false)
                 
             alarm[0] = room_speed * (3/60);
             damage_hitstop = false;          
-           } 
+        } 
         
         //Player Hitstop
         if (obj_player.state != states.hitstop)
-           {
+        {
             obj_player.hitstop = false;
             obj_player.damage_hitstop = false;
             obj_player.alarm[11] = alarm[0];
             obj_player.old_state = obj_player.state;
             obj_player.state = states.hitstop;
-           }
+        }
         state = boss_state.hitstop;
-       }   
-   }          
+    }   
+}          
 
 if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
    {
@@ -142,7 +142,7 @@ if (place_meeting(x, y, obj_bat_launcher) && obj_bat_launcher.hit == false)
                 }
             }  
             
-            alarm[0] = room_speed * ((((hp < 1)*50) + (5 + (obj_player.chargeTwo*2)))/60);
+            alarm[0] = room_speed * ((((hp < 1)*55) + (5 + (obj_player.chargeTwo*2)))/60);
             show_debug_message("Vulnerable spot hit, alarm 0 = " + string(room_speed * ((((hp < 1)*50) + (5 + (obj_player.chargeTwo*2)))/60)));
             damage_hitstop = true;
            }
@@ -226,7 +226,7 @@ if (place_meeting(x, y, obj_bat_spike) && obj_bat_spike.hit == false)
                 }
             }
             
-            alarm[0] = room_speed * ((((hp < 1)*50) + 3)/60);
+            alarm[0] = room_speed * ((((hp < 1)*55) + 3)/60);
             //show_debug_message("Hit by spike. player state is: " + string(obj_player.state) + " old state is " + string(obj_player.old_state));
             damage_hitstop = true;
            }
@@ -372,7 +372,7 @@ if (place_meeting(x,y,obj_explosion_hitbox) && hitstun == false)
         hitstun_direction = 75 * hitdir;
         old_state = state;
         //alarm[7] = -1;
-        alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+        alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
         damage_hitstop = true;
         show_debug_message("Head hit by an explosion.");
        }
@@ -408,7 +408,7 @@ if (place_meeting(x,y,obj_spike_floor) && hitstun == false)
             hitstun_direction = 90;
             old_state = state;
             //alarm[7] = -1;
-            alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+            alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
             damage_hitstop = true;
             state = boss_state.hitstop;
            }
@@ -442,7 +442,7 @@ if (place_meeting(x,y,obj_spike_wall_L) && hitstun == false)
         hitstun_direction = 35;
         old_state = state;
         //alarm[7] = -1;
-        alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+        alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
         damage_hitstop = true;
         state = boss_state.hitstop;
        }
@@ -467,7 +467,7 @@ if (place_meeting(x,y,obj_spike_wall_R) && hitstun == false)
         hitstun_direction = 145;
         old_state = state;
         //alarm[7] = -1;
-        alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+        alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
         damage_hitstop = true;
         state = boss_state.hitstop;
        }
@@ -492,7 +492,7 @@ if (place_meeting(x,y,obj_spike_ceiling) && hitstun == false)
         hitstun_direction = 270;
         old_state = state;
         //alarm[7] = -1;
-        alarm[0] = room_speed * ((((hp < 1)*50) + 5)/60);
+        alarm[0] = room_speed * ((((hp < 1)*55) + 5)/60);
         damage_hitstop = true;
         state = boss_state.hitstop;
        }

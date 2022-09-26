@@ -2,7 +2,7 @@
 speed = 0;
 direction = 0;
 hspd = 0;
-vspd = (min(7, vspd + grv))
+vspd = (min(12, vspd + grv))
 if (distance_to_object(obj_player) < 500) 
    {
     //show_debug_message("Within distance.")

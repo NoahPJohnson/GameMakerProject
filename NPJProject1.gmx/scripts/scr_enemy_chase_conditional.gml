@@ -22,7 +22,7 @@ else if (obj_player.state != states.knockback && switched == true)
    }
   
    
-vspd = (min(7, vspd + grv));
+vspd = (min(12, vspd + grv));
 if (alarm[7] = -1 && alarm[8] = -1)
    {
     if (firing = false)

@@ -96,6 +96,10 @@ melee_warning_time = 30;
 anti_air_warning_time = 6;
 follow_up_warning_time = 9;
 
+spark_interval = 5;
+spark_offset_x = 0;
+spark_offset_y = 0;
+
 
 //boss stuff
 vulnerable = false;

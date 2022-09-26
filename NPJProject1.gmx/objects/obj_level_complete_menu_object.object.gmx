@@ -52,11 +52,11 @@ menu_text = "Level Complete!";
 saved_player_score = 0;
 par_score = 60;
 evaluation_index = 0;
-evaluation[0] = "A";
-evaluation[1] = "B";
-evaluation[2] = "C";
-evaluation[3] = "D";
-evaluation[4] = "A+";
+evaluation[0] = "Mighty Casey";
+evaluation[1] = "Power Hitter";
+evaluation[2] = "Lil Slugger";
+evaluation[3] = "Bench Warmer";
+evaluation[4] = "MVP";
 
 
 //Checkpoint stuff
@@ -142,18 +142,20 @@ scr_pause_screen();
           <argument>
             <kind>1</kind>
             <string>///Draw Menu Text
-draw_set_font(fnt_button_font);
+draw_background_tiled_ext(bkg_menu,view_xview[0],view_yview[0],1,1,c_white,1);
+draw_set_font(fnt_title_font);
 draw_set_halign(fa_center);
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_black,c_black,c_black,c_black,1);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)-320)),menu_text,c_navy,c_navy,c_navy,c_navy,1);
 if (saved_player_score &gt;= par_score)
-   {
+{
     evaluation_index = 4;
-   }
+}
 else
-   {
+{
     evaluation_index = clamp(floor((par_score - saved_player_score)/5),0,3);
-   }
-draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)+180)),"Score: " + string(saved_player_score) + "   Evaluation: " + evaluation[evaluation_index],c_black,c_black,c_black,c_black,1);
+}
+draw_set_font(fnt_button_font);
+draw_text_colour((view_xview[0]+(view_wview[0]/2)),(view_yview[0]+((view_hview[0]/2)+180)),"Score: " + string(saved_player_score) + "   Evaluation: " + evaluation[evaluation_index],c_navy,c_navy,c_navy,c_navy,1);
 draw_set_halign(fa_left);
 </string>
           </argument>

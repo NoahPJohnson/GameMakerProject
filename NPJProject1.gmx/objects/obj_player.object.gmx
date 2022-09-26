@@ -881,6 +881,8 @@ draw_sprite_ext(spr_health_bar,1,view_xview[0]+15, view_yview[0]+15, obj_player.
 draw_sprite(spr_health_bar_background,1,view_xview[0]+15, view_yview[0]+15);
 draw_sprite_ext(spr_stamina_bar,1,view_xview[0]+15, view_yview[0]+45, obj_player.sp/100, 1, 0, c_white,1);
 draw_sprite(spr_stamina_bar_background,1,view_xview[0]+15, view_yview[0]+45);
+
+
 </string>
           </argument>
         </arguments>

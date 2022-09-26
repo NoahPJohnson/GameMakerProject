@@ -2,7 +2,7 @@
 //General Settings
 //switch between approach and retreet after each attack regardless of success
    
-vspd = (min(7, vspd + grv));
+vspd = (min(12, vspd + grv));
 if (alarm[7] = -1 && alarm[8] = -1)
    {
     follow_up_attack = false;

@@ -63,8 +63,10 @@ enum boss_state
       neutral,
       active,
       hitstop,
-      hitstun
+      hitstun,
+      crash
      }
+randomize();
 room_goto(rm_main_menu);</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>

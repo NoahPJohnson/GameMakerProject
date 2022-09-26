@@ -117,6 +117,15 @@ if (place_meeting(x, y, obj_bat_spike))
         state = proj_state.hitstop;
        }
     spark_index = 2;
+    
+    //Play hit sound
+    if (instance_exists(obj_music_sfx_manager))
+    {
+        with (obj_music_sfx_manager) 
+        {
+            scr_prompt_sound(snd_player_hit_projectile_SFX,other,false);    
+        }
+    }
    }
    
 //Collision with Bunt   

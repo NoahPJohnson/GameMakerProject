@@ -19,12 +19,12 @@ if (jumping_type == true)
        }
     else
        {
-        vspd = (min(7, vspd + grv));
+        vspd = (min(12, vspd + grv));
        }
    }
 else 
    {
-    vspd = (min(7, vspd + grv));
+    vspd = (min(12, vspd + grv));
    }
 if (/*alarm[7] = -1 && */alarm[8] = -1)
    {
